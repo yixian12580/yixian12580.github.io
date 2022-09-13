@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yixian12580.github.io/"/>
-  <updated>2022-09-08T04:08:06.011Z</updated>
+  <updated>2022-09-13T08:10:41.131Z</updated>
   <id>https://yixian12580.github.io/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>test</title>
+    <link href="https://yixian12580.github.io/2022/09/13/test.html"/>
+    <id>https://yixian12580.github.io/2022/09/13/test.html</id>
+    <published>2022-09-13T07:56:30.000Z</published>
+    <updated>2022-09-13T08:10:41.131Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;测试一下图片是否能正常显示&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="test" scheme="https://yixian12580.github.io/tags/test/"/>
+    
+      <category term="test1" scheme="https://yixian12580.github.io/tags/test1/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
-    <link href="https://yixian12580.github.io/2022/09/08/hello-world.html"/>
-    <id>https://yixian12580.github.io/2022/09/08/hello-world.html</id>
-    <published>2022-09-08T04:08:06.011Z</published>
-    <updated>2022-09-08T04:08:06.011Z</updated>
+    <link href="https://yixian12580.github.io/2022/09/13/hello-world.html"/>
+    <id>https://yixian12580.github.io/2022/09/13/hello-world.html</id>
+    <published>2022-09-13T07:42:00.050Z</published>
+    <updated>2022-09-13T07:42:00.053Z</updated>
     
     <summary type="html">
     
@@ -37,7 +57,7 @@
     <link href="https://yixian12580.github.io/2022/08/24/This-is-Life.html"/>
     <id>https://yixian12580.github.io/2022/08/24/This-is-Life.html</id>
     <published>2022-08-24T09:03:58.000Z</published>
-    <updated>2022-09-08T13:32:56.121Z</updated>
+    <updated>2022-09-13T07:42:00.058Z</updated>
     
     <summary type="html">
     
