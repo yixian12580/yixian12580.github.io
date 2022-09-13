@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>逸贤 | Blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://yixian12580.github.io/"/>
+  <updated>2022-09-08T04:08:06.011Z</updated>
+  <id>https://yixian12580.github.io/</id>
+  
+  <author>
+    <name>丨逸贤丨</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://yixian12580.github.io/2022/09/08/hello-world.html"/>
+    <id>https://yixian12580.github.io/2022/09/08/hello-world.html</id>
+    <published>2022-09-08T04:08:06.011Z</published>
+    <updated>2022-09-08T04:08:06.011Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>This is Life</title>
+    <link href="https://yixian12580.github.io/2022/08/24/This-is-Life.html"/>
+    <id>https://yixian12580.github.io/2022/08/24/This-is-Life.html</id>
+    <published>2022-08-24T09:03:58.000Z</published>
+    <updated>2022-09-08T13:32:56.121Z</updated>
+    
+    <summary type="html">
+    
+      这是显示在首页的概述，正文内容均会被隐藏。
+    
+    </summary>
+    
+    
+      <category term="test" scheme="https://yixian12580.github.io/tags/test/"/>
+    
+  </entry>
+  
+</feed>
