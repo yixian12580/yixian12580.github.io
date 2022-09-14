@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yixian12580.github.io/"/>
-  <updated>2022-09-13T08:10:41.131Z</updated>
+  <updated>2022-09-14T03:44:52.209Z</updated>
   <id>https://yixian12580.github.io/</id>
   
   <author>
@@ -17,56 +17,184 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>test</title>
-    <link href="https://yixian12580.github.io/2022/09/13/test.html"/>
-    <id>https://yixian12580.github.io/2022/09/13/test.html</id>
-    <published>2022-09-13T07:56:30.000Z</published>
-    <updated>2022-09-13T08:10:41.131Z</updated>
+    <title>Docker入门及实战演练</title>
+    <link href="https://yixian12580.github.io/2022/09/14/Docker%E5%85%A5%E9%97%A8%E5%8F%8A%E5%AE%9E%E6%88%98%E6%BC%94%E7%BB%83.html"/>
+    <id>https://yixian12580.github.io/2022/09/14/Docker入门及实战演练.html</id>
+    <published>2022-09-14T03:10:23.000Z</published>
+    <updated>2022-09-14T03:44:52.209Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;测试一下图片是否能正常显示&lt;/p&gt;
+      &lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。几乎没有性能开销，可以很容易地在机器和数据中心中运行。&lt;/p&gt;
     
     </summary>
     
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="test" scheme="https://yixian12580.github.io/tags/test/"/>
+      <category term="Docker" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Docker/"/>
     
-      <category term="test1" scheme="https://yixian12580.github.io/tags/test1/"/>
+    
+      <category term="Docker" scheme="https://yixian12580.github.io/tags/Docker/"/>
     
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://yixian12580.github.io/2022/09/13/hello-world.html"/>
-    <id>https://yixian12580.github.io/2022/09/13/hello-world.html</id>
-    <published>2022-09-13T07:42:00.050Z</published>
-    <updated>2022-09-13T07:42:00.053Z</updated>
+    <title>Linux脚本小知识之含义</title>
+    <link href="https://yixian12580.github.io/2022/09/14/Linux%E8%84%9A%E6%9C%AC%E5%B0%8F%E7%9F%A5%E8%AF%86%E4%B9%8B%E5%90%AB%E4%B9%89.html"/>
+    <id>https://yixian12580.github.io/2022/09/14/Linux脚本小知识之含义.html</id>
+    <published>2022-09-14T03:04:21.000Z</published>
+    <updated>2022-09-14T03:08:15.085Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+      &lt;p&gt;Linux系统中的Shell脚本语言内设了用于接收参数的变量，变量之间可以使用空格间隔。&lt;/p&gt;
     
     </summary>
     
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="脚本" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E8%84%9A%E6%9C%AC/"/>
+    
+    
+      <category term="脚本" scheme="https://yixian12580.github.io/tags/%E8%84%9A%E6%9C%AC/"/>
     
   </entry>
   
   <entry>
-    <title>This is Life</title>
-    <link href="https://yixian12580.github.io/2022/08/24/This-is-Life.html"/>
-    <id>https://yixian12580.github.io/2022/08/24/This-is-Life.html</id>
-    <published>2022-08-24T09:03:58.000Z</published>
-    <updated>2022-09-13T07:42:00.058Z</updated>
+    <title>电脑开机按F1键进系统</title>
+    <link href="https://yixian12580.github.io/2022/09/14/%E7%94%B5%E8%84%91%E5%BC%80%E6%9C%BA%E6%8C%89F1%E9%94%AE%E8%BF%9B%E7%B3%BB%E7%BB%9F.html"/>
+    <id>https://yixian12580.github.io/2022/09/14/电脑开机按F1键进系统.html</id>
+    <published>2022-09-14T03:02:19.000Z</published>
+    <updated>2022-09-14T03:03:52.047Z</updated>
     
     <summary type="html">
     
-      这是显示在首页的概述，正文内容均会被隐藏。
+      &lt;p&gt;问题名称：电脑开机要按F1键才能进系统&lt;br&gt;问题表现：启动电脑后，需要按F1键才能进系统，下面有提示：511-cpu fan not detected&lt;/p&gt;
     
     </summary>
     
+      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
     
-      <category term="test" scheme="https://yixian12580.github.io/tags/test/"/>
+      <category term="故障" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/%E6%95%85%E9%9A%9C/"/>
+    
+    
+      <category term="系统" scheme="https://yixian12580.github.io/tags/%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>电脑开机黑屏</title>
+    <link href="https://yixian12580.github.io/2022/09/14/%E7%94%B5%E8%84%91%E5%BC%80%E6%9C%BA%E9%BB%91%E5%B1%8F.html"/>
+    <id>https://yixian12580.github.io/2022/09/14/电脑开机黑屏.html</id>
+    <published>2022-09-14T03:00:13.000Z</published>
+    <updated>2022-09-14T03:01:32.724Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;问题名称：电脑开不了机&lt;br&gt;问题表现：电脑显示屏正常，但进不了系统，开机显示屏黑屏，无反应；拆开主机时散热器时转时不转。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
+    
+      <category term="故障" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/%E6%95%85%E9%9A%9C/"/>
+    
+    
+      <category term="黑屏" scheme="https://yixian12580.github.io/tags/%E9%BB%91%E5%B1%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>打印机工作异常</title>
+    <link href="https://yixian12580.github.io/2022/09/14/%E6%89%93%E5%8D%B0%E6%9C%BA%E5%B7%A5%E4%BD%9C%E5%BC%82%E5%B8%B8.html"/>
+    <id>https://yixian12580.github.io/2022/09/14/打印机工作异常.html</id>
+    <published>2022-09-14T02:56:22.000Z</published>
+    <updated>2022-09-14T03:01:45.967Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1． 问题名称：打印机工作异常&lt;br&gt;2． 问题表现：打印文件时，打印机没反应，打印机后台显示文档被挂起。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
+    
+      <category term="打印机" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/%E6%89%93%E5%8D%B0%E6%9C%BA/"/>
+    
+    
+      <category term="打印机" scheme="https://yixian12580.github.io/tags/%E6%89%93%E5%8D%B0%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SVN客户端使用</title>
+    <link href="https://yixian12580.github.io/2022/09/14/SVN%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8.html"/>
+    <id>https://yixian12580.github.io/2022/09/14/SVN客户端使用.html</id>
+    <published>2022-09-14T01:30:34.000Z</published>
+    <updated>2022-09-14T01:55:07.899Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Linux命令行SVN使用教程&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="SVN" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/SVN/"/>
+    
+    
+      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
+    
+      <category term="SVN" scheme="https://yixian12580.github.io/tags/SVN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux部署SVN服务器</title>
+    <link href="https://yixian12580.github.io/2022/09/13/Linux%E9%83%A8%E7%BD%B2SVN%E6%9C%8D%E5%8A%A1%E5%99%A8.html"/>
+    <id>https://yixian12580.github.io/2022/09/13/Linux部署SVN服务器.html</id>
+    <published>2022-09-13T11:46:42.000Z</published>
+    <updated>2022-09-14T01:32:00.159Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;SVN是Subversion的简称，是一个开放源代码的版本控制系统，用于多个人共同开发同一个项目，共用资源的目的。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="SVN" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/SVN/"/>
+    
+    
+      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
+    
+      <category term="SVN" scheme="https://yixian12580.github.io/tags/SVN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>虚拟机安装Linux系统</title>
+    <link href="https://yixian12580.github.io/2022/09/13/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85Linux%E7%B3%BB%E7%BB%9F.html"/>
+    <id>https://yixian12580.github.io/2022/09/13/虚拟机安装Linux系统.html</id>
+    <published>2022-09-13T08:57:33.000Z</published>
+    <updated>2022-09-14T02:57:20.143Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;VMware 可以使你在一台计算机上同时运行多个操作系统，例如同时运行 Windows、Linux 和 Mac OS。在计算机上直接安装多个操作系统，同一个时刻只能运行一个操作系统，重启才可以切换；而 Vmware 可以同时运行多个操作系统，可以像 Windows 应用程序一样来回切换。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
+    
+      <category term="系统" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="Linux系统" scheme="https://yixian12580.github.io/tags/Linux%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="VMware" scheme="https://yixian12580.github.io/tags/VMware/"/>
     
   </entry>
   
