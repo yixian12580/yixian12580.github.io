@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yixian12580.github.io/"/>
-  <updated>2022-09-14T09:00:16.320Z</updated>
+  <updated>2022-09-15T10:44:45.664Z</updated>
   <id>https://yixian12580.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>shell脚本记录</title>
+    <link href="https://yixian12580.github.io/2022/09/15/shell%E8%84%9A%E6%9C%AC%E8%AE%B0%E5%BD%95.html"/>
+    <id>https://yixian12580.github.io/2022/09/15/shell脚本记录.html</id>
+    <published>2022-09-15T10:13:29.000Z</published>
+    <updated>2022-09-15T10:44:45.664Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在工作中经常会有重复性的工作，这种工作借助脚本帮助我们完成可以省心又省力，记录一下工作中用到的脚本&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="脚本" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E8%84%9A%E6%9C%AC/"/>
+    
+    
+      <category term="脚本" scheme="https://yixian12580.github.io/tags/%E8%84%9A%E6%9C%AC/"/>
+    
+  </entry>
   
   <entry>
     <title>CentOS7安装zabbix-agent</title>
