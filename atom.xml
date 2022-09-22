@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yixian12580.github.io/"/>
-  <updated>2022-09-22T06:59:31.992Z</updated>
+  <updated>2022-09-22T10:22:42.894Z</updated>
   <id>https://yixian12580.github.io/</id>
   
   <author>
@@ -15,6 +15,222 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux-GitLab安装及汉化</title>
+    <link href="https://yixian12580.github.io/2022/09/22/Linux-GitLab%E5%AE%89%E8%A3%85%E5%8F%8A%E6%B1%89%E5%8C%96.html"/>
+    <id>https://yixian12580.github.io/2022/09/22/Linux-GitLab安装及汉化.html</id>
+    <published>2022-09-22T10:17:19.000Z</published>
+    <updated>2022-09-22T10:22:42.894Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;GitLab是一个用于仓库管理系统的开源项目。使用Git作为代码管理工具，并在此基础上搭建起来的Web服务。可通过Web界面进行访问公开的或者私人项目。它拥有GitHub类似的功能，能够浏览源代码，管理缺陷和注释。可以管理团队对仓库的访问，它非常易于浏览提交过的版本并提供一个文件历史库。团队成员可以利用内置的简单聊天程序（Wall）进行交流。它还提供了一个代码片段收集功能可以轻松实现代码复用。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Gitlab" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Gitlab/"/>
+    
+    
+      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
+    
+      <category term="Gitlab" scheme="https://yixian12580.github.io/tags/Gitlab/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS 7 安装supervisor</title>
+    <link href="https://yixian12580.github.io/2022/09/22/CentOS-7-%E5%AE%89%E8%A3%85supervisor.html"/>
+    <id>https://yixian12580.github.io/2022/09/22/CentOS-7-安装supervisor.html</id>
+    <published>2022-09-22T10:13:11.000Z</published>
+    <updated>2022-09-22T10:16:32.822Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1.什么是supervisor&lt;br&gt;supervisor是用python写的一个进程管理工具，用来启动，重启，关闭进程。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
+    
+      <category term="supervisor" scheme="https://yixian12580.github.io/tags/supervisor/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS 7部署frp</title>
+    <link href="https://yixian12580.github.io/2022/09/22/CentOS-7%E9%83%A8%E7%BD%B2frp.html"/>
+    <id>https://yixian12580.github.io/2022/09/22/CentOS-7部署frp.html</id>
+    <published>2022-09-22T09:51:06.000Z</published>
+    <updated>2022-09-22T10:11:58.026Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;frp 是一个可用于内网穿透的高性能的反向代理应用，支持 tcp, udp, http, https 协议。 本文将基于 frp 来实现内网穿透。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="frp" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/frp/"/>
+    
+    
+      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
+    
+      <category term="frp" scheme="https://yixian12580.github.io/tags/frp/"/>
+    
+      <category term="内网穿透" scheme="https://yixian12580.github.io/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>openVPN客户端连接</title>
+    <link href="https://yixian12580.github.io/2022/09/22/openVPN%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%BF%9E%E6%8E%A5.html"/>
+    <id>https://yixian12580.github.io/2022/09/22/openVPN客户端连接.html</id>
+    <published>2022-09-22T09:38:01.000Z</published>
+    <updated>2022-09-22T09:50:16.555Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;上一章已经部署好了openVPN服务器，现在我们说一下客户端如何连接服务器从而访问内网。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="openVPN" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/openVPN/"/>
+    
+    
+      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
+    
+      <category term="openVPN" scheme="https://yixian12580.github.io/tags/openVPN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>openVPN通过用户名密码认证</title>
+    <link href="https://yixian12580.github.io/2022/09/22/openVPN%E9%80%9A%E8%BF%87%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81%E8%AE%A4%E8%AF%81.html"/>
+    <id>https://yixian12580.github.io/2022/09/22/openVPN通过用户名密码认证.html</id>
+    <published>2022-09-22T09:27:50.000Z</published>
+    <updated>2022-09-22T09:37:40.442Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;紧接上一篇，让openvpn读取本地文件中的用户名密码，通过判断用户名密码是否存在文件中进行认证，搭建openvpn环境就不多做说明了，只要把openvpn搭建好，客户端能够连接就可以了。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="openVPN" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/openVPN/"/>
+    
+    
+      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
+    
+      <category term="openVPN" scheme="https://yixian12580.github.io/tags/openVPN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux部署openVPN以访问server端内网其他服务</title>
+    <link href="https://yixian12580.github.io/2022/09/22/Linux%E9%83%A8%E7%BD%B2openVPN%E4%BB%A5%E8%AE%BF%E9%97%AEserver%E7%AB%AF%E5%86%85%E7%BD%91%E5%85%B6%E4%BB%96%E6%9C%8D%E5%8A%A1.html"/>
+    <id>https://yixian12580.github.io/2022/09/22/Linux部署openVPN以访问server端内网其他服务.html</id>
+    <published>2022-09-22T09:22:34.000Z</published>
+    <updated>2022-09-22T09:27:21.321Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;上一章已经部署了open服务，但那仅仅只能访问部署了open server的服务器，要想同时也能访问同网段的其他机器，还需配置一下。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="openVPN" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/openVPN/"/>
+    
+    
+      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
+    
+      <category term="openVPN" scheme="https://yixian12580.github.io/tags/openVPN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux部署openVPN服务</title>
+    <link href="https://yixian12580.github.io/2022/09/22/Linux%E9%83%A8%E7%BD%B2openVPN%E6%9C%8D%E5%8A%A1.html"/>
+    <id>https://yixian12580.github.io/2022/09/22/Linux部署openVPN服务.html</id>
+    <published>2022-09-22T09:12:49.000Z</published>
+    <updated>2022-09-22T09:21:14.402Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;由于在家办公需要访问公司内网，故记录一下部署openVPN服务过程。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="openVPN" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/openVPN/"/>
+    
+    
+      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
+    
+      <category term="openVPN" scheme="https://yixian12580.github.io/tags/openVPN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS7 重新分配分区大小</title>
+    <link href="https://yixian12580.github.io/2022/09/22/CentOS7-%E9%87%8D%E6%96%B0%E5%88%86%E9%85%8D%E5%88%86%E5%8C%BA%E5%A4%A7%E5%B0%8F.html"/>
+    <id>https://yixian12580.github.io/2022/09/22/CentOS7-重新分配分区大小.html</id>
+    <published>2022-09-22T08:51:24.000Z</published>
+    <updated>2022-09-22T08:57:55.081Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;服务器安装CentOS7系统时，没注意点了自动分区，空间大部分分到了/home目录。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="分区" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%88%86%E5%8C%BA/"/>
+    
+    
+      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
+    
+      <category term="分区" scheme="https://yixian12580.github.io/tags/%E5%88%86%E5%8C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ssh免密登陆</title>
+    <link href="https://yixian12580.github.io/2022/09/22/ssh%E5%85%8D%E5%AF%86%E7%99%BB%E9%99%86.html"/>
+    <id>https://yixian12580.github.io/2022/09/22/ssh免密登陆.html</id>
+    <published>2022-09-22T08:46:40.000Z</published>
+    <updated>2022-09-22T08:51:08.936Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;为了保证一台Linux主机的安全，所以我们每个主机登录的时候一般我们都设置账号密码登录。但是很多时候为了操作方便，我们都通过设置SSH免密码登录。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="SSH" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/SSH/"/>
+    
+    
+      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
+    
+      <category term="SSH免密" scheme="https://yixian12580.github.io/tags/SSH%E5%85%8D%E5%AF%86/"/>
+    
+  </entry>
   
   <entry>
     <title>nginx URL重写规则配置详解</title>
@@ -276,144 +492,6 @@
     
     
       <category term="脚本" scheme="https://yixian12580.github.io/tags/%E8%84%9A%E6%9C%AC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>电脑开机按F1键进系统</title>
-    <link href="https://yixian12580.github.io/2022/09/14/%E7%94%B5%E8%84%91%E5%BC%80%E6%9C%BA%E6%8C%89F1%E9%94%AE%E8%BF%9B%E7%B3%BB%E7%BB%9F.html"/>
-    <id>https://yixian12580.github.io/2022/09/14/电脑开机按F1键进系统.html</id>
-    <published>2022-09-14T03:02:19.000Z</published>
-    <updated>2022-09-14T03:03:52.047Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;问题名称：电脑开机要按F1键才能进系统&lt;br&gt;问题表现：启动电脑后，需要按F1键才能进系统，下面有提示：511-cpu fan not detected&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
-    
-      <category term="故障" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/%E6%95%85%E9%9A%9C/"/>
-    
-    
-      <category term="系统" scheme="https://yixian12580.github.io/tags/%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>电脑开机黑屏</title>
-    <link href="https://yixian12580.github.io/2022/09/14/%E7%94%B5%E8%84%91%E5%BC%80%E6%9C%BA%E9%BB%91%E5%B1%8F.html"/>
-    <id>https://yixian12580.github.io/2022/09/14/电脑开机黑屏.html</id>
-    <published>2022-09-14T03:00:13.000Z</published>
-    <updated>2022-09-14T03:01:32.724Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;问题名称：电脑开不了机&lt;br&gt;问题表现：电脑显示屏正常，但进不了系统，开机显示屏黑屏，无反应；拆开主机时散热器时转时不转。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
-    
-      <category term="故障" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/%E6%95%85%E9%9A%9C/"/>
-    
-    
-      <category term="黑屏" scheme="https://yixian12580.github.io/tags/%E9%BB%91%E5%B1%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>打印机工作异常</title>
-    <link href="https://yixian12580.github.io/2022/09/14/%E6%89%93%E5%8D%B0%E6%9C%BA%E5%B7%A5%E4%BD%9C%E5%BC%82%E5%B8%B8.html"/>
-    <id>https://yixian12580.github.io/2022/09/14/打印机工作异常.html</id>
-    <published>2022-09-14T02:56:22.000Z</published>
-    <updated>2022-09-14T03:01:45.967Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;1． 问题名称：打印机工作异常&lt;br&gt;2． 问题表现：打印文件时，打印机没反应，打印机后台显示文档被挂起。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
-    
-      <category term="打印机" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/%E6%89%93%E5%8D%B0%E6%9C%BA/"/>
-    
-    
-      <category term="打印机" scheme="https://yixian12580.github.io/tags/%E6%89%93%E5%8D%B0%E6%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SVN客户端使用</title>
-    <link href="https://yixian12580.github.io/2022/09/14/SVN%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8.html"/>
-    <id>https://yixian12580.github.io/2022/09/14/SVN客户端使用.html</id>
-    <published>2022-09-14T01:30:34.000Z</published>
-    <updated>2022-09-14T01:55:07.899Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Linux命令行SVN使用教程&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="SVN" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/SVN/"/>
-    
-    
-      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
-    
-      <category term="SVN" scheme="https://yixian12580.github.io/tags/SVN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux部署SVN服务器</title>
-    <link href="https://yixian12580.github.io/2022/09/13/Linux%E9%83%A8%E7%BD%B2SVN%E6%9C%8D%E5%8A%A1%E5%99%A8.html"/>
-    <id>https://yixian12580.github.io/2022/09/13/Linux部署SVN服务器.html</id>
-    <published>2022-09-13T11:46:42.000Z</published>
-    <updated>2022-09-14T01:32:00.159Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;SVN是Subversion的简称，是一个开放源代码的版本控制系统，用于多个人共同开发同一个项目，共用资源的目的。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="SVN" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/SVN/"/>
-    
-    
-      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
-    
-      <category term="SVN" scheme="https://yixian12580.github.io/tags/SVN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>虚拟机安装Linux系统</title>
-    <link href="https://yixian12580.github.io/2022/09/13/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85Linux%E7%B3%BB%E7%BB%9F.html"/>
-    <id>https://yixian12580.github.io/2022/09/13/虚拟机安装Linux系统.html</id>
-    <published>2022-09-13T08:57:33.000Z</published>
-    <updated>2022-09-14T02:57:20.143Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;VMware 可以使你在一台计算机上同时运行多个操作系统，例如同时运行 Windows、Linux 和 Mac OS。在计算机上直接安装多个操作系统，同一个时刻只能运行一个操作系统，重启才可以切换；而 Vmware 可以同时运行多个操作系统，可以像 Windows 应用程序一样来回切换。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
-    
-      <category term="系统" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-      <category term="VMware" scheme="https://yixian12580.github.io/tags/VMware/"/>
-    
-      <category term="Linux系统" scheme="https://yixian12580.github.io/tags/Linux%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
