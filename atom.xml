@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yixian12580.github.io/"/>
-  <updated>2022-09-15T10:44:45.664Z</updated>
+  <updated>2022-09-22T06:59:31.992Z</updated>
   <id>https://yixian12580.github.io/</id>
   
   <author>
@@ -17,11 +17,81 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>nginx URL重写规则配置详解</title>
+    <link href="https://yixian12580.github.io/2022/09/22/nginx-URL%E9%87%8D%E5%86%99%E8%A7%84%E5%88%99%E9%85%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3.html"/>
+    <id>https://yixian12580.github.io/2022/09/22/nginx-URL重写规则配置详解.html</id>
+    <published>2022-09-22T02:19:24.000Z</published>
+    <updated>2022-09-22T06:59:31.992Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;访问重写rewrite是Nginx HTTP请求处理过程中的一个重要功能，它是以模块的形式存在于代码中的，其功能是对用户请求的URI进行PCRE正则重写，然后返回30×重定向跳转或按条件执行相关配置。rewrite模块内置了类似脚本语言的set、if、break、return配置指令，通过这些指令，用户可以在HTTP请求处理过程中对URI进行更灵活的操作控制。rewrite模块提供的指令可以分两类，一类是标准配置指令，这部分指令只是对指定的操作进行相应的操作控制；另一类是脚本指令，这部分指令可以在HTTP指令域内以类似脚本编程的形式进行编写。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Nginx" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Nginx/"/>
+    
+    
+      <category term="Nginx" scheme="https://yixian12580.github.io/tags/Nginx/"/>
+    
+      <category term="rewrite" scheme="https://yixian12580.github.io/tags/rewrite/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nginx模块ssi配置详解</title>
+    <link href="https://yixian12580.github.io/2022/09/21/nginx%E6%A8%A1%E5%9D%97ssi%E9%85%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3.html"/>
+    <id>https://yixian12580.github.io/2022/09/21/nginx模块ssi配置详解.html</id>
+    <published>2022-09-21T09:53:09.000Z</published>
+    <updated>2022-09-22T02:18:31.205Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;什么是SSI&quot;&gt;&lt;a href=&quot;#什么是SSI&quot; class=&quot;headerlink&quot; title=&quot;什么是SSI&quot;&gt;&lt;/a&gt;什么是SSI&lt;/h3&gt;&lt;p&gt;Server Side Include，通常称为服务器端嵌入，是一种类似于ASP的基于服务器的网页制作技术。大多数（尤其是基于Unix平台）的WEB服务器如Netscape Enterprise Server等均支持SSI命令。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Nginx" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Nginx/"/>
+    
+    
+      <category term="Nginx" scheme="https://yixian12580.github.io/tags/Nginx/"/>
+    
+      <category term="ssi" scheme="https://yixian12580.github.io/tags/ssi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nginx清除缓存模块配置教程</title>
+    <link href="https://yixian12580.github.io/2022/09/21/nginx%E6%B8%85%E9%99%A4%E7%BC%93%E5%AD%98%E6%A8%A1%E5%9D%97%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html"/>
+    <id>https://yixian12580.github.io/2022/09/21/nginx清除缓存模块配置教程.html</id>
+    <published>2022-09-21T09:43:46.000Z</published>
+    <updated>2022-09-21T09:51:26.946Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Nginx作为Web缓存服务器，它介于客户端和应用服务器之间，当用户通过浏览器访问一个URL时，web缓存服务器会去应用服务器获取要展示给用户的内容，将内容缓存到自己的服务器上，当下一次请求到来时，如果访问的是同一个URL，web缓存服务器就会直接将之前缓存的内容返回给客户端，而不是向应用服务器再次发送请求。web缓存降低了应用服务器、数据库的负载，减少了网络延迟，提高了用户访问的响应速度，增强了用户的体验。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Nginx" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Nginx/"/>
+    
+    
+      <category term="Nginx" scheme="https://yixian12580.github.io/tags/Nginx/"/>
+    
+  </entry>
+  
+  <entry>
     <title>shell脚本记录</title>
     <link href="https://yixian12580.github.io/2022/09/15/shell%E8%84%9A%E6%9C%AC%E8%AE%B0%E5%BD%95.html"/>
     <id>https://yixian12580.github.io/2022/09/15/shell脚本记录.html</id>
     <published>2022-09-15T10:13:29.000Z</published>
-    <updated>2022-09-15T10:44:45.664Z</updated>
+    <updated>2022-09-16T08:47:33.027Z</updated>
     
     <summary type="html">
     
