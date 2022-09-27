@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yixian12580.github.io/"/>
-  <updated>2022-09-22T10:22:42.894Z</updated>
+  <updated>2022-09-27T06:28:04.827Z</updated>
   <id>https://yixian12580.github.io/</id>
   
   <author>
@@ -17,11 +17,121 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Centos7部署phabricator服务</title>
+    <link href="https://yixian12580.github.io/2022/09/23/Centos7%E9%83%A8%E7%BD%B2phabricator%E6%9C%8D%E5%8A%A1.html"/>
+    <id>https://yixian12580.github.io/2022/09/23/Centos7部署phabricator服务.html</id>
+    <published>2022-09-23T02:32:26.000Z</published>
+    <updated>2022-09-27T06:28:04.827Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Phabricator是一套基于Web的软件开发协作工具，包括代码审查工具Differential，资源库浏览器Diffusion，变更监测工具Herald，Bug跟踪工具Maniphest和维基工具Phriction。Phabricator可与Git、Mercurial、Subversion集成使用。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="phabricator" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/phabricator/"/>
+    
+    
+      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
+    
+      <category term="phabricator" scheme="https://yixian12580.github.io/tags/phabricator/"/>
+    
+      <category term="code review" scheme="https://yixian12580.github.io/tags/code-review/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>远程桌面连接失败</title>
+    <link href="https://yixian12580.github.io/2022/09/23/%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5.html"/>
+    <id>https://yixian12580.github.io/2022/09/23/远程桌面连接失败.html</id>
+    <published>2022-09-23T02:30:09.000Z</published>
+    <updated>2022-09-23T02:30:46.278Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;问题表现：远程桌面连接失败，显示出现了内部错误。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
+    
+    
+      <category term="插件" scheme="https://yixian12580.github.io/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>谷歌浏览器安装插件</title>
+    <link href="https://yixian12580.github.io/2022/09/23/%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6.html"/>
+    <id>https://yixian12580.github.io/2022/09/23/谷歌浏览器安装插件.html</id>
+    <published>2022-09-23T02:15:36.000Z</published>
+    <updated>2022-09-23T02:29:40.629Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;问题表现：直接拖拽插件文件至谷歌浏览器扩展程序处安装失败。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
+    
+    
+      <category term="插件" scheme="https://yixian12580.github.io/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>win10系统插入耳机没有声音</title>
+    <link href="https://yixian12580.github.io/2022/09/23/win10%E7%B3%BB%E7%BB%9F%E6%8F%92%E5%85%A5%E8%80%B3%E6%9C%BA%E6%B2%A1%E6%9C%89%E5%A3%B0%E9%9F%B3.html"/>
+    <id>https://yixian12580.github.io/2022/09/23/win10系统插入耳机没有声音.html</id>
+    <published>2022-09-23T02:08:56.000Z</published>
+    <updated>2022-09-23T02:13:29.999Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1.下载安装并打开Realtek高清晰音频管理器：&lt;br&gt;控制面板-查看方式：小图标，找到并打开Realtek高清晰音频管理器&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
+    
+      <category term="故障" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/%E6%95%85%E9%9A%9C/"/>
+    
+    
+      <category term="耳机" scheme="https://yixian12580.github.io/tags/%E8%80%B3%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mac设置静态IP</title>
+    <link href="https://yixian12580.github.io/2022/09/23/Mac%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP.html"/>
+    <id>https://yixian12580.github.io/2022/09/23/Mac设置静态IP.html</id>
+    <published>2022-09-23T02:07:12.000Z</published>
+    <updated>2022-09-23T02:08:29.267Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;问题表现：Mac笔记本设置静态IP地址显示：无效的服务器地址 BasicIPv6ValidationError&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
+    
+      <category term="Mac" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/Mac/"/>
+    
+    
+      <category term="静态ip" scheme="https://yixian12580.github.io/tags/%E9%9D%99%E6%80%81ip/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux-GitLab安装及汉化</title>
     <link href="https://yixian12580.github.io/2022/09/22/Linux-GitLab%E5%AE%89%E8%A3%85%E5%8F%8A%E6%B1%89%E5%8C%96.html"/>
     <id>https://yixian12580.github.io/2022/09/22/Linux-GitLab安装及汉化.html</id>
     <published>2022-09-22T10:17:19.000Z</published>
-    <updated>2022-09-22T10:22:42.894Z</updated>
+    <updated>2022-09-22T10:28:31.062Z</updated>
     
     <summary type="html">
     
@@ -372,126 +482,6 @@
       <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
     
       <category term="zabbix" scheme="https://yixian12580.github.io/tags/zabbix/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux_shell条件判断if中的-a到-z的含义</title>
-    <link href="https://yixian12580.github.io/2022/09/14/Linux-shell%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%ADif%E4%B8%AD%E7%9A%84-a%E5%88%B0-z%E7%9A%84%E5%90%AB%E4%B9%89.html"/>
-    <id>https://yixian12580.github.io/2022/09/14/Linux-shell条件判断if中的-a到-z的含义.html</id>
-    <published>2022-09-14T08:31:37.000Z</published>
-    <updated>2022-09-14T08:34:45.155Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="脚本" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E8%84%9A%E6%9C%AC/"/>
-    
-    
-      <category term="脚本" scheme="https://yixian12580.github.io/tags/%E8%84%9A%E6%9C%AC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CentOS 6新增网卡</title>
-    <link href="https://yixian12580.github.io/2022/09/14/CentOS-6%E6%96%B0%E5%A2%9E%E7%BD%91%E5%8D%A1.html"/>
-    <id>https://yixian12580.github.io/2022/09/14/CentOS-6新增网卡.html</id>
-    <published>2022-09-14T08:25:09.000Z</published>
-    <updated>2022-09-14T08:29:29.756Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;有时候我们在装完系统后有可能有新增网卡的需求&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
-    
-      <category term="VMware" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/VMware/"/>
-    
-    
-      <category term="VMware" scheme="https://yixian12580.github.io/tags/VMware/"/>
-    
-      <category term="网卡" scheme="https://yixian12580.github.io/tags/%E7%BD%91%E5%8D%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>虚拟机CentOS 6连接外网</title>
-    <link href="https://yixian12580.github.io/2022/09/14/%E8%99%9A%E6%8B%9F%E6%9C%BACentOS-6%E8%BF%9E%E6%8E%A5%E5%A4%96%E7%BD%91.html"/>
-    <id>https://yixian12580.github.io/2022/09/14/虚拟机CentOS-6连接外网.html</id>
-    <published>2022-09-14T08:20:17.000Z</published>
-    <updated>2022-09-14T08:24:31.572Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;1.点击编辑，打开虚拟网络编辑器，可以设置子网网段&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
-    
-      <category term="VMware" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/VMware/"/>
-    
-    
-      <category term="VMware" scheme="https://yixian12580.github.io/tags/VMware/"/>
-    
-      <category term="虚拟网络" scheme="https://yixian12580.github.io/tags/%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Docker入门及实战演练</title>
-    <link href="https://yixian12580.github.io/2022/09/14/Docker%E5%85%A5%E9%97%A8%E5%8F%8A%E5%AE%9E%E6%88%98%E6%BC%94%E7%BB%83.html"/>
-    <id>https://yixian12580.github.io/2022/09/14/Docker入门及实战演练.html</id>
-    <published>2022-09-14T03:10:23.000Z</published>
-    <updated>2022-09-14T03:44:52.209Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。几乎没有性能开销，可以很容易地在机器和数据中心中运行。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="Docker" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Docker/"/>
-    
-    
-      <category term="Docker" scheme="https://yixian12580.github.io/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux脚本小知识之含义</title>
-    <link href="https://yixian12580.github.io/2022/09/14/Linux%E8%84%9A%E6%9C%AC%E5%B0%8F%E7%9F%A5%E8%AF%86%E4%B9%8B%E5%90%AB%E4%B9%89.html"/>
-    <id>https://yixian12580.github.io/2022/09/14/Linux脚本小知识之含义.html</id>
-    <published>2022-09-14T03:04:21.000Z</published>
-    <updated>2022-09-14T03:08:15.085Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Linux系统中的Shell脚本语言内设了用于接收参数的变量，变量之间可以使用空格间隔。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="脚本" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E8%84%9A%E6%9C%AC/"/>
-    
-    
-      <category term="脚本" scheme="https://yixian12580.github.io/tags/%E8%84%9A%E6%9C%AC/"/>
     
   </entry>
   

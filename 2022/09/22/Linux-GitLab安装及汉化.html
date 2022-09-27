@@ -169,7 +169,7 @@
 <meta property="og:image" content="https://yixian12580.github.io/2022/09/22/Linux-GitLab安装及汉化/image-20220922182013741.png">
 <meta property="og:image" content="https://yixian12580.github.io/2022/09/22/Linux-GitLab安装及汉化/image-20220922182151266.png">
 <meta property="og:image" content="https://yixian12580.github.io/2022/09/22/Linux-GitLab安装及汉化/image-20220922182240780.png">
-<meta property="og:updated_time" content="2022-09-22T10:22:42.894Z">
+<meta property="og:updated_time" content="2022-09-22T10:28:31.062Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux-GitLab安装及汉化">
 <meta name="twitter:description" content="GitLab是一个用于仓库管理系统的开源项目。使用Git作为代码管理工具，并在此基础上搭建起来的Web服务。可通过Web界面进行访问公开的或者私人项目。它拥有GitHub类似的功能，能够浏览源代码，管理缺陷和注释。可以管理团队对仓库的访问，它非常易于浏览提交过的版本并提供一个文件历史库。团队成员可以利用内置的简单聊天程序（Wall）进行交流。它还提供了一个代码片段收集功能可以轻松实现代码复用。">
@@ -498,7 +498,7 @@
                 
               
 
-              <time title="创建时间：2022-09-22 18:17:19 / 修改时间：18:22:42" itemprop="dateCreated datePublished" datetime="2022-09-22T18:17:19+08:00">2022-09-22</time>
+              <time title="创建时间：2022-09-22 18:17:19 / 修改时间：18:28:31" itemprop="dateCreated datePublished" datetime="2022-09-22T18:17:19+08:00">2022-09-22</time>
             
 
             
@@ -612,7 +612,7 @@
 <p>（2）根据安装完成提示界面进行访问URL更改及重新加载配置文件 更改次选项为自己的域名或者IP</p>
 <p>external_url ‘ <a href="http://gitlab.example.com’" target="_blank" rel="noopener">http://gitlab.example.com’</a></p>
 <figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@gitlab</span> ~]<span class="meta"># vim /etc/gitlab/gitlab.rb      #编辑配置文件  </span></span><br><span class="line">external_url <span class="string">'http://192.168.1.21'</span>        <span class="meta">#改为自己的IP地址</span></span><br><span class="line">[root<span class="symbol">@gitlab</span> ~]<span class="meta"># gitlab-ctl reconfigure    #重新加载配置文件</span></span><br></pre></td></tr></table></figure>
-<p>（3）重装完成访问<a href="http://192.168.1.21，会首先叫更改密码（root用户），改完后登录。如下界面：" target="_blank" rel="noopener">http://192.168.1.21，会首先叫更改密码（root用户），改完后登录。如下界面：</a></p>
+<p>（3）重装完成访问<a href="http://192.168.1.21" target="_blank" rel="noopener">http://192.168.1.21</a>，会首先叫更改密码（root用户），改完后登录。如下界面：</p>
 <img src="/2022/09/22/Linux-GitLab安装及汉化/image-20220922182151266.png" title="image-20220922182151266">
 <p>（4）汉化<br>1、下载汉化补丁</p>
 <figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@gitlab</span> ~]<span class="meta"># git clone https://gitlab.com/xhang/gitlab.git</span></span><br><span class="line">[root<span class="symbol">@gitlab</span> ~]<span class="meta"># cd gitlab</span></span><br></pre></td></tr></table></figure>
@@ -764,6 +764,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2022/09/23/Mac设置静态IP.html" rel="prev" title="Mac设置静态IP">
+                Mac设置静态IP <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -829,7 +833,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-count">31</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -878,7 +882,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">16</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -939,7 +947,17 @@
                     
                       
                     
-                    <span class="site-state-item-count">22</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1117,7 +1135,7 @@
       <i class="fa fa-area-chart"> 站点字数合计:</i>
     </span>
     
-    <span title="站点总字数">126k</span>
+    <span title="站点总字数">134k</span>
   
   
 </div>
@@ -1224,13 +1242,6 @@
 
 
 
-  
-    
-    
-      
-    
-  
-  <script color="255,0,255" opacity="0.7" zindex="-1" count="140" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1.0.0/canvas-nest.min.js"></script>
 
 
 
@@ -1238,11 +1249,6 @@
 
 
 
-
-
-  
-  
-  <script id="ribbon" size="300" alpha="0.1" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
 
 
 
