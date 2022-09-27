@@ -166,7 +166,7 @@
 <meta property="og:site_name" content="逸贤 | Blog">
 <meta property="og:description" content="REmote DIctionary Server(Redis) 是一个由 Salvatore Sanfilippo 写的 key-value 存储系统，是跨平台的非关系型数据库。 Redis 是一个开源的使用 ANSI C 语言编写、遵守 BSD 协议、支持网络、可基于内存、分布式、可选持久性的键值对(Key-Value)存储数据库，并提供多种语言的 API。 Redis 通常被称为数据结构服务器">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2022-09-27T08:40:26.079Z">
+<meta property="og:updated_time" content="2022-09-27T09:33:33.885Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux系统安装Redis">
 <meta name="twitter:description" content="REmote DIctionary Server(Redis) 是一个由 Salvatore Sanfilippo 写的 key-value 存储系统，是跨平台的非关系型数据库。 Redis 是一个开源的使用 ANSI C 语言编写、遵守 BSD 协议、支持网络、可基于内存、分布式、可选持久性的键值对(Key-Value)存储数据库，并提供多种语言的 API。 Redis 通常被称为数据结构服务器">
@@ -494,7 +494,7 @@
                 
               
 
-              <time title="创建时间：2022-09-27 16:28:08 / 修改时间：16:40:26" itemprop="dateCreated datePublished" datetime="2022-09-27T16:28:08+08:00">2022-09-27</time>
+              <time title="创建时间：2022-09-27 16:28:08 / 修改时间：17:33:33" itemprop="dateCreated datePublished" datetime="2022-09-27T16:28:08+08:00">2022-09-27</time>
             
 
             
@@ -626,15 +626,15 @@
 <p>d.测试连接</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> redis-cli -h 127.0.0.1 -p 6379 -a <span class="emphasis">***</span>*</span><br><span class="line">（<span class="emphasis">***</span>*为你设置的密码）</span><br><span class="line"> 输入 redis-cli 进入命令模式，使用 auth '\<span class="emphasis">*\*</span>\<span class="emphasis">*\*</span>\*' </span><br><span class="line">（<span class="emphasis">***</span>*为你设置的密码）登陆</span><br></pre></td></tr></table></figure>
 <p>redis-清理数据：</p>
-<p>1.首先通过密码登陆redis</p>
+<p>1）首先通过密码登陆redis</p>
 <blockquote>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">redis-cli</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">auth 密码</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"></span></span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>2.执行清理前查看(若不需要清理全部则清理指定key即可)</p>
+<p>2）执行清理前查看(若不需要清理全部则清理指定key即可)</p>
 <blockquote>
 <figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="built_in">keys</span> *<span class="comment"> //查看所有key值</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>3.清理redis</p>
+<p>3）清理redis</p>
 <blockquote>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="selector-tag">del</span> key <span class="comment">//①删除指定key</span></span><br><span class="line">&gt;Flushdb <span class="comment">//②删除当前数据库中的所有Key</span></span><br><span class="line">&gt;flushall <span class="comment">//③删除所有数据库中的key</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
@@ -650,11 +650,11 @@
 <figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">redis-server <span class="meta-keyword">/usr/</span>local<span class="meta-keyword">/redis/</span>etc/redis.conf <span class="comment">//启动redis</span></span><br><span class="line">pkill redis  <span class="comment">//停止redis</span></span><br></pre></td></tr></table></figure>
 <p>卸载redis：</p>
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">rm</span> -rf /usr/<span class="keyword">local</span>/redis <span class="comment">//删除安装目录</span></span><br><span class="line"><span class="keyword">rm</span> -rf /usr/bin/redis-* <span class="comment">//删除所有redis相关命令脚本</span></span><br></pre></td></tr></table></figure>
-<p>8-启动redis:</p>
+<p>启动redis:</p>
 <figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server <span class="meta">&amp;</span></span><br></pre></td></tr></table></figure>
-<p>9-检测后台进程是否存在</p>
+<p>检测后台进程是否存在</p>
 <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ps</span> -ef |<span class="keyword">grep</span> redis</span><br></pre></td></tr></table></figure>
-<p>10-检测6379端口是否在监听</p>
+<p>检测6379端口是否在监听</p>
 <figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -lntp <span class="string">| grep 6379</span></span><br></pre></td></tr></table></figure>
 <p>有时候会报异常</p>
 <p>原因: Redis已经启动</p>
@@ -870,7 +870,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-count">53</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -929,7 +929,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">21</span>
+                      
+                    
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1014,7 +1016,19 @@
                     
                       
                     
-                    <span class="site-state-item-count">34</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1192,7 +1206,7 @@
       <i class="fa fa-area-chart"> 站点字数合计:</i>
     </span>
     
-    <span title="站点总字数">160k</span>
+    <span title="站点总字数">179k</span>
   
   
 </div>

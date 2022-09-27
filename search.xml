@@ -1,6 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[MySQL异常关机数据恢复]]></title>
+    <url>%2F2022%2F09%2F27%2FMySQL%E5%BC%82%E5%B8%B8%E5%85%B3%E6%9C%BA%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D.html</url>
+    <content type="text"><![CDATA[MySQL因为停电异常关机，导致数据库无法启动成功，出现如下报错： 123456789101112131415161718192021222021-03-15T01:50:21.759534Z 0 [Note] /usr/sbin/mysqld (mysqld 5.7.20) starting as process 22291 …2021-03-15T01:50:21.767474Z 0 [Note] InnoDB: PUNCH HOLE support available2021-03-15T01:50:21.767508Z 0 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins2021-03-15T01:50:21.767521Z 0 [Note] InnoDB: Uses event mutexes2021-03-15T01:50:21.767530Z 0 [Note] InnoDB: GCC builtin __sync_synchronize() is used for memory barrier2021-03-15T01:50:21.767538Z 0 [Note] InnoDB: Compressed tables use zlib 1.2.32021-03-15T01:50:21.767549Z 0 [Note] InnoDB: Using Linux native AIO2021-03-15T01:50:21.768478Z 0 [Note] InnoDB: Number of pools: 12021-03-15T01:50:21.768631Z 0 [Note] InnoDB: Using CPU crc32 instructions2021-03-15T01:50:21.770450Z 0 [Note] InnoDB: Initializing buffer pool, total size = 2G, instances = 8, chunk size = 128M2021-03-15T01:50:21.925994Z 0 [Note] InnoDB: Completed initialization of buffer pool2021-03-15T01:50:21.949851Z 0 [Note] InnoDB: If the mysqld execution user is authorized, page cleaner thread priority can be changed. See the man page of setpriority().2021-03-15T01:50:21.962020Z 0 [Note] InnoDB: Highest supported file format is Barracuda.2021-03-15T01:50:21.977821Z 0 [Note] InnoDB: Log scan progressed past the checkpoint lsn 7018727888602021-03-15T01:50:22.006445Z 0 [Note] InnoDB: Doing recovery: scanned up to log sequence number 7018732975692021-03-15T01:50:22.008894Z 0 [Note] InnoDB: Database was not shutdown normally!2021-03-15T01:50:22.008927Z 0 [Note] InnoDB: Starting crash recovery.2021-03-15T01:50:22.027234Z 0 [ERROR] InnoDB: Trying to access page number 3841987584 in space 0, space name innodb_system, which is outside the tablespace bounds. Byte offset 0, len 16384, i/o type read. If you get this error at mysqld startup, please check that your my.cnf matches the ibdata files that you have in the MySQL server.2021-03-15T01:50:22.027297Z 0 [ERROR] InnoDB: Server exits.2021-03-15T01:56:15.606226Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use –explicit_defaults_for_timestamp server option (see documentation for more details).2021-03-15T01:56:15.606344Z 0 [Warning] ‘NO_ZERO_DATE’, ‘NO_ZERO_IN_DATE’ and ‘ERROR_FOR_DIVISION_BY_ZERO’ sql modes should be used with strict mode. They will be merged with strict mode in a future release.2021-03-15T01:56:15.606352Z 0 [Warning] ‘NO_AUTO_CREATE_USER’ sql mode was not set. 解决方法： 修改/etc/my.cnf文件，添加innodb_force_recovery=6； 重启MySQL服务，能够顺利启动MySQL服务； 使用mysqldump将数据导出到他处； 删除原来的数据文件/var/lib/mysql，并重新初始化数据库； 将mysqldump导出的文件再导入回来。 注意：在执行上述操作之前，记得先备份一下MySQL的数据文件，以免出现innodb_force_recovery=6都无法启动MySQL的情况。 经验：虽然使用innodb_force_recovery可以进行innodb数据恢复，但是还是有可能丢失数据，所以如果是关键数据库，建议还是定期进行备份比较稳妥，备份脚本可查看此文章。]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Mysql授权和撤销授权]]></title>
+    <url>%2F2022%2F09%2F27%2FMysql%E6%8E%88%E6%9D%83%E5%92%8C%E6%92%A4%E9%94%80%E6%8E%88%E6%9D%83.html</url>
+    <content type="text"><![CDATA[对某个用户授予对某个表的某种操作的权限，并可限制具体的网段 1GRANT SELECT,INSERT ON book_review.* TO 'test'@'10.100.100.%' IDENTIFIED BY 'test000'; 查询某个网段的用户信息，因为授权或者禁用是根据某个网段的主机进行操作: 1SELECT User,Host from `mysql`.user where Host like '10.100.100.%' 再根据上面查到的信息，查看已经授权的项: 1SHOW grants for test@10.100.100.% 接下来就可以根据上面查到的选项进行撤销授权： 1revoke ALL ON `test_db`.* FROM 'test'@'10.100.100.%';]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[DNS服务器部署]]></title>
+    <url>%2F2022%2F09%2F27%2FDNS%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2.html</url>
+    <content type="text"><![CDATA[dns服务器就是域名服务器，它可以把用户的网站地址解析成相应的IP地址。 DNS服务部署： 1.安装LnmOS初始化环境： 1curl -o - 'https://raw.githubusercontent.com/fxtxkktv/fxtxkktv.github.io/master/files/Install_LnmOS_env.sh'|bash Python安装失败可手动安装，Python包会下载到/tmp目录，需要先安装依赖libdb4-4.8.30-13.el7.x86_64.rpm，再安装Python，再用yum安装python-pip。 2.获取主程序： 1git clone https://github.com/fxtxkktv/lnmDNS.git 进入程序目录： 1cd lnmDNS 创建程序独立运行Python环境： 1virtualenv -p /opt/Py27lnmos/bin/python venv 进入virtualenv环境： 1source venv/bin/activate 安装DNS服务： 1yum -y install bind bind-sdb bind-utils named服务自启动： 1systemctl enable named 安装Python程序扩展包： 1pip install -r readme/requirements.txt 3.创建数据库并恢复数据模版 [创建数据库]: 1mysql -u root -p -e "create database lnmdns" [恢复数据模版]: 1mysql -u root -p lnmdns &lt; readme/db_schema.sql [配置数据库连接及其他]: 1vim config/config.ini lnmDNS服务默认不支持特殊符号解析，只支持字母和数字，需修改一下/root/lnmDNS/views/recordconf.tpl文件： 12345&lt;input type="text" class="form-control" onkeyup="value=value.replace(/[^\w\.\@]/ig,'')" id="host" name="host" placeholder="" required&gt; 改为 &lt;input type="text" class="form-control" οnkeyup="value=value.replace(//s/g,'')" id="host" name="host" placeholder="" required&gt; 4.正式运行程序： [程序调试]： 1python main.py [后台运行]: 1startweb.sh restart [前端访问]：主机ip:8443 默认用户名：admin 密码: admin 启停命令： 启动服务命令： 1/root/lnmDNS/startweb.sh start 关闭服务命令： 1/root/lnmDNS/startweb.sh stop 状态监控： 1/root/lnmDNS/startweb.sh status]]></content>
+      <categories>
+        <category>技术</category>
+        <category>DNS</category>
+      </categories>
+      <tags>
+        <tag>DNS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[使用EwoMail搭建邮件服务器]]></title>
+    <url>%2F2022%2F09%2F27%2F%E4%BD%BF%E7%94%A8EwoMail%E6%90%AD%E5%BB%BA%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8.html</url>
+    <content type="text"><![CDATA[随着移动互联网的普及，邮件服务使用的场景越来越少。但是注册帐号的时候，还是需要邮箱地址。市面上免费的邮箱很多，不过一般需要绑定手机号，如果想在同一个邮箱服务商那注册多个邮箱帐号，需要准备多个手机号，这非常的烦人。接下来我们自己动手搭建邮件服务器吧。 所需配置搭建一个邮箱服务器,并不是无成本的.我们需要以下硬件即可 云服务器 域名 进入教程主要分以下步骤： 购买云服务器Linux和域名安装xshell和xftp在Linux环境下安装EwoMail解析域名配置EwoMail（非常重要）测试WebMail邮件发送测试 购买云服务器和域名 云服务器购买 域名购买 安装xshell和xftp这两个软件是用来玩Linux的,通俗点的解释一下这两个软件是用来干嘛的： xshell是用来操作Linux服务器的,和cmd控制的输入命令式相似；xftp是用来传输文件的,你也可以理解为手机的usb数据传输线,它可以让本地电脑和云服务器交换数据,因为是可视化界面,所以非常简单； 官网安装地址： xshell和xftp下载不出意外在你邮箱里,会收到两封附有下载链接的邮件,之后就请自行下载安装。 安装EwoMail在第三步开始前,请检查你的xshell是否能打开,然后你还需要两个信息： 云服务器的公网IP和登录密码： 如果没问题,我们就开始使用xshell工具配置EwoMail了： 1.打开xshell,连接云服务器 2.安裝EwoMail 这里按照官方文档的步骤来： 关闭selinux 12vi /etc/sysconfig/selinuxSELINUX=enforcing 改为 SELINUX=disabled 小白指令：修改完之后,按键盘ESC,再按键盘 ：,输入wq ,回车； 3.设置主机名 12#mail.symail.club 换成 mail.你的域名 hostnamectl set-hostname mail.symail.club 修改hosts 12vi /etc/hosts#把symail.club 全换成你的域名 4.执行安装 123456yum -y install gitcd /rootgit clone https://github.com/gyxuehu/EwoMail.gitcd /root/EwoMail/install#下面的symail.club请换成你注册的域名sh ./start.sh symail.club 等待安装,大概10分钟左右, 解析域名在解析域名之前,先确保你之前是安装成功的,怎么确认呢？很简单,你只需要访问以下,两个端口即可。 8000端口：即WebMail页面, 请在浏览器中输入 你云服务器的 公网IP：8000 即可, 如http://129.123.123.123:8000/8010端口：即邮件管理后台, 地址同上,将那个8000改成8010即可。 如果你能够成功正确访问,那说明你之前三步,已经成功了,但是别高兴的太早,下面两步,是非常需要细心的。 腾讯云的25端口解封25端口是发送邮件的关键,我们需要前往腾讯云-&gt;我的域名中 点击进入25端口解封,进行解封即可。解析域名 配置登录ewomail的后台管理系统，第四步有提到过后台系统的访问。 12管理员默认账号：admin默认密码：ewomail123 登录成功后,进入邮件系统设置： 将框起来的全换成你的域名。 换完之后,开始添加邮箱账号,邮箱管理&gt;域名添加： 添加完你的域名之后,邮箱管理&gt;邮箱添加： 如果你都按照以上要求完成了配置,那么我们的EwoMail，已经完成了百分之90%了。接下来我们测试一下,是否能够连上webmail 测试WebMail我们进入 您的域名或IP:8000端口,访问WebMail，进入之后是这个也页面： 输入你在第五步,添加的邮箱账号。 接下来，可能会有三种错误： 认证失败(账号密码错误)域不允许(域名解析错误)无法连接服务器（域名解析中的IP地址可能填错了） 如果你没有以上错误,并且成功登录了,那么接下来进行发收邮件测试。 邮件收发测试发送一封邮件给你其他邮箱： 如果发送成功,那么恭喜你已经成功了95%,如果提示无法连接服务器,那么请回到第二步,修改你的hosts。 给自己邮箱发一封邮件： 如果收件也成功了,那么恭喜你，你的EwoMail，已经搭建完成了。 本文章主要是介绍安装教程,实现效果即可,如果需要更深入了解EwoMail： EwoMail官方文档]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>邮箱</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CentOS Docker 安装]]></title>
+    <url>%2F2022%2F09%2F27%2FCentOS7-Docker-%E5%AE%89%E8%A3%85.html</url>
+    <content type="text"><![CDATA[Docker支持以下的CentOS版本： CentOS 7 (64-bit)CentOS 6.5 (64-bit) 或更高的版本 前提条件目前，CentOS 仅发行版本中的内核支持 Docker。Docker 运行在 CentOS 7 上，要求系统为64位、系统内核版本为 3.10 以上。Docker 运行在 CentOS-6.5 或更高的版本的 CentOS 上，要求系统为64位、系统内核版本为 2.6.32-431 或者更高版本。 使用 yum 安装（CentOS 7下）Docker 要求 CentOS 系统的内核版本高于 3.10 ，查看本页面的前提条件来验证你的CentOS 版本是否支持 Docker 。 通过 uname -r 命令查看你当前的内核版本 12[root@VM_0_9_centos ~]# uname -r3.10.0-514.26.2.el7.x86_64 安装 Docker从 2017 年 3 月开始 docker 在原来的基础上分为两个分支版本: Docker CE 和 Docker EE。Docker CE 即社区免费版，Docker EE 即企业版，强调安全，但需付费使用。本文介绍 Docker CE 的安装使用。 移除旧的版本： 12345678910$ sudo yum remove docker \ docker-client \ docker-client-latest \ docker-common \ docker-latest \ docker-latest-logrotate \ docker-logrotate \ docker-selinux \ docker-engine-selinux \ docker-engine 安装一些必要的系统工具： 1sudo yum install -y yum-utils device-mapper-persistent-data lvm2 添加软件源信息： 1sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo 更新 yum 缓存： 1sudo yum makecache fast 安装 Docker-ce： 1sudo yum -y install docker-ce 启动 Docker 后台服务： 1sudo systemctl start docker 测试运行 hello-world 1docker run hello-world 由于本地没有hello-world这个镜像，所以会下载一个hello-world的镜像，并在容器内运行。 使用脚本安装 Docker使用 sudo 或 root 权限登录 Centos。确保 yum 包更新到最新： 1sudo yum update 执行 Docker 安装脚本： 12curl -fsSL https://get.docker.com -o get-docker.shsudo sh get-docker.sh 执行这个脚本会添加 docker.repo 源并安装 Docker。 启动 Docker 进程： 1sudo systemctl start docker 验证 docker 是否安装成功并在容器中执行一个测试的镜像。 1sudo docker run hello-world 可以看出来控制台有输出“Hello from Docker!“等字样，到此，Docker 在 CentOS 系统的安装完成。 镜像加速鉴于国内网络问题，后续拉取 Docker 镜像十分缓慢，我们可以需要配置加速器来解决，我使用的是网易的镜像地址： http://hub-mirror.c.163.com。 新版的 Docker 使用 /etc/docker/daemon.json（Linux） 或者 %programdata%\docker\config\daemon.json（Windows） 来配置 Daemon。 请在该配置文件中加入（没有该文件的话，请先建一个）： 123&#123; "registry-mirrors": ["http://hub-mirror.c.163.com"]&#125; 检查加速器是否生效： 1docker info 如果从结果中看到了如下内容，说明配置成功。Registry Mirrors: https://hub-mirror.c.163.com/ 安装Docker ComposeCompose 简介Compose 是用于定义和运行多容器 Docker 应用程序的工具。通过 Compose，您可以使用 YML 文件来配置应用程序需要的所有服务。然后，使用一个命令，就可以从 YML 文件配置中创建并启动所有服务。 Compose 使用的三个步骤： 使用 Dockerfile 定义应用程序的环境。使用 docker-compose.yml 定义构成应用程序的服务，这样它们可以在隔离环境中一起运行。最后，执行 docker-compose up 命令来启动并运行整个应用程序。 Compose 安装通过yum安装组件变得都很方便，比如compose 1yum install docker-compose 删除 Docker CE执行以下命令来删除 Docker CE： 12sudo yum remove docker-cesudo rm -rf /var/lib/docker]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[访问共享文件夹错误]]></title>
+    <url>%2F2022%2F09%2F27%2F%E8%AE%BF%E9%97%AE%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9%E9%94%99%E8%AF%AF.html</url>
+    <content type="text"><![CDATA[你不能访问此共享文件夹，因为你组织的安全策略阻止未经身份验证的来宾访问。 访问共享文档挂了… 方法1:2020之前的版本1、首先按window+R键打开运行键入gpedit.msc启动本地组策略编辑器。 2、在组策略编辑器中找到“计算机配置”–“管理模板”–“网络”–“Lanman工作站” 3、“Lanman工作站”这个节点，在右侧内容区可以看到“启用不安全的来宾登录”这一条策略设置。状态是“未配置”。双击“启用不安全的来宾登录”这一条策略设置，将其状态修改为“已启用”并单击确定按钮。 再次尝试,无效,据说2020版之后就不能用了 方法2:20201、打开编辑器。 2、进入地址计算机\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters 将AllowInsecureGuestAuth设置为1 3、进入计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\LanmanWorkstation，将AllowInsecureGuestAuth设置为1]]></content>
+      <categories>
+        <category>桌面</category>
+      </categories>
+      <tags>
+        <tag>共享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Centos设置中国时间]]></title>
+    <url>%2F2022%2F09%2F27%2FCentos%E8%AE%BE%E7%BD%AE%E4%B8%AD%E5%9B%BD%E6%97%B6%E9%97%B4.html</url>
+    <content type="text"><![CDATA[中国标准时间(CST)比世界协调时间(UTC)早08:00小时。该时区为标准时区时间，主要用于亚洲。 直接输入以下命令： 1tzselect 然后选择5 然后选择9 然后选择1 然后继续选择1 最后执行下面的命令： 1234567891011121314TZ='Asia/Shanghai';export TZ#修改配置文件的时区vi /etc/sysconfig/clock#填写如下信息ZONE=Asia/Shanghai#删除localtimerm -f /etc/localtime#链接文件ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime#查看时间命令，如果是当前时间，则表示时间同步成功date#查看当地时间和世界时间timedatectl status]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>CST时间</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[shell脚本实现一对一群发带附件邮件]]></title>
+    <url>%2F2022%2F09%2F27%2Fshell%E8%84%9A%E6%9C%AC%E5%AE%9E%E7%8E%B0%E4%B8%80%E5%AF%B9%E4%B8%80%E7%BE%A4%E5%8F%91%E5%B8%A6%E9%99%84%E4%BB%B6%E9%82%AE%E4%BB%B6.html</url>
+    <content type="text"><![CDATA[有时候我们有一对一发送邮件的需求，但是一个一个发太耗时间了，而这种耗时间的操作我们都可以交给机器来完成。 没接触过shell语言以及对Linux系统不熟悉的可以看我另一篇文章，也可以实现需求。 环境：CentOS 7（自带postfix） 1.修改/etc/postfix/main.cf文件： 123456myhostname = sample.test.com ← 设置系统的主机名mydomain = test.com ← 设置域名（我们将让此处设置将成为E-mail地址“@”后面的部分）myorigin = $mydomain ← 将发信地址“@”后面的部分设置为域名（非系统主机名）inet_interfaces = all ← 接受来自所有网络的请求mydestination = $myhostname, localhost.$mydomain, localhost, $mydomain ← 指定发给本地邮件的域名home_mailbox = Maildir/ ← 指定用户邮箱目录 2.安装邮件发送工具mailx 1yum -y install mailx 配置邮箱信息（修改/etc/mail.rc）： 12345set from=123456@qq.com //你自己的真实邮箱地址set smtp=smtp.exmail.qq.com //在邮箱设置，客户端设置，设置方法，发送服务器里set smtp-auth-user=123456@qq.com //自己邮箱真实地址set smtp-auth-password=123456 //自己邮箱密码set smtp-auth=login 重启postfix服务： 1service postfix restart 测试是否能发送邮件： 1echo "Test Mail" | mail -s "Test" 123456@qq.com 收件人可以收到邮件： 3.编写shell脚本（vim email.sh）： 12345678910111213141516171819202122232425262728#!/bin/shcat /root/emailreceiver.txt | while read linedo from="yixian@qq.com" email_subject="IT服务申请" attachment1="/root/test.log" attachment2="/root/test.sh" name=$(echo $line | cut -d "," -f 1) to_all=$(echo $line | cut -d "," -f 2) account=$(echo $line | cut -d "," -f 3) password=$(echo $line | cut -d "," -f 4) email_content="Dear $name,账号已开通，账号信息如下，请查收登录链接：https://aaa.bbb.com账号：$account密码：$password"echo -e "$&#123;email_content&#125;" | mailx \-r "逸贤&lt;$&#123;from&#125;&gt;" \-a $&#123;attachment1&#125; \-a $&#123;attachment2&#125; \-s $&#123;email_subject&#125; $&#123;to_all&#125;done 123-r 发送人邮箱-a 上传附件-s 邮件主题 给email.sh 700权限： 1chmod 700 emai.sh 在/root/目录下创建emailreceiver.txt文件，并在里面写上对方的称呼，对方的邮箱，账号，密码，每一项以逗号隔开： 执行脚本： 1sh email.sh 查看对应邮箱收取的邮件：]]></content>
+      <categories>
+        <category>技术</category>
+        <category>脚本</category>
+      </categories>
+      <tags>
+        <tag>脚本</tag>
+        <tag>群发邮件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[甘特图制作]]></title>
+    <url>%2F2022%2F09%2F27%2F%E7%94%98%E7%89%B9%E5%9B%BE%E5%88%B6%E4%BD%9C.html</url>
+    <content type="text"><![CDATA[甘特图又叫横道图、条状图，以图示的方式通过活动列表和时间刻度形象地表示出任何特定项目的活动顺序与持续时间。能够直观地表明任务计划在什么时候进行，及实际进展与计划要求的对比，管理者由此可便利地弄清一项任务（项目）还剩下哪些工作要做，并可评估工作进度。 静态设置数据源一个合格的工作进度规划，必须是要有任务开始时间以及任务持续时间的，因此在我们制作甘特图中，同样也需要这两组数据。 建立工作进度规划表要求计划开始日期必须以日期格式储存计划持续天数必须以数字格式储存 插入图表在我们excel中其实没有“甘特图”这种图表，然而我们为什么还能够用excel做出甘特图呢？在这里我们可以考虑利用其他图表，加以简单的修改，使他变成我们想要的“甘特图”。 选中任务、计划开始日期、计划持续天数这三列数据点击插入选项卡选择插入柱形图或条形图在二维条形图中选择堆积条形图 设置排列顺序在我们数据源中任务的先后顺序是从上往下排列的，然而我们刚刚生成的堆积条形图中，任务排列顺序却是反了过来。这样的逆序排列看起来并不是很美观，并且违背了人们从上往下阅读的习惯，因此我们需要对图表的垂直轴重新进行排列。 点击垂直坐标轴点击右键并选择设置坐标轴格式在坐标轴选项中找到“逆序类别”并且勾选它 设置起始日期我们的甘特图中持续天数是从第一天开始的，然而在刚刚生成的堆积条形图中，坐标轴边界的最小值并不是我们任务开始的这一天，因此我们需要手动设置坐标轴边界的最小值为任务开始的这一天。 点击水平坐标轴单击右键并选择设置坐标轴格式在坐标轴边界最小值中，输入我们任务开始这一天的日期敲击回车后我们发现录入的日期变为了数值，这是因为在我们的excel中所有的日期都是以数值的形式储存的（1900/1/1这天数值为1，以此类推） 隐藏系列在我们甘特图中只需要保留的是持续天数这个系列，而持续天数这条橙色的系列已经能够显示出开始日期的值，那么我们可以利用系列的填充格式，隐藏蓝色这条开始日期的系列，达到更加美观的效果。 点击图表中蓝色系列数据条单击右键并选择设置数据系列格式在设置数据系列格式中选择第一个填充与线条展开填充选项，选择无填充 美化系列整个甘特图做的已经差不多了，剩下的就是针对系列数据条进行一些简单的修改美化，可以根据自己的偏好，对系列数据条进行加粗，或者修改颜色。 点击图表中橙色系列数据条 单击右键并选择设置数据系列格式 在系列选项中调整间隙宽度，缩小间隙宽度来加粗系列数据条 同时可以修改数据系列条的填充色，使比较重要的任务突出显示出来 最终的图表，已经基本完成了，就剩下最后的简单修饰，例如修改个标题，或者修改个图例等等，使得整个图表更加的简洁美观。 甘特图的基本思想和固有的简单性是惊人的，以一个时间表，配合资源和颜色条，展示任务活动及其持续时间。从你的一个idea开始，很轻易的就可以开始制作一个甘特图。 动态然而有的小伙伴们就说了，这图是静态的，而人物进度是动态的，如何才能让自己的甘特图动起来呢？ 我们插入一个滚动条控件，从而达到控制任务进度，达到动态管理的目的。 接下来我们来一步一步学习如何绘制出一个这样的动态甘特图。 设置数据源动态图的数据源需要在原有的基础上增加【计划已用天数】和【计划剩余天数】两列内容作为辅助列，同时增加【完成比例】一列作为进度展示。 在C12单元格输入一个日期作为可变日期使用在E3单元格内输入公式（=MIN(MAX($C$12-C3,0),D3)）在F3单元格内输入公式（=D3-E3）在G3单元格内输入公式（=E3/D3） 由于实际工作进度跟计划工作进度可能会有差别，因此这里以计划进度为例。 插入滚动条控件利用滚动条控件来控制我们在C12单元格设置的日期，随着滚动条滚动，可以直接修改C12单元格内的日期数值，从而形成动态的数据表。 在选项卡标签上单击右键打开自定义功能区在右侧功能区中勾选开发工具点击开发工具选项卡，找到控件选择插入在ActiveX控件中选择插入滚动条根据自己需求画一个控件矩形框 设置控件数据控件默认最大值和最小值都是数字格式，因此我们需要把开始日期和结束日期转化为数字格式才能录入进控件的属性。 选择控件后单击右键打开属性对话框在 LinkedCell 中输入C12，使控件链接到C12单元格在 Max 中输入值43100，2017/12/31转化为数字是43100在 Min 中输入值43070，2017/12/1转化为数字是43070关闭属性对话框后，点击一下开发工具中的设计模式，退出设计模式即可。 插入图表同样的插入图表，然而在动态甘特图中，数据的选择是非常重要的，数据表中并不是所有的数据都需要被选择进去。 选中任务、计划开始日期、计划已用天数、计划剩余天数这四列数据点击插入选项卡选择插入柱形图或条形图在二维条形图中选择堆积条形图，并适当调整格式。 设置横纵坐标轴图表的纵坐标顺序并不是我们期望的顺序，我们期望能够从上到下排列任务的先后，因此在这里我们需要对类别重新排列，同时我们的横坐标起始日期应该是计划开始的第一天。 点击垂直坐标轴单击右键并选择设置坐标轴格式在坐标轴选项中找到“逆序类别”并且勾选它点击水平坐标轴单击右键并选择设置坐标轴格式在坐标轴边界最小值中，输入我们任务开始这一天的日期 优化图表整个动态甘特图框架已经完成，接下来可以对数据条进行一些简单的优化。 点击图表中蓝色系列数据条并选择设置数据系列格式在设置数据系列格式中选择无填充点击图表中橙色系列数据条并选择设置数据系列格式在系列选项中调整间隙宽度，缩小间隙宽度来加粗系列数据条 添加数据标签为了更直观的看出任务进行到哪里，我们可以选中已用时间系列，添加数据标签，借助数据标签来显示出任务完成比例。 选中表中橙色系列，并勾选数据标签选中数据标签单击右键打开设置标签选项去掉勾选值【值】，只勾选【单元格中的值】在弹出的数据标签区域中选择完成比例区域打开填充与线条，对数据标签进行简单的美化即可 图表美化最后可以插入一个矩形框，让我们的时间可以直接展示在图表中，同时也可以根据自己的需求进行简单的编辑美化。 点击插入选项卡选择插入矩形在编辑栏中直接输入（=C12）选中矩形框，设置为无填充无边框组合最终的条形图、滚动条、矩形框，完成整个图表的制作。 动态的甘特图能够更加直接的查阅到工作计划进度，再配合着自己实际工作进度，可以手动输入完成的比例，时刻提醒自己还有剩下哪些工作需要继续。]]></content>
+      <categories>
+        <category>桌面</category>
+      </categories>
+      <tags>
+        <tag>甘特图</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Linux磁盘使用空间大小与显示不符]]></title>
+    <url>%2F2022%2F09%2F27%2FLinux%E7%A3%81%E7%9B%98%E4%BD%BF%E7%94%A8%E7%A9%BA%E9%97%B4%E5%A4%A7%E5%B0%8F%E4%B8%8E%E6%98%BE%E7%A4%BA%E4%B8%8D%E7%AC%A6.html</url>
+    <content type="text"><![CDATA[在服务器运维过程中，我们时常会遇到这样的情况，收到服务器磁盘空间告警。 登录服务器，通过 df -Hl 查看: 和告警信息一致，接着我们就是要找到导致磁盘空间满的目录或文件。 如何找到占用空间大的目录或文件？一种比较笨的方法是，在根目录下，通过 du -hs 命令，列出各目录所占空间大小： 之后再用同样的方法继续到对应目录下去找。 再相对高效一点的方法是通过 du的 -d 参数，或–max-depth，设置查询的目录深度，目录深度增加，所查询的目录，展示出来会很多，这个时候可以通过 grep 进行过滤，通过这样的方式，可以搜出以G或者T为单位的占用磁盘空间的大目录，并排序。 或者可以通过find来查询 1find / -type f -size +1G -exec du -h &#123;&#125; \; 从效率上来说，find要比du要更快速、灵活通过这两种方法，我们可以快速找到占用磁盘空间的罪魁祸首你以为就这么简单？很多时候，你会发现，通过find或du查半天，发现所有加起来的占用空间，和df看到的磁盘空间占用，相差很大，就比如我上面的两张图通过df查看，磁盘使用37G，但是在根目录下通过du -hs 查看，总共加起来差不多10G，没有隐藏目录，那空间被谁吃了？很明显，有空间被已删除文件占用，文件删除了，但是资源没释放之前介绍过一个很好用的命令：lsof，我们可以通过以下命令去查看 1lsof +L1 或者 1lsof |grep delete 从结果可以看出，有一个 28G 左右的大日志文件，删除了，但是空间没释放，这可能是由于没停止服务，就把对应的文件删除了，导致空间没释放。 对应的解决方法就是，重启 tomcat 应用，释放空间 或者直接kill掉进程。 磁盘空间莫名被吃？ 还有一种经常有人问的问题，就是，通过df查看到的磁盘 会发现，Used 和 Avail 加起来不够 Size，莫名被吃掉一部分其实这是 Linux 文件系统的一种安全策略，它默认会为 root 用户保留 5% 的磁盘空间，留作紧急情况使用。这样能保证有些关键应用（比如数据库）在硬盘满的时候有点余地，不至于马上就 crash。 我们可以通过 tune2fs 修改预留空间的比例： 1tune2fs -m 1 /dev/vda1 通过下图可以看到前后对比图片 这样被吃掉的空间，就吐出来了。]]></content>
+      <categories>
+        <category>技术</category>
+        <category>分区</category>
+      </categories>
+      <tags>
+        <tag>磁盘</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Docker镜像的导入导出]]></title>
+    <url>%2F2022%2F09%2F27%2FDocker%E9%95%9C%E5%83%8F%E7%9A%84%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA.html</url>
+    <content type="text"><![CDATA[Docker镜像的导入导出 本文介绍Docker镜像的导入导出，用于迁移、备份、升级等场景 准备环境如下： CentOS 7.0 Docker 1.18 导入导出命令介绍 涉及的命令有export、import、save、load save命令 1docker save [options] images [images...] 示例: 1docker save -o nginx.tar nginx:latest 或 1docker save &gt; nginx.tar nginx:latest 其中-o和&gt;表示输出到文件，nginx.tar为目标文件，nginx:latest是源镜像名（name:tag） load命令 1docker load [options] 示例: 1docker load -i nginx.tar 或 1docker load &lt; nginx.tar 其中-i和&lt;表示从文件输入。会成功导入镜像及相关元数据，包括tag信息 export命令 1docker export [options] container 示例: 1docker export -o nginx-test.tar nginx-test 其中-o表示输出到文件，nginx-test.tar为目标文件，nginx-test是源容器名（name） import命令 1docker import [options] file|URL|- [REPOSITORY[:TAG]] 示例: 1docker import nginx-test.tar nginx:imp 或 1cat nginx-test.tar | docker import - nginx:imp 区别： export命令导出的tar文件略小于save命令导出的。 export命令是从容器（container）中导出tar文件，而save命令则是从镜像（images）中导出。 基于第二点，export导出的文件再import回去时，无法保留镜像所有历史（即每一层layer信息，不熟悉的可以去看Dockerfile），不能进行回滚操作；而save是依据镜像来的，所以导入时可以完整保留下每一层layer信息。如下图所示，nginx:latest是save导出load导入的，nginx:imp是export导出import导入的。 建议 可以依据具体使用场景来选择命令： ​ &gt;若是只想备份images，使用save、load即可 ​ &gt;若是在启动容器后，容器内容有变化，需要备份，则使用export、import]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[jumpserver服务迁移]]></title>
+    <url>%2F2022%2F09%2F27%2Fjumpserver%E6%9C%8D%E5%8A%A1%E8%BF%81%E7%A7%BB.html</url>
+    <content type="text"><![CDATA[需求：把jumpserver服务搬迁到另一台服务器上 原服务器ip：172.25.0.237 新服务器ip：172.22.12.246 由于jumpserver服务是在docker中启动的，所以直接把docker镜像搬到新服务器里跑就行。 方法一： 1.查看正在跑的容器： 2.把容器打包为镜像： 1commit -m "jumpserver backup" 67b073d01232 jumpserverbak:v2.7.0 3.导出刚打包的镜像： 1docker save -o /tmp/jumpserverbak.tar jumpserverbak:v2.7.0 4.把镜像上传至新服务器： 1scp /tmp/jumpserverbak.tar root@172.22.12.246:/data/backup/ 5.在新服务器安装docker 1curl -sSL https://get.daocloud.io/docker | sh 启动docker并设置开机自启动： 12systemctl enable dockersystemctl start docker 6.docker镜像导入： 1docker load -i /data/backup/jumpserverbak.tar 7.启动容器： 1docker run -it -d --name jumpserverbak jumpserverbak 方法二： 1.查看正在跑的容器： 2.导出镜像： 1docker export -o jumpserver.tar jumpserver 其中-o表示输出到文件，jumpserver.tar为目标文件，jumpserver是镜像名（name） 3.进docker把数据库备份： 123docker exec -it 67b073d01232 /bin/bashmysqldump -u jumpserver -h 127.0.0.1 -p jumpserver &gt; /opt/jumpserver.sqlexit 把数据库备份文件拷贝到本地服务器： 1docker cp 67b073d01232:/opt/jumpserver.sql /opt/ 4.把打包的docker镜像以及数据库备份文件拷贝到新服务器： 1scp /opt/jumpserver.* root@172.22.12.246:/tmp/ 在新服务器查看是否拷贝成功： 5.在新服务器安装docker 1curl -sSL https://get.daocloud.io/docker | sh 启动docker并设置开机自启动： 12systemctl enable dockersystemctl start docker 6.docker镜像导入： 12cd /tmp/jumpserver/docker import jumpserver.tar test/jumpserver:v1.0 查看是否导入成功： 启动容器： 1docker run --name jumpserver -d -p 81:80 -p 2222:2222 --restart=always -e SECRET_KEY=跟原服务器相同 -e BOOTSTRAP_TOKEN=跟原服务器相同 -e DB_HOST=127.0.0.1 -e DB_PORT=3306 -e DB_USER=jumpserver -e DB_PASSWORD=跟原服务器相同 -e DB_NAME=jumpserver -e REDIS_HOST=127.0.0.1 -e REDIS_PORT=6379 test/jummpserver:v1.0 /opt/entrypoint.sh 查看容器是否在跑： 把数据库备份文件拷贝到容器里： 1docker cp /opt/jumpserver/jumpserver.sql d439a4275586:/opt/ 把数据库备份文件导入数据库： 12345docker exec -it d439a427558 /bin/bashmysql -u jumpserver -h 127.0.0.1 -puse jumpserver;source /opt/jumpserver.sql;quit 把/opt/koko/data/keys/.access_key文件删除（否则会验证不成功）并重启容器： 12rm -f /opt/koko/data/keys/.access_keyexit 重启容器： 12docker stop d439a4275586docker start d439a4275586 浏览器进入管理界面： 至此，jumpserver服务搬迁完成。 错误解决： 进入资产列表测试资产可连接性的时候报错如下： 或者弹窗一直显示消息：…………………………… 解决方法： 1234567docker exec -it d439a427558 /bin/bashcd /opt/jumpserversource /opt/py3/bin/activate./jms stopps aux | grep py3 | awk '&#123;print $2&#125;' |xargs kill -9rm -rf tmp/*.pid./jms start -d 再到资产列表测试资产可连接性：]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+        <tag>jumpserver</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[阿里云Redis数据备份及恢复至自建数据库]]></title>
     <url>%2F2022%2F09%2F27%2F%E9%98%BF%E9%87%8C%E4%BA%91Redis%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E5%8F%8A%E6%81%A2%E5%A4%8D%E8%87%B3%E8%87%AA%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93.html</url>
     <content type="text"><![CDATA[1.登录阿里云控制台，点击云数据库Redis，点击对应实例，选择备份恢复，点击备份实例，下载备份文件。 2.在本地服务器安装Redis（具体查看这篇文章，在此不再赘述） 3.使用redis-port工具把下载的备份文件导进Redis数据库： 3.1 下载redis-port 1wget https://github.com/CodisLabs/redis-port 赋予可执行权限： 1chmod 777 redis-port 把备份文件导入Redis： 1./redis-port restore -i /data/backups/Redis/hy-redis02-hjl/hins2358867_data_20210821170224.rdb -t 127.0.0.1:6379 导入完成： 登入Redis查看数据： 至此，数据导入成功。]]></content>
@@ -39,7 +181,7 @@
   <entry>
     <title><![CDATA[Linux系统安装Redis]]></title>
     <url>%2F2022%2F09%2F27%2FLinux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85Redis.html</url>
-    <content type="text"><![CDATA[REmote DIctionary Server(Redis) 是一个由 Salvatore Sanfilippo 写的 key-value 存储系统，是跨平台的非关系型数据库。 Redis 是一个开源的使用 ANSI C 语言编写、遵守 BSD 协议、支持网络、可基于内存、分布式、可选持久性的键值对(Key-Value)存储数据库，并提供多种语言的 API。 Redis 通常被称为数据结构服务器，因为值（value）可以是字符串(String)、哈希(Hash)、列表(list)、集合(sets)和有序集合(sorted sets)等类型。 1.获取redis资源 1wget http://download.redis.io/releases/redis-4.0.8.tar.gz 2.解压 1tar xzvf redis-4.0.8.tar.gz 3.编译与安装 1234cd redis-4.0.8makecd srcmake install PREFIX=/usr/local/redis 4.移动配置文件到安装目录下 123cd ../mkdir /usr/local/redis/etcmv redis.conf /usr/local/redis/etc 5.配置redis为后台启动 12vi /usr/local/redis/etc/redis.conf //将daemonize no 改成daemonize yes 6.将redis加入到开机启动 12vi /etc/rc.local//在里面添加内容：/usr/local/redis/bin/redis-server /usr/local/redis/etc/redis.conf 7.开启redis 1/usr/local/redis/bin/redis-server /usr/local/redis/etc/redis.conf 8.将redis-cli,redis-server拷贝到bin下，让redis-cli指令可以在任意目录下直接使用 12cp /usr/local/redis/bin/redis-server /usr/local/bin/cp /usr/local/redis/bin/redis-cli /usr/local/bin/ 9.设置redis密码 a.运行命令： 1redis-cli b.查看现有的redis密码命令(可选操作，可以没有) 1config get requirepass 如果没有设置过密码的话运行结果会如下 12requirepass '' c.设置redis密码 运行命令： 12config set requirepass ****(****为你要设置的密码)，设置成功的话会返回‘OK’字样 d.测试连接 1234 redis-cli -h 127.0.0.1 -p 6379 -a ****（****为你设置的密码） 输入 redis-cli 进入命令模式，使用 auth '\*\*\*\*\*' （****为你设置的密码）登陆 redis-清理数据： 1.首先通过密码登陆redis 123&gt;redis-cli&gt;auth 密码&gt; 2.执行清理前查看(若不需要清理全部则清理指定key即可) 12&gt;keys * //查看所有key值&gt; 3.清理redis 1234&gt;del key //①删除指定key&gt;Flushdb //②删除当前数据库中的所有Key&gt;flushall //③删除所有数据库中的key&gt; 10.让外网能够访问redis a.配置防火墙: 12firewall-cmd --zone=public --add-port=6379/tcp --permanent（开放6379端口）systemctl restart firewalld（重启防火墙以使配置即时生效） 查看系统所有开放的端口： 1firewall-cmd --zone=public --list-ports b.此时 虽然防火墙开放了6379端口，但是外网还是无法访问的，因为redis监听的是127.0.0.1：6379，并不监听外网的请求。 （一）把文件夹目录里的redis.conf配置文件里的bind 127.0.0.1前面加#注释掉 （二）命令：redis-cli连接到redis后，输入命令 config get daemonize和config get protected-mode 是不是都为no，如果不是，就用config set 配置名 属性 改为no。 常用命令 12redis-server /usr/local/redis/etc/redis.conf //启动redispkill redis //停止redis 卸载redis： 12rm -rf /usr/local/redis //删除安装目录rm -rf /usr/bin/redis-* //删除所有redis相关命令脚本 8-启动redis: 1redis-server &amp; 9-检测后台进程是否存在 1ps -ef |grep redis 10-检测6379端口是否在监听 1netstat -lntp | grep 6379 有时候会报异常 原因: Redis已经启动 解决: 关掉Redis,重启即可 12redis-cli shutdownredis-server 然后你就能看到Redis愉快的运行了. 使用redis-cli客户端检测连接是否正常 1234567redis-cli127.0.0.1:6379&gt; keys *(empty list or set)127.0.0.1:6379&gt; set key "hello world"OK127.0.0.1:6379&gt; get key"hello world" 停止redis: 使用客户端 1redis-cli shutdown 因为Redis可以妥善处理SIGTERM信号，所以直接kill -9也是可以的 1kill -9 PID]]></content>
+    <content type="text"><![CDATA[REmote DIctionary Server(Redis) 是一个由 Salvatore Sanfilippo 写的 key-value 存储系统，是跨平台的非关系型数据库。 Redis 是一个开源的使用 ANSI C 语言编写、遵守 BSD 协议、支持网络、可基于内存、分布式、可选持久性的键值对(Key-Value)存储数据库，并提供多种语言的 API。 Redis 通常被称为数据结构服务器，因为值（value）可以是字符串(String)、哈希(Hash)、列表(list)、集合(sets)和有序集合(sorted sets)等类型。 1.获取redis资源 1wget http://download.redis.io/releases/redis-4.0.8.tar.gz 2.解压 1tar xzvf redis-4.0.8.tar.gz 3.编译与安装 1234cd redis-4.0.8makecd srcmake install PREFIX=/usr/local/redis 4.移动配置文件到安装目录下 123cd ../mkdir /usr/local/redis/etcmv redis.conf /usr/local/redis/etc 5.配置redis为后台启动 12vi /usr/local/redis/etc/redis.conf //将daemonize no 改成daemonize yes 6.将redis加入到开机启动 12vi /etc/rc.local//在里面添加内容：/usr/local/redis/bin/redis-server /usr/local/redis/etc/redis.conf 7.开启redis 1/usr/local/redis/bin/redis-server /usr/local/redis/etc/redis.conf 8.将redis-cli,redis-server拷贝到bin下，让redis-cli指令可以在任意目录下直接使用 12cp /usr/local/redis/bin/redis-server /usr/local/bin/cp /usr/local/redis/bin/redis-cli /usr/local/bin/ 9.设置redis密码 a.运行命令： 1redis-cli b.查看现有的redis密码命令(可选操作，可以没有) 1config get requirepass 如果没有设置过密码的话运行结果会如下 12requirepass '' c.设置redis密码 运行命令： 12config set requirepass ****(****为你要设置的密码)，设置成功的话会返回‘OK’字样 d.测试连接 1234 redis-cli -h 127.0.0.1 -p 6379 -a ****（****为你设置的密码） 输入 redis-cli 进入命令模式，使用 auth '\*\*\*\*\*' （****为你设置的密码）登陆 redis-清理数据： 1）首先通过密码登陆redis 123&gt;redis-cli&gt;auth 密码&gt; 2）执行清理前查看(若不需要清理全部则清理指定key即可) 12&gt;keys * //查看所有key值&gt; 3）清理redis 1234&gt;del key //①删除指定key&gt;Flushdb //②删除当前数据库中的所有Key&gt;flushall //③删除所有数据库中的key&gt; 10.让外网能够访问redis a.配置防火墙: 12firewall-cmd --zone=public --add-port=6379/tcp --permanent（开放6379端口）systemctl restart firewalld（重启防火墙以使配置即时生效） 查看系统所有开放的端口： 1firewall-cmd --zone=public --list-ports b.此时 虽然防火墙开放了6379端口，但是外网还是无法访问的，因为redis监听的是127.0.0.1：6379，并不监听外网的请求。 （一）把文件夹目录里的redis.conf配置文件里的bind 127.0.0.1前面加#注释掉 （二）命令：redis-cli连接到redis后，输入命令 config get daemonize和config get protected-mode 是不是都为no，如果不是，就用config set 配置名 属性 改为no。 常用命令 12redis-server /usr/local/redis/etc/redis.conf //启动redispkill redis //停止redis 卸载redis： 12rm -rf /usr/local/redis //删除安装目录rm -rf /usr/bin/redis-* //删除所有redis相关命令脚本 启动redis: 1redis-server &amp; 检测后台进程是否存在 1ps -ef |grep redis 检测6379端口是否在监听 1netstat -lntp | grep 6379 有时候会报异常 原因: Redis已经启动 解决: 关掉Redis,重启即可 12redis-cli shutdownredis-server 然后你就能看到Redis愉快的运行了. 使用redis-cli客户端检测连接是否正常 1234567redis-cli127.0.0.1:6379&gt; keys *(empty list or set)127.0.0.1:6379&gt; set key "hello world"OK127.0.0.1:6379&gt; get key"hello world" 停止redis: 使用客户端 1redis-cli shutdown 因为Redis可以妥善处理SIGTERM信号，所以直接kill -9也是可以的 1kill -9 PID]]></content>
       <categories>
         <category>技术</category>
         <category>数据库</category>

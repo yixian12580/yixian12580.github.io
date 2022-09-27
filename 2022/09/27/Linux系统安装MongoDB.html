@@ -173,7 +173,7 @@
 <meta property="og:image" content="https://yixian12580.github.io/2022/09/27/Linux系统安装MongoDB/image-20220927164917334.png">
 <meta property="og:image" content="https://yixian12580.github.io/2022/09/27/Linux系统安装MongoDB/image-20220927164958675.png">
 <meta property="og:image" content="https://yixian12580.github.io/2022/09/27/Linux系统安装MongoDB/image-20220927165029061.png">
-<meta property="og:updated_time" content="2022-09-27T08:54:09.091Z">
+<meta property="og:updated_time" content="2022-09-27T09:31:04.523Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux系统安装MongoDB">
 <meta name="twitter:description" content="MongoDB 是由C++语言编写的，是一个基于分布式文件存储的开源数据库系统。 在高负载的情况下，添加更多的节点，可以保证服务器性能。 MongoDB 旨在为WEB应用提供可扩展的高性能数据存储解决方案。 MongoDB 将数据存储为一个文档，数据结构由键值(key=&amp;gt;value)对组成。MongoDB 文档类似于 JSON 对象。字段值可以包含其他文档，数组及文档数组。">
@@ -502,7 +502,7 @@
                 
               
 
-              <time title="创建时间：2022-09-27 16:41:52 / 修改时间：16:54:09" itemprop="dateCreated datePublished" datetime="2022-09-27T16:41:52+08:00">2022-09-27</time>
+              <time title="创建时间：2022-09-27 16:41:52 / 修改时间：17:31:04" itemprop="dateCreated datePublished" datetime="2022-09-27T16:41:52+08:00">2022-09-27</time>
             
 
             
@@ -621,10 +621,10 @@
 <p>保存后执行以下命令生效：</p>
 <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">source</span> <span class="regexp">/etc/</span>profile</span><br></pre></td></tr></table></figure>
 <p>2、创建数据库目录</p>
-<p>　　　　MongoDB的数据存储在data目录的db目录下，但是这个目录在安装过程不会自动创建，所以你需要手动创建data目录，并在data目录中创建db目录。</p>
-<p>　　　　以下实例中我们将data目录创建于根目录下(/)。</p>
-<p>　　　　注意：/data/db 是 MongoDB 默认的启动的数据库路径(–dbpath)。</p>
-<p>　　　　创建目录树：</p>
+<p>MongoDB的数据存储在data目录的db目录下，但是这个目录在安装过程不会自动创建，所以你需要手动创建data目录，并在data目录中创建db目录。</p>
+<p>以下实例中我们将data目录创建于根目录下(/)。</p>
+<p>注意：/data/db 是 MongoDB 默认的启动的数据库路径(–dbpath)。</p>
+<p>创建目录树：</p>
 <figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">mkdir</span> -p /<span class="class"><span class="keyword">data</span>/db</span></span><br></pre></td></tr></table></figure>
 <p>3、命令行中运行 MongoDB 服务</p>
 <p>你可以在命令行中执行mongo安装目录中的bin目录执行mongod命令来启动mongdb服务。</p>
@@ -858,7 +858,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-count">53</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -917,7 +917,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">21</span>
+                      
+                    
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1002,7 +1004,19 @@
                     
                       
                     
-                    <span class="site-state-item-count">34</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1180,7 +1194,7 @@
       <i class="fa fa-area-chart"> 站点字数合计:</i>
     </span>
     
-    <span title="站点总字数">160k</span>
+    <span title="站点总字数">179k</span>
   
   
 </div>

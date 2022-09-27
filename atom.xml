@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yixian12580.github.io/"/>
-  <updated>2022-09-27T09:20:02.265Z</updated>
+  <updated>2022-09-27T13:52:35.971Z</updated>
   <id>https://yixian12580.github.io/</id>
   
   <author>
@@ -17,11 +17,278 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>MySQL异常关机数据恢复</title>
+    <link href="https://yixian12580.github.io/2022/09/27/MySQL%E5%BC%82%E5%B8%B8%E5%85%B3%E6%9C%BA%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D.html"/>
+    <id>https://yixian12580.github.io/2022/09/27/MySQL异常关机数据恢复.html</id>
+    <published>2022-09-27T13:47:12.000Z</published>
+    <updated>2022-09-27T13:52:35.971Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;MySQL因为停电异常关机，导致数据库无法启动成功，出现如下报错：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="数据库" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="MySQL" scheme="https://yixian12580.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mysql授权和撤销授权</title>
+    <link href="https://yixian12580.github.io/2022/09/27/Mysql%E6%8E%88%E6%9D%83%E5%92%8C%E6%92%A4%E9%94%80%E6%8E%88%E6%9D%83.html"/>
+    <id>https://yixian12580.github.io/2022/09/27/Mysql授权和撤销授权.html</id>
+    <published>2022-09-27T13:39:24.000Z</published>
+    <updated>2022-09-27T13:43:15.535Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;对某个用户授予对某个表的某种操作的权限，并可限制具体的网段&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="数据库" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="MySQL" scheme="https://yixian12580.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DNS服务器部署</title>
+    <link href="https://yixian12580.github.io/2022/09/27/DNS%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2.html"/>
+    <id>https://yixian12580.github.io/2022/09/27/DNS服务器部署.html</id>
+    <published>2022-09-27T13:29:46.000Z</published>
+    <updated>2022-09-27T13:38:33.599Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;dns服务器就是域名服务器，它可以把用户的网站地址解析成相应的IP地址。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="DNS" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/DNS/"/>
+    
+    
+      <category term="DNS" scheme="https://yixian12580.github.io/tags/DNS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用EwoMail搭建邮件服务器</title>
+    <link href="https://yixian12580.github.io/2022/09/27/%E4%BD%BF%E7%94%A8EwoMail%E6%90%AD%E5%BB%BA%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8.html"/>
+    <id>https://yixian12580.github.io/2022/09/27/使用EwoMail搭建邮件服务器.html</id>
+    <published>2022-09-27T12:58:10.000Z</published>
+    <updated>2022-09-27T13:25:18.545Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;随着移动互联网的普及，邮件服务使用的场景越来越少。但是注册帐号的时候，还是需要邮箱地址。市面上免费的邮箱很多，不过一般需要绑定手机号，如果想在同一个邮箱服务商那注册多个邮箱帐号，需要准备多个手机号，这非常的烦人。接下来我们自己动手搭建邮件服务器吧。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="邮箱" scheme="https://yixian12580.github.io/tags/%E9%82%AE%E7%AE%B1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS Docker 安装</title>
+    <link href="https://yixian12580.github.io/2022/09/27/CentOS7-Docker-%E5%AE%89%E8%A3%85.html"/>
+    <id>https://yixian12580.github.io/2022/09/27/CentOS7-Docker-安装.html</id>
+    <published>2022-09-27T12:47:46.000Z</published>
+    <updated>2022-09-27T12:56:37.297Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Docker支持以下的CentOS版本：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;CentOS 7 (64-bit)&lt;br&gt;CentOS 6.5 (64-bit) 或更高的版本&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Docker" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Docker/"/>
+    
+    
+      <category term="Docker" scheme="https://yixian12580.github.io/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>访问共享文件夹错误</title>
+    <link href="https://yixian12580.github.io/2022/09/27/%E8%AE%BF%E9%97%AE%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9%E9%94%99%E8%AF%AF.html"/>
+    <id>https://yixian12580.github.io/2022/09/27/访问共享文件夹错误.html</id>
+    <published>2022-09-27T12:35:48.000Z</published>
+    <updated>2022-09-27T12:47:13.774Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;你不能访问此共享文件夹，因为你组织的安全策略阻止未经身份验证的来宾访问。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
+    
+    
+      <category term="共享" scheme="https://yixian12580.github.io/tags/%E5%85%B1%E4%BA%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Centos设置中国时间</title>
+    <link href="https://yixian12580.github.io/2022/09/27/Centos%E8%AE%BE%E7%BD%AE%E4%B8%AD%E5%9B%BD%E6%97%B6%E9%97%B4.html"/>
+    <id>https://yixian12580.github.io/2022/09/27/Centos设置中国时间.html</id>
+    <published>2022-09-27T12:18:49.000Z</published>
+    <updated>2022-09-27T12:25:12.712Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;中国标准时间(CST)比世界协调时间(UTC)早08:00小时。该时区为标准时区时间，主要用于亚洲。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="CST时间" scheme="https://yixian12580.github.io/tags/CST%E6%97%B6%E9%97%B4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>shell脚本实现一对一群发带附件邮件</title>
+    <link href="https://yixian12580.github.io/2022/09/27/shell%E8%84%9A%E6%9C%AC%E5%AE%9E%E7%8E%B0%E4%B8%80%E5%AF%B9%E4%B8%80%E7%BE%A4%E5%8F%91%E5%B8%A6%E9%99%84%E4%BB%B6%E9%82%AE%E4%BB%B6.html"/>
+    <id>https://yixian12580.github.io/2022/09/27/shell脚本实现一对一群发带附件邮件.html</id>
+    <published>2022-09-27T12:04:36.000Z</published>
+    <updated>2022-09-27T12:20:44.752Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有时候我们有一对一发送邮件的需求，但是一个一个发太耗时间了，而这种耗时间的操作我们都可以交给机器来完成。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="脚本" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E8%84%9A%E6%9C%AC/"/>
+    
+    
+      <category term="脚本" scheme="https://yixian12580.github.io/tags/%E8%84%9A%E6%9C%AC/"/>
+    
+      <category term="群发邮件" scheme="https://yixian12580.github.io/tags/%E7%BE%A4%E5%8F%91%E9%82%AE%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>甘特图制作</title>
+    <link href="https://yixian12580.github.io/2022/09/27/%E7%94%98%E7%89%B9%E5%9B%BE%E5%88%B6%E4%BD%9C.html"/>
+    <id>https://yixian12580.github.io/2022/09/27/甘特图制作.html</id>
+    <published>2022-09-27T11:33:04.000Z</published>
+    <updated>2022-09-27T12:04:06.552Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;甘特图又叫横道图、条状图，以图示的方式通过活动列表和时间刻度形象地表示出任何特定项目的活动顺序与持续时间。能够直观地表明任务计划在什么时候进行，及实际进展与计划要求的对比，管理者由此可便利地弄清一项任务（项目）还剩下哪些工作要做，并可评估工作进度。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
+    
+    
+      <category term="甘特图" scheme="https://yixian12580.github.io/tags/%E7%94%98%E7%89%B9%E5%9B%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux磁盘使用空间大小与显示不符</title>
+    <link href="https://yixian12580.github.io/2022/09/27/Linux%E7%A3%81%E7%9B%98%E4%BD%BF%E7%94%A8%E7%A9%BA%E9%97%B4%E5%A4%A7%E5%B0%8F%E4%B8%8E%E6%98%BE%E7%A4%BA%E4%B8%8D%E7%AC%A6.html"/>
+    <id>https://yixian12580.github.io/2022/09/27/Linux磁盘使用空间大小与显示不符.html</id>
+    <published>2022-09-27T11:24:42.000Z</published>
+    <updated>2022-09-27T11:31:52.038Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在服务器运维过程中，我们时常会遇到这样的情况，收到服务器磁盘空间告警。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="分区" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%88%86%E5%8C%BA/"/>
+    
+    
+      <category term="磁盘" scheme="https://yixian12580.github.io/tags/%E7%A3%81%E7%9B%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker镜像的导入导出</title>
+    <link href="https://yixian12580.github.io/2022/09/27/Docker%E9%95%9C%E5%83%8F%E7%9A%84%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA.html"/>
+    <id>https://yixian12580.github.io/2022/09/27/Docker镜像的导入导出.html</id>
+    <published>2022-09-27T10:21:53.000Z</published>
+    <updated>2022-09-27T10:27:13.116Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Docker镜像的导入导出&lt;/p&gt;
+&lt;p&gt;本文介绍Docker镜像的导入导出，用于迁移、备份、升级等场景&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Docker" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Docker/"/>
+    
+    
+      <category term="Docker" scheme="https://yixian12580.github.io/tags/Docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jumpserver服务迁移</title>
+    <link href="https://yixian12580.github.io/2022/09/27/jumpserver%E6%9C%8D%E5%8A%A1%E8%BF%81%E7%A7%BB.html"/>
+    <id>https://yixian12580.github.io/2022/09/27/jumpserver服务迁移.html</id>
+    <published>2022-09-27T09:39:37.000Z</published>
+    <updated>2022-09-27T10:16:50.428Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;需求：把jumpserver服务搬迁到另一台服务器上&lt;/p&gt;
+&lt;p&gt;原服务器ip：172.25.0.237&lt;/p&gt;
+&lt;p&gt;新服务器ip：172.22.12.246&lt;/p&gt;
+&lt;p&gt;由于jumpserver服务是在docker中启动的，所以直接把docker镜像搬到新服务器里跑就行。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Docker" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Docker/"/>
+    
+    
+      <category term="Docker" scheme="https://yixian12580.github.io/tags/Docker/"/>
+    
+      <category term="jumpserver" scheme="https://yixian12580.github.io/tags/jumpserver/"/>
+    
+  </entry>
+  
+  <entry>
     <title>阿里云Redis数据备份及恢复至自建数据库</title>
     <link href="https://yixian12580.github.io/2022/09/27/%E9%98%BF%E9%87%8C%E4%BA%91Redis%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E5%8F%8A%E6%81%A2%E5%A4%8D%E8%87%B3%E8%87%AA%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93.html"/>
     <id>https://yixian12580.github.io/2022/09/27/阿里云Redis数据备份及恢复至自建数据库.html</id>
     <published>2022-09-27T09:17:09.000Z</published>
-    <updated>2022-09-27T09:20:02.265Z</updated>
+    <updated>2022-09-27T09:32:14.844Z</updated>
     
     <summary type="html">
     
@@ -65,7 +332,7 @@
     <link href="https://yixian12580.github.io/2022/09/27/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85MongoDB.html"/>
     <id>https://yixian12580.github.io/2022/09/27/Linux系统安装MongoDB.html</id>
     <published>2022-09-27T08:41:52.000Z</published>
-    <updated>2022-09-27T08:54:09.091Z</updated>
+    <updated>2022-09-27T09:31:04.523Z</updated>
     
     <summary type="html">
     
@@ -90,7 +357,7 @@
     <link href="https://yixian12580.github.io/2022/09/27/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85Redis.html"/>
     <id>https://yixian12580.github.io/2022/09/27/Linux系统安装Redis.html</id>
     <published>2022-09-27T08:28:08.000Z</published>
-    <updated>2022-09-27T08:40:26.079Z</updated>
+    <updated>2022-09-27T09:33:33.885Z</updated>
     
     <summary type="html">
     
@@ -195,280 +462,6 @@
     
     
       <category term="Fastdfs" scheme="https://yixian12580.github.io/tags/Fastdfs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>利用office办公软件实现一对一群发邮件功能</title>
-    <link href="https://yixian12580.github.io/2022/09/27/%E5%88%A9%E7%94%A8office%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0%E4%B8%80%E5%AF%B9%E4%B8%80%E7%BE%A4%E5%8F%91%E9%82%AE%E4%BB%B6%E5%8A%9F%E8%83%BD.html"/>
-    <id>https://yixian12580.github.io/2022/09/27/利用office办公软件实现一对一群发邮件功能.html</id>
-    <published>2022-09-27T06:52:53.000Z</published>
-    <updated>2022-09-27T06:57:37.300Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这里介绍运用office办公软件实现一对一邮件群发功能，也就是说你群发的邮件里面即使有好几十个收件人，收件人收到的你的邮件 他只会看到你的邮件只是发给他一个人，其余的收件人，他是无法看到的，所以邮件是一对一发送的。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
-    
-      <category term="邮箱" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/%E9%82%AE%E7%AE%B1/"/>
-    
-    
-      <category term="群发邮件" scheme="https://yixian12580.github.io/tags/%E7%BE%A4%E5%8F%91%E9%82%AE%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mac设置共享文件夹</title>
-    <link href="https://yixian12580.github.io/2022/09/27/Mac%E8%AE%BE%E7%BD%AE%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9.html"/>
-    <id>https://yixian12580.github.io/2022/09/27/Mac设置共享文件夹.html</id>
-    <published>2022-09-27T06:42:13.000Z</published>
-    <updated>2022-09-27T06:49:18.749Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;当我们在同一个局域网中有多台电脑，我们需要访问其他电脑上的文件的时候，我们就可以使用文件共享的功能。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
-    
-      <category term="Mac" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/Mac/"/>
-    
-    
-      <category term="共享" scheme="https://yixian12580.github.io/tags/%E5%85%B1%E4%BA%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Centos7部署phabricator服务</title>
-    <link href="https://yixian12580.github.io/2022/09/23/Centos7%E9%83%A8%E7%BD%B2phabricator%E6%9C%8D%E5%8A%A1.html"/>
-    <id>https://yixian12580.github.io/2022/09/23/Centos7部署phabricator服务.html</id>
-    <published>2022-09-23T02:32:26.000Z</published>
-    <updated>2022-09-27T06:28:04.827Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Phabricator是一套基于Web的软件开发协作工具，包括代码审查工具Differential，资源库浏览器Diffusion，变更监测工具Herald，Bug跟踪工具Maniphest和维基工具Phriction。Phabricator可与Git、Mercurial、Subversion集成使用。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="phabricator" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/phabricator/"/>
-    
-    
-      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
-    
-      <category term="phabricator" scheme="https://yixian12580.github.io/tags/phabricator/"/>
-    
-      <category term="code review" scheme="https://yixian12580.github.io/tags/code-review/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>远程桌面连接失败</title>
-    <link href="https://yixian12580.github.io/2022/09/23/%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%E8%BF%9E%E6%8E%A5%E5%A4%B1%E8%B4%A5.html"/>
-    <id>https://yixian12580.github.io/2022/09/23/远程桌面连接失败.html</id>
-    <published>2022-09-23T02:30:09.000Z</published>
-    <updated>2022-09-23T02:30:46.278Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;问题表现：远程桌面连接失败，显示出现了内部错误。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
-    
-    
-      <category term="插件" scheme="https://yixian12580.github.io/tags/%E6%8F%92%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>谷歌浏览器安装插件</title>
-    <link href="https://yixian12580.github.io/2022/09/23/%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6.html"/>
-    <id>https://yixian12580.github.io/2022/09/23/谷歌浏览器安装插件.html</id>
-    <published>2022-09-23T02:15:36.000Z</published>
-    <updated>2022-09-23T02:29:40.629Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;问题表现：直接拖拽插件文件至谷歌浏览器扩展程序处安装失败。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
-    
-    
-      <category term="插件" scheme="https://yixian12580.github.io/tags/%E6%8F%92%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>win10系统插入耳机没有声音</title>
-    <link href="https://yixian12580.github.io/2022/09/23/win10%E7%B3%BB%E7%BB%9F%E6%8F%92%E5%85%A5%E8%80%B3%E6%9C%BA%E6%B2%A1%E6%9C%89%E5%A3%B0%E9%9F%B3.html"/>
-    <id>https://yixian12580.github.io/2022/09/23/win10系统插入耳机没有声音.html</id>
-    <published>2022-09-23T02:08:56.000Z</published>
-    <updated>2022-09-23T02:13:29.999Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;1.下载安装并打开Realtek高清晰音频管理器：&lt;br&gt;控制面板-查看方式：小图标，找到并打开Realtek高清晰音频管理器&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
-    
-      <category term="故障" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/%E6%95%85%E9%9A%9C/"/>
-    
-    
-      <category term="耳机" scheme="https://yixian12580.github.io/tags/%E8%80%B3%E6%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mac设置静态IP</title>
-    <link href="https://yixian12580.github.io/2022/09/23/Mac%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP.html"/>
-    <id>https://yixian12580.github.io/2022/09/23/Mac设置静态IP.html</id>
-    <published>2022-09-23T02:07:12.000Z</published>
-    <updated>2022-09-23T02:08:29.267Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;问题表现：Mac笔记本设置静态IP地址显示：无效的服务器地址 BasicIPv6ValidationError&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
-    
-      <category term="Mac" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/Mac/"/>
-    
-    
-      <category term="静态ip" scheme="https://yixian12580.github.io/tags/%E9%9D%99%E6%80%81ip/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux-GitLab安装及汉化</title>
-    <link href="https://yixian12580.github.io/2022/09/22/Linux-GitLab%E5%AE%89%E8%A3%85%E5%8F%8A%E6%B1%89%E5%8C%96.html"/>
-    <id>https://yixian12580.github.io/2022/09/22/Linux-GitLab安装及汉化.html</id>
-    <published>2022-09-22T10:17:19.000Z</published>
-    <updated>2022-09-22T10:28:31.062Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;GitLab是一个用于仓库管理系统的开源项目。使用Git作为代码管理工具，并在此基础上搭建起来的Web服务。可通过Web界面进行访问公开的或者私人项目。它拥有GitHub类似的功能，能够浏览源代码，管理缺陷和注释。可以管理团队对仓库的访问，它非常易于浏览提交过的版本并提供一个文件历史库。团队成员可以利用内置的简单聊天程序（Wall）进行交流。它还提供了一个代码片段收集功能可以轻松实现代码复用。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="Gitlab" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Gitlab/"/>
-    
-    
-      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
-    
-      <category term="Gitlab" scheme="https://yixian12580.github.io/tags/Gitlab/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CentOS 7 安装supervisor</title>
-    <link href="https://yixian12580.github.io/2022/09/22/CentOS-7-%E5%AE%89%E8%A3%85supervisor.html"/>
-    <id>https://yixian12580.github.io/2022/09/22/CentOS-7-安装supervisor.html</id>
-    <published>2022-09-22T10:13:11.000Z</published>
-    <updated>2022-09-27T06:37:15.252Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;1.什么是supervisor&lt;br&gt;supervisor是用python写的一个进程管理工具，用来启动，重启，关闭进程。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
-    
-      <category term="supervisor" scheme="https://yixian12580.github.io/tags/supervisor/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CentOS 7部署frp</title>
-    <link href="https://yixian12580.github.io/2022/09/22/CentOS-7%E9%83%A8%E7%BD%B2frp.html"/>
-    <id>https://yixian12580.github.io/2022/09/22/CentOS-7部署frp.html</id>
-    <published>2022-09-22T09:51:06.000Z</published>
-    <updated>2022-09-22T10:11:58.026Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;frp 是一个可用于内网穿透的高性能的反向代理应用，支持 tcp, udp, http, https 协议。 本文将基于 frp 来实现内网穿透。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="frp" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/frp/"/>
-    
-    
-      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
-    
-      <category term="frp" scheme="https://yixian12580.github.io/tags/frp/"/>
-    
-      <category term="内网穿透" scheme="https://yixian12580.github.io/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>openVPN客户端连接</title>
-    <link href="https://yixian12580.github.io/2022/09/22/openVPN%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%BF%9E%E6%8E%A5.html"/>
-    <id>https://yixian12580.github.io/2022/09/22/openVPN客户端连接.html</id>
-    <published>2022-09-22T09:38:01.000Z</published>
-    <updated>2022-09-22T09:50:16.555Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;上一章已经部署好了openVPN服务器，现在我们说一下客户端如何连接服务器从而访问内网。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="openVPN" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/openVPN/"/>
-    
-    
-      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
-    
-      <category term="openVPN" scheme="https://yixian12580.github.io/tags/openVPN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>openVPN通过用户名密码认证</title>
-    <link href="https://yixian12580.github.io/2022/09/22/openVPN%E9%80%9A%E8%BF%87%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81%E8%AE%A4%E8%AF%81.html"/>
-    <id>https://yixian12580.github.io/2022/09/22/openVPN通过用户名密码认证.html</id>
-    <published>2022-09-22T09:27:50.000Z</published>
-    <updated>2022-09-22T09:37:40.442Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;紧接上一篇，让openvpn读取本地文件中的用户名密码，通过判断用户名密码是否存在文件中进行认证，搭建openvpn环境就不多做说明了，只要把openvpn搭建好，客户端能够连接就可以了。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="openVPN" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/openVPN/"/>
-    
-    
-      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
-    
-      <category term="openVPN" scheme="https://yixian12580.github.io/tags/openVPN/"/>
     
   </entry>
   
