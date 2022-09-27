@@ -168,7 +168,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://yixian12580.github.io/2022/09/22/CentOS-7-安装supervisor/image-20220922181439174.png">
 <meta property="og:image" content="https://yixian12580.github.io/2022/09/22/CentOS-7-安装supervisor/image-20220922181522113.png">
-<meta property="og:updated_time" content="2022-09-22T10:16:32.822Z">
+<meta property="og:updated_time" content="2022-09-27T06:37:15.252Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS 7 安装supervisor">
 <meta name="twitter:description" content="1.什么是supervisorsupervisor是用python写的一个进程管理工具，用来启动，重启，关闭进程。">
@@ -497,12 +497,24 @@
                 
               
 
-              <time title="创建时间：2022-09-22 18:13:11 / 修改时间：18:16:32" itemprop="dateCreated datePublished" datetime="2022-09-22T18:13:11+08:00">2022-09-22</time>
+              <time title="创建时间：2022-09-22 18:13:11" itemprop="dateCreated datePublished" datetime="2022-09-22T18:13:11+08:00">2022-09-22</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-09-27 14:37:15" itemprop="dateModified" datetime="2022-09-27T14:37:15+08:00">2022-09-27</time>
               
             
           </span>
@@ -605,7 +617,7 @@
 <p>4.3将配置文件最后一行修改ini 文件路径，意为：supervisor每次update都会加载这个自定义路径文件夹下的所有后缀为ini的文件。</p>
 <img src="/2022/09/22/CentOS-7-安装supervisor/image-20220922181522113.png" title="image-20220922181522113">
 <p>4.4 创建ini文件，加入supervisor的进程管理中， 实现服务器后台运行</p>
-<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[program:exmaple] # example是在supercisor中的进程名，随便取啥</span></span><br><span class="line">command=/usr/local/bin/gunicorn -w 4 -b 127.0.0.1:91 run:app </span><br><span class="line"><span class="comment">#上述代码为使用gunicorn 运行flask。run是你的文件名 ：app指的是app = Flask(__name__)此处的app</span></span><br><span class="line">												或者是</span><br><span class="line">command=/usr/local/bin/python3 /root/test/test.py</span><br><span class="line">numprocs=1           ; number of processes copies to start (def 1)   </span><br><span class="line">autostart = true     ; 在 supervisord 启动的时候也自动启动   </span><br><span class="line">startsecs = 1        ; 启动 1 秒后没有异常退出，就当作已经正常启动了   </span><br><span class="line">autorestart = true   ; 程序异常退出后自动重启   </span><br><span class="line">startretries = 3     ; 启动失败自动重试次数，默认是 3   </span><br><span class="line">user = root          ; 用哪个用户启动   </span><br><span class="line">redirect_stderr = true          ; 把 stderr 重定向到 stdout，默认 false   </span><br><span class="line">stdout_logfile_maxbytes = 20MB  ; stdout 日志文件大小，默认 50MB   </span><br><span class="line">stdout_logfile_backups = 10     ; stdout 日志文件备份数 </span><br><span class="line">stdout_logfile=/**自定义路径/gunicorn.log       ; log 日志</span><br><span class="line">stderr_logfile=/**自定义路径/gunicorn.error     ; 错误日志的绝对路径</span><br></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[program:exmaple]</span> <span class="comment"># example是在supercisor中的进程名，随便取啥</span></span><br><span class="line"><span class="attr">command</span>=/usr/local/bin/gunicorn -w <span class="number">4</span> -b <span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">91</span> run:app </span><br><span class="line"><span class="comment">#上述代码为使用gunicorn 运行flask。run是你的文件名 ：app指的是app = Flask(__name__)此处的app或者是</span></span><br><span class="line"><span class="attr">command</span>=/usr/local/bin/python3 /root/test/test.py</span><br><span class="line"><span class="attr">numprocs</span>=<span class="number">1</span>           ; number of processes copies to start (def <span class="number">1</span>)   </span><br><span class="line"><span class="attr">autostart</span> = <span class="literal">true</span>     ; 在 supervisord 启动的时候也自动启动   </span><br><span class="line"><span class="attr">startsecs</span> = <span class="number">1</span>        ; 启动 <span class="number">1</span> 秒后没有异常退出，就当作已经正常启动了   </span><br><span class="line"><span class="attr">autorestart</span> = <span class="literal">true</span>   ; 程序异常退出后自动重启   </span><br><span class="line"><span class="attr">startretries</span> = <span class="number">3</span>     ; 启动失败自动重试次数，默认是 <span class="number">3</span>   </span><br><span class="line"><span class="attr">user</span> = root          ; 用哪个用户启动   </span><br><span class="line"><span class="attr">redirect_stderr</span> = <span class="literal">true</span>          ; 把 stderr 重定向到 stdout，默认 <span class="literal">false</span>   </span><br><span class="line"><span class="attr">stdout_logfile_maxbytes</span> = <span class="number">20</span>MB  ; stdout 日志文件大小，默认 <span class="number">50</span>MB   </span><br><span class="line"><span class="attr">stdout_logfile_backups</span> = <span class="number">10</span>     ; stdout 日志文件备份数 </span><br><span class="line"><span class="attr">stdout_logfile</span>=/**自定义路径/gunicorn.log       ; log 日志</span><br><span class="line"><span class="attr">stderr_logfile</span>=/**自定义路径/gunicorn.error     ; 错误日志的绝对路径</span><br></pre></td></tr></table></figure>
 <p>5.启动supervisor：</p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">supervisord -c <span class="regexp">/etc/</span>supervisor<span class="regexp">/supervisord.conf</span></span><br></pre></td></tr></table></figure>
 <p>关闭supervisor：</p>
@@ -823,7 +835,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">31</span>
+                    <span class="site-state-item-count">41</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -876,7 +888,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">18</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -947,7 +965,21 @@
                     
                       
                     
-                    <span class="site-state-item-count">27</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">34</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1125,7 +1157,7 @@
       <i class="fa fa-area-chart"> 站点字数合计:</i>
     </span>
     
-    <span title="站点总字数">134k</span>
+    <span title="站点总字数">160k</span>
   
   
 </div>

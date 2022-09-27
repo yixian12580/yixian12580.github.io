@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yixian12580.github.io/"/>
-  <updated>2022-09-27T06:28:04.827Z</updated>
+  <updated>2022-09-27T09:20:02.265Z</updated>
   <id>https://yixian12580.github.io/</id>
   
   <author>
@@ -15,6 +15,232 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>阿里云Redis数据备份及恢复至自建数据库</title>
+    <link href="https://yixian12580.github.io/2022/09/27/%E9%98%BF%E9%87%8C%E4%BA%91Redis%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E5%8F%8A%E6%81%A2%E5%A4%8D%E8%87%B3%E8%87%AA%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93.html"/>
+    <id>https://yixian12580.github.io/2022/09/27/阿里云Redis数据备份及恢复至自建数据库.html</id>
+    <published>2022-09-27T09:17:09.000Z</published>
+    <updated>2022-09-27T09:20:02.265Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1.登录阿里云控制台，点击云数据库Redis，点击对应实例，选择备份恢复，点击备份实例，下载备份文件。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="数据库" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="Redis" scheme="https://yixian12580.github.io/tags/Redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>阿里云MongoDB物理备份文件恢复至自建数据库</title>
+    <link href="https://yixian12580.github.io/2022/09/27/%E9%98%BF%E9%87%8C%E4%BA%91MongoDB%E7%89%A9%E7%90%86%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E6%81%A2%E5%A4%8D%E8%87%B3%E8%87%AA%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93.html"/>
+    <id>https://yixian12580.github.io/2022/09/27/阿里云MongoDB物理备份文件恢复至自建数据库.html</id>
+    <published>2022-09-27T08:55:19.000Z</published>
+    <updated>2022-09-27T09:16:56.067Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1.登录阿里云，进入云数据库MongoDB模块，点击对应实例，选择备份与恢复&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="数据库" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="MongoDB" scheme="https://yixian12580.github.io/tags/MongoDB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux系统安装MongoDB</title>
+    <link href="https://yixian12580.github.io/2022/09/27/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85MongoDB.html"/>
+    <id>https://yixian12580.github.io/2022/09/27/Linux系统安装MongoDB.html</id>
+    <published>2022-09-27T08:41:52.000Z</published>
+    <updated>2022-09-27T08:54:09.091Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;MongoDB 是由C++语言编写的，是一个基于分布式文件存储的开源数据库系统。&lt;/p&gt;
+&lt;p&gt;在高负载的情况下，添加更多的节点，可以保证服务器性能。&lt;/p&gt;
+&lt;p&gt;MongoDB 旨在为WEB应用提供可扩展的高性能数据存储解决方案。&lt;/p&gt;
+&lt;p&gt;MongoDB 将数据存储为一个文档，数据结构由键值(key=&amp;gt;value)对组成。MongoDB 文档类似于 JSON 对象。字段值可以包含其他文档，数组及文档数组。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="数据库" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="MongoDB" scheme="https://yixian12580.github.io/tags/MongoDB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux系统安装Redis</title>
+    <link href="https://yixian12580.github.io/2022/09/27/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85Redis.html"/>
+    <id>https://yixian12580.github.io/2022/09/27/Linux系统安装Redis.html</id>
+    <published>2022-09-27T08:28:08.000Z</published>
+    <updated>2022-09-27T08:40:26.079Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;REmote DIctionary Server(Redis) 是一个由 Salvatore Sanfilippo 写的 key-value 存储系统，是跨平台的非关系型数据库。&lt;/p&gt;
+&lt;p&gt;Redis 是一个开源的使用 ANSI C 语言编写、遵守 BSD 协议、支持网络、可基于内存、分布式、可选持久性的键值对(Key-Value)存储数据库，并提供多种语言的 API。&lt;/p&gt;
+&lt;p&gt;Redis 通常被称为数据结构服务器，因为值（value）可以是字符串(String)、哈希(Hash)、列表(list)、集合(sets)和有序集合(sorted sets)等类型。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="数据库" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="Redis" scheme="https://yixian12580.github.io/tags/Redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>redis-port工具</title>
+    <link href="https://yixian12580.github.io/2022/09/27/redis-port%E5%B7%A5%E5%85%B7.html"/>
+    <id>https://yixian12580.github.io/2022/09/27/redis-port工具.html</id>
+    <published>2022-09-27T08:20:54.000Z</published>
+    <updated>2022-09-27T08:40:12.353Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Redis数据持久化方式有AOF和RDB两种，这两种方式各有优缺点。AOF方式会生成appendonly.aof文件，记录执行的命令操作日志。RDB方式会生成dump.rdb文件，按照配置条件触发保存数据快照。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="数据库" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="Redis" scheme="https://yixian12580.github.io/tags/Redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>阿里云RDS数据备份及恢复至本地数据库</title>
+    <link href="https://yixian12580.github.io/2022/09/27/%E9%98%BF%E9%87%8C%E4%BA%91RDS%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E5%8F%8A%E6%81%A2%E5%A4%8D%E8%87%B3%E6%9C%AC%E5%9C%B0%E6%95%B0%E6%8D%AE%E5%BA%93.html"/>
+    <id>https://yixian12580.github.io/2022/09/27/阿里云RDS数据备份及恢复至本地数据库.html</id>
+    <published>2022-09-27T08:10:18.000Z</published>
+    <updated>2022-09-27T08:40:08.833Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1.首先登陆阿里云平台，到云数据库RDS页面，点击对应实例，点击备份恢复。&lt;/p&gt;
+&lt;p&gt;2.右上角点击备份实例，备份完成后下载。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="数据库" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="MySQL" scheme="https://yixian12580.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux挂载硬盘错误</title>
+    <link href="https://yixian12580.github.io/2022/09/27/Linux%E6%8C%82%E8%BD%BD%E7%A1%AC%E7%9B%98%E9%94%99%E8%AF%AF.html"/>
+    <id>https://yixian12580.github.io/2022/09/27/Linux挂载硬盘错误.html</id>
+    <published>2022-09-27T08:06:09.000Z</published>
+    <updated>2022-09-27T08:08:01.856Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Linux挂载U盘时，报错mount: unknown filesystem type ‘ntfs’ 错误。这是由于Linux上无法识别NTFS格式的分区的原因。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="分区" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%88%86%E5%8C%BA/"/>
+    
+    
+      <category term="挂载" scheme="https://yixian12580.github.io/tags/%E6%8C%82%E8%BD%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>图床Fastdfs服务部署</title>
+    <link href="https://yixian12580.github.io/2022/09/27/%E5%9B%BE%E5%BA%8AFastdfs%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2.html"/>
+    <id>https://yixian12580.github.io/2022/09/27/图床Fastdfs服务部署.html</id>
+    <published>2022-09-27T07:20:00.000Z</published>
+    <updated>2022-09-27T08:04:23.606Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;FastDFS是用c语言编写的一款开源的分布式文件系统。FastDFS为互联网量身定制，充分考虑了冗余备份、负载均衡、线性扩容等机制，并注重高可用、高性能等指标，使用FastDFS很容易搭建一套高性能的文件服务器集群提供文件上传、下载等服务。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="图床" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%9B%BE%E5%BA%8A/"/>
+    
+    
+      <category term="Fastdfs" scheme="https://yixian12580.github.io/tags/Fastdfs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>利用office办公软件实现一对一群发邮件功能</title>
+    <link href="https://yixian12580.github.io/2022/09/27/%E5%88%A9%E7%94%A8office%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0%E4%B8%80%E5%AF%B9%E4%B8%80%E7%BE%A4%E5%8F%91%E9%82%AE%E4%BB%B6%E5%8A%9F%E8%83%BD.html"/>
+    <id>https://yixian12580.github.io/2022/09/27/利用office办公软件实现一对一群发邮件功能.html</id>
+    <published>2022-09-27T06:52:53.000Z</published>
+    <updated>2022-09-27T06:57:37.300Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这里介绍运用office办公软件实现一对一邮件群发功能，也就是说你群发的邮件里面即使有好几十个收件人，收件人收到的你的邮件 他只会看到你的邮件只是发给他一个人，其余的收件人，他是无法看到的，所以邮件是一对一发送的。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
+    
+      <category term="邮箱" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/%E9%82%AE%E7%AE%B1/"/>
+    
+    
+      <category term="群发邮件" scheme="https://yixian12580.github.io/tags/%E7%BE%A4%E5%8F%91%E9%82%AE%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mac设置共享文件夹</title>
+    <link href="https://yixian12580.github.io/2022/09/27/Mac%E8%AE%BE%E7%BD%AE%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9.html"/>
+    <id>https://yixian12580.github.io/2022/09/27/Mac设置共享文件夹.html</id>
+    <published>2022-09-27T06:42:13.000Z</published>
+    <updated>2022-09-27T06:49:18.749Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;当我们在同一个局域网中有多台电脑，我们需要访问其他电脑上的文件的时候，我们就可以使用文件共享的功能。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
+    
+      <category term="Mac" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/Mac/"/>
+    
+    
+      <category term="共享" scheme="https://yixian12580.github.io/tags/%E5%85%B1%E4%BA%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>Centos7部署phabricator服务</title>
@@ -155,7 +381,7 @@
     <link href="https://yixian12580.github.io/2022/09/22/CentOS-7-%E5%AE%89%E8%A3%85supervisor.html"/>
     <id>https://yixian12580.github.io/2022/09/22/CentOS-7-安装supervisor.html</id>
     <published>2022-09-22T10:13:11.000Z</published>
-    <updated>2022-09-22T10:16:32.822Z</updated>
+    <updated>2022-09-27T06:37:15.252Z</updated>
     
     <summary type="html">
     
@@ -243,245 +469,6 @@
       <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
     
       <category term="openVPN" scheme="https://yixian12580.github.io/tags/openVPN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux部署openVPN以访问server端内网其他服务</title>
-    <link href="https://yixian12580.github.io/2022/09/22/Linux%E9%83%A8%E7%BD%B2openVPN%E4%BB%A5%E8%AE%BF%E9%97%AEserver%E7%AB%AF%E5%86%85%E7%BD%91%E5%85%B6%E4%BB%96%E6%9C%8D%E5%8A%A1.html"/>
-    <id>https://yixian12580.github.io/2022/09/22/Linux部署openVPN以访问server端内网其他服务.html</id>
-    <published>2022-09-22T09:22:34.000Z</published>
-    <updated>2022-09-22T09:27:21.321Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;上一章已经部署了open服务，但那仅仅只能访问部署了open server的服务器，要想同时也能访问同网段的其他机器，还需配置一下。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="openVPN" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/openVPN/"/>
-    
-    
-      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
-    
-      <category term="openVPN" scheme="https://yixian12580.github.io/tags/openVPN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux部署openVPN服务</title>
-    <link href="https://yixian12580.github.io/2022/09/22/Linux%E9%83%A8%E7%BD%B2openVPN%E6%9C%8D%E5%8A%A1.html"/>
-    <id>https://yixian12580.github.io/2022/09/22/Linux部署openVPN服务.html</id>
-    <published>2022-09-22T09:12:49.000Z</published>
-    <updated>2022-09-22T09:21:14.402Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;由于在家办公需要访问公司内网，故记录一下部署openVPN服务过程。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="openVPN" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/openVPN/"/>
-    
-    
-      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
-    
-      <category term="openVPN" scheme="https://yixian12580.github.io/tags/openVPN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CentOS7 重新分配分区大小</title>
-    <link href="https://yixian12580.github.io/2022/09/22/CentOS7-%E9%87%8D%E6%96%B0%E5%88%86%E9%85%8D%E5%88%86%E5%8C%BA%E5%A4%A7%E5%B0%8F.html"/>
-    <id>https://yixian12580.github.io/2022/09/22/CentOS7-重新分配分区大小.html</id>
-    <published>2022-09-22T08:51:24.000Z</published>
-    <updated>2022-09-22T08:57:55.081Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;服务器安装CentOS7系统时，没注意点了自动分区，空间大部分分到了/home目录。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="分区" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%88%86%E5%8C%BA/"/>
-    
-    
-      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
-    
-      <category term="分区" scheme="https://yixian12580.github.io/tags/%E5%88%86%E5%8C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ssh免密登陆</title>
-    <link href="https://yixian12580.github.io/2022/09/22/ssh%E5%85%8D%E5%AF%86%E7%99%BB%E9%99%86.html"/>
-    <id>https://yixian12580.github.io/2022/09/22/ssh免密登陆.html</id>
-    <published>2022-09-22T08:46:40.000Z</published>
-    <updated>2022-09-22T08:51:08.936Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;为了保证一台Linux主机的安全，所以我们每个主机登录的时候一般我们都设置账号密码登录。但是很多时候为了操作方便，我们都通过设置SSH免密码登录。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="SSH" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/SSH/"/>
-    
-    
-      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
-    
-      <category term="SSH免密" scheme="https://yixian12580.github.io/tags/SSH%E5%85%8D%E5%AF%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>nginx URL重写规则配置详解</title>
-    <link href="https://yixian12580.github.io/2022/09/22/nginx-URL%E9%87%8D%E5%86%99%E8%A7%84%E5%88%99%E9%85%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3.html"/>
-    <id>https://yixian12580.github.io/2022/09/22/nginx-URL重写规则配置详解.html</id>
-    <published>2022-09-22T02:19:24.000Z</published>
-    <updated>2022-09-22T06:59:31.992Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;访问重写rewrite是Nginx HTTP请求处理过程中的一个重要功能，它是以模块的形式存在于代码中的，其功能是对用户请求的URI进行PCRE正则重写，然后返回30×重定向跳转或按条件执行相关配置。rewrite模块内置了类似脚本语言的set、if、break、return配置指令，通过这些指令，用户可以在HTTP请求处理过程中对URI进行更灵活的操作控制。rewrite模块提供的指令可以分两类，一类是标准配置指令，这部分指令只是对指定的操作进行相应的操作控制；另一类是脚本指令，这部分指令可以在HTTP指令域内以类似脚本编程的形式进行编写。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="Nginx" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Nginx/"/>
-    
-    
-      <category term="Nginx" scheme="https://yixian12580.github.io/tags/Nginx/"/>
-    
-      <category term="rewrite" scheme="https://yixian12580.github.io/tags/rewrite/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>nginx模块ssi配置详解</title>
-    <link href="https://yixian12580.github.io/2022/09/21/nginx%E6%A8%A1%E5%9D%97ssi%E9%85%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3.html"/>
-    <id>https://yixian12580.github.io/2022/09/21/nginx模块ssi配置详解.html</id>
-    <published>2022-09-21T09:53:09.000Z</published>
-    <updated>2022-09-22T02:18:31.205Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;什么是SSI&quot;&gt;&lt;a href=&quot;#什么是SSI&quot; class=&quot;headerlink&quot; title=&quot;什么是SSI&quot;&gt;&lt;/a&gt;什么是SSI&lt;/h3&gt;&lt;p&gt;Server Side Include，通常称为服务器端嵌入，是一种类似于ASP的基于服务器的网页制作技术。大多数（尤其是基于Unix平台）的WEB服务器如Netscape Enterprise Server等均支持SSI命令。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="Nginx" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Nginx/"/>
-    
-    
-      <category term="Nginx" scheme="https://yixian12580.github.io/tags/Nginx/"/>
-    
-      <category term="ssi" scheme="https://yixian12580.github.io/tags/ssi/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>nginx清除缓存模块配置教程</title>
-    <link href="https://yixian12580.github.io/2022/09/21/nginx%E6%B8%85%E9%99%A4%E7%BC%93%E5%AD%98%E6%A8%A1%E5%9D%97%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html"/>
-    <id>https://yixian12580.github.io/2022/09/21/nginx清除缓存模块配置教程.html</id>
-    <published>2022-09-21T09:43:46.000Z</published>
-    <updated>2022-09-21T09:51:26.946Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Nginx作为Web缓存服务器，它介于客户端和应用服务器之间，当用户通过浏览器访问一个URL时，web缓存服务器会去应用服务器获取要展示给用户的内容，将内容缓存到自己的服务器上，当下一次请求到来时，如果访问的是同一个URL，web缓存服务器就会直接将之前缓存的内容返回给客户端，而不是向应用服务器再次发送请求。web缓存降低了应用服务器、数据库的负载，减少了网络延迟，提高了用户访问的响应速度，增强了用户的体验。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="Nginx" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Nginx/"/>
-    
-    
-      <category term="Nginx" scheme="https://yixian12580.github.io/tags/Nginx/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>shell脚本记录</title>
-    <link href="https://yixian12580.github.io/2022/09/15/shell%E8%84%9A%E6%9C%AC%E8%AE%B0%E5%BD%95.html"/>
-    <id>https://yixian12580.github.io/2022/09/15/shell脚本记录.html</id>
-    <published>2022-09-15T10:13:29.000Z</published>
-    <updated>2022-09-16T08:47:33.027Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在工作中经常会有重复性的工作，这种工作借助脚本帮助我们完成可以省心又省力，记录一下工作中用到的脚本&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="脚本" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E8%84%9A%E6%9C%AC/"/>
-    
-    
-      <category term="脚本" scheme="https://yixian12580.github.io/tags/%E8%84%9A%E6%9C%AC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CentOS7安装zabbix-agent</title>
-    <link href="https://yixian12580.github.io/2022/09/14/CentOS7%E5%AE%89%E8%A3%85zabbix-agent.html"/>
-    <id>https://yixian12580.github.io/2022/09/14/CentOS7安装zabbix-agent.html</id>
-    <published>2022-09-14T08:53:30.000Z</published>
-    <updated>2022-09-14T09:00:16.320Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;zabbix agent的安装方式主要有源码安装、rpm包安装、二进制包安装等多种方式，本文介绍YUM方式rpm包安装，此方式安装步骤简单、快捷。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="zabbix" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/zabbix/"/>
-    
-    
-      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
-    
-      <category term="zabbix" scheme="https://yixian12580.github.io/tags/zabbix/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CentOS6.5安装zabbix3.0.3</title>
-    <link href="https://yixian12580.github.io/2022/09/14/CentOS6-5%E5%AE%89%E8%A3%85zabbix3-0-3.html"/>
-    <id>https://yixian12580.github.io/2022/09/14/CentOS6-5安装zabbix3-0-3.html</id>
-    <published>2022-09-14T08:38:17.000Z</published>
-    <updated>2022-09-14T08:52:56.117Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;zabbix是一个基于WEB界面的提供分布式系统监视以及网络监视功能的企业级的开源解决方案。&lt;/p&gt;
-&lt;p&gt;zabbix能监视各种网络参数，保证服务器系统的安全运营；并提供灵活的通知机制以让系统管理员快速定位/解决存在的各种问题。&lt;/p&gt;
-&lt;p&gt;zabbix由2部分构成，zabbix server与可选组件zabbix agent。&lt;/p&gt;
-&lt;p&gt;zabbix server可以通过SNMP，zabbix agent，ping，端口监视等方法提供对远程服务器/网络状态的监视，数据收集等功能，它可以运行在Linux，Solaris，HP-UX，AIX，Free BSD，Open BSD，OS X等平台上。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="zabbix" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/zabbix/"/>
-    
-    
-      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
-    
-      <category term="zabbix" scheme="https://yixian12580.github.io/tags/zabbix/"/>
     
   </entry>
   
