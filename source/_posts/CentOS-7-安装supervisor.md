@@ -54,8 +54,7 @@ vim /etc/supervisor/supervisord.conf
 ```
 [program:exmaple] # example是在supercisor中的进程名，随便取啥
 command=/usr/local/bin/gunicorn -w 4 -b 127.0.0.1:91 run:app 
-#上述代码为使用gunicorn 运行flask。run是你的文件名 ：app指的是app = Flask(__name__)此处的app
-												或者是
+#上述代码为使用gunicorn 运行flask。run是你的文件名 ：app指的是app = Flask(__name__)此处的app或者是
 command=/usr/local/bin/python3 /root/test/test.py
 numprocs=1           ; number of processes copies to start (def 1)   
 autostart = true     ; 在 supervisord 启动的时候也自动启动   
