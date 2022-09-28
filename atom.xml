@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yixian12580.github.io/"/>
-  <updated>2022-09-27T13:52:35.971Z</updated>
+  <updated>2022-09-28T09:38:02.879Z</updated>
   <id>https://yixian12580.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>phabricator服务迁移</title>
+    <link href="https://yixian12580.github.io/2022/09/28/phabricator%E6%9C%8D%E5%8A%A1%E8%BF%81%E7%A7%BB.html"/>
+    <id>https://yixian12580.github.io/2022/09/28/phabricator服务迁移.html</id>
+    <published>2022-09-28T09:29:39.000Z</published>
+    <updated>2022-09-28T09:38:02.879Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在新服务器上部署好phabricator服务，在此不再赘述，可参考&lt;a href=&quot;https://yixian12580.github.io/2022/09/23/Centos7%E9%83%A8%E7%BD%B2phabricator%E6%9C%8D%E5%8A%A1.html&quot;&gt;此文章&lt;/a&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="phabricator" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/phabricator/"/>
+    
+    
+      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
+    
+      <category term="phabricator" scheme="https://yixian12580.github.io/tags/phabricator/"/>
+    
+      <category term="code review" scheme="https://yixian12580.github.io/tags/code-review/"/>
+    
+  </entry>
   
   <entry>
     <title>MySQL异常关机数据恢复</title>
@@ -440,28 +466,6 @@
     
     
       <category term="挂载" scheme="https://yixian12580.github.io/tags/%E6%8C%82%E8%BD%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>图床Fastdfs服务部署</title>
-    <link href="https://yixian12580.github.io/2022/09/27/%E5%9B%BE%E5%BA%8AFastdfs%E6%9C%8D%E5%8A%A1%E9%83%A8%E7%BD%B2.html"/>
-    <id>https://yixian12580.github.io/2022/09/27/图床Fastdfs服务部署.html</id>
-    <published>2022-09-27T07:20:00.000Z</published>
-    <updated>2022-09-27T08:04:23.606Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;FastDFS是用c语言编写的一款开源的分布式文件系统。FastDFS为互联网量身定制，充分考虑了冗余备份、负载均衡、线性扩容等机制，并注重高可用、高性能等指标，使用FastDFS很容易搭建一套高性能的文件服务器集群提供文件上传、下载等服务。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="图床" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%9B%BE%E5%BA%8A/"/>
-    
-    
-      <category term="Fastdfs" scheme="https://yixian12580.github.io/tags/Fastdfs/"/>
     
   </entry>
   
