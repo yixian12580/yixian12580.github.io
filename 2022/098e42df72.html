@@ -172,7 +172,7 @@
 <meta property="og:image" content="https://yixian12580.github.io/2022/098e42df72/image-20220927201704189.png">
 <meta property="og:image" content="https://yixian12580.github.io/2022/098e42df72/image-20220927201714277.png">
 <meta property="og:image" content="https://yixian12580.github.io/2022/098e42df72/image-20220927201724249.png">
-<meta property="og:updated_time" content="2022-09-29T03:21:18.260Z">
+<meta property="og:updated_time" content="2022-09-29T07:02:29.728Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="shell脚本实现一对一群发带附件邮件">
 <meta name="twitter:description" content="有时候我们有一对一发送邮件的需求，但是一个一个发太耗时间了，而这种耗时间的操作我们都可以交给机器来完成。">
@@ -518,7 +518,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2022-09-29 11:21:18" itemprop="dateModified" datetime="2022-09-29T11:21:18+08:00">2022-09-29</time>
+                <time title="修改时间：2022-09-29 15:02:29" itemprop="dateModified" datetime="2022-09-29T15:02:29+08:00">2022-09-29</time>
               
             
           </span>
@@ -614,7 +614,7 @@
       
         <p>有时候我们有一对一发送邮件的需求，但是一个一个发太耗时间了，而这种耗时间的操作我们都可以交给机器来完成。</p>
 <a id="more"></a>
-<p>没接触过shell语言以及对Linux系统不熟悉的可以看我另一篇<a href="https://yixian12580.github.io/2022/09/27/%E5%88%A9%E7%94%A8office%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0%E4%B8%80%E5%AF%B9%E4%B8%80%E7%BE%A4%E5%8F%91%E9%82%AE%E4%BB%B6%E5%8A%9F%E8%83%BD.html">文章</a>，也可以实现需求。</p>
+<p>没接触过shell语言以及对Linux系统不熟悉的可以看我另一篇<a href="https://yixian12580.github.io/2022/09f0f05856.html">文章</a>，也可以实现需求。</p>
 <p>环境：CentOS 7（自带postfix）</p>
 <p>1.修改/etc/postfix/main.cf文件：</p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">myhostname</span> = sample.test.com　 ← 设置系统的主机名</span><br><span class="line"><span class="attr">mydomain</span> = test.com　 ← 设置域名（我们将让此处设置将成为E-mail地址“@”后面的部分）</span><br><span class="line"><span class="attr">myorigin</span> = <span class="variable">$mydomain</span>　 ← 将发信地址“@”后面的部分设置为域名（非系统主机名）</span><br><span class="line"><span class="attr">inet_interfaces</span> = all　 ← 接受来自所有网络的请求</span><br><span class="line"><span class="attr">mydestination</span> = <span class="variable">$myhostname</span>, localhost.<span class="variable">$mydomain</span>, localhost, <span class="variable">$mydomain</span>　 ← 指定发给本地邮件的域名</span><br><span class="line"><span class="attr">home_mailbox</span> = Maildir/　 ← 指定用户邮箱目录</span><br></pre></td></tr></table></figure>
@@ -645,6 +645,43 @@
 
       
     </div>
+
+    
+      
+
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\2022\09c131c9f7.html" rel="bookmark">Linux_shell条件判断if中的-a到-z的含义</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\2022\0949af059c.html" rel="bookmark">Linux脚本小知识之含义</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\2022\094f3e6852.html" rel="bookmark">shell脚本记录</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\2022\09f0f05856.html" rel="bookmark">利用office办公软件实现一对一群发邮件功能</a></div>
+      
+    </li>
+  
+  </ul>
+
 
     
 

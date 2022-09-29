@@ -166,19 +166,19 @@
 <meta property="og:site_name" content="逸贤 | Blog">
 <meta property="og:description" content="上一章已经部署好了openVPN服务器，现在我们说一下客户端如何连接服务器从而访问内网。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="c:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20220922174047378.png">
-<meta property="og:image" content="c:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20220922174118884.png">
-<meta property="og:image" content="c:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20220922174516122.png">
-<meta property="og:image" content="c:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20220922174526398.png">
-<meta property="og:image" content="c:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20220922174538500.png">
-<meta property="og:image" content="c:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20220922174808606.png">
-<meta property="og:image" content="c:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20220922174939022.png">
-<meta property="og:image" content="c:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20220922174948934.png">
-<meta property="og:updated_time" content="2022-09-29T03:21:18.233Z">
+<meta property="og:image" content="https://yixian12580.github.io/2022/09776c38cc/image-20220929150444351.png">
+<meta property="og:image" content="https://yixian12580.github.io/2022/09776c38cc/image-20220929150503591.png">
+<meta property="og:image" content="https://yixian12580.github.io/2022/09776c38cc/image-20220929150529701.png">
+<meta property="og:image" content="https://yixian12580.github.io/2022/09776c38cc/image-20220929150545179.png">
+<meta property="og:image" content="https://yixian12580.github.io/2022/09776c38cc/image-20220929150557744.png">
+<meta property="og:image" content="https://yixian12580.github.io/2022/09776c38cc/image-20220929150612925.png">
+<meta property="og:image" content="https://yixian12580.github.io/2022/09776c38cc/image-20220929150626711.png">
+<meta property="og:image" content="https://yixian12580.github.io/2022/09776c38cc/image-20220929150639467.png">
+<meta property="og:updated_time" content="2022-09-29T07:06:46.968Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="openVPN客户端连接">
 <meta name="twitter:description" content="上一章已经部署好了openVPN服务器，现在我们说一下客户端如何连接服务器从而访问内网。">
-<meta name="twitter:image" content="c:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20220922174047378.png">
+<meta name="twitter:image" content="https://yixian12580.github.io/2022/09776c38cc/image-20220929150444351.png">
 
 
 
@@ -520,7 +520,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2022-09-29 11:21:18" itemprop="dateModified" datetime="2022-09-29T11:21:18+08:00">2022-09-29</time>
+                <time title="修改时间：2022-09-29 15:06:46" itemprop="dateModified" datetime="2022-09-29T15:06:46+08:00">2022-09-29</time>
               
             
           </span>
@@ -617,34 +617,78 @@
         <p>上一章已经部署好了openVPN服务器，现在我们说一下客户端如何连接服务器从而访问内网。</p>
 <a id="more"></a>
 <h3 id="Windows连接："><a href="#Windows连接：" class="headerlink" title="Windows连接："></a>Windows连接：</h3><p>下载OpenVPN GUI客户端：链接:  <a href="https://pan.baidu.com/s/161nsft8FnVMz6vY_Xp0MXQ" target="_blank" rel="noopener">https://pan.baidu.com/s/161nsft8FnVMz6vY_Xp0MXQ</a> 提取码: qect<br>默认下一步就可以安装完成（如果自定义安装的话要记住安装路径，一会会用到）。<br>安装完成后，首先进入到安装目录下，默认安装目录为C:\Program Files\OpenVPN/config,创建一个ovpn后缀的配置文件：</p>
-<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220922174047378.png" alt="image-20220922174047378"></p>
+<img src="/2022/09776c38cc/image-20220929150444351.png" title="image-20220929150444351">
 <p>输入以下内容：</p>
-<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220922174118884.png" alt="image-20220922174118884"></p>
+<img src="/2022/09776c38cc/image-20220929150503591.png" title="image-20220929150503591">
 <figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">client</span><br><span class="line">dev tun</span><br><span class="line">proto udp</span><br><span class="line">remote **** *    #公网ip 端口</span><br><span class="line">resolv-retry infinite</span><br><span class="line">nobind</span><br><span class="line">persist-key</span><br><span class="line">persist-tun</span><br><span class="line">#ca ca.crt</span><br><span class="line">comp-lzo</span><br><span class="line">verb <span class="number">3</span></span><br><span class="line">auth-user-pass login.txt</span><br><span class="line">&lt;ca&gt;</span><br><span class="line">###服务器ca证书###</span><br><span class="line">&lt;/ca&gt;</span><br></pre></td></tr></table></figure>
 <p>再在同目录下创建一个login.txt的文件，第一行写用户名，第二行写密码。</p>
 <p>然后运行Openvpn GUI客户端，在右下角任务栏会有图标:</p>
-<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220922174516122.png" alt="image-20220922174516122"></p>
+<img src="/2022/09776c38cc/image-20220929150529701.png" title="image-20220929150529701">
 <p>鼠标右键，连接：</p>
-<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220922174526398.png" alt="image-20220922174526398"></p>
+<img src="/2022/09776c38cc/image-20220929150545179.png" title="image-20220929150545179">
 <p>连接成功后，图标为绿色：</p>
-<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220922174538500.png" alt="image-20220922174538500"></p>
+<img src="/2022/09776c38cc/image-20220929150557744.png" title="image-20220929150557744">
 <h3 id="Linux服务器连接："><a href="#Linux服务器连接：" class="headerlink" title="Linux服务器连接："></a>Linux服务器连接：</h3><p>安装openVPN，前两章已经有教程，这里不再赘述。<br>创建一个openvpn的文件夹并进入：</p>
 <figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir <span class="string">/etc/openvpn</span></span><br><span class="line"><span class="keyword">cd</span>  <span class="string">/etc/openvpn/</span></span><br></pre></td></tr></table></figure>
 <p>创建客户端配置文件</p>
 <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">vim</span> client.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure>
 <p>填写以下内容：</p>
-<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220922174808606.png" alt="image-20220922174808606"></p>
+<img src="/2022/09776c38cc/image-20220929150612925.png" title="image-20220929150612925">
 <figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">client</span><br><span class="line">dev tun</span><br><span class="line">proto udp</span><br><span class="line">remote *.*.*.* *    #公网IP和端口</span><br><span class="line">resolv-retry infinite</span><br><span class="line">nobind</span><br><span class="line">persist-key</span><br><span class="line">persist-tun</span><br><span class="line">#ca ca.crt</span><br><span class="line">comp-lzo</span><br><span class="line">verb <span class="number">3</span></span><br><span class="line">auth-user-pass login.txt</span><br><span class="line">&lt;ca&gt;</span><br><span class="line">####服务器ca证书####</span><br><span class="line">&lt;/ca&gt;</span><br></pre></td></tr></table></figure>
 <p>再在同目录下创建一个login.txt的文件，第一行写用户名，第二行写密码。<br>启动openvpn客户端：</p>
 <figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">[</span><span class="comment">root@localhost</span> <span class="comment">~</span><span class="title">]</span><span class="comment">#</span> <span class="comment">openvpn</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">daemon</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">writepid</span> <span class="comment">/var/run/openvpn</span><span class="string">.</span><span class="comment">pid</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">cd</span> <span class="comment">/etc/openvpn</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">config</span> <span class="comment">client</span><span class="string">.</span><span class="comment">conf</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">script</span><span class="literal">-</span><span class="comment">security</span> <span class="comment">2</span></span><br></pre></td></tr></table></figure>
 <p>查看openvpn是否在运行：</p>
-<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220922174939022.png" alt="image-20220922174939022"></p>
+<img src="/2022/09776c38cc/image-20220929150626711.png" title="image-20220929150626711">
 <p>ping内网服务看是否能通：</p>
-<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220922174948934.png" alt="image-20220922174948934"></p>
+<img src="/2022/09776c38cc/image-20220929150639467.png" title="image-20220929150639467">
 <p>至此，openVPN客户端连接完成。</p>
 
       
     </div>
+
+    
+      
+
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\2022\091f828d1f.html" rel="bookmark">Linux部署openVPN以访问server端内网其他服务</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\2022\094db9fd21.html" rel="bookmark">Linux部署openVPN服务</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\2022\0964de3690.html" rel="bookmark">openVPN通过用户名密码认证</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\2022\0918dcecaf.html" rel="bookmark">CentOS 7 安装supervisor</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\2022\09f01cefab.html" rel="bookmark">CentOS6.5安装zabbix3.0.3</a></div>
+      
+    </li>
+  
+  </ul>
+
 
     
 

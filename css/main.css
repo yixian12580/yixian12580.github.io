@@ -1859,7 +1859,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #444dc3;
+  background: #2b7c1f;
 }
 .feed-link,
 .chat {
@@ -2243,6 +2243,25 @@ pre .javascript .function {
   padding: 0 10px 0 14px;
   border: 1px solid #222;
   border-radius: 4px;
+}
+.popular-posts-header {
+  margin-top: 60px;
+  margin-bottom: 10px;
+  font-size: 26px;
+  border-bottom: 1px solid #eee;
+  display: block;
+}
+ul.popular-posts {
+  padding: 0;
+}
+ul.popular-posts .popular-posts-item {
+  margin-left: 2em;
+}
+ul.popular-posts .popular-posts-item .popular-posts-title {
+  font-weight: normal;
+  font-size: 14px;
+  margin: 0;
+  line-height: 2.4;
 }
 .copy-btn {
   display: inline-block;
@@ -2883,4 +2902,42 @@ hr {
 ::-moz-selection {
   background: #00c4b6;
   color: #f7f7f7;
+}
+.highlight {
+  border-radius: 1px;
+  background-color: #f6f8fa;
+  overflow: auto;
+  border-width: 1px 1px 1px 2px;
+  border-style: dashed dashed dashed solid;
+  border-color: #aaa #aaa #aaa #6ce26c;
+  border-image: initial;
+  position: relative;
+}
+strong {
+  font-weight: bold;
+/* background-color: #9f95ff; */
+  border-radius: 39px;
+  color: #171be7;
+  padding-left: 0px;
+  padding-right: 1px;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+}
+code {
+  padding: 2px 4px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  color: #ff7600;
+  background: #fbf7f8;
+  border-radius: 3px;
+  font-size: 15px;
+  font-weight: bolder;
+}
+.posts-expand .post-body img {
+  border: 1px #6f42c1;
+}
+.posts-expand .post-title-link {
+  color: #d9534f;
+}
+.posts-expand .post-title {
+  color: #d9534f;
 }
