@@ -1859,7 +1859,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #2b7c1f;
+  background: #f8f;
 }
 .feed-link,
 .chat {
@@ -2902,16 +2902,6 @@ hr {
 ::-moz-selection {
   background: #00c4b6;
   color: #f7f7f7;
-}
-.highlight {
-  border-radius: 1px;
-  background-color: #f6f8fa;
-  overflow: auto;
-  border-width: 1px 1px 1px 2px;
-  border-style: dashed dashed dashed solid;
-  border-color: #aaa #aaa #aaa #6ce26c;
-  border-image: initial;
-  position: relative;
 }
 strong {
   font-weight: bold;
