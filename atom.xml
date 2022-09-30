@@ -137,10 +137,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;Docker支持以下的CentOS版本：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;CentOS 7 (64-bit)&lt;br&gt;CentOS 6.5 (64-bit) 或更高的版本&lt;/p&gt;
-&lt;/blockquote&gt;
+      &lt;p&gt;Docker支持以下的CentOS版本：&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;CentOS 7 (64-bit)&lt;br&gt;CentOS 6.5 (64-bit) 或更高的版本&lt;/p&gt;&lt;/blockquote&gt;
     
     </summary>
     
@@ -268,8 +265,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;Docker镜像的导入导出&lt;/p&gt;
-&lt;p&gt;本文介绍Docker镜像的导入导出，用于迁移、备份、升级等场景&lt;/p&gt;
+      &lt;p&gt;Docker镜像的导入导出&lt;/p&gt;&lt;p&gt;本文介绍Docker镜像的导入导出，用于迁移、备份、升级等场景&lt;/p&gt;
     
     </summary>
     
@@ -291,10 +287,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;需求：把jumpserver服务搬迁到另一台服务器上&lt;/p&gt;
-&lt;p&gt;原服务器ip：172.25.0.237&lt;/p&gt;
-&lt;p&gt;新服务器ip：172.22.12.246&lt;/p&gt;
-&lt;p&gt;由于jumpserver服务是在docker中启动的，所以直接把docker镜像搬到新服务器里跑就行。&lt;/p&gt;
+      &lt;p&gt;需求：把jumpserver服务搬迁到另一台服务器上&lt;/p&gt;&lt;p&gt;原服务器ip：172.25.0.237&lt;/p&gt;&lt;p&gt;新服务器ip：172.22.12.246&lt;/p&gt;&lt;p&gt;由于jumpserver服务是在docker中启动的，所以直接把docker镜像搬到新服务器里跑就行。&lt;/p&gt;
     
     </summary>
     
@@ -362,10 +355,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;MongoDB 是由C++语言编写的，是一个基于分布式文件存储的开源数据库系统。&lt;/p&gt;
-&lt;p&gt;在高负载的情况下，添加更多的节点，可以保证服务器性能。&lt;/p&gt;
-&lt;p&gt;MongoDB 旨在为WEB应用提供可扩展的高性能数据存储解决方案。&lt;/p&gt;
-&lt;p&gt;MongoDB 将数据存储为一个文档，数据结构由键值(key=&amp;gt;value)对组成。MongoDB 文档类似于 JSON 对象。字段值可以包含其他文档，数组及文档数组。&lt;/p&gt;
+      &lt;p&gt;MongoDB 是由C++语言编写的，是一个基于分布式文件存储的开源数据库系统。&lt;/p&gt;&lt;p&gt;在高负载的情况下，添加更多的节点，可以保证服务器性能。&lt;/p&gt;&lt;p&gt;MongoDB 旨在为WEB应用提供可扩展的高性能数据存储解决方案。&lt;/p&gt;&lt;p&gt;MongoDB 将数据存储为一个文档，数据结构由键值(key=&amp;gt;value)对组成。MongoDB 文档类似于 JSON 对象。字段值可以包含其他文档，数组及文档数组。&lt;/p&gt;
     
     </summary>
     
@@ -387,9 +377,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;REmote DIctionary Server(Redis) 是一个由 Salvatore Sanfilippo 写的 key-value 存储系统，是跨平台的非关系型数据库。&lt;/p&gt;
-&lt;p&gt;Redis 是一个开源的使用 ANSI C 语言编写、遵守 BSD 协议、支持网络、可基于内存、分布式、可选持久性的键值对(Key-Value)存储数据库，并提供多种语言的 API。&lt;/p&gt;
-&lt;p&gt;Redis 通常被称为数据结构服务器，因为值（value）可以是字符串(String)、哈希(Hash)、列表(list)、集合(sets)和有序集合(sorted sets)等类型。&lt;/p&gt;
+      &lt;p&gt;REmote DIctionary Server(Redis) 是一个由 Salvatore Sanfilippo 写的 key-value 存储系统，是跨平台的非关系型数据库。&lt;/p&gt;&lt;p&gt;Redis 是一个开源的使用 ANSI C 语言编写、遵守 BSD 协议、支持网络、可基于内存、分布式、可选持久性的键值对(Key-Value)存储数据库，并提供多种语言的 API。&lt;/p&gt;&lt;p&gt;Redis 通常被称为数据结构服务器，因为值（value）可以是字符串(String)、哈希(Hash)、列表(list)、集合(sets)和有序集合(sorted sets)等类型。&lt;/p&gt;
     
     </summary>
     
@@ -433,8 +421,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;1.首先登陆阿里云平台，到云数据库RDS页面，点击对应实例，点击备份恢复。&lt;/p&gt;
-&lt;p&gt;2.右上角点击备份实例，备份完成后下载。&lt;/p&gt;
+      &lt;p&gt;1.首先登陆阿里云平台，到云数据库RDS页面，点击对应实例，点击备份恢复。&lt;/p&gt;&lt;p&gt;2.右上角点击备份实例，备份完成后下载。&lt;/p&gt;
     
     </summary>
     
