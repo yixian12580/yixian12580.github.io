@@ -1,16 +1,17 @@
 ---
 title: phabricator服务迁移
-date: 2022-09-28 17:29:39
-categories: 
-- 技术
-- phabricator
+categories:
+  - 技术
+  - phabricator
 tags:
-- Linux
-- phabricator
-- code review
+  - Linux
+  - phabricator
+  - code review
+abbrlink: a696f486
+date: 2022-09-28 17:29:39
 ---
 
-在新服务器上部署好phabricator服务，在此不再赘述，可参考[此文章](https://yixian12580.github.io/2022/09/23/Centos7%E9%83%A8%E7%BD%B2phabricator%E6%9C%8D%E5%8A%A1.html)。
+在新服务器上部署好phabricator服务，在此不再赘述，可参考此[文章](https://yixian12580.github.io/2022/09d5dcd440.html)。
 
 <!--more-->
 

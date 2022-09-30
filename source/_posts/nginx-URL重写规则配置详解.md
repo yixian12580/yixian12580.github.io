@@ -1,12 +1,13 @@
 ---
 title: nginx URL重写规则配置详解
+tags:
+  - Nginx
+  - rewrite
+categories:
+  - 技术
+  - Nginx
+abbrlink: 3ccacdb4
 date: 2022-09-22 10:19:24
-tags: 
-- Nginx
-- rewrite
-categories: 
-- 技术
-- Nginx
 ---
 
 访问重写rewrite是Nginx HTTP请求处理过程中的一个重要功能，它是以模块的形式存在于代码中的，其功能是对用户请求的URI进行PCRE正则重写，然后返回30×重定向跳转或按条件执行相关配置。rewrite模块内置了类似脚本语言的set、if、break、return配置指令，通过这些指令，用户可以在HTTP请求处理过程中对URI进行更灵活的操作控制。rewrite模块提供的指令可以分两类，一类是标准配置指令，这部分指令只是对指定的操作进行相应的操作控制；另一类是脚本指令，这部分指令可以在HTTP指令域内以类似脚本编程的形式进行编写。

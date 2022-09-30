@@ -1,12 +1,13 @@
 ---
 title: 虚拟机安装Linux系统
+tags:
+  - Linux系统
+  - VMware
+categories:
+  - 桌面
+  - 系统
+abbrlink: dc84a67d
 date: 2022-09-13 16:57:33
-tags: 
-- Linux系统
-- VMware
-categories: 
-- 桌面
-- 系统
 ---
 
 VMware 可以使你在一台计算机上同时运行多个操作系统，例如同时运行 Windows、Linux 和 Mac OS。在计算机上直接安装多个操作系统，同一个时刻只能运行一个操作系统，重启才可以切换；而 Vmware 可以同时运行多个操作系统，可以像 Windows 应用程序一样来回切换。

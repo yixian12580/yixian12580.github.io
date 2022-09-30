@@ -1,10 +1,11 @@
 ---
 title: Mac设置静态IP
-date: 2022-09-23 10:07:12
 tags: 静态ip
-categories: 
-- 桌面
-- Mac
+categories:
+  - 桌面
+  - Mac
+abbrlink: 9bc44327
+date: 2022-09-23 10:07:12
 ---
 
 问题表现：Mac笔记本设置静态IP地址显示：无效的服务器地址 BasicIPv6ValidationError

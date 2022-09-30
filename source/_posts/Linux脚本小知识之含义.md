@@ -1,10 +1,11 @@
 ---
 title: Linux脚本小知识之含义
-date: 2022-09-14 11:04:21
 tags: 脚本
-categories: 
-- 技术
-- 脚本
+categories:
+  - 技术
+  - 脚本
+abbrlink: 49af059c
+date: 2022-09-14 11:04:21
 ---
 
 Linux系统中的Shell脚本语言内设了用于接收参数的变量，变量之间可以使用空格间隔。

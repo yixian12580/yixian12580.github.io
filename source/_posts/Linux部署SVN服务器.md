@@ -1,12 +1,13 @@
 ---
 title: Linux部署SVN服务器
-date: 2022-09-13 19:46:42
-categories: 
-- 技术
-- SVN
+categories:
+  - 技术
+  - SVN
 tags:
-- Linux
-- SVN
+  - Linux
+  - SVN
+abbrlink: dc8e267
+date: 2022-09-13 19:46:42
 ---
 
 SVN是Subversion的简称，是一个开放源代码的版本控制系统，用于多个人共同开发同一个项目，共用资源的目的。

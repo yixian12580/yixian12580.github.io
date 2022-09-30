@@ -1,12 +1,13 @@
 ---
 title: Linux部署openVPN服务
-date: 2022-09-22 17:12:49
-categories: 
-- 技术
-- openVPN
+categories:
+  - 技术
+  - openVPN
 tags:
-- Linux
-- openVPN
+  - Linux
+  - openVPN
+abbrlink: 4db9fd21
+date: 2022-09-22 17:12:49
 ---
 
 由于在家办公需要访问公司内网，故记录一下部署openVPN服务过程。

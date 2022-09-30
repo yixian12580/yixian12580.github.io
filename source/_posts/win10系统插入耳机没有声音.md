@@ -1,10 +1,11 @@
 ---
 title: win10系统插入耳机没有声音
-date: 2022-09-23 10:08:56
 tags: 耳机
-categories: 
-- 桌面
-- 故障
+categories:
+  - 桌面
+  - 故障
+abbrlink: 5a7458cf
+date: 2022-09-23 10:08:56
 ---
 
 1.下载安装并打开Realtek高清晰音频管理器：

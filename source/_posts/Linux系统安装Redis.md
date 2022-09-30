@@ -1,10 +1,11 @@
 ---
 title: Linux系统安装Redis
-date: 2022-09-27 16:28:08
-categories: 
-- 技术
-- 数据库
+categories:
+  - 技术
+  - 数据库
 tags: Redis
+abbrlink: ca3d3aa4
+date: 2022-09-27 16:28:08
 ---
 
 REmote DIctionary Server(Redis) 是一个由 Salvatore Sanfilippo 写的 key-value 存储系统，是跨平台的非关系型数据库。

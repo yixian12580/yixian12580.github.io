@@ -1,10 +1,11 @@
 ---
 title: Docker镜像的导入导出
-date: 2022-09-27 18:21:53
 tags: Docker
-categories: 
-- 技术
-- Docker
+categories:
+  - 技术
+  - Docker
+abbrlink: 153a44f6
+date: 2022-09-27 18:21:53
 ---
 
 Docker镜像的导入导出

@@ -1,12 +1,13 @@
 ---
 title: CentOS7安装zabbix-agent
-date: 2022-09-14 16:53:30
 tags:
-- Linux
-- zabbix
-categories: 
-- 技术
-- zabbix
+  - Linux
+  - zabbix
+categories:
+  - 技术
+  - zabbix
+abbrlink: b1aa2744
+date: 2022-09-14 16:53:30
 ---
 
 zabbix agent的安装方式主要有源码安装、rpm包安装、二进制包安装等多种方式，本文介绍YUM方式rpm包安装，此方式安装步骤简单、快捷。

@@ -1,19 +1,20 @@
 ---
 title: shell脚本实现一对一群发带附件邮件
+tags:
+  - 脚本
+  - 群发邮件
+categories:
+  - 技术
+  - 脚本
+abbrlink: 8e42df72
 date: 2022-09-27 20:04:36
-tags: 
-- 脚本
-- 群发邮件
-categories: 
-- 技术
-- 脚本
 ---
 
 有时候我们有一对一发送邮件的需求，但是一个一个发太耗时间了，而这种耗时间的操作我们都可以交给机器来完成。
 
 <!--more-->
 
-没接触过shell语言以及对Linux系统不熟悉的可以看我另一篇[文章](https://yixian12580.github.io/2022/09/27/%E5%88%A9%E7%94%A8office%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0%E4%B8%80%E5%AF%B9%E4%B8%80%E7%BE%A4%E5%8F%91%E9%82%AE%E4%BB%B6%E5%8A%9F%E8%83%BD.html)，也可以实现需求。
+没接触过shell语言以及对Linux系统不熟悉的可以看我另一篇[文章](https://yixian12580.github.io/2022/09f0f05856.html)，也可以实现需求。
 
 环境：CentOS 7（自带postfix）
 
@@ -133,7 +134,6 @@ sh email.sh
 
 
 ![image-20220927201724249](shell脚本实现一对一群发带附件邮件/image-20220927201724249.png)
-
 
 
 

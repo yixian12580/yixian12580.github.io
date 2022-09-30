@@ -1,13 +1,14 @@
 ---
 title: CentOS 7部署frp
-date: 2022-09-22 17:51:06
-categories: 
-- 技术
-- frp
+categories:
+  - 技术
+  - frp
 tags:
-- Linux
-- frp
-- 内网穿透
+  - Linux
+  - frp
+  - 内网穿透
+abbrlink: 6f50b0b4
+date: 2022-09-22 17:51:06
 ---
 
 frp 是一个可用于内网穿透的高性能的反向代理应用，支持 tcp, udp, http, https 协议。 本文将基于 frp 来实现内网穿透。

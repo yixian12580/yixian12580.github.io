@@ -1,10 +1,11 @@
 ---
 title: Mysql授权和撤销授权
-date: 2022-09-27 21:39:24
-categories: 
-- 技术
-- 数据库
+categories:
+  - 技术
+  - 数据库
 tags: MySQL
+abbrlink: ee8bdffb
+date: 2022-09-27 21:39:24
 ---
 
 对某个用户授予对某个表的某种操作的权限，并可限制具体的网段

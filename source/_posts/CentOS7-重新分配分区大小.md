@@ -1,12 +1,13 @@
 ---
 title: CentOS7 重新分配分区大小
-date: 2022-09-22 16:51:24
-categories: 
-- 技术
-- 分区
+categories:
+  - 技术
+  - 分区
 tags:
-- Linux
-- 分区
+  - Linux
+  - 分区
+abbrlink: 81f2b47f
+date: 2022-09-22 16:51:24
 ---
 
 服务器安装CentOS7系统时，没注意点了自动分区，空间大部分分到了/home目录。

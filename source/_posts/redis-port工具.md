@@ -1,10 +1,11 @@
 ---
 title: redis-port工具
-date: 2022-09-27 16:20:54
-categories: 
-- 技术
-- 数据库
+categories:
+  - 技术
+  - 数据库
 tags: Redis
+abbrlink: 66cd2147
+date: 2022-09-27 16:20:54
 ---
 
 Redis数据持久化方式有AOF和RDB两种，这两种方式各有优缺点。AOF方式会生成appendonly.aof文件，记录执行的命令操作日志。RDB方式会生成dump.rdb文件，按照配置条件触发保存数据快照。
@@ -15,7 +16,7 @@ redis-port 是一个 Redis 工具，通过解析 rdb 文件，实现 Redis 之�
 
 Github源码地址：https://github.com/CodisLabs/redis-port
 
-阿里云有已经编译好的：http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/85829/cn_zh/1533199526614/redis-port%282%29?spm=a2c63.p38356.879954.6.7c52162dADVBU5
+阿里云有已经编译好的：[点此查看](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/85829/cn_zh/1533199526614/redis-port%282%29?spm=a2c63.p38356.879954.6.7c52162dADVBU5)
 
 赋予可执行权限：
 

@@ -1,12 +1,13 @@
 ---
 title: nginx模块ssi配置详解
+tags:
+  - Nginx
+  - ssi
+categories:
+  - 技术
+  - Nginx
+abbrlink: a8404436
 date: 2022-09-21 17:53:09
-tags: 
-- Nginx
-- ssi
-categories: 
-- 技术
-- Nginx
 ---
 
 ### 什么是SSI
@@ -86,7 +87,7 @@ ssi_types
 </html>	
 ```
 
-把编写的两个html都放到nginx的html目录中，并通过浏览器访问( http://192.168.10.10/a.html)，测试机IP为192.168.10.10，得到以下页面：
+把编写的两个html都放到nginx的html目录中，并通过浏览器访问( [http://192.168.10.10/a.html]( http://192.168.10.10/a.html))，测试机IP为192.168.10.10，得到以下页面：
 
 ![image-20220922101819693](nginx模块ssi配置详解/image-20220922101819693.png)
 

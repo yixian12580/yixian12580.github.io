@@ -1,10 +1,11 @@
 ---
 title: 阿里云RDS数据备份及恢复至本地数据库
-date: 2022-09-27 16:10:18
-categories: 
-- 技术
-- 数据库
+categories:
+  - 技术
+  - 数据库
 tags: MySQL
+abbrlink: bd0cd4b1
+date: 2022-09-27 16:10:18
 ---
 
 1.首先登陆阿里云平台，到云数据库RDS页面，点击对应实例，点击备份恢复。

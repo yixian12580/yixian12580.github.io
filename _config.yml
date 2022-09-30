@@ -15,7 +15,11 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://yixian12580.github.io
 root: /
-permalink: :year/:month/:day/:title.html
+#permalink: :year/:month/:day/:title.html
+permalink: :year/:month:abbrlink.html
+abbrlink: 
+  alg: crc32 #算法选项：crc16丨crc32
+  rep: hex #输出进制：dec为十进制，hex为十六进制
 permalink_defaults:
 
 # Directory
@@ -133,10 +137,34 @@ live2d:
   react:
     opacity: 0.7
 
-
+##博客备份##
 backup:
   type: git
   theme: nexT
   message: Back up my blog
   repository:
     github: git@github.com:yixian12580/yixian12580.github.io.git,backup
+
+#静态资源压缩优化
+# hexo-neat
+neat_enable: true # 启用neat
+
+# 对html优化
+neat_html:          
+  enable: true
+  exclude:
+  
+# 对css优化
+neat_css:
+  enable: true
+  exclude:
+    - '*.min.css'
+
+# 对js优化
+neat_js:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '*.min.js'

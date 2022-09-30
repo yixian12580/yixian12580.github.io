@@ -1,12 +1,13 @@
 ---
 title: jumpserver服务迁移
+tags:
+  - Docker
+  - jumpserver
+categories:
+  - 技术
+  - Docker
+abbrlink: 2b689438
 date: 2022-09-27 17:39:37
-tags: 
-- Docker
-- jumpserver
-categories: 
-- 技术
-- Docker
 ---
 
 需求：把jumpserver服务搬迁到另一台服务器上

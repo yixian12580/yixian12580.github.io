@@ -1,12 +1,13 @@
 ---
 title: openVPN通过用户名密码认证
-date: 2022-09-22 17:27:50
-categories: 
-- 技术
-- openVPN
+categories:
+  - 技术
+  - openVPN
 tags:
-- Linux
-- openVPN
+  - Linux
+  - openVPN
+abbrlink: 64de3690
+date: 2022-09-22 17:27:50
 ---
 
 紧接上一篇，让openvpn读取本地文件中的用户名密码，通过判断用户名密码是否存在文件中进行认证，搭建openvpn环境就不多做说明了，只要把openvpn搭建好，客户端能够连接就可以了。

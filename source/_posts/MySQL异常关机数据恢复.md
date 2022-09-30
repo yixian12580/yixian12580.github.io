@@ -1,10 +1,11 @@
 ---
 title: MySQL异常关机数据恢复
-date: 2022-09-27 21:47:12
-categories: 
-- 技术
-- 数据库
+categories:
+  - 技术
+  - 数据库
 tags: MySQL
+abbrlink: 32c87208
+date: 2022-09-27 21:47:12
 ---
 
 MySQL因为停电异常关机，导致数据库无法启动成功，出现如下报错：
@@ -46,5 +47,5 @@ MySQL因为停电异常关机，导致数据库无法启动成功，出现如下
 
 注意：在执行上述操作之前，记得先备份一下MySQL的数据文件，以免出现innodb_force_recovery=6都无法启动MySQL的情况。
 
-经验：虽然使用innodb_force_recovery可以进行innodb数据恢复，但是还是有可能丢失数据，所以如果是关键数据库，建议还是定期进行备份比较稳妥，备份脚本可查看[此文章](https://yixian12580.github.io/2022/09/15/shell%E8%84%9A%E6%9C%AC%E8%AE%B0%E5%BD%95.html#MySQL%E5%A4%87%E4%BB%BD)。
+经验：虽然使用innodb_force_recovery可以进行innodb数据恢复，但是还是有可能丢失数据，所以如果是关键数据库，建议还是定期进行备份比较稳妥，备份脚本可查看[此文章](https://yixian12580.github.io/2022/094f3e6852.html#MySQL%E5%A4%87%E4%BB%BD)。
 

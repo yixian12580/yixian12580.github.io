@@ -1,12 +1,13 @@
 ---
 title: CentOS 6新增网卡
-date: 2022-09-14 16:25:09
-categories: 
-- 桌面
-- VMware
+categories:
+  - 桌面
+  - VMware
 tags:
-- VMware
-- 网卡
+  - VMware
+  - 网卡
+abbrlink: 25ad3e6c
+date: 2022-09-14 16:25:09
 ---
 
 有时候我们在装完系统后有可能有新增网卡的需求

@@ -138,7 +138,7 @@
 color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
 </script>  -->
 <!-- 雪花特效 -->
-<script type="text/javascript" src="/js/snow.js"></script> 
+<!--   <script type="text/javascript" src="/js/snow.js"></script>    -->
 <!-- 添加看板娘 -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
 <script src="/live2d-widget/autoload.js"></script>

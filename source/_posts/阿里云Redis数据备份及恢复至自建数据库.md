@@ -1,17 +1,18 @@
 ---
 title: 阿里云Redis数据备份及恢复至自建数据库
-date: 2022-09-27 17:17:09
-categories: 
-- 技术
-- 数据库
+categories:
+  - 技术
+  - 数据库
 tags: Redis
+abbrlink: e66e49e2
+date: 2022-09-27 17:17:09
 ---
 
 1.登录阿里云控制台，点击云数据库Redis，点击对应实例，选择备份恢复，点击备份实例，下载备份文件。
 
 <!--more-->
 
-2.在本地服务器安装Redis（具体查看[这篇文章](https://yixian12580.github.io/2022/09/27/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85Redis.html)，在此不再赘述）
+2.在本地服务器安装Redis（具体查看[这篇文章](https://yixian12580.github.io/2022/09ca3d3aa4.html)，在此不再赘述）
 
 3.使用redis-port工具把下载的备份文件导进Redis数据库：
 

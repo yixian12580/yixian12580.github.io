@@ -1,12 +1,13 @@
 ---
 title: 虚拟机CentOS 6连接外网
-date: 2022-09-14 16:20:17
-categories: 
-- 桌面
-- VMware
+categories:
+  - 桌面
+  - VMware
 tags:
-- VMware
-- 虚拟网络
+  - VMware
+  - 虚拟网络
+abbrlink: 612fe0a2
+date: 2022-09-14 16:20:17
 ---
 
 1.点击编辑，打开虚拟网络编辑器，可以设置子网网段

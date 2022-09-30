@@ -1,10 +1,11 @@
 ---
 title: Linux_shell条件判断if中的-a到-z的含义
-date: 2022-09-14 16:31:37
 tags: 脚本
-categories: 
-- 技术
-- 脚本
+categories:
+  - 技术
+  - 脚本
+abbrlink: c131c9f7
+date: 2022-09-14 16:31:37
 ---
 
 ```

@@ -1,10 +1,11 @@
 ---
 title: DNS服务器部署
-date: 2022-09-27 21:29:46
 tags: DNS
-categories: 
-- 技术
-- DNS
+categories:
+  - 技术
+  - DNS
+abbrlink: 8d4f1456
+date: 2022-09-27 21:29:46
 ---
 
 dns服务器就是域名服务器，它可以把用户的网站地址解析成相应的IP地址。

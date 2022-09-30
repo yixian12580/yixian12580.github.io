@@ -1,10 +1,11 @@
 ---
 title: Linux系统安装MongoDB
-date: 2022-09-27 16:41:52
-categories: 
-- 技术
-- 数据库
+categories:
+  - 技术
+  - 数据库
 tags: MongoDB
+abbrlink: ce2728e7
+date: 2022-09-27 16:41:52
 ---
 
 MongoDB 是由C++语言编写的，是一个基于分布式文件存储的开源数据库系统。

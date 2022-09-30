@@ -1,12 +1,13 @@
 ---
 title: ssh免密登陆
-date: 2022-09-22 16:46:40
-categories: 
-- 技术
-- SSH
+categories:
+  - 技术
+  - SSH
 tags:
-- Linux
-- SSH免密
+  - Linux
+  - SSH免密
+abbrlink: 3032f6ee
+date: 2022-09-22 16:46:40
 ---
 
 为了保证一台Linux主机的安全，所以我们每个主机登录的时候一般我们都设置账号密码登录。但是很多时候为了操作方便，我们都通过设置SSH免密码登录。

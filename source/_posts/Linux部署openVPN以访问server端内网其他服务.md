@@ -1,12 +1,13 @@
 ---
 title: Linux部署openVPN以访问server端内网其他服务
-date: 2022-09-22 17:22:34
-categories: 
-- 技术
-- openVPN
+categories:
+  - 技术
+  - openVPN
 tags:
-- Linux
-- openVPN
+  - Linux
+  - openVPN
+abbrlink: 1f828d1f
+date: 2022-09-22 17:22:34
 ---
 
 上一章已经部署了open服务，但那仅仅只能访问部署了open server的服务器，要想同时也能访问同网段的其他机器，还需配置一下。

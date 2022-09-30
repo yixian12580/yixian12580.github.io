@@ -1,12 +1,13 @@
 ---
 title: CentOS6.5安装zabbix3.0.3
+tags:
+  - Linux
+  - zabbix
+categories:
+  - 技术
+  - zabbix
+abbrlink: f01cefab
 date: 2022-09-14 16:38:17
-tags: 
-- Linux
-- zabbix
-categories: 
-- 技术
-- zabbix
 ---
 
 zabbix是一个基于WEB界面的提供分布式系统监视以及网络监视功能的企业级的开源解决方案。

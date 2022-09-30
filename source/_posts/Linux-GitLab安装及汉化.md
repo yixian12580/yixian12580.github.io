@@ -1,12 +1,13 @@
 ---
 title: Linux-GitLab安装及汉化
-date: 2022-09-22 18:17:19
-categories: 
-- 技术
-- Gitlab
+categories:
+  - 技术
+  - Gitlab
 tags:
-- Linux
-- Gitlab
+  - Linux
+  - Gitlab
+abbrlink: 9becdeed
+date: 2022-09-22 18:17:19
 ---
 
 GitLab是一个用于仓库管理系统的开源项目。使用Git作为代码管理工具，并在此基础上搭建起来的Web服务。可通过Web界面进行访问公开的或者私人项目。它拥有GitHub类似的功能，能够浏览源代码，管理缺陷和注释。可以管理团队对仓库的访问，它非常易于浏览提交过的版本并提供一个文件历史库。团队成员可以利用内置的简单聊天程序（Wall）进行交流。它还提供了一个代码片段收集功能可以轻松实现代码复用。

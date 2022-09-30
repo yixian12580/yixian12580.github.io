@@ -1,10 +1,11 @@
 ---
 title: Docker入门及实战演练
-date: 2022-09-14 11:10:23
 tags: Docker
-categories: 
-- 技术
-- Docker
+categories:
+  - 技术
+  - Docker
+abbrlink: 15f4552
+date: 2022-09-14 11:10:23
 ---
 
 ### 简介

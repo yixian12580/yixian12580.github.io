@@ -1,13 +1,14 @@
 ---
 title: Centos7部署phabricator服务
-date: 2022-09-23 10:32:26
-categories: 
-- 技术
-- phabricator
+categories:
+  - 技术
+  - phabricator
 tags:
-- Linux
-- phabricator
-- code review
+  - Linux
+  - phabricator
+  - code review
+abbrlink: d5dcd440
+date: 2022-09-23 10:32:26
 ---
 
 Phabricator是一套基于Web的软件开发协作工具，包括代码审查工具Differential，资源库浏览器Diffusion，变更监测工具Herald，Bug跟踪工具Maniphest和维基工具Phriction。Phabricator可与Git、Mercurial、Subversion集成使用。

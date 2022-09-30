@@ -1,10 +1,11 @@
 ---
 title: 阿里云MongoDB物理备份文件恢复至自建数据库
-date: 2022-09-27 16:55:19
-categories: 
-- 技术
-- 数据库
+categories:
+  - 技术
+  - 数据库
 tags: MongoDB
+abbrlink: 3109e84d
+date: 2022-09-27 16:55:19
 ---
 
 1.登录阿里云，进入云数据库MongoDB模块，点击对应实例，选择备份与恢复

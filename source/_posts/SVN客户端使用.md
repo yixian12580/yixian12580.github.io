@@ -1,12 +1,13 @@
 ---
 title: SVN客户端使用
-date: 2022-09-14 09:30:34
-categories: 
-- 技术
-- SVN
+categories:
+  - 技术
+  - SVN
 tags:
-- Linux
-- SVN
+  - Linux
+  - SVN
+abbrlink: 6cbb58b6
+date: 2022-09-14 09:30:34
 ---
 
 Linux命令行SVN使用教程

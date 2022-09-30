@@ -1,10 +1,11 @@
 ---
 title: CentOS Docker 安装
-date: 2022-09-27 20:47:46
 tags: Docker
-categories: 
-- 技术
-- Docker
+categories:
+  - 技术
+  - Docker
+abbrlink: 8df5126b
+date: 2022-09-27 20:47:46
 ---
 
 Docker支持以下的CentOS版本：

@@ -1,11 +1,12 @@
 ---
 title: CentOS 7 安装supervisor
-date: 2022-09-22 18:13:11
-categories: 
-- 技术
+categories:
+  - 技术
 tags:
-- Linux
-- supervisor
+  - Linux
+  - supervisor
+abbrlink: 18dcecaf
+date: 2022-09-22 18:13:11
 ---
 
 1.什么是supervisor

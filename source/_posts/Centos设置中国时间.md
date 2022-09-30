@@ -1,8 +1,9 @@
 ---
 title: Centos设置中国时间
-date: 2022-09-27 20:18:49
 tags: CST时间
 categories: 技术
+abbrlink: e356f91e
+date: 2022-09-27 20:18:49
 ---
 
 中国标准时间(CST)比世界协调时间(UTC)早08:00小时。该时区为标准时区时间，主要用于亚洲。
