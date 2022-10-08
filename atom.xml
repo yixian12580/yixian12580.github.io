@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yixian12580.github.io/"/>
-  <updated>2022-09-29T06:52:58.345Z</updated>
+  <updated>2022-10-08T06:17:41.124Z</updated>
   <id>https://yixian12580.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>openVPN证书到期</title>
+    <link href="https://yixian12580.github.io/2022/10c7d8d8c.html"/>
+    <id>https://yixian12580.github.io/2022/10c7d8d8c.html</id>
+    <published>2022-10-08T06:06:10.000Z</published>
+    <updated>2022-10-08T06:17:41.124Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天连接openVPN一直报错，连接失败，查看连接错误日志如下：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="openVPN" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/openVPN/"/>
+    
+    
+      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
+    
+      <category term="openVPN" scheme="https://yixian12580.github.io/tags/openVPN/"/>
+    
+  </entry>
   
   <entry>
     <title>phabricator服务迁移</title>
@@ -431,28 +455,6 @@
     
     
       <category term="MySQL" scheme="https://yixian12580.github.io/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux挂载硬盘错误</title>
-    <link href="https://yixian12580.github.io/2022/09e3336f7b.html"/>
-    <id>https://yixian12580.github.io/2022/09e3336f7b.html</id>
-    <published>2022-09-27T08:06:09.000Z</published>
-    <updated>2022-09-29T03:21:18.132Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Linux挂载U盘时，报错mount: unknown filesystem type ‘ntfs’ 错误。这是由于Linux上无法识别NTFS格式的分区的原因。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="分区" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%88%86%E5%8C%BA/"/>
-    
-    
-      <category term="挂载" scheme="https://yixian12580.github.io/tags/%E6%8C%82%E8%BD%BD/"/>
     
   </entry>
   
