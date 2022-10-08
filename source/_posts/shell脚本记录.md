@@ -858,7 +858,7 @@ fi
 
 ### 检查域名到期时间
 
-#### 脚本1
+#### 脚本1（python）
 
 ```python
 # -*- coding:utf-8 -*-
@@ -968,7 +968,7 @@ if __name__ == '__main__':
 
 ```
 
-#### 脚本2
+#### 脚本2（python）
 
 ```python
 # _*_ coding:utf-8 _*_
@@ -1053,7 +1053,7 @@ if __name__ == '__main__':
 
 ```
 
-### 检查ssl证书到期时间
+### 检查ssl证书到期时间（python）
 
 ```python
 # -*- coding:utf-8 -*-
@@ -1197,7 +1197,7 @@ echo "#########################################"
 
 ### 检查应用状态
 
-#### 检查应用在Google Play商店状态
+#### 检查应用在Google Play商店状态（python）
 
 ```python
 # 检查谷歌play应用的上线情况
@@ -1308,7 +1308,7 @@ def main():
 main()
 ```
 
-#### 检查应用在Apple Store商店状态
+#### 检查应用在Apple Store商店状态（python）
 
 ```python
 # 检查ios应用的上线情况
