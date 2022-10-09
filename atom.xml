@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yixian12580.github.io/"/>
-  <updated>2022-10-08T06:18:07.099Z</updated>
+  <updated>2022-10-09T09:22:35.987Z</updated>
   <id>https://yixian12580.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Gitlab服务迁移</title>
+    <link href="https://yixian12580.github.io/2022/1045efe774.html"/>
+    <id>https://yixian12580.github.io/2022/1045efe774.html</id>
+    <published>2022-10-09T09:16:44.000Z</published>
+    <updated>2022-10-09T09:22:35.987Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;由于Gitlab自身的兼容性问题，高版本的Gitlab无法恢复低版本备份的数据，所以新旧服务器Gitlab版本必须一致。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Gitlab" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Gitlab/"/>
+    
+    
+      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
+    
+      <category term="Gitlab" scheme="https://yixian12580.github.io/tags/Gitlab/"/>
+    
+  </entry>
   
   <entry>
     <title>openVPN证书到期</title>
@@ -433,28 +457,6 @@
     
     
       <category term="Redis" scheme="https://yixian12580.github.io/tags/Redis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>阿里云RDS数据备份及恢复至本地数据库</title>
-    <link href="https://yixian12580.github.io/2022/09bd0cd4b1.html"/>
-    <id>https://yixian12580.github.io/2022/09bd0cd4b1.html</id>
-    <published>2022-09-27T08:10:18.000Z</published>
-    <updated>2022-09-29T03:21:18.374Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;1.首先登陆阿里云平台，到云数据库RDS页面，点击对应实例，点击备份恢复。&lt;/p&gt;&lt;p&gt;2.右上角点击备份实例，备份完成后下载。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="数据库" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="MySQL" scheme="https://yixian12580.github.io/tags/MySQL/"/>
     
   </entry>
   
