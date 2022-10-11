@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[openVPN客户端安装失败]]></title>
     <url>%2F2022%2F10d0bf260f.html</url>
-    <content type="text"><![CDATA[安装openVPN时进度条卡在“tap install (tap0901) (may require confirmation)”，最后弹出错误“an error ocurred installing the TAP device driver”，网络适配器里没有安装成功此驱动“TAP-Windows Adapter V9”查看日志提示：1There are no TAP-Windows adapters on this system. You should be able to create a TAP-Windows adapter by going to Start -&gt; All Programs -&gt; TAP-Windows -&gt; Utilities -&gt; Add a new TAP-Windows virtual ethernet adapter.此问题是由于TAP网络适配器没有安装成功所导致的，单独安装TAP适配器也是报错。解决办法：1.重置网络（可能会导致断网可提前下载ccleaner）2.运行ccleaner，扫描注册表并选择修复所有问题。3.重新安装openVPN。]]></content>
+    <content type="text"><![CDATA[安装openVPN时进度条卡在“tap install (tap0901) (may require confirmation)”，最后弹出错误“an error ocurred installing the TAP device driver”查看日志提示：1There are no TAP-Windows adapters on this system. You should be able to create a TAP-Windows adapter by going to Start -&gt; All Programs -&gt; TAP-Windows -&gt; Utilities -&gt; Add a new TAP-Windows virtual ethernet adapter.此问题是由于TAP网络适配器没有安装成功所导致的，单独安装TAP适配器也是报错。解决办法：1.重置网络（可能会导致断网可提前下载ccleaner）2.运行ccleaner，扫描注册表并选择修复所有问题。3.重新安装openVPN。]]></content>
       <categories>
         <category>技术</category>
         <category>openVPN</category>

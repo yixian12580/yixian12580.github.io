@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yixian12580.github.io/"/>
-  <updated>2022-10-11T07:17:13.774Z</updated>
+  <updated>2022-10-11T07:22:19.696Z</updated>
   <id>https://yixian12580.github.io/</id>
   
   <author>
@@ -21,11 +21,11 @@
     <link href="https://yixian12580.github.io/2022/10d0bf260f.html"/>
     <id>https://yixian12580.github.io/2022/10d0bf260f.html</id>
     <published>2022-10-11T07:07:37.000Z</published>
-    <updated>2022-10-11T07:17:13.774Z</updated>
+    <updated>2022-10-11T07:22:19.696Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;安装openVPN时进度条卡在“tap install (tap0901) (may require confirmation)”，最后弹出错误“an error ocurred installing the TAP device driver”，网络适配器里没有安装成功此驱动“TAP-Windows Adapter V9”&lt;/p&gt;
+      &lt;p&gt;安装openVPN时进度条卡在“tap install (tap0901) (may require confirmation)”，最后弹出错误“an error ocurred installing the TAP device driver”&lt;/p&gt;
     
     </summary>
     
