@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yixian12580.github.io/"/>
-  <updated>2022-10-09T09:24:35.743Z</updated>
+  <updated>2022-10-11T07:17:13.774Z</updated>
   <id>https://yixian12580.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>openVPN客户端安装失败 </title>
+    <link href="https://yixian12580.github.io/2022/10d0bf260f.html"/>
+    <id>https://yixian12580.github.io/2022/10d0bf260f.html</id>
+    <published>2022-10-11T07:07:37.000Z</published>
+    <updated>2022-10-11T07:17:13.774Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;安装openVPN时进度条卡在“tap install (tap0901) (may require confirmation)”，最后弹出错误“an error ocurred installing the TAP device driver”，网络适配器里没有安装成功此驱动“TAP-Windows Adapter V9”&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="openVPN" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/openVPN/"/>
+    
+    
+      <category term="openVPN" scheme="https://yixian12580.github.io/tags/openVPN/"/>
+    
+      <category term="Windows" scheme="https://yixian12580.github.io/tags/Windows/"/>
+    
+  </entry>
   
   <entry>
     <title>Gitlab服务迁移</title>
@@ -426,28 +450,6 @@
     <summary type="html">
     
       &lt;p&gt;REmote DIctionary Server(Redis) 是一个由 Salvatore Sanfilippo 写的 key-value 存储系统，是跨平台的非关系型数据库。&lt;/p&gt;&lt;p&gt;Redis 是一个开源的使用 ANSI C 语言编写、遵守 BSD 协议、支持网络、可基于内存、分布式、可选持久性的键值对(Key-Value)存储数据库，并提供多种语言的 API。&lt;/p&gt;&lt;p&gt;Redis 通常被称为数据结构服务器，因为值（value）可以是字符串(String)、哈希(Hash)、列表(list)、集合(sets)和有序集合(sorted sets)等类型。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="数据库" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="Redis" scheme="https://yixian12580.github.io/tags/Redis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>redis-port工具</title>
-    <link href="https://yixian12580.github.io/2022/0966cd2147.html"/>
-    <id>https://yixian12580.github.io/2022/0966cd2147.html</id>
-    <published>2022-09-27T08:20:54.000Z</published>
-    <updated>2022-09-29T07:01:24.799Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Redis数据持久化方式有AOF和RDB两种，这两种方式各有优缺点。AOF方式会生成appendonly.aof文件，记录执行的命令操作日志。RDB方式会生成dump.rdb文件，按照配置条件触发保存数据快照。&lt;/p&gt;
     
     </summary>
     
