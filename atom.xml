@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yixian12580.github.io/"/>
-  <updated>2022-10-11T07:22:19.696Z</updated>
+  <updated>2022-10-17T08:48:09.787Z</updated>
   <id>https://yixian12580.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Google浏览器翻译失败</title>
+    <link href="https://yixian12580.github.io/2022/104415a2fd.html"/>
+    <id>https://yixian12580.github.io/2022/104415a2fd.html</id>
+    <published>2022-10-17T08:43:10.000Z</published>
+    <updated>2022-10-17T08:48:09.787Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;谷歌浏览器默认使用的翻译网站域名为translate.google.com IP为203.208.46.200&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
+    
+    
+      <category term="google" scheme="https://yixian12580.github.io/tags/google/"/>
+    
+      <category term="翻译" scheme="https://yixian12580.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+  </entry>
   
   <entry>
     <title>openVPN客户端安装失败 </title>
@@ -437,28 +459,6 @@
     
     
       <category term="MongoDB" scheme="https://yixian12580.github.io/tags/MongoDB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux系统安装Redis</title>
-    <link href="https://yixian12580.github.io/2022/09ca3d3aa4.html"/>
-    <id>https://yixian12580.github.io/2022/09ca3d3aa4.html</id>
-    <published>2022-09-27T08:28:08.000Z</published>
-    <updated>2022-09-29T03:21:18.143Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;REmote DIctionary Server(Redis) 是一个由 Salvatore Sanfilippo 写的 key-value 存储系统，是跨平台的非关系型数据库。&lt;/p&gt;&lt;p&gt;Redis 是一个开源的使用 ANSI C 语言编写、遵守 BSD 协议、支持网络、可基于内存、分布式、可选持久性的键值对(Key-Value)存储数据库，并提供多种语言的 API。&lt;/p&gt;&lt;p&gt;Redis 通常被称为数据结构服务器，因为值（value）可以是字符串(String)、哈希(Hash)、列表(list)、集合(sets)和有序集合(sorted sets)等类型。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="数据库" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="Redis" scheme="https://yixian12580.github.io/tags/Redis/"/>
     
   </entry>
   

@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Google浏览器翻译失败]]></title>
+    <url>%2F2022%2F104415a2fd.html</url>
+    <content type="text"><![CDATA[谷歌浏览器默认使用的翻译网站域名为translate.google.com IP为203.208.46.200请求超时是很正常的，毕竟网站服务器是国外谷歌设有国内的翻译网站translate.google.cn IP为 203.208.40.66这个网站是能够正常ping同和请求访问的解决方法：打开C:\Windows\System32\drivers\etc目录下的hosts文件。该文件需要管理员权限，或者是只读。无法更改内容。此时进行文件的属性权限修改让管理员拿到所有权就可以进行修改或者把文件复制到桌面，修改完后再覆盖回去。在hosts文件中增加以下两行内容即可:12203.208.40.66 translate.google.com203.208.40.66 translate.googleapis.com使用win + R键运行cmd 窗口输入指令1ipconfig /flushdns至此，就可以使用翻译功能。]]></content>
+      <categories>
+        <category>桌面</category>
+      </categories>
+      <tags>
+        <tag>google</tag>
+        <tag>翻译</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[openVPN客户端安装失败]]></title>
     <url>%2F2022%2F10d0bf260f.html</url>
     <content type="text"><![CDATA[安装openVPN时进度条卡在“tap install (tap0901) (may require confirmation)”，最后弹出错误“an error ocurred installing the TAP device driver”查看日志提示：1There are no TAP-Windows adapters on this system. You should be able to create a TAP-Windows adapter by going to Start -&gt; All Programs -&gt; TAP-Windows -&gt; Utilities -&gt; Add a new TAP-Windows virtual ethernet adapter.此问题是由于TAP网络适配器没有安装成功所导致的，单独安装TAP适配器也是报错。解决办法：1.重置网络（可能会导致断网可提前下载ccleaner）2.运行ccleaner，扫描注册表并选择修复所有问题。3.重新安装openVPN。]]></content>
