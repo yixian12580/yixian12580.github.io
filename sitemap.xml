@@ -2,6 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yixian12580.github.io/2022/113409a5de.html</loc>
+    
+    <lastmod>2022-11-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yixian12580.github.io/2022/1174c5f91.html</loc>
+    
+    <lastmod>2022-11-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yixian12580.github.io/2022/11d46c8f26.html</loc>
+    
+    <lastmod>2022-11-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yixian12580.github.io/2022/11473314d.html</loc>
+    
+    <lastmod>2022-11-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yixian12580.github.io/2022/111980c424.html</loc>
+    
+    <lastmod>2022-11-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://yixian12580.github.io/2022/104415a2fd.html</loc>
     
     <lastmod>2022-10-17</lastmod>
@@ -562,7 +607,7 @@
 
   <url>
     <loc>https://yixian12580.github.io/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -570,301 +615,336 @@
   
   <url>
     <loc>https://yixian12580.github.io/tags/VMware/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/%E7%BD%91%E5%8D%A1/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/Linux/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/supervisor/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/frp/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/%E5%88%86%E5%8C%BA/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/Docker/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/zabbix/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yixian12580.github.io/tags/wiki/</loc>
+    <lastmod>2022-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yixian12580.github.io/tags/%E6%8F%92%E4%BB%B6%E7%A0%B4%E8%A7%A3/</loc>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/CST%E6%97%B6%E9%97%B4/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/phabricator/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/code-review/</loc>
-    <lastmod>2022-10-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://yixian12580.github.io/tags/Gitlab/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/DNS/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yixian12580.github.io/tags/Gitlab/</loc>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/google/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/%E7%BF%BB%E8%AF%91/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/%E6%8C%82%E8%BD%BD/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/%E7%A3%81%E7%9B%98/</loc>
-    <lastmod>2022-10-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://yixian12580.github.io/tags/%E8%84%9A%E6%9C%AC/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/MongoDB/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://yixian12580.github.io/tags/SVN/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <loc>https://yixian12580.github.io/tags/%E8%84%9A%E6%9C%AC/</loc>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/openVPN/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://yixian12580.github.io/tags/Redis/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <loc>https://yixian12580.github.io/tags/SVN/</loc>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/%E5%85%B1%E4%BA%AB/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/%E9%9D%99%E6%80%81ip/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yixian12580.github.io/tags/Redis/</loc>
+    <lastmod>2022-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yixian12580.github.io/tags/jira/</loc>
+    <lastmod>2022-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yixian12580.github.io/tags/%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F/</loc>
+    <lastmod>2022-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yixian12580.github.io/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E6%AE%B5/</loc>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/MySQL/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/jumpserver/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/Nginx/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/ssi/</loc>
-    <lastmod>2022-10-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://yixian12580.github.io/tags/rewrite/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/Windows/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yixian12580.github.io/tags/rewrite/</loc>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/%E7%BE%A4%E5%8F%91%E9%82%AE%E4%BB%B6/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/SSH%E5%85%8D%E5%AF%86/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/%E8%80%B3%E6%9C%BA/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/%E9%82%AE%E7%AE%B1/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/%E7%94%98%E7%89%B9%E5%9B%BE/</loc>
-    <lastmod>2022-10-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://yixian12580.github.io/tags/Fastdfs/</loc>
-    <lastmod>2022-10-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://yixian12580.github.io/tags/%E6%89%93%E5%8D%B0%E6%9C%BA/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/%E7%B3%BB%E7%BB%9F/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yixian12580.github.io/tags/Fastdfs/</loc>
+    <lastmod>2022-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yixian12580.github.io/tags/%E6%89%93%E5%8D%B0%E6%9C%BA/</loc>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/%E9%BB%91%E5%B1%8F/</loc>
-    <lastmod>2022-10-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://yixian12580.github.io/tags/%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/Linux%E7%B3%BB%E7%BB%9F/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yixian12580.github.io/tags/%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C/</loc>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/tags/%E6%8F%92%E4%BB%B6/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -873,154 +953,168 @@
   
   <url>
     <loc>https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/VMware/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/zabbix/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Confluence/</loc>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/frp/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/phabricator/</loc>
-    <lastmod>2022-10-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Docker/</loc>
-    <lastmod>2022-10-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%88%86%E5%8C%BA/</loc>
-    <lastmod>2022-10-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Gitlab/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/DNS/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E8%84%9A%E6%9C%AC/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <loc>https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%88%86%E5%8C%BA/</loc>
+    <lastmod>2022-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Docker/</loc>
+    <lastmod>2022-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Gitlab/</loc>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/SVN/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <loc>https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E8%84%9A%E6%9C%AC/</loc>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/openVPN/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/SVN/</loc>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/Mac/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/jira/</loc>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Nginx/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/SSH/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/%E6%95%85%E9%9A%9C/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/%E9%82%AE%E7%AE%B1/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%9B%BE%E5%BA%8A/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/%E6%89%93%E5%8D%B0%E6%9C%BA/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/%E7%B3%BB%E7%BB%9F/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

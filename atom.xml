@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yixian12580.github.io/"/>
-  <updated>2022-10-17T08:48:41.333Z</updated>
+  <updated>2022-11-08T02:39:30.420Z</updated>
   <id>https://yixian12580.github.io/</id>
   
   <author>
@@ -15,6 +15,132 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>jira解决issue界面添加自定义字段</title>
+    <link href="https://yixian12580.github.io/2022/113409a5de.html"/>
+    <id>https://yixian12580.github.io/2022/113409a5de.html</id>
+    <published>2022-11-08T02:34:44.000Z</published>
+    <updated>2022-11-08T02:39:30.420Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;接上篇，研发要求问题单点击已解决后需要强制填写“云帆服务器”字段才可以提交。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="jira" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/jira/"/>
+    
+    
+      <category term="jira" scheme="https://yixian12580.github.io/tags/jira/"/>
+    
+      <category term="自定义字段" scheme="https://yixian12580.github.io/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E6%AE%B5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jira问题单添加自定义字段</title>
+    <link href="https://yixian12580.github.io/2022/1174c5f91.html"/>
+    <id>https://yixian12580.github.io/2022/1174c5f91.html</id>
+    <published>2022-11-08T02:15:55.000Z</published>
+    <updated>2022-11-08T02:22:38.979Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;研发要求要在缺陷类的问题单里加一个”云帆服务器“的字段。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="jira" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/jira/"/>
+    
+    
+      <category term="jira" scheme="https://yixian12580.github.io/tags/jira/"/>
+    
+      <category term="自定义字段" scheme="https://yixian12580.github.io/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E6%AE%B5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jira修改时间显示格式</title>
+    <link href="https://yixian12580.github.io/2022/11d46c8f26.html"/>
+    <id>https://yixian12580.github.io/2022/11d46c8f26.html</id>
+    <published>2022-11-08T02:03:54.000Z</published>
+    <updated>2022-11-08T02:15:07.621Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="jira" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/jira/"/>
+    
+    
+      <category term="jira" scheme="https://yixian12580.github.io/tags/jira/"/>
+    
+      <category term="时间格式" scheme="https://yixian12580.github.io/tags/%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jira插件破解</title>
+    <link href="https://yixian12580.github.io/2022/11473314d.html"/>
+    <id>https://yixian12580.github.io/2022/11473314d.html</id>
+    <published>2022-11-08T01:50:30.000Z</published>
+    <updated>2022-11-08T01:56:50.611Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我使用的jira版本是7.13.0，与confluence的破解方式不一样。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="jira" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/jira/"/>
+    
+    
+      <category term="插件破解" scheme="https://yixian12580.github.io/tags/%E6%8F%92%E4%BB%B6%E7%A0%B4%E8%A7%A3/"/>
+    
+      <category term="jira" scheme="https://yixian12580.github.io/tags/jira/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Confluence插件破解</title>
+    <link href="https://yixian12580.github.io/2022/111980c424.html"/>
+    <id>https://yixian12580.github.io/2022/111980c424.html</id>
+    <published>2022-11-08T01:42:12.000Z</published>
+    <updated>2022-11-08T01:50:48.015Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本章说一下confluence的插件如何破解。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Confluence" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Confluence/"/>
+    
+    
+      <category term="wiki" scheme="https://yixian12580.github.io/tags/wiki/"/>
+    
+      <category term="插件破解" scheme="https://yixian12580.github.io/tags/%E6%8F%92%E4%BB%B6%E7%A0%B4%E8%A7%A3/"/>
+    
+  </entry>
   
   <entry>
     <title>Google浏览器翻译失败</title>
@@ -347,118 +473,6 @@
     
     
       <category term="磁盘" scheme="https://yixian12580.github.io/tags/%E7%A3%81%E7%9B%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Docker镜像的导入导出</title>
-    <link href="https://yixian12580.github.io/2022/09153a44f6.html"/>
-    <id>https://yixian12580.github.io/2022/09153a44f6.html</id>
-    <published>2022-09-27T10:21:53.000Z</published>
-    <updated>2022-09-29T03:21:18.091Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Docker镜像的导入导出&lt;/p&gt;&lt;p&gt;本文介绍Docker镜像的导入导出，用于迁移、备份、升级等场景&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="Docker" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Docker/"/>
-    
-    
-      <category term="Docker" scheme="https://yixian12580.github.io/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>jumpserver服务迁移</title>
-    <link href="https://yixian12580.github.io/2022/092b689438.html"/>
-    <id>https://yixian12580.github.io/2022/092b689438.html</id>
-    <published>2022-09-27T09:39:37.000Z</published>
-    <updated>2022-09-29T03:21:18.208Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;需求：把jumpserver服务搬迁到另一台服务器上&lt;/p&gt;&lt;p&gt;原服务器ip：172.25.0.237&lt;/p&gt;&lt;p&gt;新服务器ip：172.22.12.246&lt;/p&gt;&lt;p&gt;由于jumpserver服务是在docker中启动的，所以直接把docker镜像搬到新服务器里跑就行。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="Docker" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Docker/"/>
-    
-    
-      <category term="Docker" scheme="https://yixian12580.github.io/tags/Docker/"/>
-    
-      <category term="jumpserver" scheme="https://yixian12580.github.io/tags/jumpserver/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>阿里云Redis数据备份及恢复至自建数据库</title>
-    <link href="https://yixian12580.github.io/2022/09e66e49e2.html"/>
-    <id>https://yixian12580.github.io/2022/09e66e49e2.html</id>
-    <published>2022-09-27T09:17:09.000Z</published>
-    <updated>2022-09-29T06:59:26.512Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;1.登录阿里云控制台，点击云数据库Redis，点击对应实例，选择备份恢复，点击备份实例，下载备份文件。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="数据库" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="Redis" scheme="https://yixian12580.github.io/tags/Redis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>阿里云MongoDB物理备份文件恢复至自建数据库</title>
-    <link href="https://yixian12580.github.io/2022/093109e84d.html"/>
-    <id>https://yixian12580.github.io/2022/093109e84d.html</id>
-    <published>2022-09-27T08:55:19.000Z</published>
-    <updated>2022-09-29T03:21:18.359Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;1.登录阿里云，进入云数据库MongoDB模块，点击对应实例，选择备份与恢复&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="数据库" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="MongoDB" scheme="https://yixian12580.github.io/tags/MongoDB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux系统安装MongoDB</title>
-    <link href="https://yixian12580.github.io/2022/09ce2728e7.html"/>
-    <id>https://yixian12580.github.io/2022/09ce2728e7.html</id>
-    <published>2022-09-27T08:41:52.000Z</published>
-    <updated>2022-09-29T03:21:18.138Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;MongoDB 是由C++语言编写的，是一个基于分布式文件存储的开源数据库系统。&lt;/p&gt;&lt;p&gt;在高负载的情况下，添加更多的节点，可以保证服务器性能。&lt;/p&gt;&lt;p&gt;MongoDB 旨在为WEB应用提供可扩展的高性能数据存储解决方案。&lt;/p&gt;&lt;p&gt;MongoDB 将数据存储为一个文档，数据结构由键值(key=&amp;gt;value)对组成。MongoDB 文档类似于 JSON 对象。字段值可以包含其他文档，数组及文档数组。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="数据库" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="MongoDB" scheme="https://yixian12580.github.io/tags/MongoDB/"/>
     
   </entry>
   

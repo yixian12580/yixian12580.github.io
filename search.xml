@@ -1,6 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[jira解决issue界面添加自定义字段]]></title>
+    <url>%2F2022%2F113409a5de.html</url>
+    <content type="text"><![CDATA[接上篇，研发要求问题单点击已解决后需要强制填写“云帆服务器”字段才可以提交。实现方法：1.点解项目设置-工作流，编辑对应问题类型的工作流：2.点击链接为已解决的工作流动作：3.点击编辑：4.链接到对应的界面（需提前在界面处创建好对应的界面，此处已创建）：5.校验条件处添加校验器：6.点击发布：此时点击解决问题会弹出界面，必须填写云帆服务器名称才可以提交单子：]]></content>
+      <categories>
+        <category>技术</category>
+        <category>jira</category>
+      </categories>
+      <tags>
+        <tag>jira</tag>
+        <tag>自定义字段</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[jira问题单添加自定义字段]]></title>
+    <url>%2F2022%2F1174c5f91.html</url>
+    <content type="text"><![CDATA[研发要求要在缺陷类的问题单里加一个”云帆服务器“的字段。具体实现方法如下：1.进入需要设置的jira项目，点击项目设置-字段-编辑2.在自定义字段里添加云帆服务器：3.点击字段配置-增加字段配置-配置，云帆服务器选项处可以选择是否显示以及是否必选（为了不影响其他项目，可以复制一个默认的配置，然后修改配置，再把项目关联到这个方案）。 4.点击字段配置方案，创建一个方案，引用刚刚创建的字段配置：5.字段配置了，需要在创建问题单的时候显示出来，找到项目关联的方案（也可复制一个方案，单独修改，以免修改到其他项目），点击界面，找到需要配置的界面-配置，再加入刚创建的字段 6.在创建问题的时候就会显示对应的字段了：]]></content>
+      <categories>
+        <category>技术</category>
+        <category>jira</category>
+      </categories>
+      <tags>
+        <tag>jira</tag>
+        <tag>自定义字段</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[jira修改时间显示格式]]></title>
+    <url>%2F2022%2F11d46c8f26.html</url>
+    <content type="text"><![CDATA[由于jira系统默认时间会采用“14/Jul/22 2:02 PM”的样式，跟我们日常所使用的格式不太一致，看起很不习惯 ，在这里说明一下在JIRA中如何进行日期格式的调整：想调整2018-12-31和2018-12-31 23:22:29，可以按以下步骤进行设置1.系统管理员登录系统后台，点击系统-外观2.在日期/时间格式中将时间格式进行调整更新完之后时间显示如下：还有在创建问题单的时候，需要选择日期，选择完之后还是显示之前默认的“14/Jul/22 2:02 PM”的格式：如果需要2018-12-31和2018-12-31 23:22:29，可以按以下步骤进行设置：管理员登录系统后台&gt;&gt;系统&gt;&gt;般配置&gt;&gt;高级设置修改以下项：更新完后显示如下：另外，开发要求jira平台问题单时间节点显示为具体的时间，而不是几天前：解决方法：1.编辑/usr/local/jira/atlassian-jira/WEB-INF/classes/jpm.xml文件2.找到对应的参数(key)：jira.lf.date.relativize3.将对应的值(default-value)改为：false4.重新启动JIRA可以看到时间格式已修改：]]></content>
+      <categories>
+        <category>技术</category>
+        <category>jira</category>
+      </categories>
+      <tags>
+        <tag>jira</tag>
+        <tag>时间格式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[jira插件破解]]></title>
+    <url>%2F2022%2F11473314d.html</url>
+    <content type="text"><![CDATA[我使用的jira版本是7.13.0，与confluence的破解方式不一样。破解jira服务：jira服务器授权更新：将atlassian-extras-3.2.jar替换掉/usr/local/jira/atlassian/jira/atlassian-jira/WEB-INF/lib/目录下对应jar包，重启jira服务即可。jira插件授权更新：使用的破解文件是：atlassian-universal-plugin-manager-plugin-2.22.9.jarJIRA V7.13安装后默认的atlassian-universal-plugin-manager-plugin版本就是2.22.9方法很简单，直接将这个破解文件覆盖原来的文件，路径在：/usr/local/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins然后重启jira服务。插件破解原理：atlassian-universal-plugin-manager-plugin插件是进行插件管理的，只需要破解了这个插件，剩下的所有插件都自动破解完成了上面两个文件已配置好，直接到插件市场找你想要的插件找到想要的插件后，免费试用，转到官网得到一个试用的license，把这个license直接黏贴到JIRA后台的插件管理中输入插件license的地方，会发现就破解了，插件的deadline就是你jira应用的deadline：2033年6月5日（前提是jira已经破解了）注意，不要去升级插件：atlassian-universal-plugin-manager-plugin，就让版本一直是2.22.9，升级了插件就用不了了如果升级了，可以用如下方法：12#cd /#find . -name *manager-pl* |grep jira返回如下：12345678910find: ‘./proc/67008’: No such file or directoryfind: ‘./proc/67009’: No such file or directoryfind: ‘./proc/67010’: No such file or directoryfind: ‘./proc/67011’: No such file or directory./var/atlassian/application-data/jira/plugins/installed-plugins/plugin.7291572728482458613.atlassian-universal-plugin-manager-plugin-3.0.1.jar./var/atlassian/application-data/jira/plugins/.osgi-plugins/transformed-plugins/atlassian-universal-plugin-manager-plugin-2.22.9_1543375156000.jar./var/atlassian/application-data/jira/plugins/.osgi-plugins/transformed-plugins/plugin.7291572728482458613.atlassian-universal-plugin-manager-plugin-3.0.1_1545962501000.jar./var/atlassian/application-data/jira/plugins/.osgi-plugins/transformed-plugins/atlassian-universal-plugin-manager-plugin-2.22.9_1545974690000.jar./opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins/atlassian-universal-plugin-manager-plugin-2.22.9.jar./opt/atlassian/jira/temp/plugin.7291572728482458613.atlassian-universal-plugin-manager-plugin-3.0.1.jar把这些jar文件都删除，再把文件：atlassian-universal-plugin-manager-plugin-2.22.9.jar 放/opt/atlassian/jira/atlassian-jira/WEB-INF/atlassian-bundled-plugins 目录下，重启jira.如果想修改Jira破解方式跟Confluence一样，需要先从数据库中得到 licences ，用破解包生成的 licences 替换。生成 licenses 进入后台管理面板页，在系统信息中获得服务器ID (管理——系统——系统信息——服务器 ID) 之后，参照wiki插件破解方式获取激活码(license)，保存备用。修改 licenses 我们需要进入数据库，使用上文得到的激活码（license）来替换原有的 license。登陆数据库123456789101112# 执行SELECT * FROM productlicense\G获得原来的激活信息（别忘了备份旧的license信息，方便回退）： MySQL [jiradb]&gt; SELECT * FROM productlicense\G*************************** 1. row *************************** ID: 10200LICENSE: AAABZg0xxxx*************************** 2. row *************************** ID: 10201LICENSE: AAABcQ0ODAoxxxx # 利用上面获取licences的方式获取licences后，更新记录update productlicense set license ='xxxxx' WHERE id=10200;update productlicense set license ='xxxxx' WHERE id=10201;修改启动命令停止 jira 后，在 setenv.sh 文件末尾加入：1export JAVA_OPTS="-javaagent:/usr/local/confluence/ $&#123;JAVA_OPTS&#125;"重新启动即可。]]></content>
+      <categories>
+        <category>技术</category>
+        <category>jira</category>
+      </categories>
+      <tags>
+        <tag>插件破解</tag>
+        <tag>jira</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Confluence插件破解]]></title>
+    <url>%2F2022%2F111980c424.html</url>
+    <content type="text"><![CDATA[本章说一下confluence的插件如何破解。环境配置1.下载atlassian-agent.jar放置在你不会删除的任意位置。全局设置：123[root@nbu upgrade-confluence]# tailf -1 /etc/profileexport JAVA_OPTS="-javaagent:/usr/local/confluence/atlassian-agent.jar $&#123;JAVA_OPTS&#125;"[root@nbu upgrade-confluence]# source /etc/profile或者：可以把：export JAVA_OPTS=”-javaagent:/usr/local/confluence/ ${JAVA_OPTS}”这样的命令放到服务安装所在bin目录下的setenv.sh或setenv.bat（供windows使用）中。或者：还可以直接命令行执行：JAVA_OPTS=”-javaagent:/usr/local/confluence/atlassian-agent.jar” /path/to/start-confluence.sh来启动服务。3.重启服务4.查看是否配置成功，使用ps -ef |grep java查看是否带有 -javaagent参数，且查看日志catalina.out，搜索agent working，无报错情况。破解步骤1.在确认环境配置好的前提下，执行以下命令，这里以confluence的mohamicorp-render-markdown 插件为例。1java -jar atlassian-agent.jar -p mohamicorp-render-markdown -m admin@chuangyue.cn -n name -o https://mohami.io/ -s B93T-TNVL-Q1QC-LZ3N关于参数详情可以运行java -jar atlassian-agent.jar查看。-p 指的是应用密钥/插件关键字，这里mohamicorp-render-markdown-m 指的是邮箱，随便填写即可。-n 指的是名字，随意填写-o 指的是提供提供该产品的开发者，具体指的是上图中的开发者。-s 是你的server-id,可以在的授权细节中查看。运行后会得到如下所示：1234567891011121314151617[root@nbu upgrade-confluence]# java -jar atlassian-agent.jar -p mohamicorp-render-markdown -m admin@chuangyue.cn -n name -o https://mohami.io/ -s B93T-TNVL-Q1QC-LZ3N =========================================================== Atlassian Crack Agent ============== https://zhile.io ============== QQ Group: 30347511 =========================================================== Your license code(Don't copy this line!!!): AAABTQ0ODAoPeJx9kUFvgjAYhu/9FSQ7VylkTk2abEMOJohzoIfdavmUZlDI1+LGfv06wcuSLWn7HZo+75und3kHXgatx3yPzZYsWIYzL8pyL/DZgqRdfQTcnvYG0HDKyEYobUELLSH+bBX2K2GBB/58Qf0Ht0iiJGjzx2XdlKJWssGWIugCkNYC34vmQ0/AYbFFZYBb7ICswEhUrVWN5ntdqVpZKLxqoHvH3iutbc1yOv0qVQUT1fwHz6xAh+cnURkgUaOtkDYVNXDtDpIBXgDXK/68CHOap4eE7tguoslbmJItnoVWRlyb3EKHLJc6vdFiZ6bioqiVfpRlJ/S572AiNYkQrm9HF8y5WFDmkyxOuds0YfezOfNDN/wwIPFFVN0QNrQdheZ9C9fG0XaziV+j9VNCXjqUpTDwG/2PCddUXUbFo8yD+9qfuOAb+2SxgDAtAhUAkNaZ1D/IFPRzMP4dpn4dsrEtQ60CFHDHThIq23PE4kdA6aHvKzM9SM7wX02gg然后复制生成的license，完成破解。此方法破解可以在插件升级后依旧是破解状态。异常处理如果你之前不是一个干净的jira或confluence，你加了java环境变量后可能会起不来，通常看日志里会报License问题，原因在于你之前已经录进了一些license，而这license与现在的agent冲突，解决的办法是：根据日志里报出的license，你去你的数据库里搜，找到并删除，之后重启进入系统后，用它的keygen重新算license，然后输入就可以了。]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Confluence</category>
+      </categories>
+      <tags>
+        <tag>wiki</tag>
+        <tag>插件破解</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Google浏览器翻译失败]]></title>
     <url>%2F2022%2F104415a2fd.html</url>
     <content type="text"><![CDATA[谷歌浏览器默认使用的翻译网站域名为translate.google.com IP为203.208.46.200请求超时是很正常的，毕竟网站服务器是国外谷歌设有国内的翻译网站translate.google.cn IP为 203.208.40.66这个网站是能够正常ping同和请求访问的解决方法：打开C:\Windows\System32\drivers\etc目录下的hosts文件。该文件需要管理员权限，或者是只读。无法更改内容。此时进行文件的属性权限修改让管理员拿到所有权就可以进行修改或者把文件复制到桌面，修改完后再覆盖回去。在hosts文件中增加以下两行内容即可:12203.208.40.66 translate.google.com203.208.40.66 translate.googleapis.com使用win + R键运行cmd 窗口输入指令1ipconfig /flushdns至此，就可以使用翻译功能。]]></content>
