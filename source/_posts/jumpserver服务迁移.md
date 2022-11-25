@@ -29,7 +29,7 @@ date: 2022-09-27 17:39:37
 2.把容器打包为镜像：
 
 ```
-commit -m "jumpserver backup" 67b073d01232 jumpserverbak:v2.7.0
+docker commit -m "jumpserver backup" 67b073d01232 jumpserverbak:v2.7.0
 ```
 
 3.导出刚打包的镜像：
