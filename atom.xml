@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yixian12580.github.io/"/>
-  <updated>2022-11-14T07:57:00.030Z</updated>
+  <updated>2022-11-25T07:53:48.460Z</updated>
   <id>https://yixian12580.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Windows图文界面使用SVN</title>
+    <link href="https://yixian12580.github.io/2022/1154f25ee7.html"/>
+    <id>https://yixian12580.github.io/2022/1154f25ee7.html</id>
+    <published>2022-11-25T07:04:31.000Z</published>
+    <updated>2022-11-25T07:53:48.460Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前已经出过一篇Linux系统使用SVN的教程，可&lt;a href=&quot;https://blog.ybangwl.com/2022/096cbb58b6.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;点此&lt;/a&gt;查看，今天出一下Windows图形界面的教程。需要使用TortoiseSVN软件。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="SVN" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/SVN/"/>
+    
+    
+      <category term="TortoiseSVN" scheme="https://yixian12580.github.io/tags/TortoiseSVN/"/>
+    
+      <category term="SVN客户端" scheme="https://yixian12580.github.io/tags/SVN%E5%AE%A2%E6%88%B7%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>Mac部署nexus服务及nexus迁移</title>
@@ -455,30 +479,6 @@
     
     
       <category term="CST时间" scheme="https://yixian12580.github.io/tags/CST%E6%97%B6%E9%97%B4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>shell脚本实现一对一群发带附件邮件</title>
-    <link href="https://yixian12580.github.io/2022/098e42df72.html"/>
-    <id>https://yixian12580.github.io/2022/098e42df72.html</id>
-    <published>2022-09-27T12:04:36.000Z</published>
-    <updated>2022-09-29T07:02:29.728Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;有时候我们有一对一发送邮件的需求，但是一个一个发太耗时间了，而这种耗时间的操作我们都可以交给机器来完成。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="脚本" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E8%84%9A%E6%9C%AC/"/>
-    
-    
-      <category term="脚本" scheme="https://yixian12580.github.io/tags/%E8%84%9A%E6%9C%AC/"/>
-    
-      <category term="群发邮件" scheme="https://yixian12580.github.io/tags/%E7%BE%A4%E5%8F%91%E9%82%AE%E4%BB%B6/"/>
     
   </entry>
   
