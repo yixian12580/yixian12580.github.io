@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yixian12580.github.io/"/>
-  <updated>2022-11-29T09:48:05.738Z</updated>
+  <updated>2023-01-18T03:01:32.569Z</updated>
   <id>https://yixian12580.github.io/</id>
   
   <author>
@@ -17,11 +17,71 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>开发者平台冷知识</title>
+    <link href="https://yixian12580.github.io/2023/017f1808df.html"/>
+    <id>https://yixian12580.github.io/2023/017f1808df.html</id>
+    <published>2023-01-18T02:46:58.000Z</published>
+    <updated>2023-01-18T03:01:32.569Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Google Play和Apple Store是海外的主流应用商店，今天详细说说一些比较冷门问题。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="应用市场" scheme="https://yixian12580.github.io/categories/%E5%BA%94%E7%94%A8%E5%B8%82%E5%9C%BA/"/>
+    
+    
+      <category term="应用上架" scheme="https://yixian12580.github.io/tags/%E5%BA%94%E7%94%A8%E4%B8%8A%E6%9E%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Google开发者账号申请流程</title>
+    <link href="https://yixian12580.github.io/2023/011df77120.html"/>
+    <id>https://yixian12580.github.io/2023/011df77120.html</id>
+    <published>2023-01-18T01:42:13.000Z</published>
+    <updated>2023-01-18T01:54:25.276Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Google商店作为海外最大的应用商店，今天来说说如何申请Google开发者账号，上架我们的APP到谷歌商店。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="应用市场" scheme="https://yixian12580.github.io/categories/%E5%BA%94%E7%94%A8%E5%B8%82%E5%9C%BA/"/>
+    
+    
+      <category term="应用上架" scheme="https://yixian12580.github.io/tags/%E5%BA%94%E7%94%A8%E4%B8%8A%E6%9E%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Google应用商店上架流程</title>
+    <link href="https://yixian12580.github.io/2023/011a846b2.html"/>
+    <id>https://yixian12580.github.io/2023/011a846b2.html</id>
+    <published>2023-01-18T01:37:57.000Z</published>
+    <updated>2023-01-18T02:43:59.745Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;国内的应用商店上架流程都大同小异，今天来说一下Google应用商店的上架流程。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="应用市场" scheme="https://yixian12580.github.io/categories/%E5%BA%94%E7%94%A8%E5%B8%82%E5%9C%BA/"/>
+    
+    
+      <category term="应用上架" scheme="https://yixian12580.github.io/tags/%E5%BA%94%E7%94%A8%E4%B8%8A%E6%9E%B6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>远程挂载Linux目录</title>
     <link href="https://yixian12580.github.io/2022/11a4e0a084.html"/>
     <id>https://yixian12580.github.io/2022/11a4e0a084.html</id>
     <published>2022-11-29T09:43:14.000Z</published>
-    <updated>2022-11-29T09:48:05.738Z</updated>
+    <updated>2022-11-29T09:48:32.811Z</updated>
     
     <summary type="html">
     
@@ -419,68 +479,6 @@
     
     
       <category term="DNS" scheme="https://yixian12580.github.io/tags/DNS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用EwoMail搭建邮件服务器</title>
-    <link href="https://yixian12580.github.io/2022/09cfa5bedf.html"/>
-    <id>https://yixian12580.github.io/2022/09cfa5bedf.html</id>
-    <published>2022-09-27T12:58:10.000Z</published>
-    <updated>2022-11-25T09:47:04.329Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;随着移动互联网的普及，邮件服务使用的场景越来越少。但是注册帐号的时候，还是需要邮箱地址。市面上免费的邮箱很多，不过一般需要绑定手机号，如果想在同一个邮箱服务商那注册多个邮箱帐号，需要准备多个手机号，这非常的烦人。接下来我们自己动手搭建邮件服务器吧。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="邮箱" scheme="https://yixian12580.github.io/tags/%E9%82%AE%E7%AE%B1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CentOS Docker 安装</title>
-    <link href="https://yixian12580.github.io/2022/098df5126b.html"/>
-    <id>https://yixian12580.github.io/2022/098df5126b.html</id>
-    <published>2022-09-27T12:47:46.000Z</published>
-    <updated>2022-09-29T03:21:18.048Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Docker支持以下的CentOS版本：&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;CentOS 7 (64-bit)&lt;br&gt;CentOS 6.5 (64-bit) 或更高的版本&lt;/p&gt;&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="Docker" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Docker/"/>
-    
-    
-      <category term="Docker" scheme="https://yixian12580.github.io/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>访问共享文件夹错误</title>
-    <link href="https://yixian12580.github.io/2022/0954da8c84.html"/>
-    <id>https://yixian12580.github.io/2022/0954da8c84.html</id>
-    <published>2022-09-27T12:35:48.000Z</published>
-    <updated>2022-11-25T09:45:45.729Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;你不能访问此共享文件夹，因为你组织的安全策略阻止未经身份验证的来宾访问。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
-    
-    
-      <category term="共享" scheme="https://yixian12580.github.io/tags/%E5%85%B1%E4%BA%AB/"/>
     
   </entry>
   

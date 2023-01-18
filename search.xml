@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[开发者平台冷知识]]></title>
+    <url>%2F2023%2F017f1808df.html</url>
+    <content type="text"><![CDATA[Google Play和Apple Store是海外的主流应用商店，今天详细说说一些比较冷门问题。常见问题：Google Play平台：首发没有灰度，只有全量发布无法回滚版本，只能创建新版本覆盖未灰度完创建新版本会自动暂停灰度，Google市场最新版为上一个版本灰度比例只能上升，不能降低，灰度期间有问题可暂停灰度，但已安装该版本的用户仍然是此版本，全量发布后，该版本不能再暂停灰度用户均随机选择，可选择特定地区进行灰度商店截图，文案等信息可随时修改，需审核，可能会因为包体有问题而拒绝有侵权风险，但已取得授权文件的应用，提审前可通过以下链接先提交授权文件再提审：前往提交提审后无法撤回审核商品详情实验（A/B测试）：Google Play 上的商品详情，可以通过开展实验来找到对应用而言最富有成效的图片和本地化文本。可以针对自己的主要商品详情页面和自定义商品详情页面开展实验。对于已发布的应用，可以测试各种变体，并与目前的版本进行对比，从而根据安装数据找到效果最好的变体。APP最低支持系统是4.4，下个版本的app改为最低支持系统为5.0，那4.4系统的用户无法接收相关更新通知或是查看到最新版本，查找该应用时，将会看到与他们的装置相匹配的旧版本。如需取消发布应用，需先关闭自管式发布应用。Google商店发布手表包时，不会像Automotive包一样，有单独的渠道分发，手表包跟手机包是在同一渠道，所以按照Google官方文档操作加入Wear OS计划后，需要把手机包和手表包一起提审才行（同一版本，上传两个包），不然一直审核驳回。​ iOS平台：灰度：只针对打开了自动更新的用户，手动到商店搜索都是最新版本App 处在分阶段发布过程中，可以选择暂停发布，总计 30 天，暂停次数没有限制。如果App 下架，当前的分阶段发布会停止，且不再对该版本可用。​ 2. 更改截图、文案等信息需创建新版本才可编辑3. 提审后可撤回审核 3. 无法回滚版本，只能创建新版本覆盖]]></content>
+      <categories>
+        <category>应用市场</category>
+      </categories>
+      <tags>
+        <tag>应用上架</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Google开发者账号申请流程]]></title>
+    <url>%2F2023%2F011df77120.html</url>
+    <content type="text"><![CDATA[Google商店作为海外最大的应用商店，今天来说说如何申请Google开发者账号，上架我们的APP到谷歌商店。1.首先我们要先申请一个Google账号：前往申请2.验证手机号码，填写国内的手机号码就行：ps：如果输入号码后提示：“此电话号码无法用于进行验证” ：把Google浏览器设置为英文后重启浏览器重新注册： 3.注册完成后打开Google开发者后台：选择个人或公司：填写相关信息：付款：购买完成后即可进入Google Play后台。4.绑定付款资料（财务提供），Google会往你提供的银行打一笔款，收到款后需填写具体金额进行验证。验证成功后，需要财务同事协助填写美国税务信息。5.账号产生收益后，Google会再次要求验证收款账户，需提供公司注册证书，法人身份证（护照），手持法人身份证（护照）带上Google字眼和时间的标签，银行流水等信息：一定要处理，两周到一个月内（时间不定）如果没有完成认证，会导致用户支付失败。账号产生收益，但未绑定银行账号也会出现红色警报]]></content>
+      <categories>
+        <category>应用市场</category>
+      </categories>
+      <tags>
+        <tag>应用上架</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Google应用商店上架流程]]></title>
+    <url>%2F2023%2F011a846b2.html</url>
+    <content type="text"><![CDATA[国内的应用商店上架流程都大同小异，今天来说一下Google应用商店的上架流程。应用首发首先，得先申请一个Google开发者账号，申请流程点此查看（需花费25美元）。打开Google Play控制台：点此前往1.点击右上角创建应用：2.填写相关信息：3.点击创建后回跳转到信息中心，需要按照他的提示全部完成任务，完成之后回打钩：全部完成之后，可以先在测试渠道上传包，先测试APP登录，支付等是否有问题，如无问题可直接把包推到正式版，或者在正式版渠道提交包进行审核，两种方式皆需要审核，审核通过后即可在Google应用商店发布。应用更新版本1.应用在Google商店发布之后，有更新版本的需求，登录到Google Play控制台。点击需要更新的APP，点击左边的导航栏：正式版，确认是手机渠道后，点击右上角的创建新的发布版本：2.点击上传需要更新的APP（因为手机和手表在同一渠道，如有手表包，需要等手机包上传完毕后，再点击上传手表包）：3.填写更新版本日志（替换中文字体就行，其他字符不可删除，如有多语言，需全部语言替换）：4.点击检查发布版本，警告可忽略，填写灰度比例，点击发布版本即可提交到Google审核。5.审核通过后，如果开启了自管式发布，不会自动发布到Google商店，需要到发布概览处点击发布（如需自动发布可在发布概览处关闭自管式发布）：6.观察数据无异常后，可加大灰度比例，如数据有异常，也可暂停灰度：]]></content>
+      <categories>
+        <category>应用市场</category>
+      </categories>
+      <tags>
+        <tag>应用上架</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[远程挂载Linux目录]]></title>
     <url>%2F2022%2F11a4e0a084.html</url>
     <content type="text"><![CDATA[Linux现有比较成熟的解决方案有两种，一种是NFS远程挂载，另一种是Samba共享目录。下面就这两方式的配置进行说明。环境：机器A：192.168.1.1 共享目录 /data/share 机器B：192.168.1.2 关联目录 /data/store大致逻辑是这样：将A机器的目录/data/share设置为共享目录，机器B通过mount的方式和A机器的共享文件夹进行连接。一、NFS远程挂载1、概念NFS：即网络文件系统（Network File System）分布式文件系统协议2、操作步骤[机器A]安装NFS123#由于NFS是依赖于RPC协议来进行的协议传输，所以，此时需同时安装，NFS 和 RPC 两个应用程序#安装NFS和RPC（安装nfs-utils，rpcbind） yum -y install nfs-utils rpcbind设置共享目录NFS的配置文件在/etc/exports，内容默认为空。配置格式为目录位置 客户机地址(权限选项)123456789101112vim /etc/exports/data/share 192.168.1.2(rw,sync,no_root_squash) #客户机地址 可以是 ： 主机名、IP地址、网段地址、或者&quot;*、?&quot;通配符；#权限选项：rw表示允许读写(ro为只读)# sync表示同步写# no_root_squash表示当前客户机以root身份访问时，赋予本地root权限(默认是root_squash,将作为nfsnobody用户降权对待) （NFS 服务器共享目录用户的属性，如果用户是 root，那么对于这个共享目录来说就具有 root 的权限。） #给多个地址授权/data/share 192.168.1.2(rw,sync,no_root_squash) 192.168.1.3(rw,sync,no_root_squash)#给某个网段内所有IP授权/data/share 192.168.1.*(rw,sync,no_root_squash)启动NFS服务配置完上述的目录文件配置后，则启动NFS服务；先启动 RPC服务，再启动 NFS 服务1234567891011#启动rpc服务systemctl start rpcbind#启动nfs服务systemctl start nfs#查看rpc服务状态systemctl status rpcbind#查看nfs服务状态systemctl status nfs#查看对应进程信息ps -ef | grep rpcbind ps -ef | grep nfs查看当前机器已经发布的NFS共享目录1234showmount -e 192.168.1.1显示Export list for 192.168.1.1:/data/share 192.168.1.2此时共享机器A的配置已经完成，可直接在机器B进行目录的挂载操作[机器B]安装RPC服务目录的挂载于共享是基于RPC协议进行的，所以B服务器作为挂载方，也应同时具备RPC的应用功能，所以也应同时安装对应的 rpcbind 服务插件。（安装rpcbind时，最好也可以直接把 nfs-utils 同步安装下，后续再次作为共享方时，则也会方便很多）1yum -y install rpcbind nfs-utils挂载123使用mount命令，此处表示将IP为：192.168.1.1所共享的/data/share目录，挂载到当前服务的 /data/store 目录下 mount -t nfs 192.168.1.1:/data/share /data/store开机自动挂载123vim /etc/fstab192.168.1.1:/data/share /data/store nfs defaults,_netdev 0 0开机自动启动12systemctl enable rpcbind.servicesystemctl enable nfs-server.service查看当前机器挂载点1df -h二、Samba共享目录1、概念和NFS不同的是，NFS解决的是UNIX/Linux之间的资源共享，而Samba除了Linux之间，也可用于Windows和Linux之间的资源共享，所以配置相对于NFS来说麻烦一些。2、操作步骤【服务端】Linux作为服务端安装Samba安装samba程序包123456#安装samba的主程序包、共享程序包、Linux作为客户端访问windows的客户端包yum -y intall samba samba-common samba-client systemctl status firewalld #查看防火墙状态setenforce 0 # 关闭SELinux 1启用 0 告警不启用getenforce # 查看Selinux状态 disabled 关闭 enforcing 打开配置共享目录123456vim /etc/samba/smb.conf[sambdir] public = yes path = /data/samba writable = yes启动Samba服务1234systemctl restart smbsystemctl enable smb systemctl restart nmbsystemctl enable nmb【客户端】安装Samba客户端包1yum -y intall samba samba-common samba-client目录挂载1mount -t cifs -o &quot;rw,dir_mode=0644,file_mode=0644,username=username,password=yourpassword&quot; //192.168.1.100/yourshare_folder_name /usr/local/your_server_folder]]></content>
