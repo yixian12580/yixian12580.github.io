@@ -18,7 +18,7 @@ date: 2022-09-14 16:25:09
 
 在这种情况下，linux不会主动去添加配置文件ifcfg-eth1的，如果需要使用这块网卡，
 
-![image-20220914162718967](CentOS-6新增网卡/image-20220914162718967.png)
+![](CentOS-6新增网卡/image-20220914162718967.png)
 
 我们需要复制ifcfg-eth0为ifcfg-eth1，并修改ifcfg-eth1配置：
 
@@ -41,7 +41,7 @@ NETMASK=255.255.255.0
 
 如果为了方便 就只保留 DEVICE， ONBOOT， BOOTPROTO, IPADDR, NETMASK五行就行
 
-![image-20220914162805987](CentOS-6新增网卡/image-20220914162805987.png)
+![](CentOS-6新增网卡/image-20220914162805987.png)
 
 重启网络服务：
 
@@ -51,7 +51,7 @@ NETMASK=255.255.255.0
 
 查看IP地址：
 
-![image-20220914162823455](CentOS-6新增网卡/image-20220914162823455.png)
+![](CentOS-6新增网卡/image-20220914162823455.png)
 
 ps：HWADDR和UUID可以不进行添加，但是如果不进行设置的的话，就需要把这二行删除，不能保留在配置文件里。
 如果不设置HWADDR的话，系统会在启动网卡时读取硬件的MAC地址；
@@ -63,12 +63,12 @@ ps：HWADDR和UUID可以不进行添加，但是如果不进行设置的的话�
 
 查看UUID：
 
-![image-20220914162857102](CentOS-6新增网卡/image-20220914162857102.png)
+![](CentOS-6新增网卡/image-20220914162857102.png)
 
 若提示无此命令的话，需要安装NetworkManager:
 
-![image-20220914162916572](CentOS-6新增网卡/image-20220914162916572.png)
+![](CentOS-6新增网卡/image-20220914162916572.png)
 
 启动NetworkManager服务：
 
-![image-20220914162926766](CentOS-6新增网卡/image-20220914162926766.png)
+![](CentOS-6新增网卡/image-20220914162926766.png)

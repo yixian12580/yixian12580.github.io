@@ -39,7 +39,7 @@ gunzip -c /root/backup.sql.gz | mysql -u root -p
 max_allowed_packet = 20M
 ```
 
-![image-20220928173454434](phabricator服务迁移/image-20220928173454434.png)
+![](phabricator服务迁移/image-20220928173454434.png)
 
 查看托管存储库：
 
@@ -47,7 +47,7 @@ max_allowed_packet = 20M
 ./bin/repository list-paths
 ```
 
-![image-20220928173516154](phabricator服务迁移/image-20220928173516154.png)
+![](phabricator服务迁移/image-20220928173516154.png)
 
 把/var/repo目录整个复制到新服务器对应的托管存储库路径下：
 
@@ -57,7 +57,7 @@ scp -r /var/repo/ root@172.31.0.146:/var/
 
 修改配置文件：
 
-![image-20220928173607466](phabricator服务迁移/image-20220928173607466.png)
+![](phabricator服务迁移/image-20220928173607466.png)
 
 不可直接修改，需用以下命令设置：
 
@@ -80,8 +80,8 @@ scp -r /var/repo/ root@172.31.0.146:/var/
 ./bin/mail send-test --to chenmingchang@stary.com --subject hello < README.md
 ```
 
-![image-20220928173710466](phabricator服务迁移/image-20220928173710466.png)
+![](phabricator服务迁移/image-20220928173710466.png)
 
 在web端访问成功：
 
-![image-20220928173801928](phabricator服务迁移/image-20220928173801928.png)
+![](phabricator服务迁移/image-20220928173801928.png)

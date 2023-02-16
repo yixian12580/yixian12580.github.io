@@ -24,7 +24,7 @@ date: 2022-09-27 17:39:37
 
 1.查看正在跑的容器：
 
-![image-20220927174301732](jumpserver服务迁移/image-20220927174301732.png)
+![](jumpserver服务迁移/image-20220927174301732.png)
 
 2.把容器打包为镜像：
 
@@ -75,7 +75,7 @@ docker run -it -d   --name  jumpserverbak jumpserverbak
 
 1.查看正在跑的容器：
 
-![image-20220927174301732](jumpserver服务迁移/image-20220927174301732.png)
+![](jumpserver服务迁移/image-20220927174301732.png)
 
 2.导出镜像：
 
@@ -107,7 +107,7 @@ scp /opt/jumpserver.* root@172.22.12.246:/tmp/
 
 在新服务器查看是否拷贝成功：
 
-![image-20220927175538282](jumpserver服务迁移/image-20220927175538282.png)
+![](jumpserver服务迁移/image-20220927175538282.png)
 
 5.在新服务器安装docker
 
@@ -131,7 +131,7 @@ docker import jumpserver.tar test/jumpserver:v1.0
 
 查看是否导入成功：
 
-![image-20220927175655703](jumpserver服务迁移/image-20220927175655703.png)
+![](jumpserver服务迁移/image-20220927175655703.png)
 
 启动容器：
 
@@ -141,7 +141,7 @@ docker run --name jumpserver -d -p 81:80 -p 2222:2222 --restart=always -e SECRET
 
 查看容器是否在跑：
 
-![image-20220927175750181](jumpserver服务迁移/image-20220927175750181.png)
+![](jumpserver服务迁移/image-20220927175750181.png)
 
 把数据库备份文件拷贝到容器里：
 
@@ -159,7 +159,7 @@ source /opt/jumpserver.sql;
 quit
 ```
 
-![image-20220927175829164](jumpserver服务迁移/image-20220927175829164.png)
+![](jumpserver服务迁移/image-20220927175829164.png)
 
 把/opt/koko/data/keys/.access_key文件删除（否则会验证不成功）并重启容器：
 
@@ -177,7 +177,7 @@ docker start d439a4275586
 
 浏览器进入管理界面：
 
-![image-20220927175933589](jumpserver服务迁移/image-20220927175933589.png)
+![](jumpserver服务迁移/image-20220927175933589.png)
 
 至此，jumpserver服务搬迁完成。
 
@@ -187,9 +187,9 @@ docker start d439a4275586
 
 进入资产列表测试资产可连接性的时候报错如下：
 
- ![image-20220927180028105](jumpserver服务迁移/image-20220927180028105.png)
+ ![](jumpserver服务迁移/image-20220927180028105.png)
 
-![image-20220927180045042](jumpserver服务迁移/image-20220927180045042.png)
+![](jumpserver服务迁移/image-20220927180045042.png)
 
 或者弹窗一直显示消息：.................................
 
@@ -207,5 +207,5 @@ rm -rf tmp/*.pid
 
 再到资产列表测试资产可连接性：
 
-![image-20220927180125710](jumpserver服务迁移/image-20220927180125710.png)
+![](jumpserver服务迁移/image-20220927180125710.png)
 

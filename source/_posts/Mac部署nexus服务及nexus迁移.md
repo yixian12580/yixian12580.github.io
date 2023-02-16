@@ -18,7 +18,7 @@ date: 2022-11-14 15:48:13
 
 解压后有两个目录：
 
-![image-20221114155256299](Mac部署nexus服务及nexus迁移/image-20221114155256299.png)
+![](Mac部署nexus服务及nexus迁移/image-20221114155256299.png)
 
 `nexus` 基础命令：
 
@@ -58,7 +58,7 @@ $ vim nexus
 
 取消`INSTALL4J_JAVA_HOME_OVERRIDE`的注释，并填入`jdk` 1.8的环境目录：
 
-![image-20221114155412173](Mac部署nexus服务及nexus迁移/image-20221114155412173.png)
+![](Mac部署nexus服务及nexus迁移/image-20221114155412173.png)
 
 保存并退出，重新启动nexus即可：
 
@@ -66,7 +66,7 @@ $ vim nexus
 ./nexus start
 ```
 
-![image-20221114155441325](Mac部署nexus服务及nexus迁移/image-20221114155441325.png)
+![](Mac部署nexus服务及nexus迁移/image-20221114155441325.png)
 
 
 
@@ -88,4 +88,4 @@ scp -r /data/src/sonatype-work/ stary@172.22.13.45:/Users/stary/nexus/
 
 把nexus服务重启即可：
 
-![image-20221114155606427](Mac部署nexus服务及nexus迁移/image-20221114155606427.png)
+![](Mac部署nexus服务及nexus迁移/image-20221114155606427.png)

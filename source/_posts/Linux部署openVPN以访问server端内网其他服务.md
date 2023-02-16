@@ -18,11 +18,11 @@ date: 2022-09-22 17:22:34
 
 方法1、将内网的其他服务器的网关设置为OpenVPN Server的内网IP，即172.16.100.120
 
-![image-20220922172504407](Linux部署openVPN以访问server端内网其他服务/image-20220922172504407.png)
+![](Linux部署openVPN以访问server端内网其他服务/image-20220922172504407.png)
 
 Windows客户端可以ping通172.16.100.128：
 
-![image-20220922172523833](Linux部署openVPN以访问server端内网其他服务/image-20220922172523833.png)
+![](Linux部署openVPN以访问server端内网其他服务/image-20220922172523833.png)
 
 方法2、在OpenVPN Server上配置NAT转换，将到10.8.0.0/24的访问都转换为172.16.100.120
 
@@ -35,14 +35,14 @@ iptables save
 
 Windows客户端可以ping通172.16.100.128：
 
-![image-20220922172613083](Linux部署openVPN以访问server端内网其他服务/image-20220922172613083.png)
+![](Linux部署openVPN以访问server端内网其他服务/image-20220922172613083.png)
 
 方法3、在需要访问的内网服务器上配置一条到10.8.0.0段的静态路由：
 
-![image-20220922172638608](Linux部署openVPN以访问server端内网其他服务/image-20220922172638608.png)
+![](Linux部署openVPN以访问server端内网其他服务/image-20220922172638608.png)
 
 Windows客户端也可以ping通172.16.100.128：
 
-![image-20220922172707235](Linux部署openVPN以访问server端内网其他服务/image-20220922172707235.png)
+![](Linux部署openVPN以访问server端内网其他服务/image-20220922172707235.png)
 
 可以看到，这种方法也可以实现需求，但是不方便的是每一台内网服务器上都需要添加这样一条路由，操作起来可能稍显麻烦。

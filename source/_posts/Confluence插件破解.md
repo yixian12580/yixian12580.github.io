@@ -48,7 +48,7 @@ java -jar atlassian-agent.jar -p mohamicorp-render-markdown -m admin@chuangyue.c
 -o 指的是提供提供该产品的开发者，具体指的是上图中的开发者。
 -s 是你的server-id,可以在的授权细节中查看。
 
-![image-20221108094849532](Confluence插件破解/image-20221108094849532.png)
+![](Confluence插件破解/image-20221108094849532.png)
 
 运行后会得到如下所示：
 

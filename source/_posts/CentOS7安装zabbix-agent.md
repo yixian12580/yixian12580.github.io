@@ -16,7 +16,7 @@ zabbix agent的安装方式主要有源码安装、rpm包安装、二进制包�
 
 环境：
 
-![image-20220914165624379](CentOS7安装zabbix-agent/image-20220914165624379.png)
+![](CentOS7安装zabbix-agent/image-20220914165624379.png)
 
 
 首先关掉相关安全设置：
@@ -88,9 +88,9 @@ Hostname=192.168.10.20
 
 在zabbix后台创建主机：
 
-![image-20220914165916781](CentOS7安装zabbix-agent/image-20220914165916781.png)
+![](CentOS7安装zabbix-agent/image-20220914165916781.png)
 
 
 创建完成：
 
-![image-20220914165936093](CentOS7安装zabbix-agent/image-20220914165936093.png)
+![](CentOS7安装zabbix-agent/image-20220914165936093.png)

@@ -34,7 +34,7 @@ openssl x509 -noout -text -in /etc/openvpn/server/easy-rsa/pki/issued/server.crt
 
 看到证书确实到期了：
 
-![image-20221008141004749](openVPN证书到期/image-20221008141004749.png)
+![](openVPN证书到期/image-20221008141004749.png)
 
 解决方法1：
 
@@ -46,7 +46,7 @@ openssl x509 -noout -text -in /etc/openvpn/server/easy-rsa/pki/issued/server.crt
 
 重新查看证书到期时间：
 
-![image-20221008141046278](openVPN证书到期/image-20221008141046278.png)
+![](openVPN证书到期/image-20221008141046278.png)
 
 验证证书有效性：
 

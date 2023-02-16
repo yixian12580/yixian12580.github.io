@@ -61,12 +61,12 @@ gitlab-rake gitlab:backup:restore BACKUP=备份文件编号
 
 完成后会看到提示：
 
-![image-20221009171931511](Gitlab服务迁移/image-20221009171931511.png)
+![](Gitlab服务迁移/image-20221009171931511.png)
 
 /etc/gitlab/gitlab-secrets.json和/etc/gitlab/gitlab.rb文件包含敏感数据，需要手动恢复这些文件。
 如果不覆盖这两个文件会造成CI/CD配置页报500错误：
 
-![image-20221009172008159](Gitlab服务迁移/image-20221009172008159.png)
+![](Gitlab服务迁移/image-20221009172008159.png)
 
 需要旧服务器上把这两个文件拷贝至新服务器上覆盖：
 
@@ -89,6 +89,6 @@ gitlab-rake gitlab:check SANITIZE=true
 
 PS：如果网站配置了证书，需把证书放到对应路径：
 
-![image-20221009172208268](Gitlab服务迁移/image-20221009172208268.png)
+![](Gitlab服务迁移/image-20221009172208268.png)
 
 至此，Gitlab服务迁移完成。

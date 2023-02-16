@@ -12,11 +12,11 @@ date: 2022-09-27 16:55:19
 
 <!--more-->
 
-![image-20220927165640792](阿里云MongoDB物理备份文件恢复至自建数据库/image-20220927165640792.png)
+![](阿里云MongoDB物理备份文件恢复至自建数据库/image-20220927165640792.png)
 
 下载备份文件：
 
-![image-20220927165740390](阿里云MongoDB物理备份文件恢复至自建数据库/image-20220927165740390.png)
+![](阿里云MongoDB物理备份文件恢复至自建数据库/image-20220927165740390.png)
 
 2.在本地服务器安装MongoDB（版本需与阿里云MongoDB版本一致），具体安装方法请查看上一篇文章，在此不再赘述。
 
@@ -29,7 +29,7 @@ tar -zxvf  /data/backups/MongoDB/hins4463797_data_20210825030706.tar.gz -C /mysq
 
 解压结果：
 
-![image-20220927165833903](阿里云MongoDB物理备份文件恢复至自建数据库/image-20220927165833903.png) 
+![](阿里云MongoDB物理备份文件恢复至自建数据库/image-20220927165833903.png) 
 
 4.以单节点模式恢复MongoDB物理备份的数据
 
@@ -71,7 +71,7 @@ processManagement:
 mongod -f /usr/local/mongodb/mongod.conf
 ```
 
-![image-20220927165945032](阿里云MongoDB物理备份文件恢复至自建数据库/image-20220927165945032.png)
+![](阿里云MongoDB物理备份文件恢复至自建数据库/image-20220927165945032.png)
 
 等待启动完成后，执行如下命令登录MongoDB数据库，进入Mongo Shell。
 
@@ -81,11 +81,11 @@ mongo --host 127.0.0.1 -u <username> -p <password> --authenticationDatabase admi
 
 登录成功：
 
-![image-20220927170011949](阿里云MongoDB物理备份文件恢复至自建数据库/image-20220927170011949.png)
+![](阿里云MongoDB物理备份文件恢复至自建数据库/image-20220927170011949.png)
 
 在Mongo Shell中，执行show dbs查询当前本地MongoDB中所有的数据库，以验证是否恢复成功:
 
-![image-20220927170032362](阿里云MongoDB物理备份文件恢复至自建数据库/image-20220927170032362.png)
+![](阿里云MongoDB物理备份文件恢复至自建数据库/image-20220927170032362.png)
 
 至此恢复工作已成功完成，您可以在Mongo Shell中执行exit命令退出Mongo Shell。
 
@@ -149,11 +149,11 @@ db.dropUser('tmpuser')
 
 执行结果示例：
 
-![image-20220927170301642](阿里云MongoDB物理备份文件恢复至自建数据库/image-20220927170301642.png)
+![](阿里云MongoDB物理备份文件恢复至自建数据库/image-20220927170301642.png)
 
-![image-20220927170315645](阿里云MongoDB物理备份文件恢复至自建数据库/image-20220927170315645.png)
+![](阿里云MongoDB物理备份文件恢复至自建数据库/image-20220927170315645.png)
 
-![image-20220927170329174](阿里云MongoDB物理备份文件恢复至自建数据库/image-20220927170329174.png)
+![](阿里云MongoDB物理备份文件恢复至自建数据库/image-20220927170329174.png)
 
 (对于local库的system.replset集合，root用户只有只读权限，且由于root用户无法更改自身的权限，因此只能通过其他用户进行删除。)
 
@@ -303,7 +303,7 @@ replSetName：设置副本集的名称。
 mongod -f /usr/local/mongodb/mongod.conf && mongod -f /usr/local/mongodb/mongod1.conf && mongod -f /usr/local/mongodb/mongod2.conf
 ```
 
-![image-20220927171300063](阿里云MongoDB物理备份文件恢复至自建数据库/image-20220927171300063.png)
+![](阿里云MongoDB物理备份文件恢复至自建数据库/image-20220927171300063.png)
 
 
 等待启动完成后，使用root账号登录MongoDB数据库。
@@ -326,7 +326,7 @@ rs.initiate( {
 })
 ```
 
-![image-20220927171342830](阿里云MongoDB物理备份文件恢复至自建数据库/image-20220927171342830.png)
+![](阿里云MongoDB物理备份文件恢复至自建数据库/image-20220927171342830.png)
 
 执行成功后，新加入的两个节点将会与主节点进行数据同步，注意此过程的耗时根据备份文件的大小会有较大差异。等待数据同步完成后，副本集模式启动完成。
 
@@ -341,4 +341,4 @@ mongo -u <username> -p <password> --authenticationDatabase admin
 
 观察Mongo Shell命令行左侧，显示<副本集名称>:PRIMARY>即代表副本集模式启动成功。
 
-![image-20220927171528917](阿里云MongoDB物理备份文件恢复至自建数据库/image-20220927171528917.png)
+![](阿里云MongoDB物理备份文件恢复至自建数据库/image-20220927171528917.png)

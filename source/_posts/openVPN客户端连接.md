@@ -20,11 +20,11 @@ date: 2022-09-22 17:38:01
 默认下一步就可以安装完成（如果自定义安装的话要记住安装路径，一会会用到）。
 安装完成后，首先进入到安装目录下，默认安装目录为C:\Program Files\OpenVPN/config,创建一个ovpn后缀的配置文件：
 
-![image-20220929150444351](openVPN客户端连接/image-20220929150444351.png)
+![](openVPN客户端连接/image-20220929150444351.png)
 
 输入以下内容：
 
-![image-20220929150503591](openVPN客户端连接/image-20220929150503591.png)
+![](openVPN客户端连接/image-20220929150503591.png)
 
 ```
 client
@@ -48,15 +48,15 @@ auth-user-pass login.txt
 
 然后运行Openvpn GUI客户端，在右下角任务栏会有图标:
 
-![image-20220929150529701](openVPN客户端连接/image-20220929150529701.png)
+![](openVPN客户端连接/image-20220929150529701.png)
 
 鼠标右键，连接：
 
-![image-20220929150545179](openVPN客户端连接/image-20220929150545179.png)
+![](openVPN客户端连接/image-20220929150545179.png)
 
 连接成功后，图标为绿色：
 
-![image-20220929150557744](openVPN客户端连接/image-20220929150557744.png)
+![](openVPN客户端连接/image-20220929150557744.png)
 
 ### Linux服务器连接：
 
@@ -76,7 +76,7 @@ vim client.conf
 
 填写以下内容：
 
-![image-20220929150612925](openVPN客户端连接/image-20220929150612925.png)
+![](openVPN客户端连接/image-20220929150612925.png)
 
 ```
 client
@@ -105,10 +105,10 @@ auth-user-pass login.txt
 
 查看openvpn是否在运行：
 
-![image-20220929150626711](openVPN客户端连接/image-20220929150626711.png)
+![](openVPN客户端连接/image-20220929150626711.png)
 
 ping内网服务看是否能通：
 
-![image-20220929150639467](openVPN客户端连接/image-20220929150639467.png)
+![](openVPN客户端连接/image-20220929150639467.png)
 
 至此，openVPN客户端连接完成。

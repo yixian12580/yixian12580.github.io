@@ -18,33 +18,39 @@ TortoiseSVN软件下载：https://tortoisesvn.net/downloads.html
 
 1、 根据自己电脑位数下载、安装TortoiseSVN客户端（按提示一步步安装即可）：
 
-![image-20221125151504492](Windows图文界面使用SVN/image-20221125151504492.png)
+![](Windows图文界面使用SVN/image-20221125151504492.png)
+
+
 
 2、安装完成后，新建一个文件夹（你自己想要放文件的地方创建即可）
 
 3、右键上一步创建的文件夹—选择SVN Checkout，输入url，确定，后面根据提示，输账号密码即可（url格式为：svn://ip:端口/目录，如：svn://192.168.0.0:8080/code，其中ip、端口、目录根据自己公司的进行替换）：
 
-![image-20221125152158858](Windows图文界面使用SVN/image-20221125152158858.png)
+![](Windows图文界面使用SVN/image-20221125152158858.png)
 
 
 
 输入账号密码，点击OK：
 
-![image-20221125160148313](Windows图文界面使用SVN/image-20221125160148313.png)
+![](Windows图文界面使用SVN/image-20221125160148313.png)
+
+
 
 仓库如果有文件的话，会把文件拉到本地，因为我这个是新建的仓库，里面没有东西，所以点击OK后，文件夹是空的：
 
-![image-20221125152533468](Windows图文界面使用SVN/image-20221125152533468.png)
+![](Windows图文界面使用SVN/image-20221125152533468.png)
+
+
 
 4、进入文件夹，创建你需要上传到仓库的文件（这里我随便复制一个文件过来），然后右键文件，选择TortoiseSVN-Add，然后再右键文件，会多出一个SVN Commit的选项，点击SVN Commit，可以在Message处填写提交的版本信息，备注一下，然后点击OK，就把文件上传到仓库了
 
-![image-20221125153234321](Windows图文界面使用SVN/image-20221125153234321.png)
+![](Windows图文界面使用SVN/image-20221125153234321.png)
 
 
 
 成功提交后，会多出一个绿色的勾：
 
-![image-20221125153412059](Windows图文界面使用SVN/image-20221125153412059.png)
+![](Windows图文界面使用SVN/image-20221125153412059.png)
 
 此时，其他有权限的用户就可以把这个文件拉到他们的电脑上了。
 
@@ -52,27 +58,27 @@ TortoiseSVN软件下载：https://tortoisesvn.net/downloads.html
 
 如需从仓库删除文件，在电脑上删除文件后，需要commit，不然只是在你电脑本地删除该文件，文件还是存在仓库：
 
-![image-20221125154042103](Windows图文界面使用SVN/image-20221125154042103.png)
+![](Windows图文界面使用SVN/image-20221125154042103.png)
 
 
 
-![image-20221125154122405](Windows图文界面使用SVN/image-20221125154122405.png)
+![](Windows图文界面使用SVN/image-20221125154122405.png)
 
 
 
 你在电脑上修改了文件的话，文件会出现一个红色感叹号：
 
-![image-20221125154609732](Windows图文界面使用SVN/image-20221125154609732.png)
+![](Windows图文界面使用SVN/image-20221125154609732.png)
 
 
 
 如果在本地更新了文件，需要同步给别人的话，也需要commit到仓库，不然别人拉取的还是旧版本的文件：
 
-![image-20221125154701582](Windows图文界面使用SVN/image-20221125154701582.png)
+![](Windows图文界面使用SVN/image-20221125154701582.png)
 
 
 
-![image-20221125154717618](Windows图文界面使用SVN/image-20221125154717618.png)
+![](Windows图文界面使用SVN/image-20221125154717618.png)
 
 
 

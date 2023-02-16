@@ -112,7 +112,7 @@ startweb.sh restart
 
 默认用户名：admin 密码: admin
 
-![image-20220927213722868](DNS服务器部署/image-20220927213722868.png)
+![](DNS服务器部署/image-20220927213722868.png)
 
 
 

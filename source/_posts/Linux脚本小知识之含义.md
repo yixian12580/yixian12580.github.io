@@ -20,7 +20,7 @@ Linux系统中的Shell脚本语言内设了用于接收参数的变量，变量�
 [root@localhost tmp]# vim shell.sh
 ```
 
-![image-20220914110732383](Linux脚本小知识之含义/image-20220914110732383.png)
+![](Linux脚本小知识之含义/image-20220914110732383.png)
 
 编写完成后执行一下脚本：
 
@@ -28,6 +28,6 @@ Linux系统中的Shell脚本语言内设了用于接收参数的变量，变量�
 [root@localhost tmp]# sh shell.sh wo shi chen ming chang
 ```
 
-![image-20220914110801971](Linux脚本小知识之含义/image-20220914110801971.png)
+![](Linux脚本小知识之含义/image-20220914110801971.png)
 
 上面的“wo shi chen ming chang”是我们执行脚本时输入的5个参数，最后一个命令执行返回值为0表示命令执行成功。

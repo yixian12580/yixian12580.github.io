@@ -16,7 +16,7 @@ Phabricator是一套基于Web的软件开发协作工具，包括代码审查工
 
 环境：
 
-![image-20220923110208824](Centos7部署phabricator服务/image-20220923110208824.png)
+![](Centos7部署phabricator服务/image-20220923110208824.png)
 
 首先搭建LNMP环境：
 
@@ -210,9 +210,9 @@ nginx -V            显示 nginx 的版本，编译器版本和配置参数
 3.6配置nginx：
 默认配置文件是nginx.conf,可以在这里面配置，但是如果把所有内容都放在nginx.conf里就太乱了，我们可以把其他的配置内容放在conf.d目录下。只要你的默认配置中把conf.d目录include进去就行了。
 
-![image-20220927142254254](Centos7部署phabricator服务/image-20220927142254254.png)
+![](Centos7部署phabricator服务/image-20220927142254254.png)
 
-![image-20220927142327475](Centos7部署phabricator服务/image-20220927142327475.png)
+![](Centos7部署phabricator服务/image-20220927142327475.png)
 
 
 在conf.d中新建一个pha.example.com.conf，内容如下：
@@ -335,6 +335,6 @@ git clone https://github.com/wanthings/phabricator-zh_CN.git ./
 
 8.配置完成后，进入web页面左上角有很多杂项，可根据提示修改即可：
 
-![image-20220927142622652](Centos7部署phabricator服务/image-20220927142622652.png)
+![](Centos7部署phabricator服务/image-20220927142622652.png)
 
 至此，Phabricator服务部署完成。

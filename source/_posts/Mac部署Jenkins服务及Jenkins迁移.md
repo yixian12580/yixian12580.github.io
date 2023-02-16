@@ -1,5 +1,5 @@
 ---
-title: Mac部署Jenkins服务Jenkins迁移
+title: Mac部署Jenkins服务及Jenkins迁移
 categories:
   - 技术
   - Jenkins
@@ -38,7 +38,7 @@ brew install jenkins
 netstat -AaLlnW | grep 8080
 ```
 
-![image-20221114154422678](Mac部署Jenkins服务Jenkins迁移/image-20221114154422678.png)
+![](Mac部署Jenkins服务Jenkins迁移/image-20221114154422678.png)
 
 或者：
 
@@ -50,19 +50,19 @@ sudo lsof -nP |grep LISTEN
 
 找到页面提示的路径中的文件，输入文件中的密码信息：
 
-![image-20221114154454182](Mac部署Jenkins服务Jenkins迁移/image-20221114154454182.png)
+![](Mac部署Jenkins服务Jenkins迁移/image-20221114154454182.png)
 
 勾选需要安装的插件，等待配置：
 
-![image-20221114154511515](Mac部署Jenkins服务Jenkins迁移/image-20221114154511515.png)
+![](Mac部署Jenkins服务Jenkins迁移/image-20221114154511515.png)
 
 来到创建用户的界面，设置管理员用户名和密码：
 
-![image-20221114154540571](Mac部署Jenkins服务Jenkins迁移/image-20221114154540571.png)
+![](Mac部署Jenkins服务Jenkins迁移/image-20221114154540571.png)
 
 按照提示继续，就能来到这个界面啦：
 
-![image-20221114154556778](Mac部署Jenkins服务Jenkins迁移/image-20221114154556778.png)
+![](Mac部署Jenkins服务Jenkins迁移/image-20221114154556778.png)
 
 至此，Jenkins服务器部署好了，需要把旧服务器数据迁移过来，把Jenkins整个目录拷贝过来就行：
 
@@ -80,4 +80,4 @@ scp -r ./.jenkins/ stary@172.22.13.45:/Users/stary/
 
 重启Jenkins即可：
 
-![image-20221114154709775](Mac部署Jenkins服务Jenkins迁移/image-20221114154709775.png)
+![](Mac部署Jenkins服务Jenkins迁移/image-20221114154709775.png)

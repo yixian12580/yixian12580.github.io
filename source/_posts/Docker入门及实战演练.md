@@ -28,7 +28,7 @@ Docker 是一个开源的应用容器引擎，让开发者可以打包他们的�
 
 仓库，从认识上来说，就好像软件包上传下载站，有各种软件的不同版本被上传供用户下载。镜像构建完成后，可以很容易的在当前宿主机上运行，但是，如果需要在其它服务器上使用这个镜像，我们就需要一个集中的存储、分发镜像的服务，Docker Registry 就是这样的服务。
 
-![image-20220914111255619](Docker入门及实战演练/image-20220914111255619.png)
+![](Docker入门及实战演练/image-20220914111255619.png)
 
 ### Docker的优势
 
@@ -44,15 +44,15 @@ Docker 是一个开源的应用容器引擎，让开发者可以打包他们的�
 
 传统开发流程:
 
-![image-20220914111312898](Docker入门及实战演练/image-20220914111312898.png)
+![](Docker入门及实战演练/image-20220914111312898.png)
 
 Docker环境开发流程:
 
-![image-20220914111327458](Docker入门及实战演练/image-20220914111327458.png)
+![](Docker入门及实战演练/image-20220914111327458.png)
 
 ### 与传统虚拟机对比
 
-![image-20220914111351642](Docker入门及实战演练/image-20220914111351642.png)
+![](Docker入门及实战演练/image-20220914111351642.png)
 
 ### Docker命令
 
@@ -86,7 +86,7 @@ docker commit [options] container [repository[:tag]]
 
 镜像管理指令:
 
-![image-20220914111655356](Docker入门及实战演练/image-20220914111655356.png)
+![](Docker入门及实战演练/image-20220914111655356.png)
 
 #### 创建/启动/停止/删除容器
 
@@ -96,11 +96,11 @@ docker commit [options] container [repository[:tag]]
 	docker rm container_id    #删除容器
 创建容器常用选项
 
-![image-20220914111714833](Docker入门及实战演练/image-20220914111714833.png)
+![](Docker入门及实战演练/image-20220914111714833.png)
 
 管理容器常用命令
 
-![image-20220914111740699](Docker入门及实战演练/image-20220914111740699.png)
+![](Docker入门及实战演练/image-20220914111740699.png)
 
 #### 镜像与容器联系
 
@@ -108,7 +108,7 @@ docker commit [options] container [repository[:tag]]
 容器其实是在镜像的最上面加了一层读写层，在运行容器里做的任何文件改动，都会写到这个读写层。如果容器删除了，最上面的读写层也就删除了，改动也就丢失了。
 Docker使用存储驱动管理镜像每层内容及可读写层的容器层。
 
-![image-20220914111846360](Docker入门及实战演练/image-20220914111846360.png)
+![](Docker入门及实战演练/image-20220914111846360.png)
 
 #### 将主机数据挂载到容器
 
@@ -120,7 +120,7 @@ bind mounts：可以存储在宿主机系统的任意位置。
 tmpfs：挂载存储在宿主机系统的内存中，而不会写入宿主机的文件系统。
 ```
 
-![image-20220914111918477](Docker入门及实战演练/image-20220914111918477.png)
+![](Docker入门及实战演练/image-20220914111918477.png)
 
 ##### volume
 
@@ -166,21 +166,21 @@ docker run -d -it --name nginx-test --tmpfs /usr/share/nginx/html nginx
 
 实验环境：
 
-![image-20220914112158189](Docker入门及实战演练/image-20220914112158189.png)
+![](Docker入门及实战演练/image-20220914112158189.png)
 
 #### Docker安装
 
 首先安装依赖包
 
-![image-20220914112218409](Docker入门及实战演练/image-20220914112218409.png)
+![](Docker入门及实战演练/image-20220914112218409.png)
 
 安装Docker（之前已安装过，所以提示已经安装）
 
-![image-20220914112233692](Docker入门及实战演练/image-20220914112233692.png)
+![](Docker入门及实战演练/image-20220914112233692.png)
 
 查看Docker是否安装成功
 
-![image-20220914112248741](Docker入门及实战演练/image-20220914112248741.png)
+![](Docker入门及实战演练/image-20220914112248741.png)
 
 
 启动Docker并加入开机自启动
@@ -194,7 +194,7 @@ docker run -d -it --name nginx-test --tmpfs /usr/share/nginx/html nginx
 
 Dockerfile指令
 
-![image-20220914112321256](Docker入门及实战演练/image-20220914112321256.png)
+![](Docker入门及实战演练/image-20220914112321256.png)
 
 环境说明：
 在本文中我都是基于centos 7.5系统，nginx和php用的源码包来构建，如果你不想用源码包，也可用yum方式构建。
@@ -206,7 +206,7 @@ php，也用的源码包来构建，版本为php-5.6.31.tar.gz，下载地址htt
 
 创建镜像时所需文件
 
-![image-20220914112435164](Docker入门及实战演练/image-20220914112435164.png)
+![](Docker入门及实战演练/image-20220914112435164.png)
 
 
 在Dockerfiles目录下创建了两个目录（nginx，php），里面分别存放Dockerfile文件、源码包。nginx目录下放了nginx.conf配置文件，php目录下也放置了php.ini配置文件（在实际环境中，这两个文件是经常需要修改的，单独拿出来后在启动容器时你可以把这两个文件mount到容器中，便于管理。）。
@@ -215,7 +215,7 @@ php，也用的源码包来构建，版本为php-5.6.31.tar.gz，下载地址htt
 
 Dockerfile内容：
 
-![image-20220914112527971](Docker入门及实战演练/image-20220914112527971.png)
+![](Docker入门及实战演练/image-20220914112527971.png)
 
 
 分析一下Dockerfile的内容，当你构建镜像时，它会根据你编排好的内容一步一步的执行下去，如果当中的某一步执行不下去，会立刻停止构建。上面的大部分指令都很好理解，大家可以对照上文的Dockerfile指令图进行理解，最后一个指令我要详细说明一下：CMD [“./sbin/nginx”,“-g”,“daemon off;”]
@@ -227,7 +227,7 @@ Dockerfile内容：
 
 nginx.conf 内容：
 
-![image-20220914112624370](Docker入门及实战演练/image-20220914112624370.png)
+![](Docker入门及实战演练/image-20220914112624370.png)
 
 配置中主要添加了 location ~ .php这一段的内容，其中fastcgi_pass的 lnmp_php，这个是后面启动php容器时的名称。当匹配到php的请求时，它会转发给lnmp_php这个容器php-fpm服务来处理。正常情况下，如果php服务不是跑在容器中，lnmp_php这个内容一般写php服务器的Ip地址。
 
@@ -235,7 +235,7 @@ build 构建nginx镜像
 
 切换到nginx目录下：
 
-![image-20220914112703914](Docker入门及实战演练/image-20220914112703914.png)
+![](Docker入门及实战演练/image-20220914112703914.png)
 
 
 构建：
@@ -246,13 +246,13 @@ build 构建nginx镜像
 
 查看镜像是否构建成功：
 
-![image-20220914112725828](Docker入门及实战演练/image-20220914112725828.png)
+![](Docker入门及实战演练/image-20220914112725828.png)
 
 ##### PHP构建
 
 Dockerfile内容：
 
-![image-20220914112754481](Docker入门及实战演练/image-20220914112754481.png)
+![](Docker入门及实战演练/image-20220914112754481.png)
 
 
 php.ini 内容（PHP默认的配置内容就好，实在找不到的可以复制粘贴我的）
@@ -434,7 +434,7 @@ build构建php镜像
 php源码包、php.ini、Dockerfile都准备好了之后，现在我们可以来用docker build来构建这个镜像了：
 切换到php目录下：
 
-![image-20220914112828203](Docker入门及实战演练/image-20220914112828203.png)
+![](Docker入门及实战演练/image-20220914112828203.png)
 
 
 构建php镜像：
@@ -445,7 +445,7 @@ php源码包、php.ini、Dockerfile都准备好了之后，现在我们可以来
 
 查看镜像是否构建成功：
 
-![image-20220914112848129](Docker入门及实战演练/image-20220914112848129.png)
+![](Docker入门及实战演练/image-20220914112848129.png)
 
 ##### 运行容器
 
@@ -480,7 +480,7 @@ php:5.6.31： # 指定刚才构建的php镜像来启动容器；
 
 查看php容器是否运行：
 
-![image-20220914113015712](Docker入门及实战演练/image-20220914113015712.png)
+![](Docker入门及实战演练/image-20220914113015712.png)
 
 ###### 创建nginx容器：
 
@@ -492,7 +492,7 @@ php:5.6.31： # 指定刚才构建的php镜像来启动容器；
 
 查看容器是否运行：
 
-![image-20220914113108016](Docker入门及实战演练/image-20220914113108016.png)
+![](Docker入门及实战演练/image-20220914113108016.png)
 
 ###### 测试访问
 
@@ -504,7 +504,7 @@ php:5.6.31： # 指定刚才构建的php镜像来启动容器；
 
 用浏览器访问宿主机的IP：
 
-![image-20220914113137716](Docker入门及实战演练/image-20220914113137716.png)
+![](Docker入门及实战演练/image-20220914113137716.png)
 
 再创建一个index.php文件开测试：
 
@@ -514,7 +514,7 @@ php:5.6.31： # 指定刚才构建的php镜像来启动容器；
 
 访问PHP页面：
 
-![image-20220914113155855](Docker入门及实战演练/image-20220914113155855.png)
+![](Docker入门及实战演练/image-20220914113155855.png)
 
 ###### 创建mysql容器
 
@@ -524,15 +524,15 @@ php:5.6.31： # 指定刚才构建的php镜像来启动容器；
 
 查看mysql容器是否启动：
 
-![image-20220914113248676](Docker入门及实战演练/image-20220914113248676.png)
+![](Docker入门及实战演练/image-20220914113248676.png)
 
 进到mysql容器里创建wordpress数据库：
 
-![image-20220914113259502](Docker入门及实战演练/image-20220914113259502.png)
+![](Docker入门及实战演练/image-20220914113259502.png)
 
 查看wordpress是否创建成功：
 
-![image-20220914113311811](Docker入门及实战演练/image-20220914113311811.png)
+![](Docker入门及实战演练/image-20220914113311811.png)
 
 Ctrl+p再Ctrl+q退出mysql容器，回到宿主机
 
@@ -540,7 +540,7 @@ Ctrl+p再Ctrl+q退出mysql容器，回到宿主机
 
 下载wordpress文件到/app/wwwroot目录下
 
-![image-20220914113414426](Docker入门及实战演练/image-20220914113414426.png)
+![](Docker入门及实战演练/image-20220914113414426.png)
 
 wordpress文件下载地址： https://cn.wordpress.org/wordpress-4.7.4-zh_CN.tar.gz
 解压wordpress压缩包并访问测试：
@@ -552,24 +552,24 @@ root@localhost ~]# tar -zxvf wordpress-4.7.4-zh_CN.tar.gz
 打开浏览器访问：
  http://容器宿主机IP/wordpress/wp-admin/setup-config.php
 
-![image-20220914113455412](Docker入门及实战演练/image-20220914113455412.png)
+![](Docker入门及实战演练/image-20220914113455412.png)
 
 配置wordpress博客：
 
-![image-20220914113515837](Docker入门及实战演练/image-20220914113515837.png)
+![](Docker入门及实战演练/image-20220914113515837.png)
 
 提交：
 
-![image-20220914113524341](Docker入门及实战演练/image-20220914113524341.png)
+![](Docker入门及实战演练/image-20220914113524341.png)
 
 
 输入信息安装Wordpress：
 
-![image-20220914113536975](Docker入门及实战演练/image-20220914113536975.png)
+![](Docker入门及实战演练/image-20220914113536975.png)
 
 
 
-![image-20220914113552070](Docker入门及实战演练/image-20220914113552070.png)
+![](Docker入门及实战演练/image-20220914113552070.png)
 
 ### 文件迁移
 

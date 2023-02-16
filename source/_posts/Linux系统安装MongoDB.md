@@ -25,9 +25,9 @@ wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.4.10.tgz
 tar -zxvf mongodb-linux-x86_64-3.4.10.tgz
 ```
 
-![image-20220927164414806](Linux系统安装MongoDB/image-20220927164414806.png)
+![](Linux系统安装MongoDB/image-20220927164414806.png)
 
-![image-20220927164425922](Linux系统安装MongoDB/image-20220927164425922.png)
+![](Linux系统安装MongoDB/image-20220927164425922.png)
 
 
 将Mongodb文件夹命名为mongdb文件夹
@@ -36,7 +36,7 @@ tar -zxvf mongodb-linux-x86_64-3.4.10.tgz
 mv mongodb-linux-x86_64-3.4.10 mongodb
 ```
 
-![image-20220927164505063](Linux系统安装MongoDB/image-20220927164505063.png)
+![](Linux系统安装MongoDB/image-20220927164505063.png)
 
 MongoDB 的可执行文件位于 bin 目录下，所以可以将其添加到 PATH 路径中：
 
@@ -86,7 +86,7 @@ mkdir -p /data/db
 ./mongod --dbpath /data/db  --shutdown
 ```
 
-![image-20220927164725598](Linux系统安装MongoDB/image-20220927164725598.png)
+![](Linux系统安装MongoDB/image-20220927164725598.png)
 
 也可以在 mongo 的命令出口中实现：
 
@@ -104,17 +104,17 @@ switched to db admin
 
 　　　　当你进入mongoDB后台后，它默认会链接到 test 文档（数据库）
 
-![image-20220927164917334](Linux系统安装MongoDB/image-20220927164917334.png)
+![](Linux系统安装MongoDB/image-20220927164917334.png)
 
 插入一些简单的数据，并对插入的数据进行检索：
 
-![image-20220927164958675](Linux系统安装MongoDB/image-20220927164958675.png)
+![](Linux系统安装MongoDB/image-20220927164958675.png)
 
 5、创建用户和密码
 
 进入bin目录下，  输入./mongo 127.0.0.1:27017 连接到mongodb中
 
-![image-20220927165029061](Linux系统安装MongoDB/image-20220927165029061.png)
+![](Linux系统安装MongoDB/image-20220927165029061.png)
 
 建立系统管理员用户
 

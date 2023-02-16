@@ -39,7 +39,7 @@ svn checkout svn://192.168.10.60/jingyu
 svn co
 ```
 
-![image-20220914094349636](SVN客户端使用/image-20220914094349636.png)
+![](SVN客户端使用/image-20220914094349636.png)
 
 2、往版本库中添加新的文件
 
@@ -53,7 +53,7 @@ svn add file
 svn add test.php  #添加test.php
 ```
 
-![image-20220914094510757](SVN客户端使用/image-20220914094510757.png)
+![](SVN客户端使用/image-20220914094510757.png)
 
 ```bash
 svn add *.php  #添加当前目录下所有的php文件
@@ -77,7 +77,7 @@ svn commit -m “add test file for my test“ test.php
 svn ci
 ```
 
-![image-20220914094635327](SVN客户端使用/image-20220914094635327.png)
+![](SVN客户端使用/image-20220914094635327.png)
 
 4、加锁/解锁
 
@@ -165,7 +165,7 @@ svn log path
 svn log test.php   #显示这个文件的所有修改记录，及其版本号的变化
 ```
 
-![image-20220914095011330](SVN客户端使用/image-20220914095011330.png)
+![](SVN客户端使用/image-20220914095011330.png)
 
 9、查看文件详细信息
 
@@ -179,7 +179,7 @@ svn info path
 svn info test.php
 ```
 
-![image-20220914095029198](SVN客户端使用/image-20220914095029198.png)
+![](SVN客户端使用/image-20220914095029198.png)
 
 10、比较差异
 

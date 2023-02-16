@@ -14,7 +14,7 @@ date: 2022-09-22 16:51:24
 
 <!--more-->
 
-![image-20220922165223009](CentOS7-重新分配分区大小/image-20220922165223009.png)
+![](CentOS7-重新分配分区大小/image-20220922165223009.png)
 
 需重新分配分区，把空间加到/目录。
 
@@ -38,7 +38,7 @@ date: 2022-09-22 16:51:24
 [root@localhost ~]# lvremove /dev/mapper/centos-home
 ```
 
-![image-20220922165424072](CentOS7-重新分配分区大小/image-20220922165424072.png)
+![](CentOS7-重新分配分区大小/image-20220922165424072.png)
 
 4.给/目录所在的扇区增加800G:
 
@@ -46,7 +46,7 @@ date: 2022-09-22 16:51:24
 [root@localhost ~]# lvextend -L +800G /dev/mapper/centos-root
 ```
 
-![image-20220922165452667](CentOS7-重新分配分区大小/image-20220922165452667.png)
+![](CentOS7-重新分配分区大小/image-20220922165452667.png)
 
 5.扩展/dev/mapper/centos-root文件系统:
 
@@ -54,7 +54,7 @@ date: 2022-09-22 16:51:24
 [root@localhost ~]# xfs_growfs /dev/mapper/centos-root
 ```
 
-![image-20220922165522010](CentOS7-重新分配分区大小/image-20220922165522010.png)
+![](CentOS7-重新分配分区大小/image-20220922165522010.png)
 
 6.根据 vgdisplay 中的free PE 的大小确定还有多少空间可分配：
 
@@ -62,7 +62,7 @@ date: 2022-09-22 16:51:24
 [root@localhost ~]# vgdisplay
 ```
 
-![image-20220922165539731](CentOS7-重新分配分区大小/image-20220922165539731.png)
+![](CentOS7-重新分配分区大小/image-20220922165539731.png)
 
 
 7.重新创建home lv ：
@@ -71,7 +71,7 @@ date: 2022-09-22 16:51:24
 [root@localhost ~]# lvcreate -L 76G -n home centos
 ```
 
-![image-20220922165608324](CentOS7-重新分配分区大小/image-20220922165608324.png)
+![](CentOS7-重新分配分区大小/image-20220922165608324.png)
 
 8.创建文件系统：
 
@@ -79,7 +79,7 @@ date: 2022-09-22 16:51:24
 [root@localhost ~]# mkfs.xfs /dev/centos/home
 ```
 
-![image-20220922165627675](CentOS7-重新分配分区大小/image-20220922165627675.png)
+![](CentOS7-重新分配分区大小/image-20220922165627675.png)
 
 9.挂载 home：
 
@@ -89,7 +89,7 @@ date: 2022-09-22 16:51:24
 
 重新分区后的分区大小：
 
-![image-20220922165730155](CentOS7-重新分配分区大小/image-20220922165730155.png)
+![](CentOS7-重新分配分区大小/image-20220922165730155.png)
 
 10.把备份的东西cp回home，删掉备份。
 
