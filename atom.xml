@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yixian12580.github.io/"/>
-  <updated>2023-01-18T03:17:41.605Z</updated>
+  <updated>2023-02-16T08:27:13.839Z</updated>
   <id>https://yixian12580.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ELK实践</title>
+    <link href="https://yixian12580.github.io/2023/02294d67f2.html"/>
+    <id>https://yixian12580.github.io/2023/02294d67f2.html</id>
+    <published>2023-02-16T08:12:54.000Z</published>
+    <updated>2023-02-16T08:27:13.839Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本篇文章主要介绍elk的一些框架组成，原理和实践，采用的ELK本版为7.7.0版本&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="ELK" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/ELK/"/>
+    
+    
+      <category term="ELK" scheme="https://yixian12580.github.io/tags/ELK/"/>
+    
+      <category term="ES" scheme="https://yixian12580.github.io/tags/ES/"/>
+    
+  </entry>
   
   <entry>
     <title>开发者平台冷知识</title>
@@ -457,28 +481,6 @@
     
     
       <category term="MySQL" scheme="https://yixian12580.github.io/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DNS服务器部署</title>
-    <link href="https://yixian12580.github.io/2022/098d4f1456.html"/>
-    <id>https://yixian12580.github.io/2022/098d4f1456.html</id>
-    <published>2022-09-27T13:29:46.000Z</published>
-    <updated>2022-11-25T09:36:54.131Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;dns服务器就是域名服务器，它可以把用户的网站地址解析成相应的IP地址。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="DNS" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/DNS/"/>
-    
-    
-      <category term="DNS" scheme="https://yixian12580.github.io/tags/DNS/"/>
     
   </entry>
   
