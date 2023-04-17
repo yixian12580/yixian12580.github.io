@@ -14,11 +14,13 @@ date: 2023-02-16 16:12:54
 
 <!--more-->
 
-## 一、ELK介绍
-
 转载自：https://www.cnblogs.com/zsql/p/13164414.html#_label0
 
-### 1.1、ELK简介
+
+
+## ELK介绍
+
+### ELK简介
 
 　　ELK是Elasticsearch、Logstash、Kibana三大开源框架首字母大写简称(但是后期出现的filebeat(beats中的一种)可以用来替代logstash的数据收集功能，比较轻量级)。市面上也被成为Elastic Stack。
 
@@ -32,7 +34,7 @@ date: 2023-02-16 16:12:54
 
 
 
-### 1.2、为什么要使用ELK
+### 为什么要使用ELK
 
 　　日志主要包括系统日志、应用程序日志和安全日志。系统运维和开发人员可以通过日志了解服务器软硬件信息、检查配置过程中的错误及错误发生的原因。经常分析日志可以了解服务器的负荷，性能安全性，从而及时采取措施纠正错误。
 
@@ -42,7 +44,7 @@ date: 2023-02-16 16:12:54
 
 
 
-### 1.3、完整日志系统基本特征
+### 完整日志系统基本特征
 
 - 收集：能够采集多种来源的日志数据
 - 传输：能够稳定的把日志数据解析过滤并传输到存储系统
@@ -50,11 +52,11 @@ date: 2023-02-16 16:12:54
 - 分析：支持 UI 分析
 - 警告：能够提供错误报告，监控机制
 
-##  二、ELK架构分析
+##  ELK架构分析
 
 
 
-### 2.1、beats+elasticsearch+kibana模式
+### beats+elasticsearch+kibana模式
 
 ![](ELK实践/1271254-20200619151358717-426018215.png)
 
@@ -68,7 +70,7 @@ date: 2023-02-16 16:12:54
 
 
 
-### 2.2、beats+logstash+elasticsearch+kibana模式
+### beats+logstash+elasticsearch+kibana模式
 
 ![](ELK实践/1271254-20200619151852578-1536645590.png)
 
@@ -99,7 +101,7 @@ filebeat结合logstash带来的优势：
 
 
 
-### 2.3、beats+缓存/消息队列+logstash+elasticsearch+kibana模式
+### beats+缓存/消息队列+logstash+elasticsearch+kibana模式
 
 ![](ELK实践/1271254-20200619161852010-1648834504.png)
 
@@ -110,7 +112,7 @@ filebeat结合logstash带来的优势：
 第二，如果有很多台机器需要做日志收集，那么让每台机器都向Elasticsearch持续写入数据，必然会对Elasticsearch造成压力，因此需要对数据进行缓冲，同时，这样的缓冲也可以一定程度的保护数据不丢失；
 第三，将日志数据的格式化与处理放到Indexer中统一做，可以在一处修改代码、部署，避免需要到多台机器上去修改配置
 
-## 三、ELK部署 
+## ELK部署 
 
 elk各个组件的网址可以在官网下载：https://www.elastic.co/cn/
 
@@ -120,15 +122,15 @@ elk各个组件的网址可以在官网下载：https://www.elastic.co/cn/
 
 
 
-### 3.1、filebeat的安装介绍
+### filebeat的安装介绍
 
-#### 3.1.1、原理
+#### 原理
 
 　　Filebeat的工作方式如下：启动Filebeat时，它将启动一个或多个输入，这些输入将在为日志数据指定的位置中查找。对于Filebeat所找到的每个日志，Filebeat都会启动收集器。每个收集器都读取单个日志以获取新内容，并将新日志数据发送到libbeat，libbeat将聚集事件，并将聚集的数据发送到为Filebeat配置的输出
 
 　　Filebeat结构：由两个组件构成，分别是inputs（输入）和harvesters（收集器），这些组件一起工作来跟踪文件并将事件数据发送到您指定的输出，harvester负责读取单个文件的内容。harvester逐行读取每个文件，并将内容发送到输出。为每个文件启动一个harvester。harvester负责打开和关闭文件，这意味着文件描述符在harvester运行时保持打开状态。如果在收集文件时删除或重命名文件，Filebeat将继续读取该文件。这样做的副作用是，磁盘上的空间一直保留到harvester关闭。默认情况下，Filebeat保持文件打开，直到达到close_inactive
 
-#### 3.1.2、简单安装
+#### 简单安装
 
 本文采用压缩包的方式安装，linux版本，filebeat-7.7.0-linux-x86_64.tar.gz
 
@@ -145,15 +147,15 @@ tar -xzvf filebeat-7.7.0-linux-x86_64.tar.gz
 
 
 
-### 3.2、logstash的安装介绍
+### logstash的安装介绍
 
-#### 3.2.1、基本原理
+#### 基本原理
 
 logstash分为三个步骤：inputs（必须的）→ filters（可选的）→ outputs（必须的），inputs生成时间，filters对其事件进行过滤和处理，outputs输出到输出端或者决定其存储在哪些组件里。inputs和outputs支持编码和解码
 
 Logstash管道中的每个input阶段都在自己的线程中运行。将写事件输入到内存（默认）或磁盘上的中心队列。每个管道工作线程从该队列中取出一批事件，通过配置的filter处理该批事件，然后通过output输出到指定的组件存储。管道处理数据量的大小和管道工作线程的数量是可配置的
 
-#### 3.2.2、简单安装
+#### 简单安装
 
 下载地址1：https://www.elastic.co/cn/downloads/logstash  
 
@@ -181,9 +183,9 @@ tar -zxvf logstash-7.7.0.tar.gz
 
 
 
-### 3.3、elasticsearch的安装介绍
+### elasticsearch的安装介绍
 
-#### 3.3.1、基本介绍
+#### 基本介绍
 
 　　Elasticsearch（ES）是一个基于Lucene构建的开源、分布式、RESTful接口的全文搜索引擎。Elasticsearch还是一个分布式文档数据库，其中每个字段均可被索引，而且每个字段的数据均可被搜索，ES能够横向扩展至数以百计的服务器存储以及处理PB级的数据。可以在极短的时间内存储、搜索和分析大量的数据。
 
@@ -198,7 +200,7 @@ elasticsearch的优势：
 - 模式自由：ES的动态mapping机制可以自动检测数据的结构和类型，创建索引并使数据可搜索。
 - RESTful API：JSON + HTTP
 
-#### 3.3.2、linux系统参数设置
+#### linux系统参数设置
 
 ```
 1、设置系统配置
@@ -239,7 +241,7 @@ ulimit -u 4096 #临时修改
 vim /etc/security/limits.conf #永久修改
 ```
 
-#### 3.3.3、elasticsearch安装
+#### elasticsearch安装
 
 elasticsearch是需要其他用户启动的，所以需要先创建一个新的用户elk：
 
@@ -426,7 +428,7 @@ Changed password for user [remote_monitoring_user]
 
  
 
-#### 3.3.4、head插件安装
+#### head插件安装
 
 https://github.com/mobz/elasticsearch-head  #head官网
 
@@ -451,7 +453,7 @@ open http://localhost:9100/
 
 
 
-### 3.4、kibana的安装介绍
+### kibana的安装介绍
 
 下载地址：https://elasticsearch.cn/download/
 
@@ -475,7 +477,7 @@ elasticsearch.password: "password"   #或者使用keystore的保存的密码"${E
 
 访问网址：[http://192.168.110.130:5601/](http://10.18.126.222:5601/) 并使用elastic/password 登录
 
-## 四、实例分析
+## 实例分析
 
 [一篇文章搞懂filebeat（ELK）](https://www.cnblogs.com/zsql/p/13137833.html) 该文章中有beats+elasticsearch+kibana的实例
 
