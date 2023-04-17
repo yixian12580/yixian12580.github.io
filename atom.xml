@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yixian12580.github.io/"/>
-  <updated>2023-02-16T08:43:35.299Z</updated>
+  <updated>2023-04-17T08:08:18.158Z</updated>
   <id>https://yixian12580.github.io/</id>
   
   <author>
@@ -15,6 +15,94 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Zookeeper详解</title>
+    <link href="https://yixian12580.github.io/2023/04f855b122.html"/>
+    <id>https://yixian12580.github.io/2023/04f855b122.html</id>
+    <published>2023-04-17T07:38:12.000Z</published>
+    <updated>2023-04-17T08:08:18.158Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天聊聊zookeeper的理论知识。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Zookeeper" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Zookeeper/"/>
+    
+    
+      <category term="-Zookeeper -zk原理" scheme="https://yixian12580.github.io/tags/Zookeeper-zk%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Zookeeper详解</title>
+    <link href="https://yixian12580.github.io/2023/04f855b122.html"/>
+    <id>https://yixian12580.github.io/2023/04f855b122.html</id>
+    <published>2023-04-17T02:59:10.000Z</published>
+    <updated>2023-04-17T07:36:53.427Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文讲述如何安装和部署ZooKeeper。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Zookeeper" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Zookeeper/"/>
+    
+    
+      <category term="-Zookeeper -zk" scheme="https://yixian12580.github.io/tags/Zookeeper-zk/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL主从结构详解</title>
+    <link href="https://yixian12580.github.io/2023/0417f29fe3.html"/>
+    <id>https://yixian12580.github.io/2023/0417f29fe3.html</id>
+    <published>2023-04-17T02:15:56.000Z</published>
+    <updated>2023-04-17T02:27:29.791Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天聊一下数据库主从结构&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="数据库" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="-MySQL -主从结构" scheme="https://yixian12580.github.io/tags/MySQL-%E4%B8%BB%E4%BB%8E%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL主从同步详解与配置</title>
+    <link href="https://yixian12580.github.io/2023/0490be6400.html"/>
+    <id>https://yixian12580.github.io/2023/0490be6400.html</id>
+    <published>2023-04-17T01:52:34.000Z</published>
+    <updated>2023-04-17T02:11:30.202Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;MySQL数据库自身提供的主从复制功能可以方便的实现数据的多处自动备份，实现数据库的拓展。多个数据备份不仅可以加强数据的安全性，通过实现读写分离还能进一步提升数据库的负载性能。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="数据库" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="MySQL" scheme="https://yixian12580.github.io/tags/MySQL/"/>
+    
+  </entry>
   
   <entry>
     <title>ELK实践</title>
@@ -387,100 +475,6 @@
       <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
     
       <category term="Gitlab" scheme="https://yixian12580.github.io/tags/Gitlab/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>openVPN证书到期</title>
-    <link href="https://yixian12580.github.io/2022/10c7d8d8c.html"/>
-    <id>https://yixian12580.github.io/2022/10c7d8d8c.html</id>
-    <published>2022-10-08T06:06:10.000Z</published>
-    <updated>2022-11-25T09:31:31.633Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今天连接openVPN一直报错，连接失败，查看连接错误日志如下：&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="openVPN" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/openVPN/"/>
-    
-    
-      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
-    
-      <category term="openVPN" scheme="https://yixian12580.github.io/tags/openVPN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>phabricator服务迁移</title>
-    <link href="https://yixian12580.github.io/2022/09a696f486.html"/>
-    <id>https://yixian12580.github.io/2022/09a696f486.html</id>
-    <published>2022-09-28T09:29:39.000Z</published>
-    <updated>2022-11-25T09:33:34.202Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在新服务器上部署好phabricator服务，在此不再赘述，可参考此&lt;a href=&quot;https://yixian12580.github.io/2022/09d5dcd440.html&quot;&gt;文章&lt;/a&gt;。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="phabricator" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/phabricator/"/>
-    
-    
-      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
-    
-      <category term="phabricator" scheme="https://yixian12580.github.io/tags/phabricator/"/>
-    
-      <category term="code review" scheme="https://yixian12580.github.io/tags/code-review/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL异常关机数据恢复</title>
-    <link href="https://yixian12580.github.io/2022/0932c87208.html"/>
-    <id>https://yixian12580.github.io/2022/0932c87208.html</id>
-    <published>2022-09-27T13:47:12.000Z</published>
-    <updated>2022-09-29T06:54:34.109Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;MySQL因为停电异常关机，导致数据库无法启动成功，出现如下报错：&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="数据库" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="MySQL" scheme="https://yixian12580.github.io/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mysql授权和撤销授权</title>
-    <link href="https://yixian12580.github.io/2022/09ee8bdffb.html"/>
-    <id>https://yixian12580.github.io/2022/09ee8bdffb.html</id>
-    <published>2022-09-27T13:39:24.000Z</published>
-    <updated>2022-09-29T03:21:18.198Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;对某个用户授予对某个表的某种操作的权限，并可限制具体的网段&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="数据库" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="MySQL" scheme="https://yixian12580.github.io/tags/MySQL/"/>
     
   </entry>
   
