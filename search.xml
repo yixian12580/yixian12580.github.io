@@ -9,7 +9,8 @@
         <category>Zookeeper</category>
       </categories>
       <tags>
-        <tag>-Zookeeper -zk原理</tag>
+        <tag>Zookeeper</tag>
+        <tag>zk原理</tag>
       </tags>
   </entry>
   <entry>
@@ -21,7 +22,8 @@
         <category>Zookeeper</category>
       </categories>
       <tags>
-        <tag>-Zookeeper -zk</tag>
+        <tag>Zookeeper</tag>
+        <tag>zk</tag>
       </tags>
   </entry>
   <entry>
@@ -33,7 +35,8 @@
         <category>数据库</category>
       </categories>
       <tags>
-        <tag>-MySQL -主从结构</tag>
+        <tag>MySQL</tag>
+        <tag>主从结构</tag>
       </tags>
   </entry>
   <entry>
