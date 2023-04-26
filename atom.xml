@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yixian12580.github.io/"/>
-  <updated>2023-04-18T09:47:29.585Z</updated>
+  <updated>2023-04-26T09:18:21.120Z</updated>
   <id>https://yixian12580.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Docker Swarm集群管理</title>
+    <link href="https://yixian12580.github.io/2023/04e8be827.html"/>
+    <id>https://yixian12580.github.io/2023/04e8be827.html</id>
+    <published>2023-04-26T09:09:40.000Z</published>
+    <updated>2023-04-26T09:18:21.120Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Swarm 在 Docker 1.12 版本之前属于一个独立的项目，在 Docker 1.12 版本发布之后，该项目合并到了 Docker 中，成为 Docker 的一个子命令。目前，Swarm 是 Docker 社区提供的唯一一个原生支持 Docker 集群管理的工具。它可以把多个 Docker 主机组成的系统转换为单一的虚拟 Docker 主机，使得容器可以组成跨主机的子网网络。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Docker" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Docker/"/>
+    
+    
+      <category term="Docker Swarm" scheme="https://yixian12580.github.io/tags/Docker-Swarm/"/>
+    
+      <category term="Docker集群管理" scheme="https://yixian12580.github.io/tags/Docker%E9%9B%86%E7%BE%A4%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>磁盘阵列的创建</title>
@@ -187,7 +211,7 @@
     <link href="https://yixian12580.github.io/2023/0417f29fe3.html"/>
     <id>https://yixian12580.github.io/2023/0417f29fe3.html</id>
     <published>2023-04-17T02:15:56.000Z</published>
-    <updated>2023-04-17T08:44:23.378Z</updated>
+    <updated>2023-04-19T02:24:24.658Z</updated>
     
     <summary type="html">
     
@@ -451,36 +475,6 @@
       <category term="jira" scheme="https://yixian12580.github.io/tags/jira/"/>
     
       <category term="自定义字段" scheme="https://yixian12580.github.io/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E6%AE%B5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>jira修改时间显示格式</title>
-    <link href="https://yixian12580.github.io/2022/11d46c8f26.html"/>
-    <id>https://yixian12580.github.io/2022/11d46c8f26.html</id>
-    <published>2022-11-08T02:03:54.000Z</published>
-    <updated>2022-11-25T09:29:36.882Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="jira" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/jira/"/>
-    
-    
-      <category term="jira" scheme="https://yixian12580.github.io/tags/jira/"/>
-    
-      <category term="时间格式" scheme="https://yixian12580.github.io/tags/%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F/"/>
     
   </entry>
   
