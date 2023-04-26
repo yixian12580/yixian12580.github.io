@@ -41,6 +41,84 @@
   </entry>
   
   <entry>
+    <title>Kafka部署</title>
+    <link href="https://yixian12580.github.io/2023/04b8893609.html"/>
+    <id>https://yixian12580.github.io/2023/04b8893609.html</id>
+    <published>2023-04-26T03:48:12.000Z</published>
+    <updated>2023-04-26T10:08:37.829Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;什么是-Kafka&quot;&gt;&lt;a href=&quot;#什么是-Kafka&quot; class=&quot;headerlink&quot; title=&quot;什么是 Kafka&quot;&gt;&lt;/a&gt;什么是 Kafka&lt;/h2&gt;&lt;p&gt;Kafka 是一个分布式流式平台，它有三个关键能力&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Kafka" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Kafka/"/>
+    
+    
+      <category term="kafka原理" scheme="https://yixian12580.github.io/tags/kafka%E5%8E%9F%E7%90%86/"/>
+    
+      <category term="消息队列" scheme="https://yixian12580.github.io/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+      <category term="kafka" scheme="https://yixian12580.github.io/tags/kafka/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kafka相关讨论</title>
+    <link href="https://yixian12580.github.io/2023/04e6ad34c9.html"/>
+    <id>https://yixian12580.github.io/2023/04e6ad34c9.html</id>
+    <published>2023-04-26T03:35:35.000Z</published>
+    <updated>2023-04-26T10:08:26.468Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Kafka 是一个消息系统，原本开发自 LinkedIn，用作 LinkedIn 的活动流（Activity Stream）和运营数据处理管道（Pipeline）的基础。现在它已被多家不同类型的公司 作为多种类型的数据管道和消息系统使用。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Kafka" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Kafka/"/>
+    
+    
+      <category term="kafka原理" scheme="https://yixian12580.github.io/tags/kafka%E5%8E%9F%E7%90%86/"/>
+    
+      <category term="消息队列" scheme="https://yixian12580.github.io/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+      <category term="kafka" scheme="https://yixian12580.github.io/tags/kafka/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kafka原理详解</title>
+    <link href="https://yixian12580.github.io/2023/04f0560a40.html"/>
+    <id>https://yixian12580.github.io/2023/04f0560a40.html</id>
+    <published>2023-04-26T03:16:25.000Z</published>
+    <updated>2023-04-26T10:08:46.780Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Kafka是最初由Linkedin公司开发，是一个分布式、支持分区的（partition）、多副本的（replica），基于zookeeper协调的分布式消息系统，它的最大的特性就是可以实时的处理大量数据以满足各种需求场景：比如基于hadoop的批处理系统、低延迟的实时系统、storm/Spark流式处理引擎，web/nginx日志、访问日志，消息服务等等，用scala语言编写，Linkedin于2010年贡献给了Apache基金会并成为顶级开源 项目。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Kafka" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Kafka/"/>
+    
+    
+      <category term="kafka原理" scheme="https://yixian12580.github.io/tags/kafka%E5%8E%9F%E7%90%86/"/>
+    
+      <category term="消息队列" scheme="https://yixian12580.github.io/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+      <category term="kafka" scheme="https://yixian12580.github.io/tags/kafka/"/>
+    
+  </entry>
+  
+  <entry>
     <title>磁盘阵列的创建</title>
     <link href="https://yixian12580.github.io/2023/0498e1822.html"/>
     <id>https://yixian12580.github.io/2023/0498e1822.html</id>
@@ -403,78 +481,6 @@
       <category term="nexus" scheme="https://yixian12580.github.io/tags/nexus/"/>
     
       <category term="nexus迁移" scheme="https://yixian12580.github.io/tags/nexus%E8%BF%81%E7%A7%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mac部署Jenkins服务及Jenkins迁移</title>
-    <link href="https://yixian12580.github.io/2022/1189a4bfe3.html"/>
-    <id>https://yixian12580.github.io/2022/1189a4bfe3.html</id>
-    <published>2022-11-14T07:40:37.000Z</published>
-    <updated>2022-11-25T09:54:51.162Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;由于老的Jenkins服务器配置跟不上时代的发展了，需要把服务迁移至新Macmini机器上。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="Jenkins" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Jenkins/"/>
-    
-    
-      <category term="Jenkins" scheme="https://yixian12580.github.io/tags/Jenkins/"/>
-    
-      <category term="Jenkins迁移" scheme="https://yixian12580.github.io/tags/Jenkins%E8%BF%81%E7%A7%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>jira解决issue界面添加自定义字段</title>
-    <link href="https://yixian12580.github.io/2022/113409a5de.html"/>
-    <id>https://yixian12580.github.io/2022/113409a5de.html</id>
-    <published>2022-11-08T02:34:44.000Z</published>
-    <updated>2022-11-25T09:27:54.252Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;接上篇，研发要求问题单点击已解决后需要强制填写“云帆服务器”字段才可以提交。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="jira" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/jira/"/>
-    
-    
-      <category term="jira" scheme="https://yixian12580.github.io/tags/jira/"/>
-    
-      <category term="自定义字段" scheme="https://yixian12580.github.io/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E6%AE%B5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>jira问题单添加自定义字段</title>
-    <link href="https://yixian12580.github.io/2022/1174c5f91.html"/>
-    <id>https://yixian12580.github.io/2022/1174c5f91.html</id>
-    <published>2022-11-08T02:15:55.000Z</published>
-    <updated>2022-11-25T09:28:16.187Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;研发要求要在缺陷类的问题单里加一个”云帆服务器“的字段。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="jira" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/jira/"/>
-    
-    
-      <category term="jira" scheme="https://yixian12580.github.io/tags/jira/"/>
-    
-      <category term="自定义字段" scheme="https://yixian12580.github.io/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E6%AE%B5/"/>
     
   </entry>
   
