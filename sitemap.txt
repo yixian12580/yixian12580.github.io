@@ -178,6 +178,6 @@ https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/jira/
 https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Nginx/
 https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/SSH/
 https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/%E6%95%85%E9%9A%9C/
-https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%9B%BE%E5%BA%8A/
 https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/%E9%82%AE%E7%AE%B1/
+https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%9B%BE%E5%BA%8A/
 https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/%E6%89%93%E5%8D%B0%E6%9C%BA/
