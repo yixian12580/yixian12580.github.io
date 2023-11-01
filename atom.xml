@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yixian12580.github.io/"/>
-  <updated>2023-10-20T09:24:07.395Z</updated>
+  <updated>2023-11-01T07:56:38.807Z</updated>
   <id>https://yixian12580.github.io/</id>
   
   <author>
@@ -15,6 +15,78 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>K8S入门</title>
+    <link href="https://yixian12580.github.io/2023/11fbdfb25a.html"/>
+    <id>https://yixian12580.github.io/2023/11fbdfb25a.html</id>
+    <published>2023-11-01T07:51:20.000Z</published>
+    <updated>2023-11-01T07:56:38.807Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Kubernetes（k8s）作为云原生的核心平台，吸引了越来越多的运维、开发、测试以及其他技术员去了解学习。随着行业越来越内卷，k8s已经被广泛使用。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/K8S/"/>
+    
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/tags/K8S/"/>
+    
+      <category term="Kubernetes" scheme="https://yixian12580.github.io/tags/Kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>redis哨兵模式部署</title>
+    <link href="https://yixian12580.github.io/2023/10b68cbed0.html"/>
+    <id>https://yixian12580.github.io/2023/10b68cbed0.html</id>
+    <published>2023-10-21T03:57:38.000Z</published>
+    <updated>2023-10-21T04:01:37.292Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;上一篇文章讲解了Redis哨兵模式的原理，今天来实战一下，部署Redis哨兵高可用。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Redis" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Redis/"/>
+    
+    
+      <category term="Redis" scheme="https://yixian12580.github.io/tags/Redis/"/>
+    
+      <category term="哨兵模式" scheme="https://yixian12580.github.io/tags/%E5%93%A8%E5%85%B5%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Redis哨兵模式详解</title>
+    <link href="https://yixian12580.github.io/2023/104a1a49cf.html"/>
+    <id>https://yixian12580.github.io/2023/104a1a49cf.html</id>
+    <published>2023-10-21T03:41:47.000Z</published>
+    <updated>2023-10-21T03:57:12.817Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Redis 的主从复制模式下，一旦主节点由于故障不能提供服务，需要手动将从节点晋升为 主节点，同时还要通知客户端更新主节点地址，这种故障处理方式从一定程度上是无法接受的。Redis 2.8 以后提供了 Redis Sentinel 哨兵机制 来解决这个问题。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Redis" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Redis/"/>
+    
+    
+      <category term="Redis" scheme="https://yixian12580.github.io/tags/Redis/"/>
+    
+      <category term="哨兵模式" scheme="https://yixian12580.github.io/tags/%E5%93%A8%E5%85%B5%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>LVS+KeepAlived高可用部署实战应用</title>
@@ -423,66 +495,6 @@
       <category term="ELK" scheme="https://yixian12580.github.io/tags/ELK/"/>
     
       <category term="ES" scheme="https://yixian12580.github.io/tags/ES/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>开发者平台冷知识</title>
-    <link href="https://yixian12580.github.io/2023/017f1808df.html"/>
-    <id>https://yixian12580.github.io/2023/017f1808df.html</id>
-    <published>2023-01-18T02:46:58.000Z</published>
-    <updated>2023-01-18T03:17:41.605Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Google Play和Apple Store是海外的主流应用商店，今天详细说说一些比较冷门问题。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="应用市场" scheme="https://yixian12580.github.io/categories/%E5%BA%94%E7%94%A8%E5%B8%82%E5%9C%BA/"/>
-    
-    
-      <category term="应用上架" scheme="https://yixian12580.github.io/tags/%E5%BA%94%E7%94%A8%E4%B8%8A%E6%9E%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Google开发者账号申请流程</title>
-    <link href="https://yixian12580.github.io/2023/011df77120.html"/>
-    <id>https://yixian12580.github.io/2023/011df77120.html</id>
-    <published>2023-01-18T01:42:13.000Z</published>
-    <updated>2023-01-18T03:19:00.405Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Google商店作为海外最大的应用商店，今天来说说如何申请Google开发者账号，上架我们的APP到谷歌商店。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="应用市场" scheme="https://yixian12580.github.io/categories/%E5%BA%94%E7%94%A8%E5%B8%82%E5%9C%BA/"/>
-    
-    
-      <category term="应用上架" scheme="https://yixian12580.github.io/tags/%E5%BA%94%E7%94%A8%E4%B8%8A%E6%9E%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Google应用商店上架流程</title>
-    <link href="https://yixian12580.github.io/2023/011a846b2.html"/>
-    <id>https://yixian12580.github.io/2023/011a846b2.html</id>
-    <published>2023-01-18T01:37:57.000Z</published>
-    <updated>2023-01-18T03:17:17.211Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;国内的应用商店上架流程都大同小异，今天来说一下Google应用商店的上架流程。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="应用市场" scheme="https://yixian12580.github.io/categories/%E5%BA%94%E7%94%A8%E5%B8%82%E5%9C%BA/"/>
-    
-    
-      <category term="应用上架" scheme="https://yixian12580.github.io/tags/%E5%BA%94%E7%94%A8%E4%B8%8A%E6%9E%B6/"/>
     
   </entry>
   
