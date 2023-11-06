@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yixian12580.github.io/"/>
-  <updated>2023-11-01T07:57:56.564Z</updated>
+  <updated>2023-11-06T10:36:12.129Z</updated>
   <id>https://yixian12580.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>K8S集群部署</title>
+    <link href="https://yixian12580.github.io/2023/1192b6432e.html"/>
+    <id>https://yixian12580.github.io/2023/1192b6432e.html</id>
+    <published>2023-11-06T10:05:48.000Z</published>
+    <updated>2023-11-06T10:36:12.129Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Kubeadm 是一个K8s 部署工具，提供kubeadm init 和kubeadm join，用于快速部署Kubernetes 集群。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/K8S/"/>
+    
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/tags/K8S/"/>
+    
+      <category term="Kubernetes" scheme="https://yixian12580.github.io/tags/Kubernetes/"/>
+    
+  </entry>
   
   <entry>
     <title>K8S入门</title>
@@ -471,30 +495,6 @@
     
     
       <category term="MySQL" scheme="https://yixian12580.github.io/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ELK实践</title>
-    <link href="https://yixian12580.github.io/2023/02294d67f2.html"/>
-    <id>https://yixian12580.github.io/2023/02294d67f2.html</id>
-    <published>2023-02-16T08:12:54.000Z</published>
-    <updated>2023-04-27T06:38:22.078Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本篇文章主要介绍elk的一些框架组成，原理和实践，采用的ELK本版为7.7.0版本&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="ELK" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/ELK/"/>
-    
-    
-      <category term="ELK" scheme="https://yixian12580.github.io/tags/ELK/"/>
-    
-      <category term="ES" scheme="https://yixian12580.github.io/tags/ES/"/>
     
   </entry>
   
