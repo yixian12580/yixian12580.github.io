@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yixian12580.github.io/"/>
-  <updated>2023-11-06T10:36:44.607Z</updated>
+  <updated>2024-02-29T05:37:35.539Z</updated>
   <id>https://yixian12580.github.io/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>nginx之error.log记录报错信息分析</title>
+    <link href="https://yixian12580.github.io/2024/02701bd567.html"/>
+    <id>https://yixian12580.github.io/2024/02701bd567.html</id>
+    <published>2024-02-29T05:24:26.000Z</published>
+    <updated>2024-02-29T05:37:35.539Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我们经常遇到各种各样的nginx错误日志，平时根据一些nginx错误日志就可以分析出原因了，不过不是很系统，这里记录一下关于nginx的error.log的详细说明，方便以后查看了解。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://yixian12580.github.io/categories/Linux/"/>
+    
+      <category term="Nginx" scheme="https://yixian12580.github.io/categories/Linux/Nginx/"/>
+    
+    
+      <category term="Nginx" scheme="https://yixian12580.github.io/tags/Nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用VMware安装wim或esd格式的Win10镜像</title>
+    <link href="https://yixian12580.github.io/2024/02bbbec077.html"/>
+    <id>https://yixian12580.github.io/2024/02bbbec077.html</id>
+    <published>2024-02-29T05:13:30.000Z</published>
+    <updated>2024-02-29T05:23:33.004Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有时我们需要在虚拟机中安装个 &lt;strong&gt;Win10&lt;/strong&gt; 系统做测试使用，如果使用原版镜像不仅体积大、安装慢，而且占用资源也很多。因此我们常常会选择第三方封装的系统了，可以一键部署，开箱即用。然而，第三方封装的镜像一般是 &lt;strong&gt;wim&lt;/strong&gt; 或者 &lt;strong&gt;esd&lt;/strong&gt; 格式的，用 &lt;strong&gt;WMware&lt;/strong&gt; 是无法直接安装的。本文介绍如何借助 &lt;strong&gt;PE&lt;/strong&gt; 系统来进行安装。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
+    
+      <category term="系统" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="系统安装" scheme="https://yixian12580.github.io/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/"/>
+    
+  </entry>
   
   <entry>
     <title>K8S集群部署</title>
@@ -449,52 +493,6 @@
       <category term="Zookeeper" scheme="https://yixian12580.github.io/tags/Zookeeper/"/>
     
       <category term="zk" scheme="https://yixian12580.github.io/tags/zk/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL主从结构详解</title>
-    <link href="https://yixian12580.github.io/2023/0417f29fe3.html"/>
-    <id>https://yixian12580.github.io/2023/0417f29fe3.html</id>
-    <published>2023-04-17T02:15:56.000Z</published>
-    <updated>2023-04-19T02:24:24.658Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今天聊一下数据库主从结构&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="数据库" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="MySQL" scheme="https://yixian12580.github.io/tags/MySQL/"/>
-    
-      <category term="主从结构" scheme="https://yixian12580.github.io/tags/%E4%B8%BB%E4%BB%8E%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL主从同步详解与配置</title>
-    <link href="https://yixian12580.github.io/2023/0490be6400.html"/>
-    <id>https://yixian12580.github.io/2023/0490be6400.html</id>
-    <published>2023-04-17T01:52:34.000Z</published>
-    <updated>2023-04-17T08:35:26.320Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;MySQL数据库自身提供的主从复制功能可以方便的实现数据的多处自动备份，实现数据库的拓展。多个数据备份不仅可以加强数据的安全性，通过实现读写分离还能进一步提升数据库的负载性能。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="数据库" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="MySQL" scheme="https://yixian12580.github.io/tags/MySQL/"/>
     
   </entry>
   
