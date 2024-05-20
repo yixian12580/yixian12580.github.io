@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yixian12580.github.io/"/>
-  <updated>2024-05-06T09:23:38.148Z</updated>
+  <updated>2024-05-20T03:10:47.559Z</updated>
   <id>https://yixian12580.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>k8s亲和性，反亲和性，污点和容忍度详解</title>
+    <link href="https://yixian12580.github.io/2024/0511e88003.html"/>
+    <id>https://yixian12580.github.io/2024/0511e88003.html</id>
+    <published>2024-05-20T02:53:16.000Z</published>
+    <updated>2024-05-20T03:10:47.559Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在k8s中，你可以约束一个 Pod 以便限制其只能在特定的节点上运行， 或优先在特定的节点上运行。有几种方法可以实现这点，推荐的方法都是用 标签选择算符来进行选择。 通常这样的约束不是必须的，因为调度器将自动进行合理的放置（比如，将 Pod 分散到节点上， 而不是将 Pod 放置在可用资源不足的节点上等等）。但在某些情况下，你可能需要进一步控制 Pod 被部署到哪个节点。例如，确保 Pod 最终落在连接了 SSD 的机器上， 或者将来自两个不同的服务且有大量通信的 Pod 被放置在同一个可用区。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/K8S/"/>
+    
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/tags/K8S/"/>
+    
+      <category term="Kubernetes" scheme="https://yixian12580.github.io/tags/Kubernetes/"/>
+    
+  </entry>
   
   <entry>
     <title>MongoDB集群搭建</title>
@@ -467,30 +491,6 @@
       <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
     
       <category term="系统优化" scheme="https://yixian12580.github.io/tags/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Zookeeper详解</title>
-    <link href="https://yixian12580.github.io/2023/04f855b121.html"/>
-    <id>https://yixian12580.github.io/2023/04f855b121.html</id>
-    <published>2023-04-17T07:38:12.000Z</published>
-    <updated>2023-04-17T08:43:14.092Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今天聊聊zookeeper的理论知识。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="Zookeeper" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Zookeeper/"/>
-    
-    
-      <category term="Zookeeper" scheme="https://yixian12580.github.io/tags/Zookeeper/"/>
-    
-      <category term="zk原理" scheme="https://yixian12580.github.io/tags/zk%E5%8E%9F%E7%90%86/"/>
     
   </entry>
   
