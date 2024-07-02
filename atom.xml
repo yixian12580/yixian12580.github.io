@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yixian12580.github.io/"/>
-  <updated>2024-05-20T03:11:21.359Z</updated>
+  <updated>2024-07-02T09:01:14.263Z</updated>
   <id>https://yixian12580.github.io/</id>
   
   <author>
@@ -15,6 +15,78 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Prometheus实现运维告警</title>
+    <link href="https://yixian12580.github.io/2024/07bbd18b10.html"/>
+    <id>https://yixian12580.github.io/2024/07bbd18b10.html</id>
+    <published>2024-07-02T08:52:25.000Z</published>
+    <updated>2024-07-02T09:01:14.263Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;搭建好监控环境并且监控了服务器、数据库、应用，运维人员可以实时了解当前被监控对象的运行情况，但是他们不可能时时坐在电脑边上盯着DashBoard，这就需要一个告警功能，当服务器或应用指标异常时发送告警，通过邮件或者短信的形式告诉运维人员及时处理。接下来就来介绍非常重要的功能——告警。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Prometheus" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Prometheus/"/>
+    
+    
+      <category term="Prometheus" scheme="https://yixian12580.github.io/tags/Prometheus/"/>
+    
+      <category term="AlertManger" scheme="https://yixian12580.github.io/tags/AlertManger/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Prometheus监控K8S</title>
+    <link href="https://yixian12580.github.io/2024/07dba56ffd.html"/>
+    <id>https://yixian12580.github.io/2024/07dba56ffd.html</id>
+    <published>2024-07-02T07:38:30.000Z</published>
+    <updated>2024-07-02T08:37:59.321Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Prometheus是一个开源系统监控和警报工具包，最初由 SoundCloud构建。自 2012 年启动以来，许多公司和组织都采用了 Prometheus，该项目拥有非常活跃的开发者和用户社区。它现在是一个独立的开源项目，独立于任何公司进行维护。为了强调这一点，并明确项目的治理结构，Prometheus 于 2016 年作为继Kubernetes之后的第二个托管项目加入了云原生计算基金会。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Prometheus" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Prometheus/"/>
+    
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/tags/K8S/"/>
+    
+      <category term="Prometheus" scheme="https://yixian12580.github.io/tags/Prometheus/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Prometheus原理详解</title>
+    <link href="https://yixian12580.github.io/2024/077829fd23.html"/>
+    <id>https://yixian12580.github.io/2024/077829fd23.html</id>
+    <published>2024-07-01T06:36:40.000Z</published>
+    <updated>2024-07-02T08:50:22.018Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Prometheus 最开始是由 SoundCloud 开发的开源监控告警系统，是 Google BorgMon 监控系统的开源版本。在 2016 年，Prometheus 加入 CNCF，成为继 Kubernetes 之后第二个被 CNCF 托管的项目。随着 Kubernetes 在容器编排领头羊地位的确立，Prometheus 也成为 Kubernetes 容器监控的标配。本文接下来将会对 Prometheus 做一个介绍。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Prometheus" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Prometheus/"/>
+    
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/tags/K8S/"/>
+    
+      <category term="Prometheus" scheme="https://yixian12580.github.io/tags/Prometheus/"/>
+    
+  </entry>
   
   <entry>
     <title>k8s亲和性，反亲和性，污点和容忍度详解</title>
@@ -111,7 +183,7 @@
     <link href="https://yixian12580.github.io/2023/1192b6432e.html"/>
     <id>https://yixian12580.github.io/2023/1192b6432e.html</id>
     <published>2023-11-06T10:05:48.000Z</published>
-    <updated>2023-11-06T10:36:44.607Z</updated>
+    <updated>2024-07-02T07:36:15.237Z</updated>
     
     <summary type="html">
     
@@ -421,76 +493,6 @@
       <category term="磁盘阵列" scheme="https://yixian12580.github.io/tags/%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%97/"/>
     
       <category term="Raid" scheme="https://yixian12580.github.io/tags/Raid/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CentOS7内核升级</title>
-    <link href="https://yixian12580.github.io/2023/048b137609.html"/>
-    <id>https://yixian12580.github.io/2023/048b137609.html</id>
-    <published>2023-04-18T08:28:35.000Z</published>
-    <updated>2023-04-18T09:16:45.473Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Linux的内核概念不用说大家也很清楚，正是内核版本的不同，才有Linux发行版本的说法，现在主流的centos应该都是centos7了，从centos7.2开始，内核版本为3.10，越往后内核版本越高。高版本的内核修复了许多的低版本内核的bug，因此，系统是需要提高内核版本的，从而提高安全性，稳定性，并增加更多的功能。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
-    
-      <category term="系统" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
-    
-      <category term="内核升级" scheme="https://yixian12580.github.io/tags/%E5%86%85%E6%A0%B8%E5%8D%87%E7%BA%A7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux性能调优</title>
-    <link href="https://yixian12580.github.io/2023/044fbb5713.html"/>
-    <id>https://yixian12580.github.io/2023/044fbb5713.html</id>
-    <published>2023-04-18T08:10:19.000Z</published>
-    <updated>2023-04-18T09:34:53.250Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;调优是一件因地制宜的事情，生搬硬套可能适得其反。互联网企业，生产环境大多数都是linux操作系统，Linux服务器性能调优，是一个重要的课题。linux有成百上千的参数可以调整，对这些参数的理解，可以帮助我们更好的理解服务器工作的原理，帮助更快的找到瓶颈和解决问题。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
-    
-      <category term="性能调优" scheme="https://yixian12580.github.io/tags/%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux系统优化思路</title>
-    <link href="https://yixian12580.github.io/2023/04b206e26e.html"/>
-    <id>https://yixian12580.github.io/2023/04b206e26e.html</id>
-    <published>2023-04-18T07:32:32.000Z</published>
-    <updated>2023-04-18T09:16:45.486Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Linux操作系统是一个开源产品，也是一个开源软件的实践和应用平台，在这个平台下有无数的开源软件支撑，我们常见的apache、tomcat、mysql、php等等，开源软件的最大理念是自由、开放，那么linux作为一个开源平台，最终要实现的是通过这些开源软件的支持，以最低廉的成本，达到应用最优的性能。因此，谈到性能问题，主要实现的是linux操作系统和应用程序的最佳结合。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
-    
-      <category term="系统" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-      <category term="Linux" scheme="https://yixian12580.github.io/tags/Linux/"/>
-    
-      <category term="系统优化" scheme="https://yixian12580.github.io/tags/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
