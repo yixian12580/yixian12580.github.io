@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>逸贤 | Blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://yixian12580.github.io/"/>
+  <updated>2024-07-02T09:34:07.670Z</updated>
+  <id>https://yixian12580.github.io/</id>
+  
+  <author>
+    <name>丨逸贤丨</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Prometheus实现运维告警</title>
+    <link href="https://yixian12580.github.io/2024/06bbd18b10.html"/>
+    <id>https://yixian12580.github.io/2024/06bbd18b10.html</id>
+    <published>2024-06-16T08:52:25.000Z</published>
+    <updated>2024-07-02T09:34:07.670Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;搭建好监控环境并且监控了服务器、数据库、应用，运维人员可以实时了解当前被监控对象的运行情况，但是他们不可能时时坐在电脑边上盯着DashBoard，这就需要一个告警功能，当服务器或应用指标异常时发送告警，通过邮件或者短信的形式告诉运维人员及时处理。接下来就来介绍非常重要的功能——告警。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Prometheus" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Prometheus/"/>
+    
+    
+      <category term="Prometheus" scheme="https://yixian12580.github.io/tags/Prometheus/"/>
+    
+      <category term="AlertManger" scheme="https://yixian12580.github.io/tags/AlertManger/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>k8s使用NFS建立持久卷</title>
+    <link href="https://yixian12580.github.io/2024/062698ba09.html"/>
+    <id>https://yixian12580.github.io/2024/062698ba09.html</id>
+    <published>2024-06-10T08:32:50.000Z</published>
+    <updated>2024-12-16T09:21:08.253Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;由于服务在k8s集群是以容器方式启动，容器重启的话数据会丢失，所以我们一般会把重要的数据挂载到机器上，这里使用NFS做k8s的持久卷。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="NFS" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/NFS/"/>
+    
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/tags/K8S/"/>
+    
+      <category term="NFS" scheme="https://yixian12580.github.io/tags/NFS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Prometheus监控K8S集群</title>
+    <link href="https://yixian12580.github.io/2024/06dba56ffd.html"/>
+    <id>https://yixian12580.github.io/2024/06dba56ffd.html</id>
+    <published>2024-06-10T07:38:30.000Z</published>
+    <updated>2024-07-02T09:34:44.216Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Prometheus是一个开源系统监控和警报工具包，最初由 SoundCloud构建。自 2012 年启动以来，许多公司和组织都采用了 Prometheus，该项目拥有非常活跃的开发者和用户社区。它现在是一个独立的开源项目，独立于任何公司进行维护。为了强调这一点，并明确项目的治理结构，Prometheus 于 2016 年作为继Kubernetes之后的第二个托管项目加入了云原生计算基金会。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Prometheus" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Prometheus/"/>
+    
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/tags/K8S/"/>
+    
+      <category term="Prometheus" scheme="https://yixian12580.github.io/tags/Prometheus/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Prometheus原理详解</title>
+    <link href="https://yixian12580.github.io/2024/067829fd23.html"/>
+    <id>https://yixian12580.github.io/2024/067829fd23.html</id>
+    <published>2024-06-05T06:36:40.000Z</published>
+    <updated>2024-07-02T09:35:57.777Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Prometheus 最开始是由 SoundCloud 开发的开源监控告警系统，是 Google BorgMon 监控系统的开源版本。在 2016 年，Prometheus 加入 CNCF，成为继 Kubernetes 之后第二个被 CNCF 托管的项目。随着 Kubernetes 在容器编排领头羊地位的确立，Prometheus 也成为 Kubernetes 容器监控的标配。本文接下来将会对 Prometheus 做一个介绍。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Prometheus" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Prometheus/"/>
+    
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/tags/K8S/"/>
+    
+      <category term="Prometheus" scheme="https://yixian12580.github.io/tags/Prometheus/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>k8s亲和性，反亲和性，污点和容忍度详解</title>
+    <link href="https://yixian12580.github.io/2024/0511e88003.html"/>
+    <id>https://yixian12580.github.io/2024/0511e88003.html</id>
+    <published>2024-05-20T02:53:16.000Z</published>
+    <updated>2024-05-20T03:11:21.359Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在k8s中，你可以约束一个 Pod 以便限制其只能在特定的节点上运行， 或优先在特定的节点上运行。有几种方法可以实现这点，推荐的方法都是用 标签选择算符来进行选择。 通常这样的约束不是必须的，因为调度器将自动进行合理的放置（比如，将 Pod 分散到节点上， 而不是将 Pod 放置在可用资源不足的节点上等等）。但在某些情况下，你可能需要进一步控制 Pod 被部署到哪个节点。例如，确保 Pod 最终落在连接了 SSD 的机器上， 或者将来自两个不同的服务且有大量通信的 Pod 被放置在同一个可用区。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/K8S/"/>
+    
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/tags/K8S/"/>
+    
+      <category term="Kubernetes" scheme="https://yixian12580.github.io/tags/Kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MongoDB集群搭建</title>
+    <link href="https://yixian12580.github.io/2024/0513fc1146.html"/>
+    <id>https://yixian12580.github.io/2024/0513fc1146.html</id>
+    <published>2024-05-06T08:57:18.000Z</published>
+    <updated>2024-05-06T09:23:38.148Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;MongoDB是一个基于分布式文件存储的数据库。由&lt;code&gt;C++&lt;/code&gt;语言编写。旨在为WEB应用提供可扩展的高性能数据存储解决方案。&lt;/p&gt;&lt;p&gt;MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。&lt;/p&gt;&lt;p&gt;它支持的数据结构非常松散，是类似&lt;code&gt;json&lt;/code&gt;的&lt;code&gt;bson&lt;/code&gt;格式，因此可以存储比较复杂的数据类型。Mongo最大的特点是它支持的查询语言非常强大，其语法有点类似于面向对象的查询语言，几乎可以实现类似关系数据库单表查询的绝大部分功能，而且还支持对数据建立索引。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://yixian12580.github.io/categories/Linux/"/>
+    
+      <category term="MongoDB" scheme="https://yixian12580.github.io/categories/Linux/MongoDB/"/>
+    
+    
+      <category term="MongoDB" scheme="https://yixian12580.github.io/tags/MongoDB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nginx之error.log记录报错信息分析</title>
+    <link href="https://yixian12580.github.io/2024/02701bd567.html"/>
+    <id>https://yixian12580.github.io/2024/02701bd567.html</id>
+    <published>2024-02-29T05:24:26.000Z</published>
+    <updated>2024-02-29T05:38:20.227Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我们经常遇到各种各样的nginx错误日志，平时根据一些nginx错误日志就可以分析出原因了，不过不是很系统，这里记录一下关于nginx的error.log的详细说明，方便以后查看了解。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://yixian12580.github.io/categories/Linux/"/>
+    
+      <category term="Nginx" scheme="https://yixian12580.github.io/categories/Linux/Nginx/"/>
+    
+    
+      <category term="Nginx" scheme="https://yixian12580.github.io/tags/Nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用VMware安装wim或esd格式的Win10镜像</title>
+    <link href="https://yixian12580.github.io/2024/02bbbec077.html"/>
+    <id>https://yixian12580.github.io/2024/02bbbec077.html</id>
+    <published>2024-02-29T05:13:30.000Z</published>
+    <updated>2024-02-29T05:38:20.229Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有时我们需要在虚拟机中安装个 &lt;strong&gt;Win10&lt;/strong&gt; 系统做测试使用，如果使用原版镜像不仅体积大、安装慢，而且占用资源也很多。因此我们常常会选择第三方封装的系统了，可以一键部署，开箱即用。然而，第三方封装的镜像一般是 &lt;strong&gt;wim&lt;/strong&gt; 或者 &lt;strong&gt;esd&lt;/strong&gt; 格式的，用 &lt;strong&gt;WMware&lt;/strong&gt; 是无法直接安装的。本文介绍如何借助 &lt;strong&gt;PE&lt;/strong&gt; 系统来进行安装。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
+    
+      <category term="系统" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="系统安装" scheme="https://yixian12580.github.io/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>K8S集群部署</title>
+    <link href="https://yixian12580.github.io/2023/1192b6432e.html"/>
+    <id>https://yixian12580.github.io/2023/1192b6432e.html</id>
+    <published>2023-11-06T10:05:48.000Z</published>
+    <updated>2024-07-02T07:36:15.237Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Kubeadm 是一个K8s 部署工具，提供kubeadm init 和kubeadm join，用于快速部署Kubernetes 集群。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/K8S/"/>
+    
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/tags/K8S/"/>
+    
+      <category term="Kubernetes" scheme="https://yixian12580.github.io/tags/Kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>K8S入门</title>
+    <link href="https://yixian12580.github.io/2023/11fbdfb25a.html"/>
+    <id>https://yixian12580.github.io/2023/11fbdfb25a.html</id>
+    <published>2023-11-01T07:51:20.000Z</published>
+    <updated>2023-11-01T07:57:56.564Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Kubernetes（k8s）作为云原生的核心平台，吸引了越来越多的运维、开发、测试以及其他技术员去了解学习。随着行业越来越内卷，k8s已经被广泛使用。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/K8S/"/>
+    
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/tags/K8S/"/>
+    
+      <category term="Kubernetes" scheme="https://yixian12580.github.io/tags/Kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>redis哨兵模式部署</title>
+    <link href="https://yixian12580.github.io/2023/10b68cbed0.html"/>
+    <id>https://yixian12580.github.io/2023/10b68cbed0.html</id>
+    <published>2023-10-21T03:57:38.000Z</published>
+    <updated>2023-11-01T07:57:56.589Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;上一篇文章讲解了Redis哨兵模式的原理，今天来实战一下，部署Redis哨兵高可用。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Redis" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Redis/"/>
+    
+    
+      <category term="Redis" scheme="https://yixian12580.github.io/tags/Redis/"/>
+    
+      <category term="哨兵模式" scheme="https://yixian12580.github.io/tags/%E5%93%A8%E5%85%B5%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Redis哨兵模式详解</title>
+    <link href="https://yixian12580.github.io/2023/104a1a49cf.html"/>
+    <id>https://yixian12580.github.io/2023/104a1a49cf.html</id>
+    <published>2023-10-21T03:41:47.000Z</published>
+    <updated>2023-11-01T07:57:56.567Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Redis 的主从复制模式下，一旦主节点由于故障不能提供服务，需要手动将从节点晋升为 主节点，同时还要通知客户端更新主节点地址，这种故障处理方式从一定程度上是无法接受的。Redis 2.8 以后提供了 Redis Sentinel 哨兵机制 来解决这个问题。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Redis" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Redis/"/>
+    
+    
+      <category term="Redis" scheme="https://yixian12580.github.io/tags/Redis/"/>
+    
+      <category term="哨兵模式" scheme="https://yixian12580.github.io/tags/%E5%93%A8%E5%85%B5%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LVS+KeepAlived高可用部署实战应用</title>
+    <link href="https://yixian12580.github.io/2023/10d48c1061.html"/>
+    <id>https://yixian12580.github.io/2023/10d48c1061.html</id>
+    <published>2023-10-20T05:46:07.000Z</published>
+    <updated>2023-10-20T09:24:07.395Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;高可用集群（High Availability Cluster，简称HA Cluster），是指以减少服务中断时间为目的得服务器集群技术。它通过保护用户得业务程序对外部间断提供的服务，把因为软件，硬件，认为造成的故障对业务得影响降低到最小程度。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="LVS" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/LVS/"/>
+    
+    
+      <category term="LVS" scheme="https://yixian12580.github.io/tags/LVS/"/>
+    
+      <category term="Keepalive" scheme="https://yixian12580.github.io/tags/Keepalive/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LVS的安装部署</title>
+    <link href="https://yixian12580.github.io/2023/108c14b9c0.html"/>
+    <id>https://yixian12580.github.io/2023/108c14b9c0.html</id>
+    <published>2023-10-20T04:58:35.000Z</published>
+    <updated>2023-10-20T09:23:47.661Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;LVS是Linux Virtual Server的简写，在1998年5月由章文嵩博士成立，工作在OSI模型的四层，基于IP进行负载均衡， 在linux2.2内核时，IPVS就已经以内核补丁的形式出现， 从2.4版本以后，IPVS已经成为linux官方标准内核的一部分。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="LVS" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/LVS/"/>
+    
+    
+      <category term="LVS" scheme="https://yixian12580.github.io/tags/LVS/"/>
+    
+      <category term="负责均衡" scheme="https://yixian12580.github.io/tags/%E8%B4%9F%E8%B4%A3%E5%9D%87%E8%A1%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LVS详解</title>
+    <link href="https://yixian12580.github.io/2023/1036d363c3.html"/>
+    <id>https://yixian12580.github.io/2023/1036d363c3.html</id>
+    <published>2023-10-20T04:44:16.000Z</published>
+    <updated>2023-10-20T09:24:46.299Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;LVS（Linux Virtual Server），是一个极好的负载均衡解决方案，它将一个真实服务器集群虚拟成一台服务器来对外提供服务，同时在真实服务器集群中实现了负载均衡，从linux2.4开始已经被收录到linux核心中。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="LVS" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/LVS/"/>
+    
+    
+      <category term="LVS" scheme="https://yixian12580.github.io/tags/LVS/"/>
+    
+      <category term="负责均衡" scheme="https://yixian12580.github.io/tags/%E8%B4%9F%E8%B4%A3%E5%9D%87%E8%A1%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker Swarm集群管理</title>
+    <link href="https://yixian12580.github.io/2023/04e8be827.html"/>
+    <id>https://yixian12580.github.io/2023/04e8be827.html</id>
+    <published>2023-04-26T09:09:40.000Z</published>
+    <updated>2023-04-26T09:18:56.856Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Swarm 在 Docker 1.12 版本之前属于一个独立的项目，在 Docker 1.12 版本发布之后，该项目合并到了 Docker 中，成为 Docker 的一个子命令。目前，Swarm 是 Docker 社区提供的唯一一个原生支持 Docker 集群管理的工具。它可以把多个 Docker 主机组成的系统转换为单一的虚拟 Docker 主机，使得容器可以组成跨主机的子网网络。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Docker" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Docker/"/>
+    
+    
+      <category term="Docker Swarm" scheme="https://yixian12580.github.io/tags/Docker-Swarm/"/>
+    
+      <category term="Docker集群管理" scheme="https://yixian12580.github.io/tags/Docker%E9%9B%86%E7%BE%A4%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kafka部署</title>
+    <link href="https://yixian12580.github.io/2023/04b8893609.html"/>
+    <id>https://yixian12580.github.io/2023/04b8893609.html</id>
+    <published>2023-04-26T03:48:12.000Z</published>
+    <updated>2023-04-26T10:09:18.779Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;什么是-Kafka&quot;&gt;&lt;a href=&quot;#什么是-Kafka&quot; class=&quot;headerlink&quot; title=&quot;什么是 Kafka&quot;&gt;&lt;/a&gt;什么是 Kafka&lt;/h2&gt;&lt;p&gt;Kafka 是一个分布式流式平台，它有三个关键能力&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Kafka" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Kafka/"/>
+    
+    
+      <category term="kafka原理" scheme="https://yixian12580.github.io/tags/kafka%E5%8E%9F%E7%90%86/"/>
+    
+      <category term="消息队列" scheme="https://yixian12580.github.io/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+      <category term="kafka" scheme="https://yixian12580.github.io/tags/kafka/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kafka相关讨论</title>
+    <link href="https://yixian12580.github.io/2023/04e6ad34c9.html"/>
+    <id>https://yixian12580.github.io/2023/04e6ad34c9.html</id>
+    <published>2023-04-26T03:35:35.000Z</published>
+    <updated>2023-04-26T10:09:18.774Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Kafka 是一个消息系统，原本开发自 LinkedIn，用作 LinkedIn 的活动流（Activity Stream）和运营数据处理管道（Pipeline）的基础。现在它已被多家不同类型的公司 作为多种类型的数据管道和消息系统使用。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Kafka" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Kafka/"/>
+    
+    
+      <category term="kafka原理" scheme="https://yixian12580.github.io/tags/kafka%E5%8E%9F%E7%90%86/"/>
+    
+      <category term="消息队列" scheme="https://yixian12580.github.io/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+      <category term="kafka" scheme="https://yixian12580.github.io/tags/kafka/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kafka原理详解</title>
+    <link href="https://yixian12580.github.io/2023/04f0560a40.html"/>
+    <id>https://yixian12580.github.io/2023/04f0560a40.html</id>
+    <published>2023-04-26T03:16:25.000Z</published>
+    <updated>2023-04-26T10:09:18.767Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Kafka是最初由Linkedin公司开发，是一个分布式、支持分区的（partition）、多副本的（replica），基于zookeeper协调的分布式消息系统，它的最大的特性就是可以实时的处理大量数据以满足各种需求场景：比如基于hadoop的批处理系统、低延迟的实时系统、storm/Spark流式处理引擎，web/nginx日志、访问日志，消息服务等等，用scala语言编写，Linkedin于2010年贡献给了Apache基金会并成为顶级开源 项目。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Kafka" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Kafka/"/>
+    
+    
+      <category term="kafka原理" scheme="https://yixian12580.github.io/tags/kafka%E5%8E%9F%E7%90%86/"/>
+    
+      <category term="消息队列" scheme="https://yixian12580.github.io/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+      <category term="kafka" scheme="https://yixian12580.github.io/tags/kafka/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>磁盘阵列的创建</title>
+    <link href="https://yixian12580.github.io/2023/0498e1822.html"/>
+    <id>https://yixian12580.github.io/2023/0498e1822.html</id>
+    <published>2023-04-18T09:03:50.000Z</published>
+    <updated>2023-04-18T09:47:29.585Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;常见raid有0、1和5，以下操作在虚拟机下模拟，学会这招在自己电脑做个raid也未尝不可啊~&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="桌面" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/"/>
+    
+      <category term="系统" scheme="https://yixian12580.github.io/categories/%E6%A1%8C%E9%9D%A2/%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="磁盘阵列" scheme="https://yixian12580.github.io/tags/%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%97/"/>
+    
+      <category term="Raid" scheme="https://yixian12580.github.io/tags/Raid/"/>
+    
+  </entry>
+  
+</feed>
