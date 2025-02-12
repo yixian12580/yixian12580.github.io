@@ -26,8 +26,8 @@ media_folder: "source/images/uploads" # 媒体文件将存储在图片/上载下
 public_folder: "/images/uploads" # 上传的媒体的src属性将以/images/uploads开头。
 
 
-site_url: https://xxxxxx.org/ # 网站网址
-display_url: https://xxxxxx.org/ # 显示网址
+site_url: https://blog.ybangwl.com/ # 网站网址
+display_url: https://blog.ybangwl.com/ # 显示网址
 
 
 locale: "zh_Hans" # 语言环境
