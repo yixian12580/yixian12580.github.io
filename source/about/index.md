@@ -7,7 +7,8 @@ comments: false
 ---
 
 <center>
-个人爱情记录网站：<a href="https://mcss77.github.io" rel="nofollow">梅菜笋丝 | 爱情网站</a>
+个人爱情记录网站：<a href="#" rel="nofollow">梅菜笋丝 | 爱情网站</a>
+
 
 个人学习记录网站：<a href="https://yixian12580.github.io" rel="nofollow">逸贤 | 博客</a>
 

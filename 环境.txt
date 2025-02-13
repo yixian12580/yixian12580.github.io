@@ -1,0 +1,5 @@
+hexo: 3.9.0
+node: 12.14.0
+git：2.47.1
+
+迁移新电脑可参考：https://blog.csdn.net/qq_43698421/article/details/120407042

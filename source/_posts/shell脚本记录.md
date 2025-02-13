@@ -1053,7 +1053,55 @@ if __name__ == '__main__':
 
 ```
 
-### 检查ssl证书到期时间（python）
+#### 脚本3（shell）
+
+domain_list：
+
+```
+baidu.com
+qq.com
+```
+
+domain.sh：
+
+```
+#!/bin/bash
+#****************************************************************************************
+#Author: Jazz
+#***************************************************************************************
+#!/bin/bash
+# 检测域名有效期
+
+while read domain; do
+    #取出域名过期时间
+    end_time=$(whois $domain | grep "Expiration Date" | awk '{print $5}' | cut -d 'T' -f 1)
+    
+    #转换成时间戳
+    end_times=$(date -d "$end_time" +%s)
+    #以时间戳的形式显示当前时间
+    current_times=$(date +%s)
+    #域名到期剩余天数
+    echo $end_times $current_times &> /dev/null
+    let left_time="$end_times - $current_times"
+    days=$(expr $left_time / 86400)
+
+    if [[ ${days} -lt 0 ]];then
+        echo "$domain 域名已过期"
+    elif [[ ${days} -lt 60 ]];then
+		echo "$domain 域名到期剩余天数: ${days}, the alarm is being sent"
+	    curl -X POST -H "Content-Type: application/json" \
+            -d '{"msgtype": "markdown", "markdown": {"content": "## <font color=red size=22>【警告】</font>域名即将过期\n  ****\n 域名：'$domain' \n 域名到期日: '$end_time' \n 剩余天数: '$days' \n <font color=red size=18>请及时续费！！</font>"}}' \
+	    https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=d60217ce-f8e7-4232-b8eb-9c991549127b
+    else
+                echo "$domain 域名到期剩余天数: ${days}"
+    fi
+	
+done < /root/monitor/domain_list
+```
+
+### 检查ssl证书到期时间
+
+#### 检查ssl证书到期时间（python）
 
 ```python
 # -*- coding:utf-8 -*-
@@ -1151,6 +1199,57 @@ if __name__ == '__main__':
 
 ```
 
+#### 检查ssl证书到期时间（shell）
+
+https_list：
+
+```
+www.baidu.com
+www.qq.com
+```
+
+https.sh：
+
+```
+#!/bin/bash
+#****************************************************************************************
+#Author: Jazz
+#***************************************************************************************
+#!/bin/bash
+# 检测https证书有效期
+
+source /etc/profile
+
+while read line; do
+
+end_time=$(echo | timeout 1 openssl s_client -servername $line -connect $line:443 2>/dev/null | openssl x509 -noout -enddate 2> /dev/null | awk -F '=' '{print $2}')
+end_time_cst=$(date -d "$end_time" +"%Y-%m-%d")
+end_times=$(date -d "$end_time" +%s)
+current_times=$(date -d "$(date -u '+%b %d %T %Y GMT')" +%s)
+
+echo $end_times $current_times &> /dev/null
+
+let left_time="$end_times - $current_times"
+days=$(expr $left_time / 86400)
+
+if [[ ${days} -eq 0 ]];then
+    echo "$line DNS解析异常"
+elif [[ "${days}" -lt 0 ]];then
+    echo "$line 证书已过期"
+elif [[ "${days}" -lt 25 ]];then
+    echo "$line 剩余天数: ${days}, the alarm is being sent"
+    curl -X POST -H "Content-Type: application/json" \
+    -d '{"msgtype": "markdown", "markdown": {"content": "## <font color=red size=22>【警告】</font>SSL证书即将过期\n  ****\n 证书：'$line' \n 证书到期日: '$end_time_cst' \n 剩余天数: '$days' \n <font color=red size=18>请及时续期！！</font>"}}' \
+    https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=d60217ce-f8e7-4232-b8eb-9c991549127b
+else
+   echo "$line 剩余天数: ${days}"
+fi
+
+done < /root/monitor/https_list
+```
+
+
+
 ### MySQL备份
 
 ```bash
@@ -1194,6 +1293,44 @@ echo "MySQL database backup ended on $(date +%F' '%T)."
 echo "#########################################"
 
 ```
+
+### 发送文件到企业微信
+
+```
+#!/bin/bash
+
+mysql -u root -p你的密码 -h 172.28.81.148 -e "SQL查询语句" > /root/finance/$(date +%F).xls
+
+api_get="https://qyapi.weixin.qq.com/cgi-bin/webhook/upload_media?key=机器人的KEY&type=file"
+api_post="https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=机器人的KEY"
+scr_file=/root/finance/$(date +%F).xls
+
+sleep 3
+
+if [[ -f $scr_file ]];then
+    file_name="/root/finance/$(date +%F).xls"
+    media_id=$(curl -s -H 'Content-Type: multipart/form-data' ${api_get} -F "media=@${file_name}" | jq -r .media_id)
+
+# 使用jq --arg进行传参，需注意'.file.media_id'对应其json格式的层级
+    jq --arg media_id "$media_id" '.file.media_id = $media_id' /root/finance/file.json > /root/finance/new_file.json
+    curl -H 'Content-Type: application/json' -d @/root/finance/new_file.json ${api_post}
+fi
+
+rm -f $scr_file
+```
+
+file.json内容：
+
+```
+{
+    "msgtype": "file",
+    "file": {
+ 		"media_id": "3a8asd892asd8asd"
+    }
+}
+```
+
+
 
 ### 检查应用状态
 

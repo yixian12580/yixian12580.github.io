@@ -43,9 +43,9 @@ make && make install
 下载链接：链接:  https://pan.baidu.com/s/1XD_pja7Cj4umOJngN92eIQ 提取码: m7dy
 
 ```
-tar -zxf open***-2.0.9.tar.gz
-cd open***-2.0.9
-./configure --with-lzo-headers=/usr/local/lzo/include --with-lzo-lib=/usr/local/lzo/lib
+tar -zxf openvpn-2.0.9.tar.gz
+cd openvpn-2.0.9
+./configure --with-lzo-headers=/usr/local/lzo/include --with-lzo-lib=/usr/local/lzo/lib --enable-password-save
 make && make install
 ```
 
@@ -55,7 +55,7 @@ Open安装完成，下面开始配置openVPN：
 在open的源代码目录下有一个/easy-rsa/2.0目录，我的环境是/opt/tools/open-2.0.9/easy-rsa/2.0/，里面有一个vars文件存有CA的详细信息，这里需要编辑并修改相关配置。
 
 ```
-cd /opt/tools/open***-2.0.9/easy-rsa/2.0/
+cd /opt/tools/openvpn-2.0.9/easy-rsa/2.0/
 vim vars #编辑vars修改为你自己的配置信息
 tail -5 vars #下面是我的配置信息
 export KEY_COUNTRY="CN"       #定义你所在的国家
@@ -369,7 +369,7 @@ echo "1" >/proc/sys/net/ipv4/ip_forward
 3）启动Open***服务
 
 ```
-[root@mylinux1 2.0]# /usr/local/sbin/open*** --config /etc/server.conf &
+[root@mylinux1 2.0]# /usr/local/sbin/openvpn --config /etc/server.conf &
 Sat Sep  3 17:31:22 2016 us=753145 Current Parameter Settings:
 Sat Sep  3 17:31:22 2016 us=753266   config = '/etc/server.conf'
 Sat Sep  3 17:31:22 2016 us=753279   mode = 1
@@ -570,7 +570,7 @@ Sat Sep  3 17:31:22 2016 us=797419 Initialization Sequence Completed
 看到“Initialization Sequence Completed”字样，说明OpenVPN启动成功。
 
 ```
-[root@mylinux1 2.0]# ps -ef|grep open***
+[root@mylinux1 2.0]# ps -ef|grep openvpn
 root      25318    922  0 17:31 pts/0    00:00:00 /usr/local/sbin/open*** --config /etc/server.conf
 root      25360   3091  0 19:47 pts/1    00:00:00 grep open***
 [root@mylinux1 2.0]# netstat -lnt|grep 1194
