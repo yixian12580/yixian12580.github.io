@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: main # Branch to update (master by default)
+  branch: backup # Branch to update (master by default)
 
 # These lines should *not* be indented
 media_folder: 'source/images' # Media files will be stored in the repo under source/images
