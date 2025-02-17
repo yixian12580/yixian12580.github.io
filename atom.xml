@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>逸贤 | Blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://yixian12580.github.io/"/>
+  <updated>2025-02-13T03:15:21.000Z</updated>
+  <id>https://yixian12580.github.io/</id>
+  
+  <author>
+    <name>丨逸贤丨</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MySQL备份恢复单库或单表</title>
+    <link href="https://yixian12580.github.io/2024/127fcc32a7.html"/>
+    <id>https://yixian12580.github.io/2024/127fcc32a7.html</id>
+    <published>2024-12-30T03:29:15.000Z</published>
+    <updated>2025-02-13T03:15:21.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;MySQL 逻辑备份工具最常用的就是 mysqldump 了，一般我们都是备份整个实例或部分业务库恢复场景可能就比较多了，比如恢复某个库或某个表等，那么如何从全备中恢复单库或单表，这其中又有哪些隐藏的坑呢？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="数据库" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="MySQL" scheme="https://yixian12580.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mysqldump备份（全量+增量）</title>
+    <link href="https://yixian12580.github.io/2024/12378b45cf.html"/>
+    <id>https://yixian12580.github.io/2024/12378b45cf.html</id>
+    <published>2024-12-28T02:58:41.000Z</published>
+    <updated>2025-02-13T03:15:21.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在日常运维工作中，对mysql数据库的备份是万分重要的，以防在数据库表丢失或损坏情况出现，可以及时恢复数据。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="数据库" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="MySQL" scheme="https://yixian12580.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL查询调优</title>
+    <link href="https://yixian12580.github.io/2024/12b2f7a67.html"/>
+    <id>https://yixian12580.github.io/2024/12b2f7a67.html</id>
+    <published>2024-12-23T02:13:08.000Z</published>
+    <updated>2025-02-13T03:15:21.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;mysql查询为什么会慢，遇到这种问题，我们一般会想到是因为索引。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="数据库" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="MySQL" scheme="https://yixian12580.github.io/tags/MySQL/"/>
+    
+      <category term="优化" scheme="https://yixian12580.github.io/tags/%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL删除所有表</title>
+    <link href="https://yixian12580.github.io/2024/125a754aee.html"/>
+    <id>https://yixian12580.github.io/2024/125a754aee.html</id>
+    <published>2024-12-16T02:43:55.000Z</published>
+    <updated>2025-02-13T03:15:21.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;当我们需要在MySQL数据库中删除所有已经存在的表时，我们可以通过执行多条drop语句的方式逐个删除，但是这样过于繁琐，没有效率，而且容易出错。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="数据库" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="MySQL" scheme="https://yixian12580.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>kubesphere监控信息缺失</title>
+    <link href="https://yixian12580.github.io/2024/1153ecdc40.html"/>
+    <id>https://yixian12580.github.io/2024/1153ecdc40.html</id>
+    <published>2024-11-22T09:54:37.000Z</published>
+    <updated>2025-02-13T03:15:21.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;K8s 1.24 已从 cAdvisor 中删除了 Docker 插件。虽然可以使用 cri-dockerd（Docker by Mirantis）来调整容器运行时，但 kubelet 无法再通过 cAdvisor 检索 Docker 容器信息，例如镜像、pod、容器标签等，导致kubesphere的pod监控页面监控信息缺失。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="k8s" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/k8s/"/>
+    
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/tags/K8S/"/>
+    
+      <category term="kubesphere" scheme="https://yixian12580.github.io/tags/kubesphere/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Centos机器磁盘扩容</title>
+    <link href="https://yixian12580.github.io/2024/11adf12f0a.html"/>
+    <id>https://yixian12580.github.io/2024/11adf12f0a.html</id>
+    <published>2024-11-11T10:35:47.000Z</published>
+    <updated>2025-02-13T03:15:21.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;内网机器磁盘可用空间不足，发现磁盘分区不合理，且有的分区磁盘未挂载使用&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="分区" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%88%86%E5%8C%BA/"/>
+    
+    
+      <category term="磁盘" scheme="https://yixian12580.github.io/tags/%E7%A3%81%E7%9B%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>skywalking部署</title>
+    <link href="https://yixian12580.github.io/2024/102994c0ea.html"/>
+    <id>https://yixian12580.github.io/2024/102994c0ea.html</id>
+    <published>2024-10-10T10:08:21.000Z</published>
+    <updated>2025-02-13T03:15:21.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;SkyWalking是一个开源的可观察性平台，用于收集，分析，聚合和可视化来自本地或者云服务中的数据。即使在整个云环境中，SkyWalking也能提供一种简便的方法来维护您的分布式系统的清晰视图。它是一个现代的APM（Application Performance Monitor 应用性能监测软件），专门为基于云、容器的分布式系统而设计。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="skywalking" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/skywalking/"/>
+    
+    
+      <category term="链路追踪" scheme="https://yixian12580.github.io/tags/%E9%93%BE%E8%B7%AF%E8%BF%BD%E8%B8%AA/"/>
+    
+      <category term="skywalking" scheme="https://yixian12580.github.io/tags/skywalking/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>k8s之Ingress资源详解</title>
+    <link href="https://yixian12580.github.io/2024/0856fdeaa.html"/>
+    <id>https://yixian12580.github.io/2024/0856fdeaa.html</id>
+    <published>2024-08-06T01:59:49.000Z</published>
+    <updated>2025-02-13T03:15:21.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;Ingress&lt;/strong&gt; 是一种 Kubernetes 资源对象，用于对外暴露服务。它定义了不同主机名（域名）及 URL 和对应后端 Service 的绑定，根据不同的路径路由 HTTP 和 HTTPS 流量。&lt;strong&gt;Ingress Controller&lt;/strong&gt; 是一个 Pod 服务，封装了一个 Web 前端负载均衡器，并根据 Ingress 的定义动态生成配置文件。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="k8s" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/k8s/"/>
+    
+    
+      <category term="Ingress" scheme="https://yixian12580.github.io/tags/Ingress/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>k8s之节点kubelet资源配置</title>
+    <link href="https://yixian12580.github.io/2024/07f89bb99b.html"/>
+    <id>https://yixian12580.github.io/2024/07f89bb99b.html</id>
+    <published>2024-07-10T09:00:45.000Z</published>
+    <updated>2025-02-13T03:15:21.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;由于Pod没有对内存及CPU进行限制，导致Pod在运行过程中所需的内存超过了节点本身的内存（OOM），从而导致节点崩溃，使得运行在该节点上的所有Pod都失败了。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="k8s" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/k8s/"/>
+    
+    
+      <category term="资源预留" scheme="https://yixian12580.github.io/tags/%E8%B5%84%E6%BA%90%E9%A2%84%E7%95%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DNSserver部署</title>
+    <link href="https://yixian12580.github.io/2024/07dee378fc.html"/>
+    <id>https://yixian12580.github.io/2024/07dee378fc.html</id>
+    <published>2024-07-05T03:01:31.000Z</published>
+    <updated>2025-02-13T03:15:21.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前已经发过一篇DNS服务器的部署教程，最近发现一个通过docker-compose启动的DNS服务，相对简单，也能实现需求，记录一下。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="DNS" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/DNS/"/>
+    
+    
+      <category term="DNS" scheme="https://yixian12580.github.io/tags/DNS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>k8s部署新版elasticsearch+kibana并配置快照备份</title>
+    <link href="https://yixian12580.github.io/2024/076d875a26.html"/>
+    <id>https://yixian12580.github.io/2024/076d875a26.html</id>
+    <published>2024-07-04T08:22:53.000Z</published>
+    <updated>2025-02-14T20:12:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Elasticsearch和Kibana是一对强大的开源工具，通常一起使用以构建实时数据分析和可视化解决方案。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="es" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/es/"/>
+    
+    
+      <category term="es" scheme="https://yixian12580.github.io/tags/es/"/>
+    
+      <category term="kibaba" scheme="https://yixian12580.github.io/tags/kibaba/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>certbot申请泛域名证书及自动续期</title>
+    <link href="https://yixian12580.github.io/2024/06540ef920.html"/>
+    <id>https://yixian12580.github.io/2024/06540ef920.html</id>
+    <published>2024-06-25T08:12:07.000Z</published>
+    <updated>2025-02-13T03:15:21.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;阿里云申请的免费证书有效期变短了，还有数量限制，而且不能申请泛域名证书，可以通过cerbot申请免费的域名证书并且自动续期。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="域名证书" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%9F%9F%E5%90%8D%E8%AF%81%E4%B9%A6/"/>
+    
+    
+      <category term="免费证书" scheme="https://yixian12580.github.io/tags/%E5%85%8D%E8%B4%B9%E8%AF%81%E4%B9%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>k8s安装cert-manager及签发泛域名证书</title>
+    <link href="https://yixian12580.github.io/2024/067bd705c5.html"/>
+    <id>https://yixian12580.github.io/2024/067bd705c5.html</id>
+    <published>2024-06-20T07:44:33.000Z</published>
+    <updated>2025-02-13T03:15:21.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;cert-manager 是一个云原生证书管理开源项目，用于在 Kubernetes 集群中自动管理和颁发来自各种颁发源的 TLS 证书，它可以从各种受支持的来源颁发证书，包括 &lt;a href=&quot;https://letsencrypt.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Let’s Encrypt&lt;/a&gt;、&lt;a href=&quot;https://www.vaultproject.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;HashiCorp Vault&lt;/a&gt;和&lt;a href=&quot;https://www.venafi.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Venafi&lt;/a&gt;以及私有 PKI，它将确保证书定期有效和更新，并在到期前的适当时间尝试更新证书。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="域名证书" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%9F%9F%E5%90%8D%E8%AF%81%E4%B9%A6/"/>
+    
+    
+      <category term="免费证书" scheme="https://yixian12580.github.io/tags/%E5%85%8D%E8%B4%B9%E8%AF%81%E4%B9%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>k8s使用NFS建立持久卷</title>
+    <link href="https://yixian12580.github.io/2024/062698ba09.html"/>
+    <id>https://yixian12580.github.io/2024/062698ba09.html</id>
+    <published>2024-06-17T08:32:50.000Z</published>
+    <updated>2025-02-13T03:15:21.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;由于服务在k8s集群是以容器方式启动，容器重启的话数据会丢失，所以我们一般会把重要的数据挂载到机器上，这里使用NFS做k8s的持久卷。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="NFS" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/NFS/"/>
+    
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/tags/K8S/"/>
+    
+      <category term="NFS" scheme="https://yixian12580.github.io/tags/NFS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Prometheus实现运维告警</title>
+    <link href="https://yixian12580.github.io/2024/06bbd18b10.html"/>
+    <id>https://yixian12580.github.io/2024/06bbd18b10.html</id>
+    <published>2024-06-16T08:52:25.000Z</published>
+    <updated>2025-02-13T03:15:21.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;搭建好监控环境并且监控了服务器、数据库、应用，运维人员可以实时了解当前被监控对象的运行情况，但是他们不可能时时坐在电脑边上盯着DashBoard，这就需要一个告警功能，当服务器或应用指标异常时发送告警，通过邮件或者短信的形式告诉运维人员及时处理。接下来就来介绍非常重要的功能——告警。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Prometheus" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Prometheus/"/>
+    
+    
+      <category term="Prometheus" scheme="https://yixian12580.github.io/tags/Prometheus/"/>
+    
+      <category term="AlertManger" scheme="https://yixian12580.github.io/tags/AlertManger/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Prometheus监控K8S集群</title>
+    <link href="https://yixian12580.github.io/2024/06dba56ffd.html"/>
+    <id>https://yixian12580.github.io/2024/06dba56ffd.html</id>
+    <published>2024-06-10T07:38:30.000Z</published>
+    <updated>2025-02-13T03:15:21.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Prometheus是一个开源系统监控和警报工具包，最初由 SoundCloud构建。自 2012 年启动以来，许多公司和组织都采用了 Prometheus，该项目拥有非常活跃的开发者和用户社区。它现在是一个独立的开源项目，独立于任何公司进行维护。为了强调这一点，并明确项目的治理结构，Prometheus 于 2016 年作为继Kubernetes之后的第二个托管项目加入了云原生计算基金会。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Prometheus" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Prometheus/"/>
+    
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/tags/K8S/"/>
+    
+      <category term="Prometheus" scheme="https://yixian12580.github.io/tags/Prometheus/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>prometheus.yaml.gz修改配置方法</title>
+    <link href="https://yixian12580.github.io/2024/065377e507.html"/>
+    <id>https://yixian12580.github.io/2024/065377e507.html</id>
+    <published>2024-06-08T09:36:57.000Z</published>
+    <updated>2025-02-13T03:15:21.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;通过kubesphere安装的Prometheus的配置文件是加密的，想要修改的话需要先把文件解压，解密，修改完之后再压缩，加密再替换回去。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Prometheus" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Prometheus/"/>
+    
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/tags/K8S/"/>
+    
+      <category term="Prometheus" scheme="https://yixian12580.github.io/tags/Prometheus/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Prometheus原理详解</title>
+    <link href="https://yixian12580.github.io/2024/067829fd23.html"/>
+    <id>https://yixian12580.github.io/2024/067829fd23.html</id>
+    <published>2024-06-05T06:36:40.000Z</published>
+    <updated>2025-02-13T03:15:21.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Prometheus 最开始是由 SoundCloud 开发的开源监控告警系统，是 Google BorgMon 监控系统的开源版本。在 2016 年，Prometheus 加入 CNCF，成为继 Kubernetes 之后第二个被 CNCF 托管的项目。随着 Kubernetes 在容器编排领头羊地位的确立，Prometheus 也成为 Kubernetes 容器监控的标配。本文接下来将会对 Prometheus 做一个介绍。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Prometheus" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Prometheus/"/>
+    
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/tags/K8S/"/>
+    
+      <category term="Prometheus" scheme="https://yixian12580.github.io/tags/Prometheus/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>k8s亲和性，反亲和性，污点和容忍度详解</title>
+    <link href="https://yixian12580.github.io/2024/0511e88003.html"/>
+    <id>https://yixian12580.github.io/2024/0511e88003.html</id>
+    <published>2024-05-20T02:53:16.000Z</published>
+    <updated>2025-02-13T03:15:21.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在k8s中，你可以约束一个 Pod 以便限制其只能在特定的节点上运行， 或优先在特定的节点上运行。有几种方法可以实现这点，推荐的方法都是用 标签选择算符来进行选择。 通常这样的约束不是必须的，因为调度器将自动进行合理的放置（比如，将 Pod 分散到节点上， 而不是将 Pod 放置在可用资源不足的节点上等等）。但在某些情况下，你可能需要进一步控制 Pod 被部署到哪个节点。例如，确保 Pod 最终落在连接了 SSD 的机器上， 或者将来自两个不同的服务且有大量通信的 Pod 被放置在同一个可用区。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/K8S/"/>
+    
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/tags/K8S/"/>
+    
+      <category term="Kubernetes" scheme="https://yixian12580.github.io/tags/Kubernetes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MongoDB集群搭建</title>
+    <link href="https://yixian12580.github.io/2024/0513fc1146.html"/>
+    <id>https://yixian12580.github.io/2024/0513fc1146.html</id>
+    <published>2024-05-06T08:57:18.000Z</published>
+    <updated>2025-02-13T03:15:21.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;MongoDB是一个基于分布式文件存储的数据库。由&lt;code&gt;C++&lt;/code&gt;语言编写。旨在为WEB应用提供可扩展的高性能数据存储解决方案。&lt;/p&gt;&lt;p&gt;MongoDB是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。&lt;/p&gt;&lt;p&gt;它支持的数据结构非常松散，是类似&lt;code&gt;json&lt;/code&gt;的&lt;code&gt;bson&lt;/code&gt;格式，因此可以存储比较复杂的数据类型。Mongo最大的特点是它支持的查询语言非常强大，其语法有点类似于面向对象的查询语言，几乎可以实现类似关系数据库单表查询的绝大部分功能，而且还支持对数据建立索引。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://yixian12580.github.io/categories/Linux/"/>
+    
+      <category term="MongoDB" scheme="https://yixian12580.github.io/categories/Linux/MongoDB/"/>
+    
+    
+      <category term="MongoDB" scheme="https://yixian12580.github.io/tags/MongoDB/"/>
+    
+  </entry>
+  
+</feed>
