@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>逸贤 | Blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://yixian12580.github.io/"/>
+  <updated>2025-08-13T02:10:01.000Z</updated>
+  <id>https://yixian12580.github.io/</id>
+  
+  <author>
+    <name>丨逸贤丨</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>docker部署certimateSSL证书管理</title>
+    <link href="https://yixian12580.github.io/2025/080.html"/>
+    <id>https://yixian12580.github.io/2025/080.html</id>
+    <published>2025-08-12T09:04:29.000Z</published>
+    <updated>2025-08-13T02:10:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前有写过一篇文章使用certbot申请免费ssl证书，最近发现certimate有提供web界面，而且集成了证书申请，证书部署，证书续订，监控告警等功能，都可以通过web界面点几下就可以完成，比较适合小白。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="域名证书" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%9F%9F%E5%90%8D%E8%AF%81%E4%B9%A6/"/>
+    
+    
+      <category term="免费证书" scheme="https://yixian12580.github.io/tags/%E5%85%8D%E8%B4%B9%E8%AF%81%E4%B9%A6/"/>
+    
+      <category term="certimate" scheme="https://yixian12580.github.io/tags/certimate/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>K8S集群证书更新</title>
+    <link href="https://yixian12580.github.io/2025/076a4a6c72.html"/>
+    <id>https://yixian12580.github.io/2025/076a4a6c72.html</id>
+    <published>2025-07-14T02:25:30.000Z</published>
+    <updated>2025-07-14T03:10:58.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;通常情况下，使用 KubeKey 部署的 Kubernetes 集群是不会遇到证书过期问题的，KubeKey 在部署时会自动配置一个定时任务，定期检查集群中所有证书的有效期，系统会监控证书状态，当发现任何证书的剩余有效期低于 30 天时，就会触发自动更新流程。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/K8S/"/>
+    
+    
+      <category term="证书" scheme="https://yixian12580.github.io/tags/%E8%AF%81%E4%B9%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>K8S部署seata-server集群</title>
+    <link href="https://yixian12580.github.io/2025/068c94af43.html"/>
+    <id>https://yixian12580.github.io/2025/068c94af43.html</id>
+    <published>2025-06-15T07:26:43.000Z</published>
+    <updated>2025-06-15T08:12:17.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Seata分TC、TM和RM三个角色，TC（Server端）为单独服务端部署，TM和RM（Client端）由业务系统集成。 Seata-server 的高可用依赖于&lt;code&gt;注册中心&lt;/code&gt;、&lt;code&gt;配置中心&lt;/code&gt;和&lt;code&gt;数据库&lt;/code&gt;来实现。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/K8S/"/>
+    
+    
+      <category term="seata-server集群" scheme="https://yixian12580.github.io/tags/seata-server%E9%9B%86%E7%BE%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>K8S创建Redis集群并迁移数据</title>
+    <link href="https://yixian12580.github.io/2025/06b3e106e6.html"/>
+    <id>https://yixian12580.github.io/2025/06b3e106e6.html</id>
+    <published>2025-06-15T04:30:55.000Z</published>
+    <updated>2025-06-15T07:08:25.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;公司之前生产环境一直用的是单节点的Redis，生产环境版本是6.2.6，开发需要使用PEXPIRETIME命令，这个命令是7.0版本之后才有的，所以趁着这个机会，升级Redis版本顺便把单节点转成集群。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/K8S/"/>
+    
+    
+      <category term="Redis集群" scheme="https://yixian12580.github.io/tags/Redis%E9%9B%86%E7%BE%A4/"/>
+    
+      <category term="Redis数据迁移" scheme="https://yixian12580.github.io/tags/Redis%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>购买海外VPS部署v2ray服务</title>
+    <link href="https://yixian12580.github.io/2025/051a0de5eb.html"/>
+    <id>https://yixian12580.github.io/2025/051a0de5eb.html</id>
+    <published>2025-05-27T10:11:49.000Z</published>
+    <updated>2025-05-28T12:10:08.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;公司之前翻墙一直是购买的梯子，由于泄密原因，决定自己购买海外VPS来部署v2ray服务，在此记录下整个过程。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="V2ray" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/V2ray/"/>
+    
+    
+      <category term="V2ray" scheme="https://yixian12580.github.io/tags/V2ray/"/>
+    
+      <category term="Vultr" scheme="https://yixian12580.github.io/tags/Vultr/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>kafka相关操作</title>
+    <link href="https://yixian12580.github.io/2025/0586a17973.html"/>
+    <id>https://yixian12580.github.io/2025/0586a17973.html</id>
+    <published>2025-05-14T09:10:49.000Z</published>
+    <updated>2025-05-14T09:48:44.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;记录下kafka相关的命令。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Kafka" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Kafka/"/>
+    
+    
+      <category term="消息队列" scheme="https://yixian12580.github.io/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+      <category term="kafka" scheme="https://yixian12580.github.io/tags/kafka/"/>
+    
+      <category term="kafka命令" scheme="https://yixian12580.github.io/tags/kafka%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Grafana-oncall企微告警问题</title>
+    <link href="https://yixian12580.github.io/2025/04ab4e863e.html"/>
+    <id>https://yixian12580.github.io/2025/04ab4e863e.html</id>
+    <published>2025-04-30T06:50:31.000Z</published>
+    <updated>2025-04-30T08:49:23.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;oncall平台部署完之后，我们一般会接入各个平台的告警信息，比如我接入了Skywalking，Graylog和Prometheus的告警。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Oncall" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Oncall/"/>
+    
+    
+      <category term="grafana" scheme="https://yixian12580.github.io/tags/grafana/"/>
+    
+      <category term="oncall" scheme="https://yixian12580.github.io/tags/oncall/"/>
+    
+      <category term="企微告警" scheme="https://yixian12580.github.io/tags/%E4%BC%81%E5%BE%AE%E5%91%8A%E8%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>oncall平台部署及使用</title>
+    <link href="https://yixian12580.github.io/2025/044e4419ae.html"/>
+    <id>https://yixian12580.github.io/2025/044e4419ae.html</id>
+    <published>2025-04-10T12:36:37.000Z</published>
+    <updated>2025-05-22T03:21:55.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Grafana OnCall 是 Grafana Labs 推出的一款开源事件响应与排班调度工具，可以帮助团队管理和跟踪故障处理情况，提高 SRE 团队的工作效率，更快地解决事件。可以自动路由警报到指定的值班团队和 ChatOps 频道，根据预定义的升级策略、时间表和通知偏好进行处理。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Oncall" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Oncall/"/>
+    
+    
+      <category term="grafana" scheme="https://yixian12580.github.io/tags/grafana/"/>
+    
+      <category term="oncall" scheme="https://yixian12580.github.io/tags/oncall/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javamelody监控图表中文乱码</title>
+    <link href="https://yixian12580.github.io/2025/031c702fda.html"/>
+    <id>https://yixian12580.github.io/2025/031c702fda.html</id>
+    <published>2025-03-26T03:02:28.000Z</published>
+    <updated>2025-03-26T03:15:53.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;JavaMelody是一款能够监测Java或Java EE应用程序的服务，JavaMelody能够很好的反映我们系统的各种性能指标，并提供很好的图形界面，其指标还能反应Java内存和Java CPU使用情况、用户Session数量、JDBC连接数、http请求、sql请求、jsp页面与业务接口方法（EJB3、Spring、 Guice）的执行数量，平均执行时间，错误百分比等。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Java" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Java/"/>
+    
+    
+      <category term="javamelody" scheme="https://yixian12580.github.io/tags/javamelody/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用certbot续费letsencrypt证书触发告警问题</title>
+    <link href="https://yixian12580.github.io/2025/03acc9418.html"/>
+    <id>https://yixian12580.github.io/2025/03acc9418.html</id>
+    <published>2025-03-18T02:50:44.000Z</published>
+    <updated>2025-03-26T03:15:53.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我们是使用cerbot来申请letsencrypt证书的，letsencrypt证书有效期只有3个月，过期前需要续期，通过certbot命令去定时续期，但是每次续期都会触发阿里云的AK告警。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="域名证书" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%9F%9F%E5%90%8D%E8%AF%81%E4%B9%A6/"/>
+    
+    
+      <category term="cerbot" scheme="https://yixian12580.github.io/tags/cerbot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>k8s部署Debezium及kafka</title>
+    <link href="https://yixian12580.github.io/2025/032620f80c.html"/>
+    <id>https://yixian12580.github.io/2025/032620f80c.html</id>
+    <published>2025-03-10T02:11:20.000Z</published>
+    <updated>2025-07-16T07:25:26.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Debezium 是一组分布式服务，用于捕获数据库中的更改（通过读取数据库日志的方式来完成数据增删改的记录），以便您的应用程序可以看到这些更改并做出响应。Debezium 将每个数据库表中的所有行级更改记录在更改事件流中，应用程序只需读取这些流，即可按更改事件发生的顺序查看更改事件。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/K8S/"/>
+    
+    
+      <category term="kafka" scheme="https://yixian12580.github.io/tags/kafka/"/>
+    
+      <category term="Debezium" scheme="https://yixian12580.github.io/tags/Debezium/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux机器压测脚本</title>
+    <link href="https://yixian12580.github.io/2025/03d01d51b6.html"/>
+    <id>https://yixian12580.github.io/2025/03d01d51b6.html</id>
+    <published>2025-03-06T04:09:36.000Z</published>
+    <updated>2025-03-06T04:26:32.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;工作中我们可能会遇到需要模拟高并发的情况，就是我们说的压测，以下通过一些shell脚本用于模拟 OOM（内存耗尽）、CPU 高负载、网络高吞吐 和 磁盘高 IO 压力。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://yixian12580.github.io/categories/Linux/"/>
+    
+    
+      <category term="压测" scheme="https://yixian12580.github.io/tags/%E5%8E%8B%E6%B5%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RocketMQ使用教程</title>
+    <link href="https://yixian12580.github.io/2025/0396717edc.html"/>
+    <id>https://yixian12580.github.io/2025/0396717edc.html</id>
+    <published>2025-03-06T02:39:28.000Z</published>
+    <updated>2025-03-06T04:26:32.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前一直用的是kafka，新公司使用的是RocketMQ，之前没接触过RocketMQ，导致告警出现消息积压，不知怎么去排查问题，趁着这次排查问题，顺便熟悉了下RocketMQ的操作。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="RocketMQ" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/RocketMQ/"/>
+    
+    
+      <category term="RocketMQ" scheme="https://yixian12580.github.io/tags/RocketMQ/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>k8s-pod重启时生成dump文件</title>
+    <link href="https://yixian12580.github.io/2025/03ba513123.html"/>
+    <id>https://yixian12580.github.io/2025/03ba513123.html</id>
+    <published>2025-03-04T10:28:01.000Z</published>
+    <updated>2025-06-19T02:12:46.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;k8s环境，有个服务频繁重启，经过排查日志和事件，确认是由于OOM导致服务重启，为了方便研发定位OOM的具体原因，需要在OOM发生时自动生成内存快照（Heap Dump），以供后续研发分析。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/K8S/"/>
+    
+    
+      <category term="OOM" scheme="https://yixian12580.github.io/tags/OOM/"/>
+    
+      <category term="dump" scheme="https://yixian12580.github.io/tags/dump/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux系统中负载、磁盘IO问题排查</title>
+    <link href="https://yixian12580.github.io/2025/02ba513123.html"/>
+    <id>https://yixian12580.github.io/2025/02ba513123.html</id>
+    <published>2025-02-28T07:23:01.000Z</published>
+    <updated>2025-03-13T08:01:34.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;CPU利用率&lt;/strong&gt;：显示的是程序在运行期间实时占用的CPU百分比&lt;/p&gt;&lt;p&gt;&lt;strong&gt;CPU负载&lt;/strong&gt;：显示的是一段时间内正在使用和等待使用CPU的平均任务数。CPU利用率高，并不意味着负载就一定大。举例来说：如果我有一个程序它需要一直使用CPU的运算功能，那么此时CPU的使用率可能达到100%，但是CPU的工作负载则是趋近于“1”，因为CPU仅负责一个工作嘛！如果同时执行这样的程序两个呢？CPU的使用率还是100%，但是工作负载则变成2了。所以也就是说，当CPU的工作负载越大，代表CPU必须要在不同的工作之间进行频繁的工作切换。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://yixian12580.github.io/categories/Linux/"/>
+    
+    
+      <category term="磁盘IO" scheme="https://yixian12580.github.io/tags/%E7%A3%81%E7%9B%98IO/"/>
+    
+      <category term="CPU负载" scheme="https://yixian12580.github.io/tags/CPU%E8%B4%9F%E8%BD%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>k8s-pod生命周期钩子函数</title>
+    <link href="https://yixian12580.github.io/2025/025914afe5.html"/>
+    <id>https://yixian12580.github.io/2025/025914afe5.html</id>
+    <published>2025-02-27T02:46:06.000Z</published>
+    <updated>2025-02-27T03:12:53.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;pod从开始创建到终止退出的时间范围称为Pod生命周期&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/K8S/"/>
+    
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/tags/K8S/"/>
+    
+      <category term="钩子" scheme="https://yixian12580.github.io/tags/%E9%92%A9%E5%AD%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>k8s探针详解</title>
+    <link href="https://yixian12580.github.io/2025/02d2fb66f3.html"/>
+    <id>https://yixian12580.github.io/2025/02d2fb66f3.html</id>
+    <published>2025-02-24T11:39:49.000Z</published>
+    <updated>2025-02-27T03:14:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;k8s提供了3种Probe，分别是startupProbe，readinessProbe和livenessProbe。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/K8S/"/>
+    
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/tags/K8S/"/>
+    
+      <category term="探针" scheme="https://yixian12580.github.io/tags/%E6%8E%A2%E9%92%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jenkins使用不同版本软件的方法</title>
+    <link href="https://yixian12580.github.io/2025/02dc15b3b5.html"/>
+    <id>https://yixian12580.github.io/2025/02dc15b3b5.html</id>
+    <published>2025-02-18T04:22:34.000Z</published>
+    <updated>2025-02-21T06:12:06.000Z</updated>
+    
+    <summary type="html">
+    
+      文章被加密了, 请输入密码查看.
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Jenkins" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Jenkins/"/>
+    
+    
+      <category term="Jenkins" scheme="https://yixian12580.github.io/tags/Jenkins/"/>
+    
+      <category term="k8s" scheme="https://yixian12580.github.io/tags/k8s/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>通过jenkins批量合并分支代码到主分支</title>
+    <link href="https://yixian12580.github.io/2025/02f9c764ea.html"/>
+    <id>https://yixian12580.github.io/2025/02f9c764ea.html</id>
+    <published>2025-02-15T04:05:15.000Z</published>
+    <updated>2025-02-18T10:03:19.000Z</updated>
+    
+    <summary type="html">
+    
+      文章被加密了, 请输入密码查看.
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Jenkins" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Jenkins/"/>
+    
+    
+      <category term="Jenkins" scheme="https://yixian12580.github.io/tags/Jenkins/"/>
+    
+      <category term="k8s" scheme="https://yixian12580.github.io/tags/k8s/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>通过jenkins更新client包到maven仓库</title>
+    <link href="https://yixian12580.github.io/2025/028a58dc5c.html"/>
+    <id>https://yixian12580.github.io/2025/028a58dc5c.html</id>
+    <published>2025-02-13T02:57:13.000Z</published>
+    <updated>2025-02-18T10:03:19.000Z</updated>
+    
+    <summary type="html">
+    
+      文章被加密了, 请输入密码查看.
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Jenkins" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Jenkins/"/>
+    
+    
+      <category term="Jenkins" scheme="https://yixian12580.github.io/tags/Jenkins/"/>
+    
+      <category term="k8s" scheme="https://yixian12580.github.io/tags/k8s/"/>
+    
+  </entry>
+  
+</feed>
