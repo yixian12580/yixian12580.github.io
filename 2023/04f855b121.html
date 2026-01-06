@@ -1,0 +1,317 @@
+<!DOCTYPE html><html class="theme-next mist use-motion" lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2"><meta name="theme-color" content="#222"><script></script><link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css"><script src="/lib/pace/pace.min.js?v=1.0.2"></script><link rel="stylesheet" href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2"><link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"><link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2"><link rel="stylesheet" href="/css/main.css?v=7.1.1"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1"><link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222"><script id="hexo.configurations">var NexT=window.NexT||{},CONFIG={root:"/",scheme:"Mist",version:"7.1.1",sidebar:{position:"left",display:"post",offset:12,onmobile:!0,dimmer:!1},back2top:!0,back2top_sidebar:!0,fancybox:!0,fastclick:!0,lazyload:!0,tabs:!0,motion:{enable:!0,async:!1,transition:{post_block:"shrinkIn",post_header:"slideLeftIn",post_body:"slideDownIn",coll_header:"slideLeftIn",sidebar:"slideDownIn"}},algolia:{applicationID:"",apiKey:"",indexName:"",hits:{per_page:10},labels:{input_placeholder:"Search for Posts",hits_empty:"We didn't find any results for the search: ${query}",hits_stats:"${hits} results found in ${time} ms"}}}</script><script>!function(e,t,o,c,a,i,n){e.DaoVoiceObject=a,e[a]=e[a]||function(){(e[a].q=e[a].q||[]).push(arguments)},e[a].l=+new Date,i=t.createElement(o),n=t.getElementsByTagName(o)[0],i.async=1,i.src=c,i.charset="utf-8",n.parentNode.insertBefore(i,n)}(window,document,"script",("https:"==document.location.protocol?"https:":"http:")+"//widget.daovoice.io/widget/0f81ff2f.js","daovoice"),daovoice("init",{app_id:"aac7f9b5"}),daovoice("update")</script><meta name="description" content="今天聊聊zookeeper的理论知识。"><meta name="keywords" content="Zookeeper,zk原理"><meta property="og:type" content="article"><meta property="og:title" content="Zookeeper详解"><meta property="og:url" content="https://yixian12580.github.io/2023/04f855b121.html"><meta property="og:site_name" content="逸贤 | Blog"><meta property="og:description" content="今天聊聊zookeeper的理论知识。"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://yixian12580.github.io/2023/04f855b121/8d7058978e614f7f8ee4832cb3b9c7cbtplv-k3u1fbpfcp-zoom-1.png"><meta property="og:image" content="https://yixian12580.github.io/2023/04f855b121/91b23e62a6424ae2848a050556ed34dftplv-k3u1fbpfcp-zoom-1.png"><meta property="og:image" content="https://yixian12580.github.io/2023/04f855b121/9477e0dada834eee9a997313a14a963btplv-k3u1fbpfcp-zoom-1.png"><meta property="og:image" content="https://yixian12580.github.io/2023/04f855b121/ea46600cd60d462ca982c60fa854419btplv-k3u1fbpfcp-zoom-1.png"><meta property="og:image" content="https://yixian12580.github.io/2023/04f855b121/6cf565bd494b4262baee09cfadfee24dtplv-k3u1fbpfcp-zoom-1.png"><meta property="og:image" content="https://yixian12580.github.io/2023/04f855b121/1b578b765d4b4500a83d7ad63bb35e2ftplv-k3u1fbpfcp-zoom-1.png"><meta property="og:image" content="https://yixian12580.github.io/2023/04f855b121/5791e745136d4da18aa4254e7c116f23tplv-k3u1fbpfcp-zoom-1.png"><meta property="og:image" content="https://yixian12580.github.io/2023/04f855b121/c974c58e0d4842cf8c7ef59d9fb28af2tplv-k3u1fbpfcp-zoom-1.png"><meta property="og:image" content="https://yixian12580.github.io/2023/04f855b121/39e5ee84f901453fb894600c331693d6tplv-k3u1fbpfcp-zoom-1.png"><meta property="og:image" content="https://yixian12580.github.io/2023/04f855b121/e958178a196742b480a20dff85dfef4ftplv-k3u1fbpfcp-zoom-1.png"><meta property="og:image" content="https://yixian12580.github.io/2023/04f855b121/34a3a0f7221b4de79e1ed5595d7c177ctplv-k3u1fbpfcp-zoom-1.png"><meta property="og:image" content="https://yixian12580.github.io/2023/04f855b121/a17880856e1546bba4f2571dbf8b3b38tplv-k3u1fbpfcp-zoom-1.png"><meta property="og:image" content="https://yixian12580.github.io/2023/04f855b121/abda17df527b4dbe8faa7e3a3a9e859etplv-k3u1fbpfcp-zoom-1.png"><meta property="og:image" content="https://yixian12580.github.io/2023/04f855b121/5a8725119723434daddca761b0d7be83tplv-k3u1fbpfcp-zoom-1.png"><meta property="og:image" content="https://yixian12580.github.io/2023/04f855b121/ecf2bec179f64ef79b180f66a327e634tplv-k3u1fbpfcp-zoom-1.png"><meta property="og:image" content="https://yixian12580.github.io/2023/04f855b121/e87703be60a3407e9e570c86bd4c180dtplv-k3u1fbpfcp-zoom-1.png"><meta property="og:image" content="https://yixian12580.github.io/2023/04f855b121/be3c7146f2934dd69a598cdf974ab390tplv-k3u1fbpfcp-zoom-1.png"><meta property="og:updated_time" content="2023-04-17T09:01:25.000Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Zookeeper详解"><meta name="twitter:description" content="今天聊聊zookeeper的理论知识。"><meta name="twitter:image" content="https://yixian12580.github.io/2023/04f855b121/8d7058978e614f7f8ee4832cb3b9c7cbtplv-k3u1fbpfcp-zoom-1.png"><link rel="alternate" href="/atom.xml" title="逸贤 | Blog" type="application/atom+xml"><link rel="canonical" href="https://yixian12580.github.io/2023/04f855b121"><script id="page.configurations">CONFIG.page={sidebar:""}</script><title>Zookeeper详解 | 逸贤 | Blog</title><noscript><style>.sidebar-inner,.use-motion .brand,.use-motion .collection-title,.use-motion .comments,.use-motion .menu-item,.use-motion .motion-element,.use-motion .pagination,.use-motion .post-block,.use-motion .post-body,.use-motion .post-header{opacity:initial}.use-motion .logo,.use-motion .site-subtitle,.use-motion .site-title{opacity:initial;top:initial}.use-motion .logo-line-before i{left:initial}.use-motion .logo-line-after i{right:initial}</style></noscript></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN"><div class="container sidebar-position-left page-post-detail"><div class="headband"></div><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-wrapper"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">逸贤 | Blog</span> <span class="logo-line-after"><i></i></span></a></div></div><div class="site-nav-toggle"><button aria-label="切换导航栏"><span class="btn-bar"></span> <span class="btn-bar"></span> <span class="btn-bar"></span></button></div></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i><br>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-bookmark"></i><br>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于</a></li><li class="menu-item menu-item-互动"><a href="/guestbook/" rel="section"><i class="menu-item-icon fa fa-fw fa-comments"></i><br>互动</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class="site-search"><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class="search-icon"><i class="fa fa-search"></i> </span><span class="popup-btn-close"><i class="fa fa-times-circle"></i></span><div class="local-search-input-wrapper"><input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input"></div></div><div id="local-search-result"></div></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><div class="post-block"><link itemprop="mainEntityOfPage" href="https://yixian12580.github.io/2023/04f855b121.html"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="丨逸贤丨"><meta itemprop="description" content="三十年众生牛马，搏十年丰功伟绩。"><meta itemprop="image" content="/images/avatar.jpg"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="逸贤 | Blog"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">Zookeeper详解</h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i> </span><span class="post-meta-item-text">发表于</span> <time title="创建时间：2023-04-17 15:38:12 / 修改时间：17:01:25" itemprop="dateCreated datePublished" datetime="2023-04-17T15:38:12+08:00">2023-04-17</time> </span><span class="post-category"><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-folder-o"></i> </span><span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span> ， <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/Zookeeper/" itemprop="url" rel="index"><span itemprop="name">Zookeeper</span></a></span> </span><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-eye"></i> 阅读次数： <span class="busuanzi-value" id="busuanzi_value_page_pv"></span></span><div class="post-symbolscount"><span class="post-meta-item-icon"><i class="fa fa-file-word-o"></i> </span><span class="post-meta-item-text">本文字数：</span> <span title="本文字数">6.9k</span> <span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-clock-o"></i> </span><span class="post-meta-item-text">阅读时长 &asymp;</span> <span title="阅读时长">6 分钟</span></div></div></header><div class="post-body" itemprop="articleBody"><p>今天聊聊zookeeper的理论知识。</p><a id="more"></a><h3 id="zookeeper是什么？有什么用？"><a href="#zookeeper是什么？有什么用？" class="headerlink" title="zookeeper是什么？有什么用？"></a>zookeeper是什么？有什么用？</h3><ul><li>ZooKeeper，它是一个开放源码的<strong>「分布式协调服务」</strong>，它是一个集群的管理者，它将简单易用的接口提供给用户。</li><li>可以基于Zookeeper 实现诸如数据发布/订阅、负载均衡、命名服务、分布式协调/通知、集群管理、Master 选举、分布式锁和分布式队列等功能。</li><li>Zookeeper的用途：命名服务、配置管理、集群管理、分布式锁、队列管理</li></ul><h3 id="什么是命名服务，什么是配置管理，什么是集群管理？"><a href="#什么是命名服务，什么是配置管理，什么是集群管理？" class="headerlink" title="什么是命名服务，什么是配置管理，什么是集群管理？"></a>什么是命名服务，什么是配置管理，什么是集群管理？</h3><ul><li><strong>「命名服务」</strong>：</li></ul><blockquote><p>命名服务是指通过<strong>「指定的名字」</strong>来获取资源或者服务地址。Zookeeper可以创建一个<strong>「全局唯一的路径」</strong>，这个路径就可以作为一个名字。被命名的实体可以是<strong>「集群中的机器，服务的地址，或者是远程的对象」</strong>等。一些分布式服务框架（RPC、RMI）中的服务地址列表，通过使用命名服务，客户端应用能够根据特定的名字来获取资源的实体、服务地址和提供者信息等。</p></blockquote><ul><li><strong>「配置管理：」</strong> ：</li></ul><blockquote><p>实际项目开发中，我们经常使用.properties或者xml需要配置很多信息，如数据库连接信息、fps地址端口等等。因为你的程序一般是分布式部署在不同的机器上（如果你是单机应用当我没说），如果把程序的这些配置信息<strong>「保存在zk的znode节点」</strong>下，当你要修改配置，即znode会发生变化时，可以通过改变zk中某个目录节点的内容，利用<strong>「watcher通知给各个客户端」</strong>，从而更改配置。</p></blockquote><ul><li><strong>「集群管理」</strong></li></ul><blockquote><p>集群管理包括集群监控和集群控制，其实就是监控集群机器状态，剔除机器和加入机器。zookeeper可以方便集群机器的管理，它可以实时监控znode节点的变化，一旦发现有机器挂了，该机器就会与zk断开连接，对用的临时目录节点会被删除，其他所有机器都收到通知。新机器加入也是类似酱紫，所有机器收到通知：有新兄弟目录加入啦。</p></blockquote><h3 id="zookeeper的数据模型是怎样的？znode有几种类型？"><a href="#zookeeper的数据模型是怎样的？znode有几种类型？" class="headerlink" title="zookeeper的数据模型是怎样的？znode有几种类型？"></a>zookeeper的数据模型是怎样的？znode有几种类型？</h3><h4 id="zookeeper的数据模型"><a href="#zookeeper的数据模型" class="headerlink" title="zookeeper的数据模型"></a>zookeeper的数据模型</h4><p>ZooKeeper的视图数据结构，很像Unix文件系统，也是树状的，这样可以确定每个路径都是唯一的。zookeeper的节点统一叫做<strong>「znode」</strong>，它是可以通过<strong>「路径来标识」</strong>，结构图如下：</p><img src="/2023/04f855b121/8d7058978e614f7f8ee4832cb3b9c7cbtplv-k3u1fbpfcp-zoom-1.png"><h4 id="znode的4种类型"><a href="#znode的4种类型" class="headerlink" title="znode的4种类型"></a>znode的4种类型</h4><p>根据节点的生命周期，znode可以分为4种类型，分别是持久节点（PERSISTENT）、持久顺序节点（PERSISTENT_SEQUENTIAL）、临时节点（EPHEMERAL）、临时顺序节点（EPHEMERAL_SEQUENTIAL）</p><ul><li>持久节点（PERSISTENT）</li></ul><blockquote><p>这类节点被创建后，就会一直存在于Zk服务器上。直到手动删除。</p></blockquote><ul><li>持久顺序节点（PERSISTENT_SEQUENTIAL）</li></ul><blockquote><p>它的基本特性同持久节点，不同在于增加了顺序性。父节点会维护一个自增整性数字，用于子节点的创建的先后顺序。</p></blockquote><ul><li>临时节点（EPHEMERAL）</li></ul><blockquote><p>临时节点的生命周期与客户端的会话绑定，一旦客户端会话失效（非TCP连接断开），那么这个节点就会被自动清理掉。zk规定临时节点只能作为叶子节点。</p></blockquote><ul><li>临时顺序节点（EPHEMERAL_SEQUENTIAL）</li></ul><blockquote><p>基本特性同临时节点，添加了顺序的特性。</p></blockquote><h3 id="znode节点里面存储的是什么？每个节点的数据最大不能超过多少？"><a href="#znode节点里面存储的是什么？每个节点的数据最大不能超过多少？" class="headerlink" title="znode节点里面存储的是什么？每个节点的数据最大不能超过多少？"></a>znode节点里面存储的是什么？每个节点的数据最大不能超过多少？</h3><h4 id="znode节点里面存储的是什么？"><a href="#znode节点里面存储的是什么？" class="headerlink" title="znode节点里面存储的是什么？"></a>znode节点里面存储的是什么？</h4><p>Znode数据节点的代码如下</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> DataNode <span class="keyword">implements</span> Record &#123;</span><br><span class="line">    byte data[];                    </span><br><span class="line">    Long acl;                       </span><br><span class="line">    <span class="keyword">public</span> StatPersisted stat;       </span><br><span class="line">    <span class="keyword">private</span> Set&lt;<span class="built_in">String</span>&gt; children = <span class="literal">null</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>Znode包含了<strong>「存储数据、访问权限、子节点引用、节点状态信息」</strong>，如图：</p><img src="/2023/04f855b121/91b23e62a6424ae2848a050556ed34dftplv-k3u1fbpfcp-zoom-1.png"><ul><li><strong>「data:」</strong> znode存储的业务数据信息</li><li><strong>「ACL:」</strong> 记录客户端对znode节点的访问权限，如IP等。</li><li><strong>「child:」</strong> 当前节点的子节点引用</li><li><strong>「stat:」</strong> 包含Znode节点的状态信息，比如<strong>「事务id、版本号、时间戳」</strong>等等。</li></ul><h4 id="每个节点的数据最大不能超过多少？"><a href="#每个节点的数据最大不能超过多少？" class="headerlink" title="每个节点的数据最大不能超过多少？"></a>每个节点的数据最大不能超过多少？</h4><p>为了保证高吞吐和低延迟，以及数据的一致性，znode只适合存储非常小的数据，不能超过1M，最好都小于1K。</p><h3 id="znode节点上的监听机制"><a href="#znode节点上的监听机制" class="headerlink" title="znode节点上的监听机制"></a>znode节点上的监听机制</h3><h4 id="Watcher监听机制"><a href="#Watcher监听机制" class="headerlink" title="Watcher监听机制"></a>Watcher监听机制</h4><p>Zookeeper 允许客户端向服务端的某个Znode注册一个Watcher监听，当服务端的一些指定事件触发了这个Watcher，服务端会向指定客户端发送一个事件通知来实现分布式的通知功能，然后客户端根据 Watcher通知状态和事件类型做出业务上的改变。</p><blockquote><p>可以把Watcher理解成客户端注册在某个Znode上的触发器，当这个Znode节点发生变化时（增删改查），就会触发Znode对应的注册事件，注册的客户端就会收到异步通知，然后做出业务的改变。</p></blockquote><h4 id="Watcher监听机制的工作原理"><a href="#Watcher监听机制的工作原理" class="headerlink" title="Watcher监听机制的工作原理"></a>Watcher监听机制的工作原理</h4><img src="/2023/04f855b121/9477e0dada834eee9a997313a14a963btplv-k3u1fbpfcp-zoom-1.png"><ul><li>ZooKeeper的Watcher机制主要包括客户端线程、客户端 WatcherManager、Zookeeper服务器三部分。</li><li>客户端向ZooKeeper服务器注册Watcher的同时，会将Watcher对象存储在客户端的WatchManager中。</li><li>当zookeeper服务器触发watcher事件后，会向客户端发送通知， 客户端线程从 WatcherManager 中取出对应的 Watcher 对象来执行回调逻辑。</li></ul><h4 id="Watcher特性总结"><a href="#Watcher特性总结" class="headerlink" title="Watcher特性总结"></a>Watcher特性总结</h4><ul><li><strong>「一次性:」</strong> 一个Watch事件是一个一次性的触发器。一次性触发，客户端只会收到一次这样的信息。</li><li><strong>「异步的：」</strong> Zookeeper服务器发送watcher的通知事件到客户端是异步的，不能期望能够监控到节点每次的变化，Zookeeper只能保证最终的一致性，而无法保证强一致性。</li><li><strong>「轻量级：」</strong> Watcher 通知非常简单，它只是通知发生了事件，而不会传递事件对象内容。</li><li><strong>「客户端串行：」</strong> 执行客户端 Watcher 回调的过程是一个串行同步的过程。</li><li>注册 watcher用getData、exists、getChildren方法</li><li>触发 watcher用create、delete、setData方法</li></ul><h3 id="Zookeeper的特性"><a href="#Zookeeper的特性" class="headerlink" title="Zookeeper的特性"></a>Zookeeper的特性</h3><p>Zookeeper 保证了如下分布式一致性特性：</p><ul><li><strong>「顺序一致性」</strong>：从同一客户端发起的事务请求，最终将会严格地按照顺序被应用到 ZooKeeper 中去。</li><li><strong>「原子性」</strong>：所有事务请求的处理结果在整个集群中所有机器上的应用情况是一致的，也就是说，要么整个集群中所有的机器都成功应用了某一个事务，要么都没有应用。</li><li><strong>「单一视图」</strong>：无论客户端连到哪一个 ZooKeeper 服务器上，其看到的服务端数据模型都是一致的。</li><li><strong>「可靠性：」</strong> 一旦服务端成功地应用了一个事务，并完成对客户端的响应，那么该事务所引起的服务端状态变更将会被一直保留下来。</li><li><strong>「实时性（最终一致性）：」</strong> Zookeeper 仅仅能保证在一定的时间段内，客户端最终一定能够从服务端上读取到最新的数据状态。</li></ul><h3 id="zookeeper是如何保证事务的顺序一致性？"><a href="#zookeeper是如何保证事务的顺序一致性？" class="headerlink" title="zookeeper是如何保证事务的顺序一致性？"></a>zookeeper是如何保证事务的顺序一致性？</h3><blockquote><p>需要了解事务ID，即zxid。ZooKeeper的在选举时通过比较各结点的zxid和机器ID选出新的主结点的。zxid由Leader节点生成，有新写入事件时，Leader生成新zxid并随提案一起广播，每个结点本地都保存了当前最近一次事务的zxid，zxid是递增的，所以谁的zxid越大，就表示谁的数据是最新的。</p></blockquote><p>ZXID的生成规则如下：</p><img src="/2023/04f855b121/ea46600cd60d462ca982c60fa854419btplv-k3u1fbpfcp-zoom-1.png"><p>ZXID有两部分组成：</p><ul><li>任期：完成本次选举后，直到下次选举前，由同一Leader负责协调写入；</li><li>事务计数器：单调递增，每生效一次写入，计数器加一。</li></ul><blockquote><p>ZXID的低32位是计数器，所以同一任期内，ZXID是连续的，每个结点又都保存着自身最新生效的ZXID，通过对比新提案的ZXID与自身最新ZXID是否相差“1”，来保证事务严格按照顺序生效的。</p></blockquote><h3 id="Zookeeper的服务器有几种角色？Zookeeper下Server工作状态有几种？"><a href="#Zookeeper的服务器有几种角色？Zookeeper下Server工作状态有几种？" class="headerlink" title="Zookeeper的服务器有几种角色？Zookeeper下Server工作状态有几种？"></a>Zookeeper的服务器有几种角色？Zookeeper下Server工作状态有几种？</h3><h4 id="Zookeeper-服务器角色"><a href="#Zookeeper-服务器角色" class="headerlink" title="Zookeeper 服务器角色"></a>Zookeeper 服务器角色</h4><p>Zookeeper集群中，有Leader、Follower和Observer三种角色</p><p><strong>「Leader」</strong></p><blockquote><p>Leader服务器是整个ZooKeeper集群工作机制中的核心，其主要工作：</p></blockquote><ul><li>事务请求的唯一调度和处理者，保证集群事务处理的顺序性</li><li>集群内部各服务的调度者</li></ul><p><strong>「Follower」</strong></p><blockquote><p>Follower服务器是ZooKeeper集群状态的跟随者，其主要工作：</p></blockquote><ul><li>处理客户端非事务请求，转发事务请求给Leader服务器</li><li>参与事务请求Proposal的投票</li><li>参与Leader选举投票</li></ul><p><strong>「Observer」</strong></p><blockquote><p>Observer是3.3.0 版本开始引入的一个服务器角色，它充当一个观察者角色——观察ZooKeeper集群的最新状态变化并将这些状态变更同步过来。其工作：</p></blockquote><ul><li>处理客户端的非事务请求，转发事务请求给 Leader 服务器</li><li>不参与任何形式的投票</li></ul><h4 id="Zookeeper下Server工作状态"><a href="#Zookeeper下Server工作状态" class="headerlink" title="Zookeeper下Server工作状态"></a>Zookeeper下Server工作状态</h4><blockquote><p>服务器具有四种状态，分别是 LOOKING、FOLLOWING、LEADING、OBSERVING。</p></blockquote><ul><li>1.LOOKING：寻找Leader状态。当服务器处于该状态时，它会认为当前集群中没有 Leader，因此需要进入 Leader 选举状态。</li><li>2.FOLLOWING：跟随者状态。表明当前服务器角色是Follower。</li><li>3.LEADING：领导者状态。表明当前服务器角色是Leader。</li><li>4.OBSERVING：观察者状态。表明当前服务器角色是Observer。</li></ul><h3 id="ZooKeeper集群部署图？ZooKeeper是如何保证主从节点数据一致性？"><a href="#ZooKeeper集群部署图？ZooKeeper是如何保证主从节点数据一致性？" class="headerlink" title="ZooKeeper集群部署图？ZooKeeper是如何保证主从节点数据一致性？"></a>ZooKeeper集群部署图？ZooKeeper是如何保证主从节点数据一致性？</h3><h4 id="ZooKeeper集群部署图"><a href="#ZooKeeper集群部署图" class="headerlink" title="ZooKeeper集群部署图"></a>ZooKeeper集群部署图</h4><img src="/2023/04f855b121/6cf565bd494b4262baee09cfadfee24dtplv-k3u1fbpfcp-zoom-1.png"><p>ZooKeeper集群是一主多从的结构：</p><ul><li>如果是写入数据，先写入主服务器（主节点），再通知从服务器。</li><li>如果是读取数据，既读主服务器的，也可以读从服务器的。</li></ul><h4 id="ZooKeeper如何保证主从节点数据一致性"><a href="#ZooKeeper如何保证主从节点数据一致性" class="headerlink" title="ZooKeeper如何保证主从节点数据一致性"></a>ZooKeeper如何保证主从节点数据一致性</h4><p>我们知道集群是主从部署结构，要保证主从节点一致性问题，无非就是两个主要问题：</p><ul><li><strong>「主服务器挂了，或者重启了」</strong></li><li><strong>「主从服务器之间同步数据」</strong></li></ul><p>Zookeeper是采用ZAB协议（Zookeeper Atomic Broadcast，Zookeeper原子广播协议）来保证主从节点数据一致性的，ZAB协议支持<strong>「崩溃恢复和消息广播」</strong>两种模式，很好解决了这两个问题：</p><ul><li>崩溃恢复：Leader挂了，进入该模式，选一个新的leader出来</li><li>消息广播： 把更新的数据，从Leader同步到所有Follower</li></ul><blockquote><p>Leader服务器挂了，所有集群中的服务器进入LOOKING状态，首先，它们会选举产生新的Leader服务器；接着，新的Leader服务器与集群中Follower服务进行数据同步，当集群中超过半数机器与该 Leader服务器完成数据同步之后，退出恢复模式进入消息广播模式。Leader 服务器开始接收客户端的事务请求生成事务Proposal进行事务请求处理。</p></blockquote><h3 id="ZooKeeper选举机制"><a href="#ZooKeeper选举机制" class="headerlink" title="ZooKeeper选举机制"></a>ZooKeeper选举机制</h3><p>服务器启动或者服务器运行期间（Leader挂了），都会进入Leader选举，我们来看一下~假设现在ZooKeeper集群有五台服务器，它们myid分别是服务器1、2、3、4、5，如图：</p><img src="/2023/04f855b121/1b578b765d4b4500a83d7ad63bb35e2ftplv-k3u1fbpfcp-zoom-1.png"><h4 id="服务器启动的Leader选举"><a href="#服务器启动的Leader选举" class="headerlink" title="服务器启动的Leader选举"></a>服务器启动的Leader选举</h4><p>zookeeper集群初始化阶段，服务器（myid=1-5）<strong>「依次」</strong>启动，开始zookeeper选举Leader</p><img src="/2023/04f855b121/5791e745136d4da18aa4254e7c116f23tplv-k3u1fbpfcp-zoom-1.png"><ul><li>服务器1（myid=1）启动，当前只有一台服务器，无法完成Leader选举</li><li>服务器2（myid=2）启动，此时两台服务器能够相互通讯，开始进入Leader选举阶段</li></ul><blockquote><ol><li>每个服务器发出一个投票</li></ol><blockquote><p>服务器1 和 服务器2都将自己作为Leader服务器进行投票，投票的基本元素包括：服务器的myid和ZXID，我们以（myid，ZXID）形式表示。初始阶段，服务器1和服务器2都会投给自己，即服务器1的投票为（1,0），服务器2的投票为（2,0），然后各自将这个投票发给集群中的其他所有机器。</p></blockquote><ol start="2"><li>接受来自各个服务器的投票</li></ol><blockquote><p>每个服务器都会接受来自其他服务器的投票。同时，服务器会校验投票的有效性，是否本轮投票、是否来自LOOKING状态的服务器。</p></blockquote><ol start="3"><li>处理投票</li></ol><blockquote><p>收到其他服务器的投票，会将被人的投票跟自己的投票PK，PK规则如下：</p><blockquote><ul><li>优先检查ZXID。ZXID比较大的服务器优先作为leader。</li><li>如果ZXID相同的话，就比较myid，myid比较大的服务器作为leader。 服务器1的投票是（1,0），它收到投票是（2,0），两者zxid都是0，因为收到的myid=2，大于自己的myid=1，所以它更新自己的投票为（2,0），然后重新将投票发出去。对于服务器2呢，即不再需要更新自己的投票，把上一次的投票信息发出即可。</li></ul></blockquote></blockquote><ol start="4"><li>统计投票</li></ol><blockquote><p>每次投票后，服务器会统计所有投票，判断是否有过半的机器接受到相同的投票信息。服务器2收到两票，少于3（n/2+1,n为总服务器），所以继续保持LOOKING状态</p></blockquote></blockquote><ul><li>服务器3（myid=3）启动，继续进入Leader选举阶段</li></ul><blockquote><p>跟前面流程一致，服务器1和2先投自己一票，因为服务器3的myid最大，所以大家把票改投给它。此时，服务器为3票（大于等于n/2+1）,所以服务器3当选为Leader。 服务器1，2更改状态为FOLLOWING，服务器3更改状态为LEADING；</p></blockquote><ul><li>服务器4启动，发起一次选举。</li></ul><blockquote><p>此时服务器1，2，3已经不是LOOKING状态，不会更改选票信息。选票信息结果：服务器3为3票，服务器4为1票。服务器4并更改状态为FOLLOWING；</p></blockquote><ul><li>服务器5启动，发起一次选举。</li></ul><blockquote><p>同理，服务器也是把票投给服务器3，服务器5并更改状态为FOLLOWING；</p></blockquote><ul><li>投票结束，服务器3当选为Leader</li></ul><h4 id="服务器运行期间的Leader选举"><a href="#服务器运行期间的Leader选举" class="headerlink" title="服务器运行期间的Leader选举"></a>服务器运行期间的Leader选举</h4><p>zookeeper集群的五台服务器（myid=1-5）正在运行中，突然某个瞬间，Leader服务器3挂了，这时候便开始Leader选举</p><img src="/2023/04f855b121/c974c58e0d4842cf8c7ef59d9fb28af2tplv-k3u1fbpfcp-zoom-1.png"><ul><li>1.变更状态</li></ul><blockquote><p>Leader 服务器挂了之后，余下的非Observer服务器都会把自己的服务器状态更改为LOOKING，然后开始进入Leader选举流程。</p></blockquote><ul><li>2.每个服务器发起投票</li></ul><blockquote><p>每个服务器都把票投给自己，因为是运行期间，所以每台服务器的ZXID可能不相同。假设服务1,2,4,5的zxid分别为333,666,999,888，则分别产生投票（1,333），（2，666），（4,999）和（5,888），然后各自将这个投票发给集群中的其他所有机器。</p></blockquote><ul><li>3.接受来自各个服务器的投票</li><li>4.处理投票</li></ul><blockquote><p>投票规则是跟Zookeeper集群启动期间一致的，优先检查ZXID，大的优先作为Leader，所以显然服务器zxid=999具有优先权。</p></blockquote><ul><li>5.统计投票</li><li>6.改变服务器状态</li></ul><h3 id="zookeeper分布式锁的实现原理"><a href="#zookeeper分布式锁的实现原理" class="headerlink" title="zookeeper分布式锁的实现原理"></a>zookeeper分布式锁的实现原理</h3><p>Zookeeper就是使用临时顺序节点特性实现分布式锁的。</p><ul><li>获取锁过程 （创建临时节点，检查序号最小）</li><li>释放锁 （删除临时节点，监听通知）</li></ul><h4 id="获取锁过程"><a href="#获取锁过程" class="headerlink" title="获取锁过程"></a>获取锁过程</h4><ul><li>当第一个客户端请求过来时，Zookeeper客户端会创建一个持久节点/locks。如果它（Client1）想获得锁，需要在locks节点下创建一个顺序节点lock1.如图<img src="/2023/04f855b121/39e5ee84f901453fb894600c331693d6tplv-k3u1fbpfcp-zoom-1.png"></li><li>接着，客户端Client1会查找locks下面的所有临时顺序子节点，判断自己的节点lock1是不是排序最小的那一个，如果是，则成功获得锁。<img src="/2023/04f855b121/e958178a196742b480a20dff85dfef4ftplv-k3u1fbpfcp-zoom-1.png"></li><li>这时候如果又来一个客户端client2前来尝试获得锁，它会在locks下再创建一个临时节点lock2<img src="/2023/04f855b121/34a3a0f7221b4de79e1ed5595d7c177ctplv-k3u1fbpfcp-zoom-1.png"></li><li>客户端client2一样也会查找locks下面的所有临时顺序子节点，判断自己的节点lock2是不是最小的，此时，发现lock1才是最小的，于是获取锁失败。获取锁失败，它是不会甘心的，client2向它排序靠前的节点lock1注册Watcher事件，用来监听lock1是否存在，也就是说client2抢锁失败进入等待状态。<img src="/2023/04f855b121/a17880856e1546bba4f2571dbf8b3b38tplv-k3u1fbpfcp-zoom-1.png"></li><li>此时，如果再来一个客户端Client3来尝试获取锁，它会在locks下再创建一个临时节点lock3<img src="/2023/04f855b121/abda17df527b4dbe8faa7e3a3a9e859etplv-k3u1fbpfcp-zoom-1.png"></li><li>同样的，client3一样也会查找locks下面的所有临时顺序子节点，判断自己的节点lock3是不是最小的，发现自己不是最小的，就获取锁失败。它也是不会甘心的，它会向在它前面的节点lock2注册Watcher事件，以监听lock2节点是否存在。<img src="/2023/04f855b121/5a8725119723434daddca761b0d7be83tplv-k3u1fbpfcp-zoom-1.png"></li></ul><h4 id="释放锁"><a href="#释放锁" class="headerlink" title="释放锁"></a>释放锁</h4><p>我们再来看看释放锁的流程，zookeeper的<strong>「客户端业务完成或者故障」</strong>，都会删除临时节点，释放锁。如果是任务完成，Client1会显式调用删除lock1的指令</p><img src="/2023/04f855b121/ecf2bec179f64ef79b180f66a327e634tplv-k3u1fbpfcp-zoom-1.png">如果是客户端故障了，根据临时节点得特性，lock1是会自动删除的<br><br><img src="/2023/04f855b121/e87703be60a3407e9e570c86bd4c180dtplv-k3u1fbpfcp-zoom-1.png">lock1节点被删除后，Client2可开心了，因为它一直监听着lock1。lock1节点删除，Client2立刻收到通知，也会查找locks下面的所有临时顺序子节点，发下lock2是最小，就获得锁。<br><br><img src="/2023/04f855b121/be3c7146f2934dd69a598cdf974ab390tplv-k3u1fbpfcp-zoom-1.png"><p>同理，Client2获得锁之后，Client3也对它虎视眈眈。</p></div><div><div id="reward-container"><div>Thank you for your accept. mua！</div><button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">打赏</button><div id="qr" style="display:none"><div style="display:inline-block"><img src="/images/reward/wechatpay.png" alt="丨逸贤丨 微信支付"><p>微信支付</p></div><div style="display:inline-block"><img src="/images/reward/alipay.png" alt="丨逸贤丨 支付宝"><p>支付宝</p></div></div></div></div><div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者： </strong>丨逸贤丨</li><li class="post-copyright-link"><strong>本文链接：</strong> <a href="https://yixian12580.github.io/2023/04f855b121.html" title="Zookeeper详解">https://yixian12580.github.io/2023/04f855b121.html</a></li><li class="post-copyright-license"><strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li></ul></div><div><div><div style="text-align:center;color:#ccc;font-size:16px">-------------本文结束<i class="fa fa-heart"></i>感谢您的阅读-------------</div></div></div><footer class="post-footer"><div class="post-tags"><a href="/tags/Zookeeper/" rel="tag"><i class="fa fa-tag"></i> Zookeeper</a> <a href="/tags/zk原理/" rel="tag"><i class="fa fa-tag"></i> zk原理</a></div><div class="post-widgets"><div class="social_share"><div id="needsharebutton-postbottom"><span class="btn"><i class="fa fa-share-alt" aria-hidden="true"></i></span></div></div></div><div class="post-nav"><div class="post-nav-next post-nav-item"><a href="/2023/04f855b122.html" rel="next" title="Zookeeper的安装与部署"><i class="fa fa-chevron-left"></i> Zookeeper的安装与部署</a></div><span class="post-nav-divider"></span><div class="post-nav-prev post-nav-item"><a href="/2023/04b206e26e.html" rel="prev" title="Linux系统优化思路">Linux系统优化思路 <i class="fa fa-chevron-right"></i></a></div></div></footer></div></article></div><div style="text-align:center"><a href="https://github.com/yixian12580/blog-source/edit/main/source/_posts/Zookeeper详解.md" target="_blank">编辑文章✏</a></div></div><div class="comments" id="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC81NzIwNy8zMzY3MQ=="></div></div></div><div class="sidebar-toggle"><div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span> <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span> <span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id="sidebar" class="sidebar"><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">文章目录</li><li class="sidebar-nav-overview" data-target="site-overview-wrap">站点概览</li></ul><div class="site-overview-wrap sidebar-panel"><div class="site-overview"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"><img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="丨逸贤丨"><p class="site-author-name" itemprop="name">丨逸贤丨</p><div class="site-description motion-element" itemprop="description">三十年众生牛马，搏十年丰功伟绩。</div></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href="/archives/"><span class="site-state-item-count">149</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-categories"><a href="/categories/"><span class="site-state-item-count">45</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"><a href="/tags/"><span class="site-state-item-count">137</span> <span class="site-state-item-name">标签</span></a></div></nav><div class="feed-link motion-element"><a href="/atom.xml" rel="alternate"><i class="fa fa-rss"></i> RSS</a></div><div class="links-of-author motion-element"><span class="links-of-author-item"><a href="https://github.com/yixian12580" title="GitHub &rarr; https://github.com/yixian12580" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a> </span><span class="links-of-author-item"><a href="mailto:1083662409@qq.com" title="E-Mail &rarr; mailto:1083662409@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a> </span><span class="links-of-author-item"><a href="https://weibo.com/u/5107819265" title="Weibo &rarr; https://weibo.com/u/5107819265" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a> </span><span class="links-of-author-item"><a href="tencent://message/?uin=1083662409&Site=&menu=yes" title="QQ &rarr; tencent://message/?uin=1083662409&Site=&menu=yes" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a></span></div><div class="links-of-blogroll motion-element links-of-blogroll-inline"><div class="links-of-blogroll-title"><i class="fa fa-fw fa-book"></i> 推荐阅读</div><ul class="links-of-blogroll-list"><li class="links-of-blogroll-item"><a href="http://www.ttlsa.com/" title="http://www.ttlsa.com/" rel="noopener" target="_blank">运维生存时间</a></li><li class="links-of-blogroll-item"><a href="https://www.iyunw.cn" title="https://www.iyunw.cn" rel="noopener" target="_blank">爱运维</a></li><li class="links-of-blogroll-item"><a href="https://nginxconfig.io/" title="https://nginxconfig.io/" rel="noopener" target="_blank">Nginxconfig</a></li><li class="links-of-blogroll-item"><a href="http://linux.51yip.com/" title="http://linux.51yip.com/" rel="noopener" target="_blank">Linux命令手册</a></li><li class="links-of-blogroll-item"><a href="https://echarts.apache.org/index.html" title="https://echarts.apache.org/index.html" rel="noopener" target="_blank">echarts可视化库</a></li><li class="links-of-blogroll-item"><a href="https://yixian12580.netlify.app/admin/" title="https://yixian12580.netlify.app/admin/" rel="noopener" target="_blank">博客管理</a></li></ul></div></div></div><div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class="post-toc"><div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#zookeeper是什么？有什么用？"><span class="nav-number">1.</span> <span class="nav-text">zookeeper是什么？有什么用？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是命名服务，什么是配置管理，什么是集群管理？"><span class="nav-number">2.</span> <span class="nav-text">什么是命名服务，什么是配置管理，什么是集群管理？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zookeeper的数据模型是怎样的？znode有几种类型？"><span class="nav-number">3.</span> <span class="nav-text">zookeeper的数据模型是怎样的？znode有几种类型？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#zookeeper的数据模型"><span class="nav-number">3.1.</span> <span class="nav-text">zookeeper的数据模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#znode的4种类型"><span class="nav-number">3.2.</span> <span class="nav-text">znode的4种类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#znode节点里面存储的是什么？每个节点的数据最大不能超过多少？"><span class="nav-number">4.</span> <span class="nav-text">znode节点里面存储的是什么？每个节点的数据最大不能超过多少？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#znode节点里面存储的是什么？"><span class="nav-number">4.1.</span> <span class="nav-text">znode节点里面存储的是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#每个节点的数据最大不能超过多少？"><span class="nav-number">4.2.</span> <span class="nav-text">每个节点的数据最大不能超过多少？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#znode节点上的监听机制"><span class="nav-number">5.</span> <span class="nav-text">znode节点上的监听机制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Watcher监听机制"><span class="nav-number">5.1.</span> <span class="nav-text">Watcher监听机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Watcher监听机制的工作原理"><span class="nav-number">5.2.</span> <span class="nav-text">Watcher监听机制的工作原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Watcher特性总结"><span class="nav-number">5.3.</span> <span class="nav-text">Watcher特性总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Zookeeper的特性"><span class="nav-number">6.</span> <span class="nav-text">Zookeeper的特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zookeeper是如何保证事务的顺序一致性？"><span class="nav-number">7.</span> <span class="nav-text">zookeeper是如何保证事务的顺序一致性？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Zookeeper的服务器有几种角色？Zookeeper下Server工作状态有几种？"><span class="nav-number">8.</span> <span class="nav-text">Zookeeper的服务器有几种角色？Zookeeper下Server工作状态有几种？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Zookeeper-服务器角色"><span class="nav-number">8.1.</span> <span class="nav-text">Zookeeper 服务器角色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Zookeeper下Server工作状态"><span class="nav-number">8.2.</span> <span class="nav-text">Zookeeper下Server工作状态</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ZooKeeper集群部署图？ZooKeeper是如何保证主从节点数据一致性？"><span class="nav-number">9.</span> <span class="nav-text">ZooKeeper集群部署图？ZooKeeper是如何保证主从节点数据一致性？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ZooKeeper集群部署图"><span class="nav-number">9.1.</span> <span class="nav-text">ZooKeeper集群部署图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ZooKeeper如何保证主从节点数据一致性"><span class="nav-number">9.2.</span> <span class="nav-text">ZooKeeper如何保证主从节点数据一致性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ZooKeeper选举机制"><span class="nav-number">10.</span> <span class="nav-text">ZooKeeper选举机制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#服务器启动的Leader选举"><span class="nav-number">10.1.</span> <span class="nav-text">服务器启动的Leader选举</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#服务器运行期间的Leader选举"><span class="nav-number">10.2.</span> <span class="nav-text">服务器运行期间的Leader选举</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zookeeper分布式锁的实现原理"><span class="nav-number">11.</span> <span class="nav-text">zookeeper分布式锁的实现原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#获取锁过程"><span class="nav-number">11.1.</span> <span class="nav-text">获取锁过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#释放锁"><span class="nav-number">11.2.</span> <span class="nav-text">释放锁</span></a></li></ol></li></ol></div></div></div><div class="back-to-top"><i class="fa fa-arrow-up"></i> <span id="scrollpercent"><span>0</span>%</span></div></div></aside><link rel="stylesheet" href="/dist/APlayer.min.css"><div id="aplayer"></div><script type="text/javascript" src="/dist/APlayer.min.js"></script><style>.aplayer .aplayer-lrc{height:35px}.aplayer .aplayer-lrc p{font-size:16px;font-weight:700;line-height:19.2px!important}.aplayer .aplayer-lrc p.aplayer-lrc-current{color:#ff1493}.aplayer.aplayer-narrow .aplayer-body{left:-66px!important}</style><div class="aplayer" data-id="7622186670" data-server="netease" data-type="playlist" data-fixed="true" data-order="random" data-autoplay="false"></div><script src="/dist/Meting.min.js"></script></div></main><footer id="footer" class="footer"><div class="footer-inner"><div class="copyright" style="text-align:center">&copy; 2022 – <span itemprop="copyrightYear">2026</span> <span class="with-love" id="animate"><i class="fa fa-heart"></i> </span><span class="author" itemprop="copyrightHolder">逸贤</span> <span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-area-chart">站点字数合计:</i> </span><span title="站点总字数">1.1m</span></div><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div class="run_time" style="text-align:center"><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>var now=new Date;function createtime(){var n=new Date("09/08/2022 10:00:00");now.setTime(now.getTime()+250),days=(now-n)/1e3/60/60/24,dnum=Math.floor(days),hours=(now-n)/1e3/60/60-24*dnum,hnum=Math.floor(hours),1==String(hnum).length&&(hnum="0"+hnum),minutes=(now-n)/1e3/60-1440*dnum-60*hnum,mnum=Math.floor(minutes),1==String(mnum).length&&(mnum="0"+mnum),seconds=(now-n)/1e3-86400*dnum-3600*hnum-60*mnum,snum=Math.round(seconds),1==String(snum).length&&(snum="0"+snum),document.getElementById("timeDate").innerHTML="本站已安全运行 "+dnum+" 天 ",document.getElementById("times").innerHTML=hnum+" 小时 "+mnum+" 分 "+snum+" 秒"}setInterval("createtime()",250)</script></div><div class="busuanzi-count" style="text-align:center"><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span class="post-meta-item-icon"><i class="fa fa-user"></i> </span><span class="site-uv" title="总访客量"><span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 人 </span><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-eye"></i> </span><span class="site-pv" title="总访问量"><span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次</span></div></div></footer></div><script>"[object Function]"!==Object.prototype.toString.call(window.Promise)&&(window.Promise=null)</script><script src="/lib/jquery/index.js?v=2.1.3"></script><script src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script><script src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script><script src="/lib/velocity/velocity.min.js?v=1.2.1"></script><script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script><script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script><script src="/js/utils.js?v=7.1.1"></script><script src="/js/motion.js?v=7.1.1"></script><script src="/js/schemes/muse.js?v=7.1.1"></script><script src="/js/scrollspy.js?v=7.1.1"></script><script src="/js/post-details.js?v=7.1.1"></script><script src="/js/next-boot.js?v=7.1.1"></script><script>window.livereOptions={refer:"2023/04f855b121.html"},function(e,t){var n,r=e.getElementsByTagName(t)[0];"function"!=typeof LivereTower&&((n=e.createElement(t)).src="https://cdn-city.livere.com/js/embed.dist.js",n.async=!0,r.parentNode.insertBefore(n,r))}(document,"script")</script><script>// Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });</script><script src="/lib/needsharebutton/needsharebutton.js"></script><script>pbOptions={iconStyle:"box",boxForm:"horizontal",position:"bottomCenter",networks:"Weibo,Wechat,Douban,QQZone,Twitter,Facebook"},new needShareButton("#needsharebutton-postbottom",pbOptions)</script><script src="/lib/bookmark/bookmark.min.js?v=1.0"></script><script>bookmark.scrollToMark("auto","#更多")</script><script>$(".highlight").not(".gist .highlight").each(function(t,e){var n=$("<div>").addClass("highlight-wrap");$(e).after(n),n.append($("<button>").addClass("copy-btn").append("复制").on("click",function(t){var e=$(this).parent().find(".code").find(".line").map(function(t,e){return $(e).text()}).toArray().join("\n"),n=document.createElement("textarea"),o=window.pageYOffset||document.documentElement.scrollTop;n.style.top=o+"px",n.style.position="absolute",n.style.opacity="0",n.readOnly=!0,n.value=e,document.body.appendChild(n),n.select(),n.setSelectionRange(0,e.length),n.readOnly=!1,document.execCommand("copy")?$(this).text("复制成功"):$(this).text("复制失败"),n.blur(),$(this).blur()})).on("mouseleave",function(t){var e=$(this).find(".copy-btn");setTimeout(function(){e.text("复制")},300)}).append(e)})</script></body></html><script type="text/javascript" src="/js/src/clicklove.js"></script><script type="text/javascript" src="/js/click_show_text.js"></script><script type="text/javascript" src="/js/FunnyTitle.js"></script><script src="/live2d-widget/autoload.js"></script>

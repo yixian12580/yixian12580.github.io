@@ -1,0 +1,317 @@
+<!DOCTYPE html><html class="theme-next mist use-motion" lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2"><meta name="theme-color" content="#222"><script></script><link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css"><script src="/lib/pace/pace.min.js?v=1.0.2"></script><link rel="stylesheet" href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2"><link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"><link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2"><link rel="stylesheet" href="/css/main.css?v=7.1.1"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1"><link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222"><script id="hexo.configurations">var NexT=window.NexT||{},CONFIG={root:"/",scheme:"Mist",version:"7.1.1",sidebar:{position:"left",display:"post",offset:12,onmobile:!0,dimmer:!1},back2top:!0,back2top_sidebar:!0,fancybox:!0,fastclick:!0,lazyload:!0,tabs:!0,motion:{enable:!0,async:!1,transition:{post_block:"shrinkIn",post_header:"slideLeftIn",post_body:"slideDownIn",coll_header:"slideLeftIn",sidebar:"slideDownIn"}},algolia:{applicationID:"",apiKey:"",indexName:"",hits:{per_page:10},labels:{input_placeholder:"Search for Posts",hits_empty:"We didn't find any results for the search: ${query}",hits_stats:"${hits} results found in ${time} ms"}}}</script><script>!function(e,t,o,c,a,i,n){e.DaoVoiceObject=a,e[a]=e[a]||function(){(e[a].q=e[a].q||[]).push(arguments)},e[a].l=+new Date,i=t.createElement(o),n=t.getElementsByTagName(o)[0],i.async=1,i.src=c,i.charset="utf-8",n.parentNode.insertBefore(i,n)}(window,document,"script",("https:"==document.location.protocol?"https:":"http:")+"//widget.daovoice.io/widget/0f81ff2f.js","daovoice"),daovoice("init",{app_id:"aac7f9b5"}),daovoice("update")</script><meta name="description" content="Kafka 是一个消息系统，原本开发自 LinkedIn，用作 LinkedIn 的活动流（Activity Stream）和运营数据处理管道（Pipeline）的基础。现在它已被多家不同类型的公司 作为多种类型的数据管道和消息系统使用。"><meta name="keywords" content="kafka原理,消息队列,kafka"><meta property="og:type" content="article"><meta property="og:title" content="Kafka相关讨论"><meta property="og:url" content="https://yixian12580.github.io/2023/04e6ad34c9.html"><meta property="og:site_name" content="逸贤 | Blog"><meta property="og:description" content="Kafka 是一个消息系统，原本开发自 LinkedIn，用作 LinkedIn 的活动流（Activity Stream）和运营数据处理管道（Pipeline）的基础。现在它已被多家不同类型的公司 作为多种类型的数据管道和消息系统使用。"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://yixian12580.github.io/2023/04e6ad34c9/image-20230426113837143.png"><meta property="og:image" content="https://yixian12580.github.io/2023/04e6ad34c9/image-20230426113855130.png"><meta property="og:image" content="https://yixian12580.github.io/2023/04e6ad34c9/image-20230426113918322.png"><meta property="og:image" content="https://yixian12580.github.io/2023/04e6ad34c9/image-20230426114025967.png"><meta property="og:image" content="https://yixian12580.github.io/2023/04e6ad34c9/image-20230426114050733.png"><meta property="og:image" content="https://yixian12580.github.io/2023/04e6ad34c9/image-20230426114115646.png"><meta property="og:image" content="https://yixian12580.github.io/2023/04e6ad34c9/image-20230426114148026.png"><meta property="og:image" content="https://yixian12580.github.io/2023/04e6ad34c9/image-20230426114200738.png"><meta property="og:image" content="https://yixian12580.github.io/2023/04e6ad34c9/image-20230426114212188.png"><meta property="og:image" content="https://yixian12580.github.io/2023/04e6ad34c9/image-20230426114223847.png"><meta property="og:image" content="https://yixian12580.github.io/2023/04e6ad34c9/image-20230426114235043.png"><meta property="og:image" content="https://yixian12580.github.io/2023/04e6ad34c9/image-20230426114317945.png"><meta property="og:image" content="https://yixian12580.github.io/2023/04e6ad34c9/image-20230426114430312.png"><meta property="og:image" content="https://yixian12580.github.io/2023/04e6ad34c9/image-20230426114605217.png"><meta property="og:updated_time" content="2023-06-19T10:01:26.000Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Kafka相关讨论"><meta name="twitter:description" content="Kafka 是一个消息系统，原本开发自 LinkedIn，用作 LinkedIn 的活动流（Activity Stream）和运营数据处理管道（Pipeline）的基础。现在它已被多家不同类型的公司 作为多种类型的数据管道和消息系统使用。"><meta name="twitter:image" content="https://yixian12580.github.io/2023/04e6ad34c9/image-20230426113837143.png"><link rel="alternate" href="/atom.xml" title="逸贤 | Blog" type="application/atom+xml"><link rel="canonical" href="https://yixian12580.github.io/2023/04e6ad34c9"><script id="page.configurations">CONFIG.page={sidebar:""}</script><title>Kafka相关讨论 | 逸贤 | Blog</title><noscript><style>.sidebar-inner,.use-motion .brand,.use-motion .collection-title,.use-motion .comments,.use-motion .menu-item,.use-motion .motion-element,.use-motion .pagination,.use-motion .post-block,.use-motion .post-body,.use-motion .post-header{opacity:initial}.use-motion .logo,.use-motion .site-subtitle,.use-motion .site-title{opacity:initial;top:initial}.use-motion .logo-line-before i{left:initial}.use-motion .logo-line-after i{right:initial}</style></noscript></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN"><div class="container sidebar-position-left page-post-detail"><div class="headband"></div><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-wrapper"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">逸贤 | Blog</span> <span class="logo-line-after"><i></i></span></a></div></div><div class="site-nav-toggle"><button aria-label="切换导航栏"><span class="btn-bar"></span> <span class="btn-bar"></span> <span class="btn-bar"></span></button></div></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i><br>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-bookmark"></i><br>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于</a></li><li class="menu-item menu-item-互动"><a href="/guestbook/" rel="section"><i class="menu-item-icon fa fa-fw fa-comments"></i><br>互动</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class="site-search"><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class="search-icon"><i class="fa fa-search"></i> </span><span class="popup-btn-close"><i class="fa fa-times-circle"></i></span><div class="local-search-input-wrapper"><input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input"></div></div><div id="local-search-result"></div></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><div class="post-block"><link itemprop="mainEntityOfPage" href="https://yixian12580.github.io/2023/04e6ad34c9.html"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="丨逸贤丨"><meta itemprop="description" content="三十年众生牛马，搏十年丰功伟绩。"><meta itemprop="image" content="/images/avatar.jpg"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="逸贤 | Blog"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">Kafka相关讨论</h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i> </span><span class="post-meta-item-text">发表于</span> <time title="创建时间：2023-04-26 11:35:35" itemprop="dateCreated datePublished" datetime="2023-04-26T11:35:35+08:00">2023-04-26</time> <span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-calendar-check-o"></i> </span><span class="post-meta-item-text">更新于</span> <time title="修改时间：2023-06-19 18:01:26" itemprop="dateModified" datetime="2023-06-19T18:01:26+08:00">2023-06-19</time> </span><span class="post-category"><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-folder-o"></i> </span><span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span> ， <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/Kafka/" itemprop="url" rel="index"><span itemprop="name">Kafka</span></a></span> </span><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-eye"></i> 阅读次数： <span class="busuanzi-value" id="busuanzi_value_page_pv"></span></span><div class="post-symbolscount"><span class="post-meta-item-icon"><i class="fa fa-file-word-o"></i> </span><span class="post-meta-item-text">本文字数：</span> <span title="本文字数">9.1k</span> <span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-clock-o"></i> </span><span class="post-meta-item-text">阅读时长 &asymp;</span> <span title="阅读时长">8 分钟</span></div></div></header><div class="post-body" itemprop="articleBody"><p>Kafka 是一个消息系统，原本开发自 LinkedIn，用作 LinkedIn 的活动流（Activity Stream）和运营数据处理管道（Pipeline）的基础。现在它已被多家不同类型的公司 作为多种类型的数据管道和消息系统使用。</p><a id="more"></a><p><strong>活动流数据</strong>是几乎所有站点在对其网站使用情况做报表时都要用到的数据中最常规的部分。活动数据包括页面访问量（Page View）、被查看内容方面的信息以及搜索情况等内容。这种数据通常的处理方式是先把各种活动以日志的形式写入某种文件，然后周期性地对这些文件进行统计分析。<strong>运营数据</strong>指的是服务器的性能数据（CPU、IO 使用率、请求时间、服务日志等等数据)。运营数据的统计方法种类繁多。</p><p>近年来，活动和运营数据处理已经成为了网站软件产品特性中一个至关重要的组成部分，这就需要一套稍微更加复杂的基础设施对其提供支持。</p><h2 id="Kafka-简介"><a href="#Kafka-简介" class="headerlink" title="Kafka 简介"></a><strong>Kafka 简介</strong></h2><p>Kafka 是一种分布式的，基于发布 / 订阅的消息系统。主要设计目标如下：</p><ul><li>以时间复杂度为 O(1) 的方式提供消息持久化能力，即使对 TB 级以上数据也能保证常数时间复杂度的访问性能。</li><li>高吞吐率。即使在非常廉价的商用机器上也能做到单机支持每秒 100K 条以上消息的传输。</li><li>支持 Kafka Server 间的消息分区，及分布式消费，同时保证每个 Partition 内的消息顺序传输。</li><li>同时支持离线数据处理和实时数据处理。</li><li>Scale out：支持在线水平扩展。</li></ul><h2 id="Kafka-基础概念"><a href="#Kafka-基础概念" class="headerlink" title="Kafka 基础概念"></a><strong>Kafka 基础概念</strong></h2><h3 id="概念一：生产者与消费者"><a href="#概念一：生产者与消费者" class="headerlink" title="概念一：生产者与消费者"></a><strong>概念一：生产者与消费者</strong></h3><img src="/2023/04e6ad34c9/image-20230426113837143.png"><p>对于 Kafka 来说客户端有两种基本类型：<strong>生产者（Producer）</strong>和<strong>消费者（Consumer）</strong>。除此之外，还有用来做数据集成的 Kafka Connect API 和流式处理的 Kafka Streams 等高阶客户端，但这些高阶客户端底层仍然是生产者和消费者API，它们只不过是在上层做了封装。</p><p>这很容易理解，生产者（也称为发布者）创建消息，而消费者（也称为订阅者）负责消费or读取消息。</p><h3 id="概念二：主题（Topic）与分区（Partition）"><a href="#概念二：主题（Topic）与分区（Partition）" class="headerlink" title="概念二：主题（Topic）与分区（Partition）"></a><strong>概念二：主题（Topic）与分区（Partition）</strong></h3><img src="/2023/04e6ad34c9/image-20230426113855130.png"><p>在 Kafka 中，消息以<strong>主题（Topic）</strong>来分类，每一个主题都对应一个「消息队列」，这有点儿类似于数据库中的表。但是如果我们把所有同类的消息都塞入到一个“中心”队列中，势必缺少可伸缩性，无论是生产者/消费者数目的增加，还是消息数量的增加，都可能耗尽系统的性能或存储。</p><p>我们使用一个生活中的例子来说明：现在 A 城市生产的某商品需要运输到 B 城市，走的是公路，那么单通道的高速公路不论是在「A 城市商品增多」还是「现在 C 城市也要往 B 城市运输东西」这样的情况下都会出现「吞吐量不足」的问题。所以我们现在引入<strong>分区（Partition）</strong>的概念，类似“允许多修几条道”的方式对我们的主题完成了水平扩展。</p><h3 id="概念三：Broker-和集群（Cluster）"><a href="#概念三：Broker-和集群（Cluster）" class="headerlink" title="概念三：Broker 和集群（Cluster）"></a><strong>概念三：Broker 和集群（Cluster）</strong></h3><p>一个 Kafka 服务器也称为 Broker，它接受生产者发送的消息并存入磁盘；Broker 同时服务消费者拉取分区消息的请求，返回目前已经提交的消息。使用特定的机器硬件，一个 Broker 每秒可以处理成千上万的分区和百万量级的消息。（现在动不动就百万量级..我特地去查了一把，好像确实集群的情况下吞吐量挺高的..摁..）</p><p>若干个 Broker 组成一个集群（Cluster），其中集群内某个 Broker 会成为集群控制器（Cluster Controller），它负责管理集群，包括分配分区到 Broker、监控 Broker 故障等。在集群内，一个分区由一个 Broker 负责，这个 Broker 也称为这个分区的 Leader；当然一个分区可以被复制到多个 Broker 上来实现冗余，这样当存在 Broker 故障时可以将其分区重新分配到其他 Broker 来负责。下图是一个样例：</p><img src="/2023/04e6ad34c9/image-20230426113918322.png"><p>Kafka 的一个关键性质是日志保留（retention），我们可以配置主题的消息保留策略，譬如只保留一段时间的日志或者只保留特定大小的日志。当超过这些限制时，老的消息会被删除。我们也可以针对某个主题单独设置消息过期策略，这样对于不同应用可以实现个性化。</p><h3 id="概念四：多集群"><a href="#概念四：多集群" class="headerlink" title="概念四：多集群"></a><strong>概念四：多集群</strong></h3><p>随着业务发展，我们往往需要多集群，通常处于下面几个原因：</p><ul><li>基于数据的隔离；</li><li>基于安全的隔离；</li><li>多数据中心（容灾）</li></ul><p>当构建多个数据中心时，往往需要实现消息互通。举个例子，假如用户修改了个人资料，那么后续的请求无论被哪个数据中心处理，这个更新需要反映出来。又或者，多个数据中心的数据需要汇总到一个总控中心来做数据分析。</p><p>上面说的分区复制冗余机制只适用于同一个 Kafka 集群内部，对于多个 Kafka 集群消息同步可以使用 Kafka 提供的 MirrorMaker 工具。本质上来说，MirrorMaker 只是一个 Kafka 消费者和生产者，并使用一个队列连接起来而已。它从一个集群中消费消息，然后往另一个集群生产消息。</p><h2 id="Kafka-的设计与实现"><a href="#Kafka-的设计与实现" class="headerlink" title="Kafka 的设计与实现"></a><strong>Kafka 的设计与实现</strong></h2><hr><p>上面我们知道了 Kafka 中的一些基本概念，但作为一个成熟的「消息队列」中间件，其中有许多有意思的设计值得我们思考，下面我们简单列举一些。</p><h2 id="讨论一：Kafka-存储在文件系统上"><a href="#讨论一：Kafka-存储在文件系统上" class="headerlink" title="讨论一：Kafka 存储在文件系统上"></a><strong>讨论一：Kafka 存储在文件系统上</strong></h2><p>是的，<strong>您首先应该知道 Kafka 的消息是存在于文件系统之上的</strong>。Kafka 高度依赖文件系统来存储和缓存消息，一般的人认为 “磁盘是缓慢的”，所以对这样的设计持有怀疑态度。实际上，磁盘比人们预想的快很多也慢很多，这取决于它们如何被使用；一个好的磁盘结构设计可以使之跟网络速度一样快。</p><p>现代的操作系统针对磁盘的读写已经做了一些优化方案来加快磁盘的访问速度。比如，<strong>预读</strong>会提前将一个比较大的磁盘快读入内存。<strong>后写</strong>会将很多小的逻辑写操作合并起来组合成一个大的物理写操作。并且，操作系统还会将主内存剩余的所有空闲内存空间都用作<strong>磁盘缓存</strong>，所有的磁盘读写操作都会经过统一的磁盘缓存（除了直接 I/O 会绕过磁盘缓存）。综合这几点优化特点，<strong>如果是针对磁盘的顺序访问，某些情况下它可能比随机的内存访问都要快，甚至可以和网络的速度相差无几。</strong></p><p><strong>上述的 Topic 其实是逻辑上的概念，面相消费者和生产者，物理上存储的其实是 Partition</strong>，每一个 Partition 最终对应一个目录，里面存储所有的消息和索引文件。默认情况下，每一个 Topic 在创建时如果不指定 Partition 数量时只会创建 1 个 Partition。比如，我创建了一个 Topic 名字为 test ，没有指定 Partition 的数量，那么会默认创建一个 test-0 的文件夹，这里的命名规则是：<code>&lt;topic_name&gt;-&lt;partition_id&gt;</code>。</p><img src="/2023/04e6ad34c9/image-20230426114025967.png"><p>任何发布到 Partition 的消息都会被追加到 Partition 数据文件的尾部，这样的顺序写磁盘操作让 Kafka 的效率非常高（经验证，顺序写磁盘效率比随机写内存还要高，这是 Kafka 高吞吐率的一个很重要的保证）。</p><p>每一条消息被发送到 Broker 中，会根据 Partition 规则选择被存储到哪一个 Partition。如果 Partition 规则设置的合理，所有消息可以均匀分布到不同的 Partition中。</p><h2 id="讨论二：Kafka-中的底层存储设计"><a href="#讨论二：Kafka-中的底层存储设计" class="headerlink" title="讨论二：Kafka 中的底层存储设计"></a><strong>讨论二：Kafka 中的底层存储设计</strong></h2><p>假设我们现在 Kafka 集群只有一个 Broker，我们创建 2 个 Topic 名称分别为：「topic1」和「topic2」，Partition 数量分别为 1、2，那么我们的根目录下就会创建如下三个文件夹：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">| --topic1-0</span><br><span class="line">| --topic2-0</span><br><span class="line">| --topic2-1</span><br></pre></td></tr></table></figure><p>在 Kafka 的文件存储中，同一个 Topic 下有多个不同的 Partition，每个 Partition 都为一个目录，而每一个目录又被平均分配成多个大小相等的 <strong>Segment File</strong> 中，Segment File 又由 index file 和 data file 组成，他们总是成对出现，后缀 “.index” 和 “.log” 分表表示 Segment 索引文件和数据文件。</p><p>现在假设我们设置每个 Segment 大小为 500 MB，并启动生产者向 topic1 中写入大量数据，topic1-0 文件夹中就会产生类似如下的一些文件：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">| --topic1-0</span><br><span class="line">    | --00000000000000000000.index</span><br><span class="line">    | --00000000000000000000.log</span><br><span class="line">    | --00000000000000368769.index</span><br><span class="line">    | --00000000000000368769.log</span><br><span class="line">    | --00000000000000737337.index</span><br><span class="line">    | --00000000000000737337.log</span><br><span class="line">    | --00000000000001105814.index</span><br><span class="line">    | --00000000000001105814.log</span><br><span class="line">| --topic2-0</span><br><span class="line">| --topic2-1</span><br></pre></td></tr></table></figure><p><strong>Segment 是 Kafka 文件存储的最小单位。</strong>Segment 文件命名规则：Partition 全局的第一个 Segment 从 0 开始，后续每个 Segment 文件名为上一个 Segment 文件最后一条消息的 offset 值。数值最大为 64 位 long 大小，19 位数字字符长度，没有数字用0填充。如 00000000000000368769.index 和 00000000000000368769.log。</p><p>以上面的一对 Segment File 为例，说明一下索引文件和数据文件对应关系：</p><img src="/2023/04e6ad34c9/image-20230426114050733.png"><p>其中以索引文件中元数据 <code>&lt;3, 497&gt;</code> 为例，依次在数据文件中表示第 3 个 message（在全局 Partition 表示第 368769 + 3 = 368772 个 message）以及该消息的物理偏移地址为 497。</p><p>注意该 index 文件并不是从0开始，也不是每次递增1的，这是因为 Kafka 采取稀疏索引存储的方式，每隔一定字节的数据建立一条索引，它减少了索引文件大小，使得能够把 index 映射到内存，降低了查询时的磁盘 IO 开销，同时也并没有给查询带来太多的时间消耗。</p><p>因为其文件名为上一个 Segment 最后一条消息的 offset ，所以当需要查找一个指定 offset 的 message 时，通过在所有 segment 的文件名中进行二分查找就能找到它归属的 segment ，再在其 index 文件中找到其对应到文件上的物理位置，就能拿出该 message 。</p><p>由于消息在 Partition 的 Segment 数据文件中是顺序读写的，且消息消费后不会删除（删除策略是针对过期的 Segment 文件），这种顺序磁盘 IO 存储设计师 Kafka 高性能很重要的原因。</p><blockquote><p>Kafka 是如何准确的知道 message 的偏移的呢？这是因为在 Kafka 定义了标准的数据存储结构，在 Partition 中的每一条 message 都包含了以下三个属性：</p></blockquote><ul><li>offset：表示 message 在当前 Partition 中的偏移量，是一个逻辑上的值，唯一确定了 Partition 中的一条 message，可以简单的认为是一个 id；</li><li>MessageSize：表示 message 内容 data 的大小；</li><li>data：message 的具体内容</li></ul><h2 id="讨论三：生产者设计概要"><a href="#讨论三：生产者设计概要" class="headerlink" title="讨论三：生产者设计概要"></a><strong>讨论三：生产者设计概要</strong></h2><p>当我们发送消息之前，先问几个问题：每条消息都是很关键且不能容忍丢失么？偶尔重复消息可以么？我们关注的是消息延迟还是写入消息的吞吐量？</p><p>举个例子，有一个信用卡交易处理系统，当交易发生时会发送一条消息到 Kafka，另一个服务来读取消息并根据规则引擎来检查交易是否通过，将结果通过 Kafka 返回。对于这样的业务，消息既不能丢失也不能重复，由于交易量大因此吞吐量需要尽可能大，延迟可以稍微高一点。</p><p>再举个例子，假如我们需要收集用户在网页上的点击数据，对于这样的场景，少量消息丢失或者重复是可以容忍的，延迟多大都不重要只要不影响用户体验，吞吐则根据实时用户数来决定。</p><p>不同的业务需要使用不同的写入方式和配置。具体的方式我们在这里不做讨论，现在先看下生产者写消息的基本流程：</p><img src="/2023/04e6ad34c9/image-20230426114115646.png"><p>流程如下：</p><ol><li>首先，我们需要创建一个ProducerRecord，这个对象需要包含消息的主题（topic）和值（value），可以选择性指定一个键值（key）或者分区（partition）。</li><li>发送消息时，生产者会对键值和值序列化成字节数组，然后发送到分配器（partitioner）。</li><li>如果我们指定了分区，那么分配器返回该分区即可；否则，分配器将会基于键值来选择一个分区并返回。</li><li>选择完分区后，生产者知道了消息所属的主题和分区，它将这条记录添加到相同主题和分区的批量消息中，另一个线程负责发送这些批量消息到对应的Kafka broker。</li><li>当broker接收到消息后，如果成功写入则返回一个包含消息的主题、分区及位移的RecordMetadata对象，否则返回异常。</li><li>生产者接收到结果后，对于异常可能会进行重试。</li></ol><h2 id="讨论四：消费者设计概要"><a href="#讨论四：消费者设计概要" class="headerlink" title="讨论四：消费者设计概要"></a><strong>讨论四：消费者设计概要</strong></h2><h3 id="消费者与消费组"><a href="#消费者与消费组" class="headerlink" title="消费者与消费组"></a><strong>消费者与消费组</strong></h3><p>假设这么个场景：我们从Kafka中读取消息，并且进行检查，最后产生结果数据。我们可以创建一个消费者实例去做这件事情，但如果生产者写入消息的速度比消费者读取的速度快怎么办呢？这样随着时间增长，消息堆积越来越严重。对于这种场景，我们需要增加多个消费者来进行水平扩展。</p><p>Kafka消费者是<strong>消费组</strong>的一部分，当多个消费者形成一个消费组来消费主题时，每个消费者会收到不同分区的消息。假设有一个T1主题，该主题有4个分区；同时我们有一个消费组G1，这个消费组只有一个消费者C1。那么消费者C1将会收到这4个分区的消息，如下所示：</p><img src="/2023/04e6ad34c9/image-20230426114148026.png"><p>如果我们增加新的消费者C2到消费组G1，那么每个消费者将会分别收到两个分区的消息，如下所示：</p><img src="/2023/04e6ad34c9/image-20230426114200738.png"><p>如果增加到4个消费者，那么每个消费者将会分别收到一个分区的消息，如下所示：</p><img src="/2023/04e6ad34c9/image-20230426114212188.png"><p>但如果我们继续增加消费者到这个消费组，剩余的消费者将会空闲，不会收到任何消息：</p><img src="/2023/04e6ad34c9/image-20230426114223847.png"><p>总而言之，我们可以通过增加消费组的消费者来进行水平扩展提升消费能力。这也是为什么建议创建主题时使用比较多的分区数，这样可以在消费负载高的情况下增加消费者来提升性能。另外，消费者的数量不应该比分区数多，因为多出来的消费者是空闲的，没有任何帮助。</p><p><strong>Kafka一个很重要的特性就是，只需写入一次消息，可以支持任意多的应用读取这个消息。</strong>换句话说，每个应用都可以读到全量的消息。为了使得每个应用都能读到全量消息，应用需要有不同的消费组。对于上面的例子，假如我们新增了一个新的消费组G2，而这个消费组有两个消费者，那么会是这样的：</p><img src="/2023/04e6ad34c9/image-20230426114235043.png"><p>在这个场景中，消费组G1和消费组G2都能收到T1主题的全量消息，在逻辑意义上来说它们属于不同的应用。</p><p>最后，总结起来就是：如果应用需要读取全量消息，那么请为该应用设置一个消费组；如果该应用消费能力不足，那么可以考虑在这个消费组里增加消费者。</p><h3 id="消费组与分区重平衡"><a href="#消费组与分区重平衡" class="headerlink" title="消费组与分区重平衡"></a><strong>消费组与分区重平衡</strong></h3><p>可以看到，当新的消费者加入消费组，它会消费一个或多个分区，而这些分区之前是由其他消费者负责的；另外，当消费者离开消费组（比如重启、宕机等）时，它所消费的分区会分配给其他分区。这种现象称为<strong>重平衡（rebalance）</strong>。重平衡是 Kafka 一个很重要的性质，这个性质保证了高可用和水平扩展。<strong>不过也需要注意到，在重平衡期间，所有消费者都不能消费消息，因此会造成整个消费组短暂的不可用。</strong>而且，将分区进行重平衡也会导致原来的消费者状态过期，从而导致消费者需要重新更新状态，这段期间也会降低消费性能。</p><p>消费者通过定期发送心跳（hearbeat）到一个作为组协调者（group coordinator）的 broker 来保持在消费组内存活。这个 broker 不是固定的，每个消费组都可能不同。当消费者拉取消息或者提交时，便会发送心跳。</p><p>如果消费者超过一定时间没有发送心跳，那么它的会话（session）就会过期，组协调者会认为该消费者已经宕机，然后触发重平衡。可以看到，从消费者宕机到会话过期是有一定时间的，这段时间内该消费者的分区都不能进行消息消费；通常情况下，我们可以进行优雅关闭，这样消费者会发送离开的消息到组协调者，这样组协调者可以立即进行重平衡而不需要等待会话过期。</p><p>在 0.10.1 版本，Kafka 对心跳机制进行了修改，将发送心跳与拉取消息进行分离，这样使得发送心跳的频率不受拉取的频率影响。另外更高版本的 Kafka 支持配置一个消费者多长时间不拉取消息但仍然保持存活，这个配置可以避免活锁（livelock）。活锁，是指应用没有故障但是由于某些原因不能进一步消费。</p><h3 id="Partition-与消费模型"><a href="#Partition-与消费模型" class="headerlink" title="Partition 与消费模型"></a><strong>Partition 与消费模型</strong></h3><p>上面提到，Kafka 中一个 topic 中的消息是被打散分配在多个 Partition(分区) 中存储的， Consumer Group 在消费时需要从不同的 Partition 获取消息，那最终如何重建出 Topic 中消息的顺序呢？</p><p>答案是：没有办法。Kafka 只会保证在 Partition 内消息是有序的，而不管全局的情况。</p><p>下一个问题是：Partition 中的消息可以被（不同的 Consumer Group）多次消费，那 Partition中被消费的消息是何时删除的？ Partition 又是如何知道一个 Consumer Group 当前消费的位置呢？</p><p>无论消息是否被消费，除非消息到期 Partition 从不删除消息。例如设置保留时间为 2 天，则消息发布 2 天内任何 Group 都可以消费，2 天后，消息自动被删除。<br>Partition 会为每个 Consumer Group 保存一个偏移量，记录 Group 消费到的位置。 如下图：</p><img src="/2023/04e6ad34c9/image-20230426114317945.png"><h3 id="为什么-Kafka-是-pull-模型"><a href="#为什么-Kafka-是-pull-模型" class="headerlink" title="为什么 Kafka 是 pull 模型"></a><strong>为什么 Kafka 是 pull 模型</strong></h3><p>消费者应该向 Broker 要数据（pull）还是 Broker 向消费者推送数据（push）？作为一个消息系统，Kafka 遵循了传统的方式，选择由 Producer 向 broker push 消息并由 Consumer 从 broker pull 消息。一些 logging-centric system，比如 Facebook 的<a href="https://link.zhihu.com/?target=https%3A//github.com/facebookarchive/scribe" target="_blank" rel="noopener">Scribe</a>和 Cloudera 的<a href="https://link.zhihu.com/?target=http%3A//flume.apache.org/" target="_blank" rel="noopener">Flume</a>，采用 push 模式。事实上，push 模式和 pull 模式各有优劣。</p><p><strong>push 模式很难适应消费速率不同的消费者，因为消息发送速率是由 broker 决定的。</strong>push 模式的目标是尽可能以最快速度传递消息，但是这样很容易造成 Consumer 来不及处理消息，典型的表现就是拒绝服务以及网络拥塞。<strong>而 pull 模式则可以根据 Consumer 的消费能力以适当的速率消费消息。</strong></p><p><strong>对于 Kafka 而言，pull 模式更合适。</strong>pull 模式可简化 broker 的设计，Consumer 可自主控制消费消息的速率，同时 Consumer 可以自己控制消费方式——即可批量消费也可逐条消费，同时还能选择不同的提交方式从而实现不同的传输语义。</p><h2 id="讨论五：Kafka-如何保证可靠性"><a href="#讨论五：Kafka-如何保证可靠性" class="headerlink" title="讨论五：Kafka 如何保证可靠性"></a><strong>讨论五：Kafka 如何保证可靠性</strong></h2><p>当我们讨论<strong>可靠性</strong>的时候，我们总会提到*保证**这个词语。可靠性保证是基础，我们基于这些基础之上构建我们的应用。比如关系型数据库的可靠性保证是ACID，也就是原子性（Atomicity）、一致性（Consistency）、隔离性（Isolation）和持久性（Durability）。</p><p>Kafka 中的可靠性保证有如下四点：</p><ul><li>对于一个分区来说，它的消息是有序的。如果一个生产者向一个分区先写入消息A，然后写入消息B，那么消费者会先读取消息A再读取消息B。</li><li>当消息写入所有in-sync状态的副本后，消息才会认为<strong>已提交（committed）</strong>。这里的写入有可能只是写入到文件系统的缓存，不一定刷新到磁盘。生产者可以等待不同时机的确认，比如等待分区主副本写入即返回，后者等待所有in-sync状态副本写入才返回。</li><li>一旦消息已提交，那么只要有一个副本存活，数据不会丢失。</li><li>消费者只能读取到已提交的消息。</li></ul><p>使用这些基础保证，我们构建一个可靠的系统，这时候需要考虑一个问题：究竟我们的应用需要多大程度的可靠性？可靠性不是无偿的，它与系统可用性、吞吐量、延迟和硬件价格息息相关，得此失彼。因此，我们往往需要做权衡，一味的追求可靠性并不实际。</p><h2 id="动手搭一个-Kafka"><a href="#动手搭一个-Kafka" class="headerlink" title="动手搭一个 Kafka"></a><strong>动手搭一个 Kafka</strong></h2><hr><p>通过上面的描述，我们已经大致了解到了「Kafka」是何方神圣了，现在我们开始尝试自己动手本地搭一个来实际体验一把。</p><h2 id="下载-Kafka"><a href="#下载-Kafka" class="headerlink" title="下载 Kafka"></a><strong>下载 Kafka</strong></h2><p>这里以 Mac OS 为例，在安装了 Homebrew 的情况下执行下列代码：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install kafka</span><br></pre></td></tr></table></figure><p>由于 Kafka 依赖了 Zookeeper，所以在下载的时候会自动下载。</p><h2 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a><strong>启动服务</strong></h2><p>我们在启动之前首先需要修改 Kafka 的监听地址和端口为 <code>localhost:9092</code>：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /usr/local/etc/kafka/server.properties</span><br></pre></td></tr></table></figure><p>然后修改成下图的样子：</p><img src="/2023/04e6ad34c9/image-20230426114430312.png"><p>依次启动 Zookeeper 和 Kafka：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew services start zookeeper</span><br><span class="line">brew services start kafka</span><br></pre></td></tr></table></figure><p>然后执行下列语句来创建一个名字为 “test” 的 Topic：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test</span><br></pre></td></tr></table></figure><p>我们可以通过下列的命令查看我们的 Topic 列表：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kafka-topics --list --zookeeper localhost:2181</span><br></pre></td></tr></table></figure><h2 id="发送消息"><a href="#发送消息" class="headerlink" title="发送消息"></a><strong>发送消息</strong></h2><p>然后我们新建一个控制台，运行下列命令创建一个消费者关注刚才创建的 Topic：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kafka-console-consumer --bootstrap-server localhost:9092 --topic test --from-beginning</span><br></pre></td></tr></table></figure><p>用控制台往刚才创建的 Topic 中添加消息，并观察刚才创建的消费者窗口：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kafka-console-producer --broker-list localhost:9092 --topic test</span><br></pre></td></tr></table></figure><p>能通过消费者窗口观察到正确的消息：</p><img src="/2023/04e6ad34c9/image-20230426114605217.png"></div><div><div id="reward-container"><div>Thank you for your accept. mua！</div><button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">打赏</button><div id="qr" style="display:none"><div style="display:inline-block"><img src="/images/reward/wechatpay.png" alt="丨逸贤丨 微信支付"><p>微信支付</p></div><div style="display:inline-block"><img src="/images/reward/alipay.png" alt="丨逸贤丨 支付宝"><p>支付宝</p></div></div></div></div><div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者： </strong>丨逸贤丨</li><li class="post-copyright-link"><strong>本文链接：</strong> <a href="https://yixian12580.github.io/2023/04e6ad34c9.html" title="Kafka相关讨论">https://yixian12580.github.io/2023/04e6ad34c9.html</a></li><li class="post-copyright-license"><strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li></ul></div><div><div><div style="text-align:center;color:#ccc;font-size:16px">-------------本文结束<i class="fa fa-heart"></i>感谢您的阅读-------------</div></div></div><footer class="post-footer"><div class="post-tags"><a href="/tags/kafka原理/" rel="tag"><i class="fa fa-tag"></i> kafka原理</a> <a href="/tags/消息队列/" rel="tag"><i class="fa fa-tag"></i> 消息队列</a> <a href="/tags/kafka/" rel="tag"><i class="fa fa-tag"></i> kafka</a></div><div class="post-widgets"><div class="social_share"><div id="needsharebutton-postbottom"><span class="btn"><i class="fa fa-share-alt" aria-hidden="true"></i></span></div></div></div><div class="post-nav"><div class="post-nav-next post-nav-item"><a href="/2023/04f0560a40.html" rel="next" title="Kafka原理详解"><i class="fa fa-chevron-left"></i> Kafka原理详解</a></div><span class="post-nav-divider"></span><div class="post-nav-prev post-nav-item"><a href="/2023/04b8893609.html" rel="prev" title="Kafka部署">Kafka部署 <i class="fa fa-chevron-right"></i></a></div></div></footer></div></article></div><div style="text-align:center"><a href="https://github.com/yixian12580/blog-source/edit/main/source/_posts/Kafka相关讨论.md" target="_blank">编辑文章✏</a></div></div><div class="comments" id="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC81NzIwNy8zMzY3MQ=="></div></div></div><div class="sidebar-toggle"><div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span> <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span> <span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id="sidebar" class="sidebar"><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">文章目录</li><li class="sidebar-nav-overview" data-target="site-overview-wrap">站点概览</li></ul><div class="site-overview-wrap sidebar-panel"><div class="site-overview"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"><img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="丨逸贤丨"><p class="site-author-name" itemprop="name">丨逸贤丨</p><div class="site-description motion-element" itemprop="description">三十年众生牛马，搏十年丰功伟绩。</div></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href="/archives/"><span class="site-state-item-count">149</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-categories"><a href="/categories/"><span class="site-state-item-count">45</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"><a href="/tags/"><span class="site-state-item-count">137</span> <span class="site-state-item-name">标签</span></a></div></nav><div class="feed-link motion-element"><a href="/atom.xml" rel="alternate"><i class="fa fa-rss"></i> RSS</a></div><div class="links-of-author motion-element"><span class="links-of-author-item"><a href="https://github.com/yixian12580" title="GitHub &rarr; https://github.com/yixian12580" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a> </span><span class="links-of-author-item"><a href="mailto:1083662409@qq.com" title="E-Mail &rarr; mailto:1083662409@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a> </span><span class="links-of-author-item"><a href="https://weibo.com/u/5107819265" title="Weibo &rarr; https://weibo.com/u/5107819265" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a> </span><span class="links-of-author-item"><a href="tencent://message/?uin=1083662409&Site=&menu=yes" title="QQ &rarr; tencent://message/?uin=1083662409&Site=&menu=yes" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a></span></div><div class="links-of-blogroll motion-element links-of-blogroll-inline"><div class="links-of-blogroll-title"><i class="fa fa-fw fa-book"></i> 推荐阅读</div><ul class="links-of-blogroll-list"><li class="links-of-blogroll-item"><a href="http://www.ttlsa.com/" title="http://www.ttlsa.com/" rel="noopener" target="_blank">运维生存时间</a></li><li class="links-of-blogroll-item"><a href="https://www.iyunw.cn" title="https://www.iyunw.cn" rel="noopener" target="_blank">爱运维</a></li><li class="links-of-blogroll-item"><a href="https://nginxconfig.io/" title="https://nginxconfig.io/" rel="noopener" target="_blank">Nginxconfig</a></li><li class="links-of-blogroll-item"><a href="http://linux.51yip.com/" title="http://linux.51yip.com/" rel="noopener" target="_blank">Linux命令手册</a></li><li class="links-of-blogroll-item"><a href="https://echarts.apache.org/index.html" title="https://echarts.apache.org/index.html" rel="noopener" target="_blank">echarts可视化库</a></li><li class="links-of-blogroll-item"><a href="https://yixian12580.netlify.app/admin/" title="https://yixian12580.netlify.app/admin/" rel="noopener" target="_blank">博客管理</a></li></ul></div></div></div><div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class="post-toc"><div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Kafka-简介"><span class="nav-number">1.</span> <span class="nav-text">Kafka 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kafka-基础概念"><span class="nav-number">2.</span> <span class="nav-text">Kafka 基础概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念一：生产者与消费者"><span class="nav-number">2.1.</span> <span class="nav-text">概念一：生产者与消费者</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念二：主题（Topic）与分区（Partition）"><span class="nav-number">2.2.</span> <span class="nav-text">概念二：主题（Topic）与分区（Partition）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念三：Broker-和集群（Cluster）"><span class="nav-number">2.3.</span> <span class="nav-text">概念三：Broker 和集群（Cluster）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念四：多集群"><span class="nav-number">2.4.</span> <span class="nav-text">概念四：多集群</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kafka-的设计与实现"><span class="nav-number">3.</span> <span class="nav-text">Kafka 的设计与实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#讨论一：Kafka-存储在文件系统上"><span class="nav-number">4.</span> <span class="nav-text">讨论一：Kafka 存储在文件系统上</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#讨论二：Kafka-中的底层存储设计"><span class="nav-number">5.</span> <span class="nav-text">讨论二：Kafka 中的底层存储设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#讨论三：生产者设计概要"><span class="nav-number">6.</span> <span class="nav-text">讨论三：生产者设计概要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#讨论四：消费者设计概要"><span class="nav-number">7.</span> <span class="nav-text">讨论四：消费者设计概要</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#消费者与消费组"><span class="nav-number">7.1.</span> <span class="nav-text">消费者与消费组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#消费组与分区重平衡"><span class="nav-number">7.2.</span> <span class="nav-text">消费组与分区重平衡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Partition-与消费模型"><span class="nav-number">7.3.</span> <span class="nav-text">Partition 与消费模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么-Kafka-是-pull-模型"><span class="nav-number">7.4.</span> <span class="nav-text">为什么 Kafka 是 pull 模型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#讨论五：Kafka-如何保证可靠性"><span class="nav-number">8.</span> <span class="nav-text">讨论五：Kafka 如何保证可靠性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动手搭一个-Kafka"><span class="nav-number">9.</span> <span class="nav-text">动手搭一个 Kafka</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载-Kafka"><span class="nav-number">10.</span> <span class="nav-text">下载 Kafka</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动服务"><span class="nav-number">11.</span> <span class="nav-text">启动服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发送消息"><span class="nav-number">12.</span> <span class="nav-text">发送消息</span></a></li></ol></div></div></div><div class="back-to-top"><i class="fa fa-arrow-up"></i> <span id="scrollpercent"><span>0</span>%</span></div></div></aside><link rel="stylesheet" href="/dist/APlayer.min.css"><div id="aplayer"></div><script type="text/javascript" src="/dist/APlayer.min.js"></script><style>.aplayer .aplayer-lrc{height:35px}.aplayer .aplayer-lrc p{font-size:16px;font-weight:700;line-height:19.2px!important}.aplayer .aplayer-lrc p.aplayer-lrc-current{color:#ff1493}.aplayer.aplayer-narrow .aplayer-body{left:-66px!important}</style><div class="aplayer" data-id="7622186670" data-server="netease" data-type="playlist" data-fixed="true" data-order="random" data-autoplay="false"></div><script src="/dist/Meting.min.js"></script></div></main><footer id="footer" class="footer"><div class="footer-inner"><div class="copyright" style="text-align:center">&copy; 2022 – <span itemprop="copyrightYear">2026</span> <span class="with-love" id="animate"><i class="fa fa-heart"></i> </span><span class="author" itemprop="copyrightHolder">逸贤</span> <span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-area-chart">站点字数合计:</i> </span><span title="站点总字数">1.1m</span></div><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div class="run_time" style="text-align:center"><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>var now=new Date;function createtime(){var n=new Date("09/08/2022 10:00:00");now.setTime(now.getTime()+250),days=(now-n)/1e3/60/60/24,dnum=Math.floor(days),hours=(now-n)/1e3/60/60-24*dnum,hnum=Math.floor(hours),1==String(hnum).length&&(hnum="0"+hnum),minutes=(now-n)/1e3/60-1440*dnum-60*hnum,mnum=Math.floor(minutes),1==String(mnum).length&&(mnum="0"+mnum),seconds=(now-n)/1e3-86400*dnum-3600*hnum-60*mnum,snum=Math.round(seconds),1==String(snum).length&&(snum="0"+snum),document.getElementById("timeDate").innerHTML="本站已安全运行 "+dnum+" 天 ",document.getElementById("times").innerHTML=hnum+" 小时 "+mnum+" 分 "+snum+" 秒"}setInterval("createtime()",250)</script></div><div class="busuanzi-count" style="text-align:center"><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span class="post-meta-item-icon"><i class="fa fa-user"></i> </span><span class="site-uv" title="总访客量"><span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 人 </span><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-eye"></i> </span><span class="site-pv" title="总访问量"><span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次</span></div></div></footer></div><script>"[object Function]"!==Object.prototype.toString.call(window.Promise)&&(window.Promise=null)</script><script src="/lib/jquery/index.js?v=2.1.3"></script><script src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script><script src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script><script src="/lib/velocity/velocity.min.js?v=1.2.1"></script><script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script><script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script><script src="/js/utils.js?v=7.1.1"></script><script src="/js/motion.js?v=7.1.1"></script><script src="/js/schemes/muse.js?v=7.1.1"></script><script src="/js/scrollspy.js?v=7.1.1"></script><script src="/js/post-details.js?v=7.1.1"></script><script src="/js/next-boot.js?v=7.1.1"></script><script>window.livereOptions={refer:"2023/04e6ad34c9.html"},function(e,t){var n,r=e.getElementsByTagName(t)[0];"function"!=typeof LivereTower&&((n=e.createElement(t)).src="https://cdn-city.livere.com/js/embed.dist.js",n.async=!0,r.parentNode.insertBefore(n,r))}(document,"script")</script><script>// Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });</script><script src="/lib/needsharebutton/needsharebutton.js"></script><script>pbOptions={iconStyle:"box",boxForm:"horizontal",position:"bottomCenter",networks:"Weibo,Wechat,Douban,QQZone,Twitter,Facebook"},new needShareButton("#needsharebutton-postbottom",pbOptions)</script><script src="/lib/bookmark/bookmark.min.js?v=1.0"></script><script>bookmark.scrollToMark("auto","#更多")</script><script>$(".highlight").not(".gist .highlight").each(function(t,e){var n=$("<div>").addClass("highlight-wrap");$(e).after(n),n.append($("<button>").addClass("copy-btn").append("复制").on("click",function(t){var e=$(this).parent().find(".code").find(".line").map(function(t,e){return $(e).text()}).toArray().join("\n"),n=document.createElement("textarea"),o=window.pageYOffset||document.documentElement.scrollTop;n.style.top=o+"px",n.style.position="absolute",n.style.opacity="0",n.readOnly=!0,n.value=e,document.body.appendChild(n),n.select(),n.setSelectionRange(0,e.length),n.readOnly=!1,document.execCommand("copy")?$(this).text("复制成功"):$(this).text("复制失败"),n.blur(),$(this).blur()})).on("mouseleave",function(t){var e=$(this).find(".copy-btn");setTimeout(function(){e.text("复制")},300)}).append(e)})</script></body></html><script type="text/javascript" src="/js/src/clicklove.js"></script><script type="text/javascript" src="/js/click_show_text.js"></script><script type="text/javascript" src="/js/FunnyTitle.js"></script><script src="/live2d-widget/autoload.js"></script>

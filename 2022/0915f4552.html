@@ -1,0 +1,502 @@
+<!DOCTYPE html><html class="theme-next mist use-motion" lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2"><meta name="theme-color" content="#222"><script></script><link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css"><script src="/lib/pace/pace.min.js?v=1.0.2"></script><link rel="stylesheet" href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2"><link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"><link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2"><link rel="stylesheet" href="/css/main.css?v=7.1.1"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1"><link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222"><script id="hexo.configurations">var NexT=window.NexT||{},CONFIG={root:"/",scheme:"Mist",version:"7.1.1",sidebar:{position:"left",display:"post",offset:12,onmobile:!0,dimmer:!1},back2top:!0,back2top_sidebar:!0,fancybox:!0,fastclick:!0,lazyload:!0,tabs:!0,motion:{enable:!0,async:!1,transition:{post_block:"shrinkIn",post_header:"slideLeftIn",post_body:"slideDownIn",coll_header:"slideLeftIn",sidebar:"slideDownIn"}},algolia:{applicationID:"",apiKey:"",indexName:"",hits:{per_page:10},labels:{input_placeholder:"Search for Posts",hits_empty:"We didn't find any results for the search: ${query}",hits_stats:"${hits} results found in ${time} ms"}}}</script><script>!function(e,t,o,c,a,i,n){e.DaoVoiceObject=a,e[a]=e[a]||function(){(e[a].q=e[a].q||[]).push(arguments)},e[a].l=+new Date,i=t.createElement(o),n=t.getElementsByTagName(o)[0],i.async=1,i.src=c,i.charset="utf-8",n.parentNode.insertBefore(i,n)}(window,document,"script",("https:"==document.location.protocol?"https:":"http:")+"//widget.daovoice.io/widget/0f81ff2f.js","daovoice"),daovoice("init",{app_id:"aac7f9b5"}),daovoice("update")</script><meta name="description" content="简介Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。几乎没有性能开销，可以很容易地在机器和数据中心中运行。"><meta name="keywords" content="Docker"><meta property="og:type" content="article"><meta property="og:title" content="Docker入门及实战演练"><meta property="og:url" content="https://yixian12580.github.io/2022/0915f4552.html"><meta property="og:site_name" content="逸贤 | Blog"><meta property="og:description" content="简介Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。几乎没有性能开销，可以很容易地在机器和数据中心中运行。"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914111255619.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914111312898.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914111327458.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914111351642.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914111643130.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914111655356.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914111714833.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914111740699.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914111846360.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914111918477.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914111951532.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914112029556.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914112158189.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914112218409.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914112233692.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914112248741.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914112321256.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914112435164.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914112527971.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914112624370.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914112703914.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914112725828.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914112754481.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914112828203.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914112848129.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914113015712.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914113108016.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914113137716.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914113155855.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914113248676.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914113259502.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914113311811.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914113414426.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914113455412.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914113515837.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914113524341.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914113536975.png"><meta property="og:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914113552070.png"><meta property="og:updated_time" content="2023-02-16T08:37:17.000Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Docker入门及实战演练"><meta name="twitter:description" content="简介Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。几乎没有性能开销，可以很容易地在机器和数据中心中运行。"><meta name="twitter:image" content="https://yixian12580.github.io/2022/0915f4552/image-20220914111255619.png"><link rel="alternate" href="/atom.xml" title="逸贤 | Blog" type="application/atom+xml"><link rel="canonical" href="https://yixian12580.github.io/2022/0915f4552"><script id="page.configurations">CONFIG.page={sidebar:""}</script><title>Docker入门及实战演练 | 逸贤 | Blog</title><noscript><style>.sidebar-inner,.use-motion .brand,.use-motion .collection-title,.use-motion .comments,.use-motion .menu-item,.use-motion .motion-element,.use-motion .pagination,.use-motion .post-block,.use-motion .post-body,.use-motion .post-header{opacity:initial}.use-motion .logo,.use-motion .site-subtitle,.use-motion .site-title{opacity:initial;top:initial}.use-motion .logo-line-before i{left:initial}.use-motion .logo-line-after i{right:initial}</style></noscript></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN"><div class="container sidebar-position-left page-post-detail"><div class="headband"></div><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-wrapper"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">逸贤 | Blog</span> <span class="logo-line-after"><i></i></span></a></div></div><div class="site-nav-toggle"><button aria-label="切换导航栏"><span class="btn-bar"></span> <span class="btn-bar"></span> <span class="btn-bar"></span></button></div></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i><br>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-bookmark"></i><br>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于</a></li><li class="menu-item menu-item-互动"><a href="/guestbook/" rel="section"><i class="menu-item-icon fa fa-fw fa-comments"></i><br>互动</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class="site-search"><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class="search-icon"><i class="fa fa-search"></i> </span><span class="popup-btn-close"><i class="fa fa-times-circle"></i></span><div class="local-search-input-wrapper"><input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input"></div></div><div id="local-search-result"></div></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><div class="post-block"><link itemprop="mainEntityOfPage" href="https://yixian12580.github.io/2022/0915f4552.html"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="丨逸贤丨"><meta itemprop="description" content="三十年众生牛马，搏十年丰功伟绩。"><meta itemprop="image" content="/images/avatar.jpg"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="逸贤 | Blog"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">Docker入门及实战演练</h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i> </span><span class="post-meta-item-text">发表于</span> <time title="创建时间：2022-09-14 11:10:23" itemprop="dateCreated datePublished" datetime="2022-09-14T11:10:23+08:00">2022-09-14</time> <span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-calendar-check-o"></i> </span><span class="post-meta-item-text">更新于</span> <time title="修改时间：2023-02-16 16:37:17" itemprop="dateModified" datetime="2023-02-16T16:37:17+08:00">2023-02-16</time> </span><span class="post-category"><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-folder-o"></i> </span><span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span> ， <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a></span> </span><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-eye"></i> 阅读次数： <span class="busuanzi-value" id="busuanzi_value_page_pv"></span></span><div class="post-symbolscount"><span class="post-meta-item-icon"><i class="fa fa-file-word-o"></i> </span><span class="post-meta-item-text">本文字数：</span> <span title="本文字数">9.6k</span> <span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-clock-o"></i> </span><span class="post-meta-item-text">阅读时长 &asymp;</span> <span title="阅读时长">9 分钟</span></div></div></header><div class="post-body" itemprop="articleBody"><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。几乎没有性能开销，可以很容易地在机器和数据中心中运行。</p><a id="more"></a><h3 id="Docker基本组成"><a href="#Docker基本组成" class="headerlink" title="Docker基本组成"></a>Docker基本组成</h3><h4 id="镜像-Image"><a href="#镜像-Image" class="headerlink" title="镜像(Image)"></a>镜像(Image)</h4><p>镜像，就是面向对象中的类，相当于一个模板。从本质上来说，镜像相当于一个文件系统。Docker 镜像是一个特殊的文件系统，除了提供容器运行时所需的程序、库、资源、配置等文件外，还包含了一些为运行时准备的一些配置参数（如匿名卷、环境变量、用户等）。镜像不包含任何动态数据，其内容在构建之后也不会被改变。</p><h4 id="容器-Container"><a href="#容器-Container" class="headerlink" title="容器(Container)"></a>容器(Container)</h4><p>容器，就是类创建的实例，就是依据镜像这个模板创建出来的实体。容器的实质是进程，但与直接在宿主执行的进程不同，容器进程运行于属于自己的独立的命名空间。因此容器可以拥有自己的root 文件系统、自己的网络配置、自己的进程空间，甚至自己的用户ID 空间。容器内的进程是运行在一个隔离的环境里，使用起来，就好像是在一个独立于宿主的系统下操作一样。这种特性使得容器封装的应用比直接在宿主运行更加安全。</p><h4 id="仓库-Repository"><a href="#仓库-Repository" class="headerlink" title="仓库(Repository)"></a>仓库(Repository)</h4><p>仓库，从认识上来说，就好像软件包上传下载站，有各种软件的不同版本被上传供用户下载。镜像构建完成后，可以很容易的在当前宿主机上运行，但是，如果需要在其它服务器上使用这个镜像，我们就需要一个集中的存储、分发镜像的服务，Docker Registry 就是这样的服务。</p><img src="/2022/0915f4552/image-20220914111255619.png"><h3 id="Docker的优势"><a href="#Docker的优势" class="headerlink" title="Docker的优势"></a>Docker的优势</h3><p>1.更高效的利用系统资源：由于容器不需要进行硬件虚拟以及运行完整操作系统等额外开销，Docker 对系统资源的利用率更高。无论是应用执行速度、内存损耗或者文件存储速度，都要比传统虚拟机技术更高效。因此，相比虚拟机技术，一个相同配置的主机，往往可以运行更多数量的应用。</p><p>2.更快速的启动时间：传统的虚拟机技术启动应用服务往往需要数分钟，而Docker 容器应用，由于直接运行于宿主内核，无需启动完整的操作系统，因此可以做到秒级、甚至毫秒级的启动时间。</p><p>3.一致的运行环境：开发过程中一个常见的问题是环境一致性问题。由于开发环境、测试环境、生产环境不一 致，导致有些bug 并未在开发过程中被发现。而Docker 的镜像提供了除内核外完整的运行时环境，确保了应用运行环境一致性，从而不会再出现这类问题。</p><p>4.持续交付和部署：Docker是build once，run everywhere. 使用Docker 可以通过定制应用镜像来实现持续集成、持续交付、部署。开发人员可以通过Dockerfile 来进行镜像构建，并结合持续集成(Continuous Integration) 系统进行集成测试，而运维人员则可以直接在生产环境中快速部署该镜像。</p><p>5.更轻松的迁移：Docker 使用的分层存储以及镜像的技术，使得应用重复部分的复用更为容易，也使得应用的维护更新更加简单，基于基础镜像进一步扩展镜像也变得非常简单。</p><p>传统开发流程:</p><img src="/2022/0915f4552/image-20220914111312898.png"><p>Docker环境开发流程:</p><img src="/2022/0915f4552/image-20220914111327458.png"><h3 id="与传统虚拟机对比"><a href="#与传统虚拟机对比" class="headerlink" title="与传统虚拟机对比"></a>与传统虚拟机对比</h3><img src="/2022/0915f4552/image-20220914111351642.png"><h3 id="Docker命令"><a href="#Docker命令" class="headerlink" title="Docker命令"></a>Docker命令</h3><h4 id="创建镜像"><a href="#创建镜像" class="headerlink" title="创建镜像"></a>创建镜像</h4><p>1.1基于已有的镜像容器创建</p><figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker commit <span class="comment">[options]</span> <span class="keyword">container</span> <span class="comment">[repository<span class="comment">[:tag]</span>]</span></span><br></pre></td></tr></table></figure><pre><code>option:
+-a,--author=“”       #作者信息
+-m,--message=“”      #提交信息
+-p,--pause=true        #提交时暂停容器运行
+</code></pre><p>1.2基于本地模板导入创建</p><pre><code>docker load &lt; ***.tar  --本地模板文件tar
+</code></pre><p>1.3基于Dockerfile文件构建镜像</p><pre><code>docker build -t image-name basedir
+</code></pre><h4 id="删除镜像"><a href="#删除镜像" class="headerlink" title="删除镜像"></a>删除镜像</h4><pre><code>docker rmi image     #image可以是标签或者ID
+docker rmi –f image    #强制删除镜像
+</code></pre><p>注意：用docker rmi 命令删除镜像时，首先要删除容器，再删除镜像。否则会提示镜像在容器中运行。</p><img src="/2022/0915f4552/image-20220914111643130.png" title="image-20220914111643130"><p>镜像管理指令:</p><img src="/2022/0915f4552/image-20220914111655356.png"><h4 id="创建-启动-停止-删除容器"><a href="#创建-启动-停止-删除容器" class="headerlink" title="创建/启动/停止/删除容器"></a>创建/启动/停止/删除容器</h4><pre><code>docker  create image   #创建的容器是停止状态
+docker  start/stop container_id     #启动/停止容器
+docker  run image         #创建并启动容器
+docker rm container_id    #删除容器
+</code></pre><p>创建容器常用选项</p><img src="/2022/0915f4552/image-20220914111714833.png"><p>管理容器常用命令</p><img src="/2022/0915f4552/image-20220914111740699.png"><h4 id="镜像与容器联系"><a href="#镜像与容器联系" class="headerlink" title="镜像与容器联系"></a>镜像与容器联系</h4><p>镜像不是一个单一的文件，而是有多层构成。我们可以通过docker history &lt;ID/NAME&gt; 查看镜像中各层内容及大小，每层对应着Dockerfile中的一条指令。Docker镜像默认存储在/var/lib/docker/<storage-driver>中。<br>容器其实是在镜像的最上面加了一层读写层，在运行容器里做的任何文件改动，都会写到这个读写层。如果容器删除了，最上面的读写层也就删除了，改动也就丢失了。<br>Docker使用存储驱动管理镜像每层内容及可读写层的容器层。</storage-driver></p><img src="/2022/0915f4552/image-20220914111846360.png"><h4 id="将主机数据挂载到容器"><a href="#将主机数据挂载到容器" class="headerlink" title="将主机数据挂载到容器"></a>将主机数据挂载到容器</h4><p>Docker提供三种不同的方式将数据从宿主机挂载到容器中：volumes，bind mounts和tmpfs。</p><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">volumes：Docker管理宿主机文件系统的一部分（/var/<span class="class"><span class="keyword">lib</span>/<span class="title">docker</span>/<span class="title">volumes</span>）。</span></span><br><span class="line">bind mounts：可以存储在宿主机系统的任意位置。</span><br><span class="line">tmpfs：挂载存储在宿主机系统的内存中，而不会写入宿主机的文件系统。</span><br></pre></td></tr></table></figure><img src="/2022/0915f4552/image-20220914111918477.png"><h5 id="volume"><a href="#volume" class="headerlink" title="volume"></a>volume</h5><img src="/2022/0915f4552/image-20220914111951532.png" title="image-20220914111951532"><p>注意：</p><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 如果没有指定卷，自动创建。</span></span><br><span class="line"><span class="meta"># 建议使用--mount，更通用。</span></span><br></pre></td></tr></table></figure><h5 id="Bind-Mounts"><a href="#Bind-Mounts" class="headerlink" title="Bind Mounts"></a>Bind Mounts</h5><img src="/2022/0915f4552/image-20220914112029556.png" title="image-20220914112029556"><p>注意：</p><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 如果源文件/目录没有存在，不会自动创建，会抛出一个错误。</span></span><br><span class="line"><span class="meta"># 如果挂载目录在容器中非空目录，则该目录现有内容将被隐藏。</span></span><br></pre></td></tr></table></figure><h5 id="tmpfs"><a href="#tmpfs" class="headerlink" title="tmpfs"></a>tmpfs</h5><p>容器中使用 tmpfs：</p><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">run</span> -d -<span class="keyword">it</span> <span class="comment">--name nginx-test --mount type=tmpfs,destination=/usr/share/nginx/html nginx</span></span><br><span class="line">docker <span class="built_in">run</span> -d -<span class="keyword">it</span> <span class="comment">--name nginx-test --tmpfs /usr/share/nginx/html nginx</span></span><br></pre></td></tr></table></figure><p>注意：</p><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># tmpfs方式仅存储在主机系统的内存中，不会写入主机的文件系统。</span></span><br><span class="line"><span class="meta"># tmpfs挂载不能在容器间共享。</span></span><br><span class="line"><span class="meta"># tmpfs只能在Linux容器上工作，不能在Windows容器上工作。</span></span><br></pre></td></tr></table></figure><h3 id="Docker实战–构建lnmp环境，搭建WordPress博客"><a href="#Docker实战–构建lnmp环境，搭建WordPress博客" class="headerlink" title="Docker实战–构建lnmp环境，搭建WordPress博客"></a>Docker实战–构建lnmp环境，搭建WordPress博客</h3><p>实验环境：</p><img src="/2022/0915f4552/image-20220914112158189.png"><h4 id="Docker安装"><a href="#Docker安装" class="headerlink" title="Docker安装"></a>Docker安装</h4><p>首先安装依赖包</p><img src="/2022/0915f4552/image-20220914112218409.png"><p>安装Docker（之前已安装过，所以提示已经安装）</p><img src="/2022/0915f4552/image-20220914112233692.png"><p>查看Docker是否安装成功</p><img src="/2022/0915f4552/image-20220914112248741.png"><p>启动Docker并加入开机自启动</p><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@localhost</span> ~]<span class="meta"># systemctl start docker</span></span><br><span class="line">[root<span class="symbol">@localhost</span> ~]<span class="meta"># systemctl enable docker</span></span><br></pre></td></tr></table></figure><h4 id="用Dockerfile方式构建镜像"><a href="#用Dockerfile方式构建镜像" class="headerlink" title="用Dockerfile方式构建镜像"></a>用Dockerfile方式构建镜像</h4><p>Dockerfile指令</p><img src="/2022/0915f4552/image-20220914112321256.png"><p>环境说明：<br>在本文中我都是基于centos 7.5系统，nginx和php用的源码包来构建，如果你不想用源码包，也可用yum方式构建。</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nginx，用的是源码包来构建，版本为nginx-<span class="number">1.12</span>.<span class="number">2</span><span class="selector-class">.tar</span><span class="selector-class">.gz</span>，下载地址http:<span class="comment">//nginx.org/en/download.html/</span></span><br><span class="line">php，也用的源码包来构建，版本为php-<span class="number">5.6</span>.<span class="number">31</span><span class="selector-class">.tar</span><span class="selector-class">.gz</span>，下载地址http:<span class="comment">//php.net/downloads.php</span></span><br></pre></td></tr></table></figure><p>创建镜像时所需文件</p><img src="/2022/0915f4552/image-20220914112435164.png"><p>在Dockerfiles目录下创建了两个目录（nginx，php），里面分别存放Dockerfile文件、源码包。nginx目录下放了nginx.conf配置文件，php目录下也放置了php.ini配置文件（在实际环境中，这两个文件是经常需要修改的，单独拿出来后在启动容器时你可以把这两个文件mount到容器中，便于管理。）。</p><h5 id="nginx-构建"><a href="#nginx-构建" class="headerlink" title="nginx 构建"></a>nginx 构建</h5><p>Dockerfile内容：</p><img src="/2022/0915f4552/image-20220914112527971.png"><p>分析一下Dockerfile的内容，当你构建镜像时，它会根据你编排好的内容一步一步的执行下去，如果当中的某一步执行不下去，会立刻停止构建。上面的大部分指令都很好理解，大家可以对照上文的Dockerfile指令图进行理解，最后一个指令我要详细说明一下：CMD [“./sbin/nginx”,“-g”,“daemon off;”]</p><p>./sbin/nginx ，就是正常启动nginx服务；<br>-g： 设置配置文件外的全局指令，也就是启动nginx时设置了daemon off参数，默认参数是打开的on，是否以守护进程的方式运行nginx，守护进程是指脱离终端并且在后台运行的进程。这里设置为off，也就是不让它在后台运行。为什么我们启动nginx容器时不让它在后台运行呢，docker 容器默认会把容器内部第一个进程，也就是pid=1的程序作为docker容器是否正在运行的依据，如果docker 容器pid挂了，那么docker容器便会直接退出。</p><p>nginx.conf 内容：</p><img src="/2022/0915f4552/image-20220914112624370.png"><p>配置中主要添加了 location ~ .php这一段的内容，其中fastcgi_pass的 lnmp_php，这个是后面启动php容器时的名称。当匹配到php的请求时，它会转发给lnmp_php这个容器php-fpm服务来处理。正常情况下，如果php服务不是跑在容器中，lnmp_php这个内容一般写php服务器的Ip地址。</p><p>build 构建nginx镜像</p><p>切换到nginx目录下：</p><img src="/2022/0915f4552/image-20220914112703914.png"><p>构建：</p><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@localhost</span> nginx]<span class="meta"># docker build  -t nginx:1.12.2</span></span><br></pre></td></tr></table></figure><p>查看镜像是否构建成功：</p><img src="/2022/0915f4552/image-20220914112725828.png"><h5 id="PHP构建"><a href="#PHP构建" class="headerlink" title="PHP构建"></a>PHP构建</h5><p>Dockerfile内容：</p><img src="/2022/0915f4552/image-20220914112754481.png"><p>php.ini 内容（PHP默认的配置内容就好，实在找不到的可以复制粘贴我的）</p><pre><code>[PHP]
+engine = On
+short_open_tag = Off
+asp_tags = Off
+precision = 14
+output_buffering = 4096
+zlib.output_compression = Off
+implicit_flush = Off
+unserialize_callback_func =
+serialize_precision = 17
+disable_functions =
+disable_classes =
+zend.enable_gc = On
+expose_php = On
+max_execution_time = 300
+max_input_time = 300
+memory_limit = 128M
+error_reporting = E_ALL &amp; ~E_DEPRECATED &amp; ~E_STRICT
+display_errors = Off
+display_startup_errors = Off
+log_errors = On
+log_errors_max_len = 1024
+ignore_repeated_errors = Off
+ignore_repeated_source = Off
+report_memleaks = On
+track_errors = Off
+html_errors = On
+variables_order = &quot;GPCS&quot;
+request_order = &quot;GP&quot;
+register_argc_argv = Off
+auto_globals_jit = On
+post_max_size = 32M
+auto_prepend_file =
+auto_append_file =
+default_mimetype = &quot;text/html&quot;
+always_populate_raw_post_data = -1
+doc_root =
+user_dir =
+enable_dl = Off
+file_uploads = On
+upload_max_filesize = 2M
+max_file_uploads = 20
+allow_url_fopen = On
+allow_url_include = Off
+default_socket_timeout = 60
+[CLI Server]
+cli_server.color = On
+[Date]
+date.timezone = Asia/Shanghai
+[filter]
+[iconv]
+[intl]
+[sqlite]
+[sqlite3]
+[Pcre]
+[Pdo]
+[Pdo_mysql]
+pdo_mysql.cache_size = 2000
+pdo_mysql.default_socket=
+[Phar]
+[mail function]
+SMTP = localhost
+smtp_port = 25
+mail.add_x_header = On
+[SQL]
+sql.safe_mode = Off
+[ODBC]
+odbc.allow_persistent = On
+odbc.check_persistent = On
+odbc.max_persistent = -1
+odbc.max_links = -1
+odbc.defaultlrl = 4096
+odbc.defaultbinmode = 1
+[Interbase]
+ibase.allow_persistent = 1
+ibase.max_persistent = -1
+ibase.max_links = -1
+ibase.timestampformat = &quot;%Y-%m-%d %H:%M:%S&quot;
+ibase.dateformat = &quot;%Y-%m-%d&quot;
+ibase.timeformat = &quot;%H:%M:%S&quot;
+[MySQL]
+mysql.allow_local_infile = On
+mysql.allow_persistent = On
+mysql.cache_size = 2000
+mysql.max_persistent = -1
+mysql.max_links = -1
+mysql.default_port =
+mysql.default_socket =
+mysql.default_host =
+mysql.default_user =
+mysql.default_password =
+mysql.connect_timeout = 60
+mysql.trace_mode = Off
+[MySQLi]
+mysqli.max_persistent = -1
+mysqli.allow_persistent = On
+mysqli.max_links = -1
+mysqli.cache_size = 2000
+mysqli.default_port = 3306
+mysqli.default_socket =
+mysqli.default_host =
+mysqli.default_user =
+mysqli.default_pw =
+mysqli.reconnect = Off
+[mysqlnd]
+mysqlnd.collect_statistics = On
+mysqlnd.collect_memory_statistics = Off
+[OCI8]
+[PostgreSQL]
+pgsql.allow_persistent = On
+pgsql.auto_reset_persistent = Off
+pgsql.max_persistent = -1
+pgsql.max_links = -1
+pgsql.ignore_notice = 0
+pgsql.log_notice = 0
+[Sybase-CT]
+sybct.allow_persistent = On
+sybct.max_persistent = -1
+sybct.max_links = -1
+sybct.min_server_severity = 10
+sybct.min_client_severity = 10
+[bcmath]
+bcmath.scale = 0
+[browscap]
+[Session]
+session.save_handler = files
+session.use_strict_mode = 0
+session.use_cookies = 1
+session.use_only_cookies = 1
+session.name = PHPSESSID
+session.auto_start = 0
+session.cookie_lifetime = 0
+session.cookie_path = /
+session.cookie_domain =
+session.cookie_httponly =
+session.serialize_handler = php
+session.gc_probability = 1
+session.gc_divisor = 1000
+session.gc_maxlifetime = 1440
+session.referer_check =
+session.cache_limiter = nocache
+session.cache_expire = 180
+session.use_trans_sid = 0
+session.hash_function = 0
+session.hash_bits_per_character = 5
+url_rewriter.tags = &quot;a=href,area=href,frame=src,input=src,form=fakeentry&quot;
+[MSSQL]
+mssql.allow_persistent = On
+mssql.max_persistent = -1
+mssql.max_links = -1
+mssql.min_error_severity = 10
+mssql.min_message_severity = 10
+mssql.compatibility_mode = Off
+mssql.secure_connection = Off
+[Assertion]
+[COM]
+[mbstring]
+[gd]
+[exif]
+[Tidy]
+tidy.clean_output = Off
+[soap]
+soap.wsdl_cache_enabled=1
+soap.wsdl_cache_dir=&quot;/tmp&quot;
+soap.wsdl_cache_ttl=86400
+soap.wsdl_cache_limit = 5
+[sysvshm]
+[ldap]
+ldap.max_links = -1
+[mcrypt]
+[dba]
+[opcache]
+[curl]
+</code></pre><p>build构建php镜像<br>php源码包、php.ini、Dockerfile都准备好了之后，现在我们可以来用docker build来构建这个镜像了：<br>切换到php目录下：</p><img src="/2022/0915f4552/image-20220914112828203.png"><p>构建php镜像：</p><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@localhost</span> php]<span class="meta"># docker build  -t php:5.6.31 .</span></span><br></pre></td></tr></table></figure><p>查看镜像是否构建成功：</p><img src="/2022/0915f4552/image-20220914112848129.png"><h5 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h5><h6 id="创建自定义网络lnmp"><a href="#创建自定义网络lnmp" class="headerlink" title="创建自定义网络lnmp"></a>创建自定义网络lnmp</h6><p>先创建一个自定义网络，运行ningx、php这些容器的时候加入到lnmp网络中来：</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看默认网络：</span></span><br><span class="line">[root@localhost php]# docker<span class="built_in"> network </span>ls</span><br><span class="line">创建：</span><br><span class="line">[root@localhost php]# docker<span class="built_in"> network </span>create lnmp</span><br></pre></td></tr></table></figure><h6 id="创建php容器"><a href="#创建php容器" class="headerlink" title="创建php容器"></a>创建php容器</h6><p>创建容器：</p><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost php]# docker run -itd --name lnmp_php --network lnmp -v <span class="regexp">/app/</span>wwwroot:<span class="regexp">/usr/</span>local<span class="regexp">/nginx/</span>html php:<span class="number">5.6</span>.<span class="number">31</span></span><br></pre></td></tr></table></figure><p>参数说明：</p><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-<span class="string">itd：</span> <span class="comment"># 在容器中打开一个伪终端进行交互操作，并在后台运行；</span></span><br><span class="line"><span class="built_in">--name：</span> <span class="comment"># 为容器分配一个名字lnmp_php；</span></span><br><span class="line"><span class="built_in">--network：</span> <span class="comment"># 为容器指定一个网络环境为lnmp网络；</span></span><br><span class="line"><span class="built_in">--mout：</span> <span class="comment"># 把宿主机的/app/wwwroot目录挂载到容器的/usr/local/nginx/html目录，挂载也相当于数据持久化；</span></span><br><span class="line"><span class="string">php:5.</span>6.<span class="string">31：</span> <span class="comment"># 指定刚才构建的php镜像来启动容器；</span></span><br></pre></td></tr></table></figure><p>查看php容器是否运行：</p><img src="/2022/0915f4552/image-20220914113015712.png"><h6 id="创建nginx容器："><a href="#创建nginx容器：" class="headerlink" title="创建nginx容器："></a>创建nginx容器：</h6><p>创建容器：</p><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost php]# docker run -itd --name lnmp_nginx --network lnmp -p <span class="number">80</span>:<span class="number">80</span> -v <span class="regexp">/app/</span>wwwroot:<span class="regexp">/usr/</span>local<span class="regexp">/nginx/</span>html nginx:<span class="number">1.12</span>.<span class="number">2</span></span><br></pre></td></tr></table></figure><p>查看容器是否运行：</p><img src="/2022/0915f4552/image-20220914113108016.png"><h6 id="测试访问"><a href="#测试访问" class="headerlink" title="测试访问"></a>测试访问</h6><p>创建一个index.html静态页面来访问：</p><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@localhost</span> wordpress]<span class="meta"># echo <span class="string">"Dockerfile lnmp test"</span> &gt; /app/wwwroot/index.html</span></span><br></pre></td></tr></table></figure><p>用浏览器访问宿主机的IP：</p><img src="/2022/0915f4552/image-20220914113137716.png"><p>再创建一个index.php文件开测试：</p><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@localhost</span> wordpress]<span class="meta"># echo <span class="string">"&lt;? phpinfo();"</span> &gt; /app/wwwroot/index.php</span></span><br></pre></td></tr></table></figure><p>访问PHP页面：</p><img src="/2022/0915f4552/image-20220914113155855.png"><h6 id="创建mysql容器"><a href="#创建mysql容器" class="headerlink" title="创建mysql容器"></a>创建mysql容器</h6><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# docker <span class="builtin-name">run</span> -itd --network lnmp -p 3306:3306 --name mysql -e <span class="attribute">MYSQL_ROOT_PASSWORD</span>=123456 mysql:5.6 <span class="attribute">--character-set-server</span>=utf8     #本地没有mysql5.6的镜像的话，会自动从仓库拉取；</span><br></pre></td></tr></table></figure><p>查看mysql容器是否启动：</p><img src="/2022/0915f4552/image-20220914113248676.png"><p>进到mysql容器里创建wordpress数据库：</p><img src="/2022/0915f4552/image-20220914113259502.png"><p>查看wordpress是否创建成功：</p><img src="/2022/0915f4552/image-20220914113311811.png"><p>Ctrl+p再Ctrl+q退出mysql容器，回到宿主机</p><h6 id="下载wordpress博客系统测试lnmp"><a href="#下载wordpress博客系统测试lnmp" class="headerlink" title="下载wordpress博客系统测试lnmp"></a>下载wordpress博客系统测试lnmp</h6><p>下载wordpress文件到/app/wwwroot目录下</p><img src="/2022/0915f4552/image-20220914113414426.png"><p>wordpress文件下载地址： <a href="https://cn.wordpress.org/wordpress-4.7.4-zh_CN.tar.gz" target="_blank" rel="noopener">https://cn.wordpress.org/wordpress-4.7.4-zh_CN.tar.gz</a><br>解压wordpress压缩包并访问测试：</p><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root<span class="symbol">@localhost</span> ~]<span class="meta"># tar -zxvf wordpress-4.7.4-zh_CN.tar.gz</span></span><br></pre></td></tr></table></figure><p>打开浏览器访问：<br>http://容器宿主机IP/wordpress/wp-admin/setup-config.php</p><img src="/2022/0915f4552/image-20220914113455412.png"><p>配置wordpress博客：</p><img src="/2022/0915f4552/image-20220914113515837.png"><p>提交：</p><img src="/2022/0915f4552/image-20220914113524341.png"><p>输入信息安装Wordpress：</p><img src="/2022/0915f4552/image-20220914113536975.png"> <img src="/2022/0915f4552/image-20220914113552070.png"><h3 id="文件迁移"><a href="#文件迁移" class="headerlink" title="文件迁移"></a>文件迁移</h3><p>可用docker save命令将镜像保存为一个tar文件：</p><figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# docker save nginx:<span class="number">1.12</span><span class="meta">.2</span> | gzip &gt; nginx1<span class="meta">.12</span><span class="meta">.2</span>.tar.gz</span><br></pre></td></tr></table></figure><p>再用docker load命令导入：</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[root@localhost ~]</span># <span class="selector-tag">docker</span> <span class="selector-tag">load</span> &lt; <span class="selector-tag">nginx</span><span class="selector-class">.1</span><span class="selector-class">.12</span><span class="selector-class">.2</span><span class="selector-class">.tar</span><span class="selector-class">.gz</span></span><br></pre></td></tr></table></figure></div><div><div id="reward-container"><div>Thank you for your accept. mua！</div><button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">打赏</button><div id="qr" style="display:none"><div style="display:inline-block"><img src="/images/reward/wechatpay.png" alt="丨逸贤丨 微信支付"><p>微信支付</p></div><div style="display:inline-block"><img src="/images/reward/alipay.png" alt="丨逸贤丨 支付宝"><p>支付宝</p></div></div></div></div><div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者： </strong>丨逸贤丨</li><li class="post-copyright-link"><strong>本文链接：</strong> <a href="https://yixian12580.github.io/2022/0915f4552.html" title="Docker入门及实战演练">https://yixian12580.github.io/2022/0915f4552.html</a></li><li class="post-copyright-license"><strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li></ul></div><div><div><div style="text-align:center;color:#ccc;font-size:16px">-------------本文结束<i class="fa fa-heart"></i>感谢您的阅读-------------</div></div></div><footer class="post-footer"><div class="post-tags"><a href="/tags/Docker/" rel="tag"><i class="fa fa-tag"></i> Docker</a></div><div class="post-widgets"><div class="social_share"><div id="needsharebutton-postbottom"><span class="btn"><i class="fa fa-share-alt" aria-hidden="true"></i></span></div></div></div><div class="post-nav"><div class="post-nav-next post-nav-item"><a href="/2022/0949af059c.html" rel="next" title="Linux脚本小知识之含义"><i class="fa fa-chevron-left"></i> Linux脚本小知识之含义</a></div><span class="post-nav-divider"></span><div class="post-nav-prev post-nav-item"><a href="/2022/09612fe0a2.html" rel="prev" title="虚拟机CentOS 6连接外网">虚拟机CentOS 6连接外网 <i class="fa fa-chevron-right"></i></a></div></div></footer></div></article></div><div style="text-align:center"><a href="https://github.com/yixian12580/blog-source/edit/main/source/_posts/Docker入门及实战演练.md" target="_blank">编辑文章✏</a></div></div><div class="comments" id="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC81NzIwNy8zMzY3MQ=="></div></div></div><div class="sidebar-toggle"><div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span> <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span> <span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id="sidebar" class="sidebar"><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">文章目录</li><li class="sidebar-nav-overview" data-target="site-overview-wrap">站点概览</li></ul><div class="site-overview-wrap sidebar-panel"><div class="site-overview"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"><img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="丨逸贤丨"><p class="site-author-name" itemprop="name">丨逸贤丨</p><div class="site-description motion-element" itemprop="description">三十年众生牛马，搏十年丰功伟绩。</div></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href="/archives/"><span class="site-state-item-count">149</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-categories"><a href="/categories/"><span class="site-state-item-count">45</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"><a href="/tags/"><span class="site-state-item-count">137</span> <span class="site-state-item-name">标签</span></a></div></nav><div class="feed-link motion-element"><a href="/atom.xml" rel="alternate"><i class="fa fa-rss"></i> RSS</a></div><div class="links-of-author motion-element"><span class="links-of-author-item"><a href="https://github.com/yixian12580" title="GitHub &rarr; https://github.com/yixian12580" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a> </span><span class="links-of-author-item"><a href="mailto:1083662409@qq.com" title="E-Mail &rarr; mailto:1083662409@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a> </span><span class="links-of-author-item"><a href="https://weibo.com/u/5107819265" title="Weibo &rarr; https://weibo.com/u/5107819265" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a> </span><span class="links-of-author-item"><a href="tencent://message/?uin=1083662409&Site=&menu=yes" title="QQ &rarr; tencent://message/?uin=1083662409&Site=&menu=yes" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a></span></div><div class="links-of-blogroll motion-element links-of-blogroll-inline"><div class="links-of-blogroll-title"><i class="fa fa-fw fa-book"></i> 推荐阅读</div><ul class="links-of-blogroll-list"><li class="links-of-blogroll-item"><a href="http://www.ttlsa.com/" title="http://www.ttlsa.com/" rel="noopener" target="_blank">运维生存时间</a></li><li class="links-of-blogroll-item"><a href="https://www.iyunw.cn" title="https://www.iyunw.cn" rel="noopener" target="_blank">爱运维</a></li><li class="links-of-blogroll-item"><a href="https://nginxconfig.io/" title="https://nginxconfig.io/" rel="noopener" target="_blank">Nginxconfig</a></li><li class="links-of-blogroll-item"><a href="http://linux.51yip.com/" title="http://linux.51yip.com/" rel="noopener" target="_blank">Linux命令手册</a></li><li class="links-of-blogroll-item"><a href="https://echarts.apache.org/index.html" title="https://echarts.apache.org/index.html" rel="noopener" target="_blank">echarts可视化库</a></li><li class="links-of-blogroll-item"><a href="https://yixian12580.netlify.app/admin/" title="https://yixian12580.netlify.app/admin/" rel="noopener" target="_blank">博客管理</a></li></ul></div></div></div><div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class="post-toc"><div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker基本组成"><span class="nav-number">2.</span> <span class="nav-text">Docker基本组成</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#镜像-Image"><span class="nav-number">2.1.</span> <span class="nav-text">镜像(Image)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#容器-Container"><span class="nav-number">2.2.</span> <span class="nav-text">容器(Container)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#仓库-Repository"><span class="nav-number">2.3.</span> <span class="nav-text">仓库(Repository)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker的优势"><span class="nav-number">3.</span> <span class="nav-text">Docker的优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#与传统虚拟机对比"><span class="nav-number">4.</span> <span class="nav-text">与传统虚拟机对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker命令"><span class="nav-number">5.</span> <span class="nav-text">Docker命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建镜像"><span class="nav-number">5.1.</span> <span class="nav-text">创建镜像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除镜像"><span class="nav-number">5.2.</span> <span class="nav-text">删除镜像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建-启动-停止-删除容器"><span class="nav-number">5.3.</span> <span class="nav-text">创建/启动/停止/删除容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#镜像与容器联系"><span class="nav-number">5.4.</span> <span class="nav-text">镜像与容器联系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将主机数据挂载到容器"><span class="nav-number">5.5.</span> <span class="nav-text">将主机数据挂载到容器</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#volume"><span class="nav-number">5.5.1.</span> <span class="nav-text">volume</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bind-Mounts"><span class="nav-number">5.5.2.</span> <span class="nav-text">Bind Mounts</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#tmpfs"><span class="nav-number">5.5.3.</span> <span class="nav-text">tmpfs</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker实战–构建lnmp环境，搭建WordPress博客"><span class="nav-number">6.</span> <span class="nav-text">Docker实战–构建lnmp环境，搭建WordPress博客</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Docker安装"><span class="nav-number">6.1.</span> <span class="nav-text">Docker安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用Dockerfile方式构建镜像"><span class="nav-number">6.2.</span> <span class="nav-text">用Dockerfile方式构建镜像</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#nginx-构建"><span class="nav-number">6.2.1.</span> <span class="nav-text">nginx 构建</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#PHP构建"><span class="nav-number">6.2.2.</span> <span class="nav-text">PHP构建</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#运行容器"><span class="nav-number">6.2.3.</span> <span class="nav-text">运行容器</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#创建自定义网络lnmp"><span class="nav-number">6.2.3.1.</span> <span class="nav-text">创建自定义网络lnmp</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#创建php容器"><span class="nav-number">6.2.3.2.</span> <span class="nav-text">创建php容器</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#创建nginx容器："><span class="nav-number">6.2.3.3.</span> <span class="nav-text">创建nginx容器：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#测试访问"><span class="nav-number">6.2.3.4.</span> <span class="nav-text">测试访问</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#创建mysql容器"><span class="nav-number">6.2.3.5.</span> <span class="nav-text">创建mysql容器</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#下载wordpress博客系统测试lnmp"><span class="nav-number">6.2.3.6.</span> <span class="nav-text">下载wordpress博客系统测试lnmp</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件迁移"><span class="nav-number">7.</span> <span class="nav-text">文件迁移</span></a></li></ol></div></div></div><div class="back-to-top"><i class="fa fa-arrow-up"></i> <span id="scrollpercent"><span>0</span>%</span></div></div></aside><link rel="stylesheet" href="/dist/APlayer.min.css"><div id="aplayer"></div><script type="text/javascript" src="/dist/APlayer.min.js"></script><style>.aplayer .aplayer-lrc{height:35px}.aplayer .aplayer-lrc p{font-size:16px;font-weight:700;line-height:19.2px!important}.aplayer .aplayer-lrc p.aplayer-lrc-current{color:#ff1493}.aplayer.aplayer-narrow .aplayer-body{left:-66px!important}</style><div class="aplayer" data-id="7622186670" data-server="netease" data-type="playlist" data-fixed="true" data-order="random" data-autoplay="false"></div><script src="/dist/Meting.min.js"></script></div></main><footer id="footer" class="footer"><div class="footer-inner"><div class="copyright" style="text-align:center">&copy; 2022 – <span itemprop="copyrightYear">2026</span> <span class="with-love" id="animate"><i class="fa fa-heart"></i> </span><span class="author" itemprop="copyrightHolder">逸贤</span> <span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-area-chart">站点字数合计:</i> </span><span title="站点总字数">1.1m</span></div><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div class="run_time" style="text-align:center"><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>var now=new Date;function createtime(){var n=new Date("09/08/2022 10:00:00");now.setTime(now.getTime()+250),days=(now-n)/1e3/60/60/24,dnum=Math.floor(days),hours=(now-n)/1e3/60/60-24*dnum,hnum=Math.floor(hours),1==String(hnum).length&&(hnum="0"+hnum),minutes=(now-n)/1e3/60-1440*dnum-60*hnum,mnum=Math.floor(minutes),1==String(mnum).length&&(mnum="0"+mnum),seconds=(now-n)/1e3-86400*dnum-3600*hnum-60*mnum,snum=Math.round(seconds),1==String(snum).length&&(snum="0"+snum),document.getElementById("timeDate").innerHTML="本站已安全运行 "+dnum+" 天 ",document.getElementById("times").innerHTML=hnum+" 小时 "+mnum+" 分 "+snum+" 秒"}setInterval("createtime()",250)</script></div><div class="busuanzi-count" style="text-align:center"><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span class="post-meta-item-icon"><i class="fa fa-user"></i> </span><span class="site-uv" title="总访客量"><span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 人 </span><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-eye"></i> </span><span class="site-pv" title="总访问量"><span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次</span></div></div></footer></div><script>"[object Function]"!==Object.prototype.toString.call(window.Promise)&&(window.Promise=null)</script><script src="/lib/jquery/index.js?v=2.1.3"></script><script src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script><script src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script><script src="/lib/velocity/velocity.min.js?v=1.2.1"></script><script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script><script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script><script src="/js/utils.js?v=7.1.1"></script><script src="/js/motion.js?v=7.1.1"></script><script src="/js/schemes/muse.js?v=7.1.1"></script><script src="/js/scrollspy.js?v=7.1.1"></script><script src="/js/post-details.js?v=7.1.1"></script><script src="/js/next-boot.js?v=7.1.1"></script><script>window.livereOptions={refer:"2022/0915f4552.html"},function(e,t){var n,r=e.getElementsByTagName(t)[0];"function"!=typeof LivereTower&&((n=e.createElement(t)).src="https://cdn-city.livere.com/js/embed.dist.js",n.async=!0,r.parentNode.insertBefore(n,r))}(document,"script")</script><script>// Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });</script><script src="/lib/needsharebutton/needsharebutton.js"></script><script>pbOptions={iconStyle:"box",boxForm:"horizontal",position:"bottomCenter",networks:"Weibo,Wechat,Douban,QQZone,Twitter,Facebook"},new needShareButton("#needsharebutton-postbottom",pbOptions)</script><script src="/lib/bookmark/bookmark.min.js?v=1.0"></script><script>bookmark.scrollToMark("auto","#更多")</script><script>$(".highlight").not(".gist .highlight").each(function(t,e){var n=$("<div>").addClass("highlight-wrap");$(e).after(n),n.append($("<button>").addClass("copy-btn").append("复制").on("click",function(t){var e=$(this).parent().find(".code").find(".line").map(function(t,e){return $(e).text()}).toArray().join("\n"),n=document.createElement("textarea"),o=window.pageYOffset||document.documentElement.scrollTop;n.style.top=o+"px",n.style.position="absolute",n.style.opacity="0",n.readOnly=!0,n.value=e,document.body.appendChild(n),n.select(),n.setSelectionRange(0,e.length),n.readOnly=!1,document.execCommand("copy")?$(this).text("复制成功"):$(this).text("复制失败"),n.blur(),$(this).blur()})).on("mouseleave",function(t){var e=$(this).find(".copy-btn");setTimeout(function(){e.text("复制")},300)}).append(e)})</script></body></html><script type="text/javascript" src="/js/src/clicklove.js"></script><script type="text/javascript" src="/js/click_show_text.js"></script><script type="text/javascript" src="/js/FunnyTitle.js"></script><script src="/live2d-widget/autoload.js"></script>

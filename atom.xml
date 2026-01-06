@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>逸贤 | Blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://yixian12580.github.io/"/>
+  <updated>2025-12-31T07:11:22.000Z</updated>
+  <id>https://yixian12580.github.io/</id>
+  
+  <author>
+    <name>丨逸贤丨</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>k8s部署Metallb</title>
+    <link href="https://yixian12580.github.io/2025/124e38afa1.html"/>
+    <id>https://yixian12580.github.io/2025/124e38afa1.html</id>
+    <published>2025-12-31T02:16:31.000Z</published>
+    <updated>2025-12-31T07:11:22.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;MetalLB 是一个 &lt;strong&gt;Kubernetes 的 LoadBalancer 解决方案&lt;/strong&gt;，专门用于裸机（Bare Metal）集群。由于 Kubernetes 本身在裸机环境中没有内置的负载均衡（不像云环境有 ELB、ALB），MetalLB 通过 &lt;strong&gt;BGP&lt;/strong&gt; 或 &lt;strong&gt;ARP&lt;/strong&gt; 提供 &lt;code&gt;LoadBalancer&lt;/code&gt; 类型的服务支持，使得服务可以获得外部可访问的 IP 地址。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/K8S/"/>
+    
+    
+      <category term="Metallb" scheme="https://yixian12580.github.io/tags/Metallb/"/>
+    
+      <category term="负载均衡" scheme="https://yixian12580.github.io/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>kubesphere安装Istio</title>
+    <link href="https://yixian12580.github.io/2025/12d6f5ac4d.html"/>
+    <id>https://yixian12580.github.io/2025/12d6f5ac4d.html</id>
+    <published>2025-12-18T09:30:20.000Z</published>
+    <updated>2026-01-06T11:15:43.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;KubeSphere 服务网格基于Istio，将微服务治理和流量管理可视化。它拥有强大的工具包，包括熔断机制、蓝绿部署、金丝雀发布、流量镜像、链路追踪、可观测性和流量控制等。KubeSphere 服务网格支持代码无侵入的微服务治理，帮助开发者快速上手，Istio 的学习曲线也极大降低。KubeSphere 服务网格的所有功能都旨在满足用户的业务需求。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/K8S/"/>
+    
+    
+      <category term="服务网格" scheme="https://yixian12580.github.io/tags/%E6%9C%8D%E5%8A%A1%E7%BD%91%E6%A0%BC/"/>
+    
+      <category term="Istio" scheme="https://yixian12580.github.io/tags/Istio/"/>
+    
+      <category term="灰度发布" scheme="https://yixian12580.github.io/tags/%E7%81%B0%E5%BA%A6%E5%8F%91%E5%B8%83/"/>
+    
+      <category term="kubesphere" scheme="https://yixian12580.github.io/tags/kubesphere/"/>
+    
+      <category term="熔断" scheme="https://yixian12580.github.io/tags/%E7%86%94%E6%96%AD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker安装Mailcow自建域名邮箱</title>
+    <link href="https://yixian12580.github.io/2025/1179e51416.html"/>
+    <id>https://yixian12580.github.io/2025/1179e51416.html</id>
+    <published>2025-11-05T08:56:23.000Z</published>
+    <updated>2025-11-05T09:39:03.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;几乎所有市面上的免费邮箱服务，都是以牺牲你的隐私和数据为代价，利用你的大数据来进行广告行为分析来盈利，而且免费邮箱都有邮箱数量，强制绑定手机号等等限制，所以为了保护我们的数据隐私以及创建无限数量邮箱，我们可以自己自建邮箱服务。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="自建邮箱" scheme="https://yixian12580.github.io/tags/%E8%87%AA%E5%BB%BA%E9%82%AE%E7%AE%B1/"/>
+    
+      <category term="Mailcow" scheme="https://yixian12580.github.io/tags/Mailcow/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>k8s动态扩缩容部署</title>
+    <link href="https://yixian12580.github.io/2025/113cc2bcea.html"/>
+    <id>https://yixian12580.github.io/2025/113cc2bcea.html</id>
+    <published>2025-11-03T09:50:29.000Z</published>
+    <updated>2025-11-03T10:39:54.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Horizontal Pod Autoscaler（HPA，Pod水平自动伸缩），根据平均 CPU 利用率、平均内存利用率或你指定的任何其他自定义指标自动调整 Deployment 、ReplicaSet 或 StatefulSet 或其他类似资源，实现部署的自动扩展和缩减，让部署的规模接近于实际服务的负载。HPA不适用于无法缩放的对象，例如DaemonSet。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/K8S/"/>
+    
+    
+      <category term="hpa" scheme="https://yixian12580.github.io/tags/hpa/"/>
+    
+      <category term="自动扩缩容" scheme="https://yixian12580.github.io/tags/%E8%87%AA%E5%8A%A8%E6%89%A9%E7%BC%A9%E5%AE%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mysql高可用MHA部署</title>
+    <link href="https://yixian12580.github.io/2025/10131ef651.html"/>
+    <id>https://yixian12580.github.io/2025/10131ef651.html</id>
+    <published>2025-10-24T09:46:29.000Z</published>
+    <updated>2025-10-24T10:40:38.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;MySQL的MHA（Master High Availability）是一种用于MySQL高可用性的解决方案，旨在提高MySQL数据库集群的可用性和故障恢复能力。MHA主要通过自动故障切换来确保数据库的高可用性，它能够在主数据库出现故障时，自动将从数据库提升为主数据库，以避免长时间的服务中断。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="数据库" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="MySQL" scheme="https://yixian12580.github.io/tags/MySQL/"/>
+    
+      <category term="MHA" scheme="https://yixian12580.github.io/tags/MHA/"/>
+    
+      <category term="MySQL高可用" scheme="https://yixian12580.github.io/tags/MySQL%E9%AB%98%E5%8F%AF%E7%94%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>crane-scheduler基于真实负载进行k8s调度</title>
+    <link href="https://yixian12580.github.io/2025/10df35fc4.html"/>
+    <id>https://yixian12580.github.io/2025/10df35fc4.html</id>
+    <published>2025-10-17T10:02:54.000Z</published>
+    <updated>2025-10-17T11:11:21.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;原生 kubernetes 调度器只能基于资源的 resource request 进行调度，然而 Pod 的真实资源使用率，往往与其所申请资源的 request/limit 差异很大，导致集群负载不均的问题。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/K8S/"/>
+    
+    
+      <category term="crane-scheduler" scheme="https://yixian12580.github.io/tags/crane-scheduler/"/>
+    
+      <category term="scheduler" scheme="https://yixian12580.github.io/tags/scheduler/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>k8s灰度发布配置</title>
+    <link href="https://yixian12580.github.io/2025/09c37847c2.html"/>
+    <id>https://yixian12580.github.io/2025/09c37847c2.html</id>
+    <published>2025-09-16T10:27:58.000Z</published>
+    <updated>2025-12-12T11:14:55.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在现代微服务架构中，应用的更新和发布是一个高频且关键的操作。如何在不影响用户体验的前提下，安全、平稳地将新版本应用推送到生产环境，是每个开发者和运维团队必须面对的挑战。灰度发布（Gray Release）作为一种渐进式发布策略，能够有效降低发布风险，而 Kubernetes 的 Ingress 注解功能为我们提供了一种简单而强大的实现方式。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/K8S/"/>
+    
+    
+      <category term="灰度发布" scheme="https://yixian12580.github.io/tags/%E7%81%B0%E5%BA%A6%E5%8F%91%E5%B8%83/"/>
+    
+      <category term="金丝雀发布" scheme="https://yixian12580.github.io/tags/%E9%87%91%E4%B8%9D%E9%9B%80%E5%8F%91%E5%B8%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Istio灰度发布的流量策略</title>
+    <link href="https://yixian12580.github.io/2025/09872234a1.html"/>
+    <id>https://yixian12580.github.io/2025/09872234a1.html</id>
+    <published>2025-09-13T04:28:19.000Z</published>
+    <updated>2025-12-12T11:14:55.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;灰度发布就是先上线一个新版本，然后根据规则将一小部分用户导向到新应用，观察新版本在生产环境的表现，如果达到预期，则逐步将流量切换到新版本中。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/K8S/"/>
+    
+    
+      <category term="服务网格" scheme="https://yixian12580.github.io/tags/%E6%9C%8D%E5%8A%A1%E7%BD%91%E6%A0%BC/"/>
+    
+      <category term="Istio" scheme="https://yixian12580.github.io/tags/Istio/"/>
+    
+      <category term="灰度发布" scheme="https://yixian12580.github.io/tags/%E7%81%B0%E5%BA%A6%E5%8F%91%E5%B8%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>服务网格Istio安装及使用</title>
+    <link href="https://yixian12580.github.io/2025/098b941b9d.html"/>
+    <id>https://yixian12580.github.io/2025/098b941b9d.html</id>
+    <published>2025-09-12T12:40:09.000Z</published>
+    <updated>2025-12-17T10:40:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在k8s中配置启用了istio之后，在创建pod之后会自动注入一个Envoy这样的容器，可理解为代理容器，也就是说，创建pod是除了定义的一个主容器，还会在启动istio之后自动注入一个容器，一个pod有两个容器，该代理容器主要是用来做流量的控制和管理，能做到流量的拦截，能控制熔断、超时、重试，按流量的百分比代理等作用。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/K8S/"/>
+    
+    
+      <category term="服务网格" scheme="https://yixian12580.github.io/tags/%E6%9C%8D%E5%8A%A1%E7%BD%91%E6%A0%BC/"/>
+    
+      <category term="Istio" scheme="https://yixian12580.github.io/tags/Istio/"/>
+    
+      <category term="灰度发布" scheme="https://yixian12580.github.io/tags/%E7%81%B0%E5%BA%A6%E5%8F%91%E5%B8%83/"/>
+    
+      <category term="熔断" scheme="https://yixian12580.github.io/tags/%E7%86%94%E6%96%AD/"/>
+    
+      <category term="超时" scheme="https://yixian12580.github.io/tags/%E8%B6%85%E6%97%B6/"/>
+    
+      <category term="故障注入" scheme="https://yixian12580.github.io/tags/%E6%95%85%E9%9A%9C%E6%B3%A8%E5%85%A5/"/>
+    
+      <category term="重试" scheme="https://yixian12580.github.io/tags/%E9%87%8D%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>k8s更新应用版本优雅终止旧pod</title>
+    <link href="https://yixian12580.github.io/2025/09f71c8c0e.html"/>
+    <id>https://yixian12580.github.io/2025/09f71c8c0e.html</id>
+    <published>2025-09-12T08:23:08.000Z</published>
+    <updated>2025-09-12T10:19:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;所谓优雅终止，就是保证在销毁 Pod 的时候保证对业务无损，比如在业务发版时，让工作负载能够平滑滚动更新。 Pod 在销毁时，会停止容器内的进程，通常在停止的过程中我们需要执行一些善后逻辑，比如等待存量请求处理完以避免连接中断，或通知相关依赖进行清理等，从而实现优雅终止目的。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/K8S/"/>
+    
+    
+      <category term="pod无缝更新" scheme="https://yixian12580.github.io/tags/pod%E6%97%A0%E7%BC%9D%E6%9B%B4%E6%96%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>代码扫描平台SonarQube部署及配置jenkins集成</title>
+    <link href="https://yixian12580.github.io/2025/089615066.html"/>
+    <id>https://yixian12580.github.io/2025/089615066.html</id>
+    <published>2025-08-29T11:02:16.000Z</published>
+    <updated>2025-09-05T06:59:31.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Sonar是一个用于代码质量管理的开源平台，用于管理源代码的质量，可以从七个维度检测代码质量，通过插件形式，可以支持包括java,C#,C/C++,PL/SQL,Cobol,JavaScrip,Groovy等等二十几种编程语言的代码质量管理与检测。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="SonarQube" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/SonarQube/"/>
+    
+    
+      <category term="SonarQube" scheme="https://yixian12580.github.io/tags/SonarQube/"/>
+    
+      <category term="jenkins" scheme="https://yixian12580.github.io/tags/jenkins/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES数据迁移</title>
+    <link href="https://yixian12580.github.io/2025/089b445ae1.html"/>
+    <id>https://yixian12580.github.io/2025/089b445ae1.html</id>
+    <published>2025-08-22T06:49:30.000Z</published>
+    <updated>2025-09-09T04:29:11.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;公司最近需要把uat环境数据迁移到生产环境，其中有一个就是es数据迁移，在这里记录下迁移办法。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="es" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/es/"/>
+    
+    
+      <category term="es" scheme="https://yixian12580.github.io/tags/es/"/>
+    
+      <category term="elasticdump" scheme="https://yixian12580.github.io/tags/elasticdump/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RocketMQ命令行操作</title>
+    <link href="https://yixian12580.github.io/2025/0869c0894f.html"/>
+    <id>https://yixian12580.github.io/2025/0869c0894f.html</id>
+    <published>2025-08-22T06:12:52.000Z</published>
+    <updated>2025-08-22T10:40:02.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Rocketmq有带图形界面的控制台，这次公司环境迁移，需要把jl环境的topic及消费组加到另一个Rocketmq集群，如果在web控制台一个个点太费时间了，可以通过命令行批量添加。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="RocketMQ" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/RocketMQ/"/>
+    
+    
+      <category term="RocketMQ" scheme="https://yixian12580.github.io/tags/RocketMQ/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>docker部署certimateSSL证书管理</title>
+    <link href="https://yixian12580.github.io/2025/080.html"/>
+    <id>https://yixian12580.github.io/2025/080.html</id>
+    <published>2025-08-12T09:04:29.000Z</published>
+    <updated>2025-08-13T02:10:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前有写过一篇文章使用certbot申请免费ssl证书，最近发现certimate有提供web界面，而且集成了证书申请，证书部署，证书续订，监控告警等功能，都可以通过web界面点几下就可以完成，比较适合小白。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="域名证书" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/%E5%9F%9F%E5%90%8D%E8%AF%81%E4%B9%A6/"/>
+    
+    
+      <category term="免费证书" scheme="https://yixian12580.github.io/tags/%E5%85%8D%E8%B4%B9%E8%AF%81%E4%B9%A6/"/>
+    
+      <category term="certimate" scheme="https://yixian12580.github.io/tags/certimate/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>K8S集群证书更新</title>
+    <link href="https://yixian12580.github.io/2025/076a4a6c72.html"/>
+    <id>https://yixian12580.github.io/2025/076a4a6c72.html</id>
+    <published>2025-07-14T02:25:30.000Z</published>
+    <updated>2025-07-14T03:10:58.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;通常情况下，使用 KubeKey 部署的 Kubernetes 集群是不会遇到证书过期问题的，KubeKey 在部署时会自动配置一个定时任务，定期检查集群中所有证书的有效期，系统会监控证书状态，当发现任何证书的剩余有效期低于 30 天时，就会触发自动更新流程。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/K8S/"/>
+    
+    
+      <category term="证书" scheme="https://yixian12580.github.io/tags/%E8%AF%81%E4%B9%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>K8S部署seata-server集群</title>
+    <link href="https://yixian12580.github.io/2025/068c94af43.html"/>
+    <id>https://yixian12580.github.io/2025/068c94af43.html</id>
+    <published>2025-06-15T07:26:43.000Z</published>
+    <updated>2025-06-15T08:12:17.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Seata分TC、TM和RM三个角色，TC（Server端）为单独服务端部署，TM和RM（Client端）由业务系统集成。 Seata-server 的高可用依赖于&lt;code&gt;注册中心&lt;/code&gt;、&lt;code&gt;配置中心&lt;/code&gt;和&lt;code&gt;数据库&lt;/code&gt;来实现。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/K8S/"/>
+    
+    
+      <category term="seata-server集群" scheme="https://yixian12580.github.io/tags/seata-server%E9%9B%86%E7%BE%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>K8S创建Redis集群并迁移数据</title>
+    <link href="https://yixian12580.github.io/2025/06b3e106e6.html"/>
+    <id>https://yixian12580.github.io/2025/06b3e106e6.html</id>
+    <published>2025-06-15T04:30:55.000Z</published>
+    <updated>2025-06-15T07:08:25.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;公司之前生产环境一直用的是单节点的Redis，生产环境版本是6.2.6，开发需要使用PEXPIRETIME命令，这个命令是7.0版本之后才有的，所以趁着这个机会，升级Redis版本顺便把单节点转成集群。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="K8S" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/K8S/"/>
+    
+    
+      <category term="Redis集群" scheme="https://yixian12580.github.io/tags/Redis%E9%9B%86%E7%BE%A4/"/>
+    
+      <category term="Redis数据迁移" scheme="https://yixian12580.github.io/tags/Redis%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>购买海外VPS部署v2ray服务</title>
+    <link href="https://yixian12580.github.io/2025/051a0de5eb.html"/>
+    <id>https://yixian12580.github.io/2025/051a0de5eb.html</id>
+    <published>2025-05-27T10:11:49.000Z</published>
+    <updated>2025-05-28T12:10:08.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;公司之前翻墙一直是购买的梯子，由于泄密原因，决定自己购买海外VPS来部署v2ray服务，在此记录下整个过程。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="V2ray" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/V2ray/"/>
+    
+    
+      <category term="V2ray" scheme="https://yixian12580.github.io/tags/V2ray/"/>
+    
+      <category term="Vultr" scheme="https://yixian12580.github.io/tags/Vultr/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>kafka相关操作</title>
+    <link href="https://yixian12580.github.io/2025/0586a17973.html"/>
+    <id>https://yixian12580.github.io/2025/0586a17973.html</id>
+    <published>2025-05-14T09:10:49.000Z</published>
+    <updated>2025-05-14T09:48:44.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;记录下kafka相关的命令。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Kafka" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Kafka/"/>
+    
+    
+      <category term="消息队列" scheme="https://yixian12580.github.io/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+      <category term="kafka" scheme="https://yixian12580.github.io/tags/kafka/"/>
+    
+      <category term="kafka命令" scheme="https://yixian12580.github.io/tags/kafka%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Grafana-oncall企微告警问题</title>
+    <link href="https://yixian12580.github.io/2025/04ab4e863e.html"/>
+    <id>https://yixian12580.github.io/2025/04ab4e863e.html</id>
+    <published>2025-04-30T06:50:31.000Z</published>
+    <updated>2025-04-30T08:49:23.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;oncall平台部署完之后，我们一般会接入各个平台的告警信息，比如我接入了Skywalking，Graylog和Prometheus的告警。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Oncall" scheme="https://yixian12580.github.io/categories/%E6%8A%80%E6%9C%AF/Oncall/"/>
+    
+    
+      <category term="grafana" scheme="https://yixian12580.github.io/tags/grafana/"/>
+    
+      <category term="oncall" scheme="https://yixian12580.github.io/tags/oncall/"/>
+    
+      <category term="企微告警" scheme="https://yixian12580.github.io/tags/%E4%BC%81%E5%BE%AE%E5%91%8A%E8%AD%A6/"/>
+    
+  </entry>
+  
+</feed>
